@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landolio — Automation That Actually Works</title>
+    <meta name="description" content="Practical automation tools for freelancers and small businesses. Stop chasing invoices. Start getting paid.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #D4AF37;
+            --gold-dark: #B8962E;
+            --black: #0A0A0A;
+            --dark: #1A1A1A;
+            --gray: #888;
+            --white: #FAFAFA;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+        
+        .hero h1 span {
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 16px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: var(--gold-dark);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .product-card {
+            background: var(--dark);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 32px;
+            transition: border-color 0.2s;
+        }
+        
+        .product-card:hover {
+            border-color: var(--gold);
+        }
+        
+        .product-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .product-card p {
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+        
+        .product-card .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .product-card .price span {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .service-list {
+            display: grid;
+            gap: 24px;
+        }
+        
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px;
+            background: var(--dark);
+            border-radius: 8px;
+        }
+        
+        .service-icon {
+            font-size: 1.5rem;
+        }
+        
+        .service-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .service-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        /* Coming Soon Overlay */
+        .coming-soon {
+            position: relative;
+        }
+        
+        .coming-soon::after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">Landolio</a>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Stop Chasing <span>Invoices</span>.<br>Start Getting Paid.</h1>
+                <p>Practical automation tools for freelancers and small businesses. No fluff. No complexity. Just tools that work.</p>
+                <a href="#products" class="cta-button">See Our Tools →</a>
+            </div>
+        </section>
+        
+        <section id="products" class="products">
+            <div class="container">
+                <p class="section-title">Products</p>
+                <h2 class="section-heading">Tools That Pay for Themselves</h2>
+                
+                <div class="product-grid">
+                    <div class="product-card coming-soon">
+                        <span class="badge">SaaS</span>
+                        <h3>Invoice Follow-Up Automator</h3>
+                        <p>Automated reminder sequences that get your invoices paid faster. Connect your invoicing tool, set your rules, forget about chasing payments.</p>
+                        <p class="price">£9<span>/month</span></p>
+                    </div>
+                    
+                    <div class="product-card">
+                        <span class="badge">Template</span>
+                        <h3>Freelancer Invoice Email Pack</h3>
+                        <p>12 battle-tested email templates for invoice reminders. From friendly nudges to firm final notices. Copy, paste, get paid.</p>
+                        <p class="price">£7<span> one-time</span></p>
+                    </div>
+                    
+                    <div class="product-card">
+                        <span class="badge">Guide</span>
+                        <h3>The Late Payment Playbook</h3>
+                        <p>A no-nonsense guide to dealing with late-paying clients. Scripts, timelines, and legal steps for UK freelancers.</p>
+                        <p class="price">£12<span> one-time</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="services">
+            <div class="container">
+                <p class="section-title">Services</p>
+                <h2 class="section-heading">Need Something Custom?</h2>
+                
+                <div class="service-list">
+                    <div class="service-item">
+                        <span class="service-icon">⚡</span>
+                        <div>
+                            <h4>Automation Setup</h4>
+                            <p>We'll set up your invoice reminder system, email sequences, and payment tracking. One-time setup, ongoing results.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <span class="service-icon">🔧</span>
+                        <div>
+                            <h4>Custom Integrations</h4>
+                            <p>Need your tools to talk to each other? We build bespoke automations connecting your invoicing, accounting, and CRM systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 Landolio. Built by <a href="#">Midas</a> 👑</p>
+            <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
