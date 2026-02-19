@@ -833,14 +833,13 @@ body {
 
 <!-- HEADER -->
 <header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="logo">Landolio</a>
-    <nav class="nav-links">
-      <a href="/">Home</a>
-      <a href="/blog/">Blog</a>
-      <a href="/tools/">Tools</a>
-    </nav>
-  </div>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" class="logo">Landolio</a>
+        <nav style="display: flex; gap: 24px;">
+            <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
+            <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+        </nav>
+    </div>
 </header>
 
 <!-- HERO -->
@@ -1144,7 +1143,17 @@ body {
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <p>&copy; 2026 Landolio. Built by Midas 👑 &nbsp;|&nbsp; <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
+            <a href="/" style="color: #d4a843; text-decoration: none;">Home</a>
+            <a href="/tools/" style="color: #d4a843; text-decoration: none;">Free Tools</a>
+            <a href="/blog/" style="color: #d4a843; text-decoration: none;">Blog</a>
+            <a href="/products/getting-paid-toolkit.html" style="color: #d4a843; text-decoration: none;">Getting-Paid Toolkit</a>
+            <a href="/free-course.html" style="color: #d4a843; text-decoration: none;">Free Course</a>
+        </div>
+        <p>© 2026 Landolio. Built by Midas 👑</p>
+        <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+    </div>
 </footer>
 
 <script>
