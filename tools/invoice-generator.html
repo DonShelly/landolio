@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Invoice Generator for Freelancers — Create &amp; Print | Landolio</title>
+<meta name="description" content="Create professional invoices in seconds. Free online invoice generator for freelancers — fill in your details, preview, and print or save as PDF. No signup required.">
+<meta name="keywords" content="free invoice generator freelancer, invoice template generator, create invoice online free, printable invoice generator">
+<link rel="canonical" href="https://landolio.com/tools/invoice-generator.html">
+<meta property="og:title" content="Free Invoice Generator for Freelancers — Create & Print | Landolio">
+<meta property="og:description" content="Create professional invoices in seconds. Free online invoice generator for freelancers — fill in your details, preview, and print or save as PDF. No signup required.">
+<meta property="og:url" content="https://landolio.com/tools/invoice-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Landolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Invoice Generator for Freelancers — Create & Print | Landolio">
+<meta name="twitter:description" content="Create professional invoices in seconds. Free online invoice generator for freelancers.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Invoice Generator for Freelancers",
+  "description": "Create professional invoices in seconds. Free online invoice generator for freelancers — fill in your details, preview, and print or save as PDF. No signup required.",
+  "url": "https://landolio.com/tools/invoice-generator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Landolio",
+    "url": "https://landolio.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   CSS VARIABLES & RESET
+   ═══════════════════════════════════════════ */
+:root {
+  --gold: #D4AF37;
+  --gold-light: #E8CC6E;
+  --gold-dark: #B8941F;
+  --bg: #0a0a0a;
+  --dark: #1A1A1A;
+  --dark-2: #222222;
+  --dark-3: #2a2a2a;
+  --border: #333333;
+  --border-light: #444444;
+  --text: #f0f0f0;
+  --text-muted: #999999;
+  --text-dim: #777777;
+  --white: #ffffff;
+  --red: #e74c3c;
+  --green: #2ecc71;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.6);
+  --transition: all 0.25s ease;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+.site-header {
+  background: var(--dark);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  background: rgba(26,26,26,0.92);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo:hover { color: var(--gold-light); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.nav-links a:hover { color: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  text-align: center;
+  padding: 3.5rem 2rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero .badge {
+  display: inline-block;
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.25);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.hero h1 .gold { color: var(--gold); }
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════
+   FORM LAYOUT
+   ═══════════════════════════════════════════ */
+.generator-wrap {
+  max-width: 1000px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
+}
+.form-section {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+.form-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.form-section-title .icon {
+  font-size: 1.2rem;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.form-grid .full { grid-column: 1 / -1; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.form-group label .optional {
+  font-weight: 400;
+  text-transform: none;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+}
+.form-group textarea { resize: vertical; min-height: 80px; }
+.form-group select { cursor: pointer; }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-dim); }
+.form-group input.error { border-color: var(--red); }
+
+/* ═══════════════════════════════════════════
+   LINE ITEMS TABLE
+   ═══════════════════════════════════════════ */
+.line-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.line-items-table thead th {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+  padding: 0 0 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.line-items-table thead th:last-child { text-align: center; width: 48px; }
+.line-items-table thead th.text-right { text-align: right; }
+.line-items-table tbody td {
+  padding: 0.6rem 0.4rem 0.6rem 0;
+  vertical-align: top;
+}
+.line-items-table tbody td:first-child { padding-left: 0; }
+.line-items-table tbody td:last-child { text-align: center; }
+.line-items-table tbody td input {
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.7rem;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  width: 100%;
+  outline: none;
+  transition: var(--transition);
+}
+.line-items-table tbody td input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+}
+.line-items-table .col-desc { width: 40%; }
+.line-items-table .col-qty { width: 15%; }
+.line-items-table .col-price { width: 20%; }
+.line-items-table .col-total { width: 20%; }
+.line-items-table .col-action { width: 5%; }
+.line-total-display {
+  padding: 0.6rem 0.7rem;
+  background: var(--dark-3);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: var(--gold);
+  text-align: right;
+  font-size: 0.9rem;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.btn-remove-line {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+.btn-remove-line:hover { border-color: var(--red); color: var(--red); background: rgba(231,76,60,0.1); }
+
+.btn-add-line {
+  background: rgba(212,175,55,0.08);
+  border: 1px dashed var(--gold);
+  border-radius: var(--radius-sm);
+  color: var(--gold);
+  padding: 0.65rem 1.2rem;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn-add-line:hover { background: rgba(212,175,55,0.15); }
+
+/* ═══════════════════════════════════════════
+   TOTALS SECTION
+   ═══════════════════════════════════════════ */
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+}
+.totals-row.total-due {
+  border-top: 2px solid var(--gold);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.totals-row.total-due .total-amount { color: var(--gold); font-size: 1.35rem; }
+.totals-area { max-width: 360px; margin-left: auto; padding-top: 0.5rem; }
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+}
+.toggle-row label { font-size: 0.9rem; cursor: pointer; user-select: none; }
+.toggle-row input[type="checkbox"] {
+  width: 18px; height: 18px; cursor: pointer; accent-color: var(--gold);
+}
+.toggle-row .toggle-fields {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: auto;
+}
+.toggle-row .toggle-fields input,
+.toggle-row .toggle-fields select {
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.6rem;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.85rem;
+  width: 90px;
+  outline: none;
+}
+.toggle-row .toggle-fields input:focus { border-color: var(--gold); }
+.toggle-row .toggle-fields select { width: 70px; cursor: pointer; }
+
+/* ═══════════════════════════════════════════
+   GENERATE BUTTON
+   ═══════════════════════════════════════════ */
+.generate-wrap { text-align: center; margin: 2rem 0; }
+.btn-generate {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: #000;
+  border: none;
+  border-radius: var(--radius);
+  padding: 1rem 3rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 20px rgba(212,175,55,0.3);
+}
+.btn-generate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(212,175,55,0.45);
+}
+.btn-generate:active { transform: translateY(0); }
+
+/* ═══════════════════════════════════════════
+   INVOICE PREVIEW MODAL
+   ═══════════════════════════════════════════ */
+.invoice-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 2000;
+  overflow-y: auto;
+  padding: 2rem 1rem;
+  backdrop-filter: blur(4px);
+}
+.invoice-overlay.active { display: block; }
+
+.invoice-actions {
+  max-width: 820px;
+  margin: 0 auto 1rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.invoice-actions button {
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn-print {
+  background: var(--gold);
+  color: #000;
+  border: none;
+}
+.btn-print:hover { background: var(--gold-light); }
+.btn-copy-text {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text);
+}
+.btn-copy-text:hover { border-color: var(--gold); color: var(--gold); }
+.btn-close-invoice {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+}
+.btn-close-invoice:hover { border-color: var(--red); color: var(--red); }
+
+/* ═══════════════════════════════════════════
+   INVOICE DOCUMENT (white themed)
+   ═══════════════════════════════════════════ */
+.invoice-doc {
+  max-width: 820px;
+  margin: 0 auto;
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 3.5rem;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.invoice-doc * { color: #1a1a1a; }
+
+.inv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid #D4AF37;
+}
+.inv-brand h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.15rem;
+}
+.inv-brand .inv-name { font-size: 0.95rem; color: #555; }
+.inv-title {
+  text-align: right;
+}
+.inv-title h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #D4AF37;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.inv-title .inv-number {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.inv-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.inv-meta-block h4 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+.inv-meta-block p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+.inv-meta-block .detail-row {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  margin-top: 0.2rem;
+}
+.inv-meta-block .detail-row .label { color: #888; min-width: 90px; }
+
+.inv-dates {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.2rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+.inv-date-item .date-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+}
+.inv-date-item .date-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Invoice table */
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+.inv-table thead th {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+.inv-table thead th.text-right { text-align: right; }
+.inv-table tbody td {
+  padding: 0.85rem 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+}
+.inv-table tbody td.text-right { text-align: right; }
+.inv-table tbody td.item-desc { font-weight: 500; }
+.inv-table tbody tr:last-child td { border-bottom: 2px solid #e0e0e0; }
+
+.inv-totals {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2.5rem;
+}
+.inv-totals-inner { min-width: 280px; }
+.inv-totals-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+  font-size: 0.9rem;
+}
+.inv-totals-row.grand-total {
+  border-top: 3px solid #D4AF37;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.inv-totals-row.grand-total .total-val { color: #D4AF37; }
+
+.inv-payment {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.inv-payment h4 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #999;
+  margin-bottom: 0.6rem;
+}
+.inv-payment .pay-detail {
+  font-size: 0.88rem;
+  margin-bottom: 0.2rem;
+}
+.inv-payment .pay-detail .pay-label { color: #888; }
+
+.inv-notes {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+.inv-notes strong { font-style: normal; color: #444; }
+
+.inv-footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #bbb;
+}
+
+/* ═══════════════════════════════════════════
+   CONTENT SECTIONS
+   ═══════════════════════════════════════════ */
+.content-sections {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+.content-block {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+.content-block h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--white);
+}
+.content-block h2 .gold { color: var(--gold); }
+.content-block p, .content-block li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.content-block ul, .content-block ol {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+.content-block li { margin-bottom: 0.5rem; }
+.content-block li strong { color: var(--text); }
+.content-block .checklist { list-style: none; padding-left: 0; }
+.content-block .checklist li { padding-left: 1.8rem; position: relative; }
+.content-block .checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.term-card {
+  background: var(--dark-2);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+}
+.term-card h4 {
+  color: var(--gold);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+.term-card p {
+  font-size: 0.85rem !important;
+  color: var(--text-dim) !important;
+}
+
+/* CTA */
+.cta-block {
+  background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(212,175,55,0.02) 100%);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.cta-block h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+.cta-block p { color: var(--text-muted); margin-bottom: 1.25rem; }
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: #000;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(212,175,55,0.25);
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(212,175,55,0.4); }
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.related-links a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: var(--transition);
+}
+.related-links a:hover { color: var(--gold-light); text-decoration: underline; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+.site-footer a { color: var(--text-muted); text-decoration: none; }
+.site-footer a:hover { color: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   TOAST
+   ═══════════════════════════════════════════ */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--dark);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .inv-header { flex-direction: column; gap: 1rem; }
+  .inv-title { text-align: left; }
+  .inv-meta { grid-template-columns: 1fr; gap: 1.25rem; }
+  .inv-dates { flex-direction: column; gap: 0.75rem; }
+  .invoice-doc { padding: 2rem 1.5rem; }
+  .form-section { padding: 1.5rem; }
+  .line-items-table { font-size: 0.85rem; }
+  .line-items-table .col-desc { width: 35%; }
+  .content-block { padding: 1.75rem; }
+  .header-inner { padding: 0; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.82rem; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.7rem; }
+  .invoice-doc { padding: 1.5rem 1rem; font-size: 12px; }
+  .inv-title h1 { font-size: 1.8rem; }
+  .invoice-actions { justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════ */
+@media print {
+  body { background: #fff !important; }
+  .site-header, .hero, .generator-wrap, .content-sections,
+  .site-footer, .invoice-actions, .toast { display: none !important; }
+  .invoice-overlay {
+    display: block !important;
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    backdrop-filter: none !important;
+  }
+  .invoice-doc {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .inv-header { border-bottom-width: 2px !important; }
+  .inv-totals-row.grand-total { border-top-width: 2px !important; }
+  @page { margin: 1.5cm; size: A4; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">Landolio</a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/tools/">Tools</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">✦ Free Tool — No Signup</div>
+  <h1>Freelance <span class="gold">Invoice Generator</span></h1>
+  <p>Create professional, printable invoices in seconds. Fill in your details, preview, and download as PDF — completely free.</p>
+</section>
+
+<!-- GENERATOR FORM -->
+<div class="generator-wrap">
+
+  <!-- YOUR DETAILS -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">👤</span> Your Details</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Business Name</label>
+        <input type="text" id="yourBusiness" placeholder="e.g. Smith Design Co.">
+      </div>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="yourName" placeholder="e.g. John Smith">
+      </div>
+      <div class="form-group full">
+        <label>Address</label>
+        <textarea id="yourAddress" placeholder="e.g. 123 High Street&#10;London, EC1A 1BB&#10;United Kingdom"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="yourEmail" placeholder="e.g. hello@example.com">
+      </div>
+      <div class="form-group">
+        <label>Phone <span class="optional">(optional)</span></label>
+        <input type="tel" id="yourPhone" placeholder="e.g. +44 7700 900000">
+      </div>
+      <div class="form-group">
+        <label>VAT Number <span class="optional">(optional)</span></label>
+        <input type="text" id="yourVAT" placeholder="e.g. GB123456789">
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENT DETAILS -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">🏢</span> Client Details</div>
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Client Name / Company</label>
+        <input type="text" id="clientName" placeholder="e.g. Acme Corp">
+      </div>
+      <div class="form-group full">
+        <label>Client Address</label>
+        <textarea id="clientAddress" placeholder="e.g. 456 Business Park&#10;Manchester, M1 1AA"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Client Email <span class="optional">(optional)</span></label>
+        <input type="email" id="clientEmail" placeholder="e.g. accounts@client.com">
+      </div>
+    </div>
+  </div>
+
+  <!-- INVOICE DETAILS -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">📋</span> Invoice Details</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Invoice Number</label>
+        <input type="text" id="invoiceNumber" value="INV-001">
+      </div>
+      <div class="form-group">
+        <label>Currency</label>
+        <select id="currency">
+          <option value="£">£ GBP</option>
+          <option value="$">$ USD</option>
+          <option value="€">€ EUR</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Invoice Date</label>
+        <input type="date" id="invoiceDate">
+      </div>
+      <div class="form-group">
+        <label>Due Date</label>
+        <input type="date" id="dueDate">
+      </div>
+      <div class="form-group">
+        <label>Payment Terms</label>
+        <select id="paymentTerms">
+          <option value="Due on Receipt">Due on Receipt</option>
+          <option value="Net 7">Net 7</option>
+          <option value="Net 14">Net 14</option>
+          <option value="Net 30" selected>Net 30</option>
+          <option value="Net 60">Net 60</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINE ITEMS -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">📦</span> Line Items</div>
+    <table class="line-items-table">
+      <thead>
+        <tr>
+          <th class="col-desc">Description</th>
+          <th class="col-qty">Qty</th>
+          <th class="col-price">Unit Price</th>
+          <th class="col-total text-right">Total</th>
+          <th class="col-action"></th>
+        </tr>
+      </thead>
+      <tbody id="lineItemsBody">
+        <tr>
+          <td><input type="text" class="li-desc" placeholder="e.g. Website Design"></td>
+          <td><input type="number" class="li-qty" value="1" min="0" step="any"></td>
+          <td><input type="number" class="li-price" value="0" min="0" step="any"></td>
+          <td><div class="line-total-display">0.00</div></td>
+          <td><button class="btn-remove-line" title="Remove item" onclick="removeLine(this)">✕</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn-add-line" onclick="addLine()">＋ Add Line Item</button>
+
+    <!-- TOTALS -->
+    <div class="totals-area">
+      <div class="totals-row">
+        <span>Subtotal</span>
+        <span id="displaySubtotal">0.00</span>
+      </div>
+
+      <div class="toggle-row">
+        <input type="checkbox" id="vatToggle">
+        <label for="vatToggle">Add VAT</label>
+        <div class="toggle-fields" id="vatFields" style="display:none;">
+          <input type="number" id="vatRate" value="20" min="0" step="any" style="width:65px;">
+          <span style="color:var(--text-dim)">%</span>
+        </div>
+      </div>
+      <div class="totals-row" id="vatRow" style="display:none;">
+        <span>VAT (<span id="vatRateDisplay">20</span>%)</span>
+        <span id="displayVAT">0.00</span>
+      </div>
+
+      <div class="toggle-row">
+        <input type="checkbox" id="discountToggle">
+        <label for="discountToggle">Discount</label>
+        <div class="toggle-fields" id="discountFields" style="display:none;">
+          <input type="number" id="discountValue" value="0" min="0" step="any" style="width:75px;">
+          <select id="discountType">
+            <option value="%">%</option>
+            <option value="fixed">Fixed</option>
+          </select>
+        </div>
+      </div>
+      <div class="totals-row" id="discountRow" style="display:none;">
+        <span>Discount</span>
+        <span id="displayDiscount">−0.00</span>
+      </div>
+
+      <div class="totals-row total-due">
+        <span>Total Due</span>
+        <span class="total-amount" id="displayTotal">0.00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT DETAILS -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">💳</span> Payment Details <span style="font-weight:400;color:var(--text-dim);font-size:0.8rem;margin-left:0.5rem">(optional)</span></div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Bank Name</label>
+        <input type="text" id="bankName" placeholder="e.g. Barclays">
+      </div>
+      <div class="form-group">
+        <label>Sort Code</label>
+        <input type="text" id="sortCode" placeholder="e.g. 20-00-00">
+      </div>
+      <div class="form-group">
+        <label>Account Number</label>
+        <input type="text" id="accountNumber" placeholder="e.g. 12345678">
+      </div>
+      <div class="form-group">
+        <label>PayPal Email</label>
+        <input type="email" id="paypalEmail" placeholder="e.g. pay@example.com">
+      </div>
+      <div class="form-group full">
+        <label>Custom Payment Instructions</label>
+        <textarea id="paymentInstructions" placeholder="e.g. Please reference the invoice number when making payment."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">📝</span> Notes <span style="font-weight:400;color:var(--text-dim);font-size:0.8rem;margin-left:0.5rem">(optional)</span></div>
+    <div class="form-group">
+      <textarea id="invoiceNotes" placeholder="e.g. Thank you for your business! Payment is appreciated within the due date."></textarea>
+    </div>
+  </div>
+
+  <!-- GENERATE BUTTON -->
+  <div class="generate-wrap">
+    <button class="btn-generate" onclick="generateInvoice()">✦ Generate Invoice</button>
+  </div>
+</div>
+
+<!-- INVOICE PREVIEW OVERLAY -->
+<div class="invoice-overlay" id="invoiceOverlay">
+  <div class="invoice-actions">
+    <button class="btn-copy-text" onclick="copyAsText()">📋 Copy as Text</button>
+    <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <button class="btn-close-invoice" onclick="closeInvoice()">✕ Close</button>
+  </div>
+  <div class="invoice-doc" id="invoiceDoc">
+    <!-- Populated by JS -->
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- CONTENT SECTIONS -->
+<div class="content-sections">
+
+  <!-- Why Use a Professional Invoice -->
+  <div class="content-block">
+    <h2>Why Use a <span class="gold">Professional Invoice</span>?</h2>
+    <ul>
+      <li><strong>Get paid faster.</strong> A clear, professional invoice with payment details and due dates reduces back-and-forth and gets money in your account sooner.</li>
+      <li><strong>Build credibility.</strong> A well-formatted invoice signals that you're a serious professional — not someone who dashes off a quick email asking for payment.</li>
+      <li><strong>Stay legally compliant.</strong> In many jurisdictions, invoices must include specific information (your name, address, VAT number, etc.) to be valid tax documents.</li>
+    </ul>
+  </div>
+
+  <!-- What Should Every Invoice Include -->
+  <div class="content-block">
+    <h2>What Should Every <span class="gold">Invoice Include</span>?</h2>
+    <ul class="checklist">
+      <li>Your full name or business name and contact details</li>
+      <li>Client's name and address</li>
+      <li>A unique invoice number for record-keeping</li>
+      <li>Invoice date and payment due date</li>
+      <li>Clear description of goods or services provided</li>
+      <li>Quantity, unit price, and line totals</li>
+      <li>Subtotal, any applicable VAT/tax, and discounts</li>
+      <li>Total amount due — prominently displayed</li>
+      <li>Payment terms and accepted payment methods</li>
+      <li>Bank details or payment instructions</li>
+    </ul>
+  </div>
+
+  <!-- Invoice Payment Terms Explained -->
+  <div class="content-block">
+    <h2>Invoice <span class="gold">Payment Terms</span> Explained</h2>
+    <p>Payment terms tell your client when you expect to be paid. Here are the most common ones freelancers use:</p>
+    <div class="terms-grid">
+      <div class="term-card">
+        <h4>Due on Receipt</h4>
+        <p>Payment is expected immediately upon receiving the invoice. Best for one-off projects.</p>
+      </div>
+      <div class="term-card">
+        <h4>Net 7</h4>
+        <p>Payment due within 7 days. Good for small projects or clients you trust.</p>
+      </div>
+      <div class="term-card">
+        <h4>Net 14</h4>
+        <p>Payment due within 14 days. A reasonable middle ground for most freelance work.</p>
+      </div>
+      <div class="term-card">
+        <h4>Net 30</h4>
+        <p>Payment due within 30 days. The most common term — standard for larger companies.</p>
+      </div>
+      <div class="term-card">
+        <h4>Net 60</h4>
+        <p>Payment due within 60 days. Typically used with enterprise clients — beware of cash flow impact.</p>
+      </div>
+    </div>
+    <p style="margin-top:1rem;">Always agree payment terms <em>before</em> starting work, and include them in your contract and on every invoice. Learn more about protecting your payments in our guides below.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Never Chase a Late Invoice Again</h3>
+    <p>Landolio's free automated reminders send polite follow-ups to your clients so you don't have to. Focus on your work — we'll chase the money.</p>
+    <a href="https://saas-mvp-omega.vercel.app/signup" class="cta-btn">Try Free Automated Reminders →</a>
+  </div>
+
+  <!-- Related Links -->
+  <div class="content-block">
+    <h2>Related <span class="gold">Resources</span></h2>
+    <p>Dive deeper into invoicing best practices and protect your freelance income:</p>
+    <div class="related-links">
+      <a href="/blog/freelance-invoice-best-practices.html">📄 Freelance Invoice Best Practices →</a>
+      <a href="/blog/freelance-payment-terms-contract.html">📑 Payment Terms &amp; Contracts Guide →</a>
+      <a href="/tools/late-payment-interest-calculator.html">🧮 Late Payment Interest Calculator →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>&copy; 2026 Landolio. Built by Midas 👑 &nbsp;|&nbsp; <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   INITIALIZATION
+   ═══════════════════════════════════════════ */
+(function init() {
+  // Set default dates
+  const today = new Date();
+  const due = new Date(today);
+  due.setDate(due.getDate() + 30);
+  document.getElementById('invoiceDate').value = formatDateInput(today);
+  document.getElementById('dueDate').value = formatDateInput(due);
+
+  // Event listeners for payment terms ↔ due date sync
+  document.getElementById('paymentTerms').addEventListener('change', function() {
+    const days = { 'Due on Receipt': 0, 'Net 7': 7, 'Net 14': 14, 'Net 30': 30, 'Net 60': 60 };
+    const base = new Date(document.getElementById('invoiceDate').value);
+    if (!isNaN(base)) {
+      base.setDate(base.getDate() + (days[this.value] || 30));
+      document.getElementById('dueDate').value = formatDateInput(base);
+    }
+  });
+
+  document.getElementById('invoiceDate').addEventListener('change', function() {
+    document.getElementById('paymentTerms').dispatchEvent(new Event('change'));
+  });
+
+  // VAT toggle
+  document.getElementById('vatToggle').addEventListener('change', function() {
+    document.getElementById('vatFields').style.display = this.checked ? 'flex' : 'none';
+    document.getElementById('vatRow').style.display = this.checked ? 'flex' : 'none';
+    recalc();
+  });
+  document.getElementById('vatRate').addEventListener('input', function() {
+    document.getElementById('vatRateDisplay').textContent = this.value || '0';
+    recalc();
+  });
+
+  // Discount toggle
+  document.getElementById('discountToggle').addEventListener('change', function() {
+    document.getElementById('discountFields').style.display = this.checked ? 'flex' : 'none';
+    document.getElementById('discountRow').style.display = this.checked ? 'flex' : 'none';
+    recalc();
+  });
+  document.getElementById('discountValue').addEventListener('input', recalc);
+  document.getElementById('discountType').addEventListener('change', recalc);
+
+  // Initial line item listeners
+  attachLineListeners(document.querySelector('#lineItemsBody tr'));
+  recalc();
+})();
+
+function formatDateInput(d) {
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+
+function formatDateDisplay(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+/* ═══════════════════════════════════════════
+   LINE ITEMS
+   ═══════════════════════════════════════════ */
+function attachLineListeners(row) {
+  row.querySelectorAll('.li-qty, .li-price').forEach(function(inp) {
+    inp.addEventListener('input', recalc);
+  });
+}
+
+function addLine() {
+  const tbody = document.getElementById('lineItemsBody');
+  const tr = document.createElement('tr');
+  tr.innerHTML =
+    '<td><input type="text" class="li-desc" placeholder="Description"></td>' +
+    '<td><input type="number" class="li-qty" value="1" min="0" step="any"></td>' +
+    '<td><input type="number" class="li-price" value="0" min="0" step="any"></td>' +
+    '<td><div class="line-total-display">0.00</div></td>' +
+    '<td><button class="btn-remove-line" title="Remove item" onclick="removeLine(this)">✕</button></td>';
+  tbody.appendChild(tr);
+  attachLineListeners(tr);
+  tr.querySelector('.li-desc').focus();
+}
+
+function removeLine(btn) {
+  const tbody = document.getElementById('lineItemsBody');
+  if (tbody.rows.length <= 1) return;
+  btn.closest('tr').remove();
+  recalc();
+}
+
+/* ═══════════════════════════════════════════
+   RECALCULATE TOTALS
+   ═══════════════════════════════════════════ */
+function recalc() {
+  const cur = document.getElementById('currency').value;
+  let subtotal = 0;
+  const rows = document.querySelectorAll('#lineItemsBody tr');
+  rows.forEach(function(row) {
+    const qty = parseFloat(row.querySelector('.li-qty').value) || 0;
+    const price = parseFloat(row.querySelector('.li-price').value) || 0;
+    const lineTotal = qty * price;
+    subtotal += lineTotal;
+    row.querySelector('.line-total-display').textContent = cur + lineTotal.toFixed(2);
+  });
+
+  let vatAmount = 0;
+  if (document.getElementById('vatToggle').checked) {
+    const rate = parseFloat(document.getElementById('vatRate').value) || 0;
+    vatAmount = subtotal * (rate / 100);
+  }
+
+  let discountAmount = 0;
+  if (document.getElementById('discountToggle').checked) {
+    const val = parseFloat(document.getElementById('discountValue').value) || 0;
+    if (document.getElementById('discountType').value === '%') {
+      discountAmount = subtotal * (val / 100);
+    } else {
+      discountAmount = val;
+    }
+  }
+
+  const total = subtotal + vatAmount - discountAmount;
+
+  document.getElementById('displaySubtotal').textContent = cur + subtotal.toFixed(2);
+  document.getElementById('displayVAT').textContent = cur + vatAmount.toFixed(2);
+  document.getElementById('displayDiscount').textContent = '−' + cur + discountAmount.toFixed(2);
+  document.getElementById('displayTotal').textContent = cur + Math.max(0, total).toFixed(2);
+}
+
+// Recalc on currency change
+document.getElementById('currency').addEventListener('change', recalc);
+
+/* ═══════════════════════════════════════════
+   GENERATE INVOICE
+   ═══════════════════════════════════════════ */
+function generateInvoice() {
+  // Simple validation
+  const required = [
+    { id: 'yourName', label: 'Your Name' },
+    { id: 'yourEmail', label: 'Your Email' },
+    { id: 'clientName', label: 'Client Name' }
+  ];
+  let valid = true;
+  required.forEach(function(f) {
+    const el = document.getElementById(f.id);
+    if (!el.value.trim()) {
+      el.classList.add('error');
+      valid = false;
+      el.addEventListener('input', function handler() {
+        el.classList.remove('error');
+        el.removeEventListener('input', handler);
+      });
+    }
+  });
+  // Check at least one line item has a description
+  const firstDesc = document.querySelector('#lineItemsBody .li-desc');
+  if (!firstDesc.value.trim()) {
+    firstDesc.classList.add('error');
+    valid = false;
+    firstDesc.addEventListener('input', function handler() {
+      firstDesc.classList.remove('error');
+      firstDesc.removeEventListener('input', handler);
+    });
+  }
+  if (!valid) {
+    showToast('Please fill in the required fields');
+    return;
+  }
+
+  const cur = document.getElementById('currency').value;
+  const v = function(id) { return document.getElementById(id).value.trim(); };
+
+  // Build line items HTML
+  let lineItemsHTML = '';
+  let subtotal = 0;
+  document.querySelectorAll('#lineItemsBody tr').forEach(function(row) {
+    const desc = row.querySelector('.li-desc').value.trim() || '—';
+    const qty = parseFloat(row.querySelector('.li-qty').value) || 0;
+    const price = parseFloat(row.querySelector('.li-price').value) || 0;
+    const lt = qty * price;
+    subtotal += lt;
+    lineItemsHTML +=
+      '<tr>' +
+      '<td class="item-desc">' + esc(desc) + '</td>' +
+      '<td class="text-right">' + formatNum(qty) + '</td>' +
+      '<td class="text-right">' + cur + formatMoney(price) + '</td>' +
+      '<td class="text-right">' + cur + formatMoney(lt) + '</td>' +
+      '</tr>';
+  });
+
+  // VAT
+  let vatAmount = 0;
+  let vatHTML = '';
+  if (document.getElementById('vatToggle').checked) {
+    const rate = parseFloat(v('vatRate')) || 0;
+    vatAmount = subtotal * (rate / 100);
+    vatHTML = '<div class="inv-totals-row"><span>VAT (' + rate + '%)</span><span>' + cur + formatMoney(vatAmount) + '</span></div>';
+  }
+
+  // Discount
+  let discountAmount = 0;
+  let discountHTML = '';
+  if (document.getElementById('discountToggle').checked) {
+    const dv = parseFloat(v('discountValue')) || 0;
+    const dt = document.getElementById('discountType').value;
+    if (dt === '%') {
+      discountAmount = subtotal * (dv / 100);
+      discountHTML = '<div class="inv-totals-row"><span>Discount (' + dv + '%)</span><span>−' + cur + formatMoney(discountAmount) + '</span></div>';
+    } else {
+      discountAmount = dv;
+      discountHTML = '<div class="inv-totals-row"><span>Discount</span><span>−' + cur + formatMoney(discountAmount) + '</span></div>';
+    }
+  }
+
+  const total = Math.max(0, subtotal + vatAmount - discountAmount);
+
+  // Payment details
+  let payHTML = '';
+  const payParts = [];
+  if (v('bankName')) payParts.push('<div class="pay-detail"><span class="pay-label">Bank: </span>' + esc(v('bankName')) + '</div>');
+  if (v('sortCode')) payParts.push('<div class="pay-detail"><span class="pay-label">Sort Code: </span>' + esc(v('sortCode')) + '</div>');
+  if (v('accountNumber')) payParts.push('<div class="pay-detail"><span class="pay-label">Account No: </span>' + esc(v('accountNumber')) + '</div>');
+  if (v('paypalEmail')) payParts.push('<div class="pay-detail"><span class="pay-label">PayPal: </span>' + esc(v('paypalEmail')) + '</div>');
+  if (v('paymentInstructions')) payParts.push('<div class="pay-detail" style="margin-top:0.5rem;">' + esc(v('paymentInstructions')).replace(/\n/g, '<br>') + '</div>');
+  if (payParts.length) {
+    payHTML = '<div class="inv-payment"><h4>Payment Details</h4>' + payParts.join('') + '</div>';
+  }
+
+  // Notes
+  let notesHTML = '';
+  if (v('invoiceNotes')) {
+    notesHTML = '<div class="inv-notes"><strong>Notes:</strong> ' + esc(v('invoiceNotes')).replace(/\n/g, '<br>') + '</div>';
+  }
+
+  // From details
+  let fromLines = '';
+  if (v('yourAddress')) fromLines += '<p>' + esc(v('yourAddress')).replace(/\n/g, '<br>') + '</p>';
+  const fromDetails = [];
+  if (v('yourEmail')) fromDetails.push('<div class="detail-row"><span class="label">Email</span> ' + esc(v('yourEmail')) + '</div>');
+  if (v('yourPhone')) fromDetails.push('<div class="detail-row"><span class="label">Phone</span> ' + esc(v('yourPhone')) + '</div>');
+  if (v('yourVAT')) fromDetails.push('<div class="detail-row"><span class="label">VAT No.</span> ' + esc(v('yourVAT')) + '</div>');
+  fromLines += fromDetails.join('');
+
+  // To details
+  let toLines = '';
+  if (v('clientAddress')) toLines += '<p>' + esc(v('clientAddress')).replace(/\n/g, '<br>') + '</p>';
+  if (v('clientEmail')) toLines += '<div class="detail-row"><span class="label">Email</span> ' + esc(v('clientEmail')) + '</div>';
+
+  // Build invoice
+  const html =
+    '<div class="inv-header">' +
+      '<div class="inv-brand">' +
+        '<h2>' + esc(v('yourBusiness') || v('yourName')) + '</h2>' +
+        (v('yourBusiness') ? '<div class="inv-name">' + esc(v('yourName')) + '</div>' : '') +
+      '</div>' +
+      '<div class="inv-title">' +
+        '<h1>INVOICE</h1>' +
+        '<div class="inv-number">' + esc(v('invoiceNumber')) + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="inv-meta">' +
+      '<div class="inv-meta-block"><h4>From</h4>' + fromLines + '</div>' +
+      '<div class="inv-meta-block"><h4>Bill To</h4><p style="font-weight:600;margin-bottom:0.2rem;">' + esc(v('clientName')) + '</p>' + toLines + '</div>' +
+    '</div>' +
+    '<div class="inv-dates">' +
+      '<div class="inv-date-item"><div class="date-label">Invoice Date</div><div class="date-value">' + formatDateDisplay(v('invoiceDate')) + '</div></div>' +
+      '<div class="inv-date-item"><div class="date-label">Due Date</div><div class="date-value">' + formatDateDisplay(v('dueDate')) + '</div></div>' +
+      '<div class="inv-date-item"><div class="date-label">Terms</div><div class="date-value">' + esc(v('paymentTerms')) + '</div></div>' +
+    '</div>' +
+    '<table class="inv-table">' +
+      '<thead><tr><th>Description</th><th class="text-right">Qty</th><th class="text-right">Unit Price</th><th class="text-right">Amount</th></tr></thead>' +
+      '<tbody>' + lineItemsHTML + '</tbody>' +
+    '</table>' +
+    '<div class="inv-totals"><div class="inv-totals-inner">' +
+      '<div class="inv-totals-row"><span>Subtotal</span><span>' + cur + formatMoney(subtotal) + '</span></div>' +
+      vatHTML +
+      discountHTML +
+      '<div class="inv-totals-row grand-total"><span>Total Due</span><span class="total-val">' + cur + formatMoney(total) + '</span></div>' +
+    '</div></div>' +
+    payHTML +
+    notesHTML +
+    '<div class="inv-footer">Generated with <strong style="color:#D4AF37;">Landolio</strong> — Free Invoice Generator for Freelancers</div>';
+
+  document.getElementById('invoiceDoc').innerHTML = html;
+  document.getElementById('invoiceOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('invoiceOverlay').scrollTop = 0;
+}
+
+function closeInvoice() {
+  document.getElementById('invoiceOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeInvoice();
+});
+
+// Close on overlay click (not on invoice itself)
+document.getElementById('invoiceOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeInvoice();
+});
+
+/* ═══════════════════════════════════════════
+   COPY AS TEXT
+   ═══════════════════════════════════════════ */
+function copyAsText() {
+  const cur = document.getElementById('currency').value;
+  const v = function(id) { return document.getElementById(id).value.trim(); };
+  let text = '';
+  text += '═══════════════════════════════════════\n';
+  text += '               INVOICE\n';
+  text += '═══════════════════════════════════════\n\n';
+  text += 'Invoice: ' + v('invoiceNumber') + '\n';
+  text += 'Date:    ' + formatDateDisplay(v('invoiceDate')) + '\n';
+  text += 'Due:     ' + formatDateDisplay(v('dueDate')) + '\n';
+  text += 'Terms:   ' + v('paymentTerms') + '\n\n';
+  text += '───────────────────────────────────────\n';
+  text += 'FROM:\n';
+  text += (v('yourBusiness') || v('yourName')) + '\n';
+  if (v('yourBusiness') && v('yourName')) text += v('yourName') + '\n';
+  if (v('yourAddress')) text += v('yourAddress') + '\n';
+  if (v('yourEmail')) text += v('yourEmail') + '\n';
+  if (v('yourPhone')) text += v('yourPhone') + '\n';
+  if (v('yourVAT')) text += 'VAT: ' + v('yourVAT') + '\n';
+  text += '\nTO:\n';
+  text += v('clientName') + '\n';
+  if (v('clientAddress')) text += v('clientAddress') + '\n';
+  if (v('clientEmail')) text += v('clientEmail') + '\n';
+  text += '\n───────────────────────────────────────\n';
+  text += 'ITEMS:\n\n';
+
+  let subtotal = 0;
+  document.querySelectorAll('#lineItemsBody tr').forEach(function(row) {
+    const desc = row.querySelector('.li-desc').value.trim() || '—';
+    const qty = parseFloat(row.querySelector('.li-qty').value) || 0;
+    const price = parseFloat(row.querySelector('.li-price').value) || 0;
+    const lt = qty * price;
+    subtotal += lt;
+    text += '• ' + desc + '\n';
+    text += '  ' + formatNum(qty) + ' × ' + cur + formatMoney(price) + ' = ' + cur + formatMoney(lt) + '\n\n';
+  });
+
+  text += '───────────────────────────────────────\n';
+  text += 'Subtotal:     ' + cur + formatMoney(subtotal) + '\n';
+
+  let vatAmount = 0;
+  if (document.getElementById('vatToggle').checked) {
+    const rate = parseFloat(v('vatRate')) || 0;
+    vatAmount = subtotal * (rate / 100);
+    text += 'VAT (' + rate + '%):   ' + cur + formatMoney(vatAmount) + '\n';
+  }
+  let discountAmount = 0;
+  if (document.getElementById('discountToggle').checked) {
+    const dv = parseFloat(v('discountValue')) || 0;
+    const dt = document.getElementById('discountType').value;
+    if (dt === '%') {
+      discountAmount = subtotal * (dv / 100);
+      text += 'Discount (' + dv + '%): -' + cur + formatMoney(discountAmount) + '\n';
+    } else {
+      discountAmount = dv;
+      text += 'Discount:     -' + cur + formatMoney(discountAmount) + '\n';
+    }
+  }
+  const total = Math.max(0, subtotal + vatAmount - discountAmount);
+  text += '═══════════════════════════════════════\n';
+  text += 'TOTAL DUE:    ' + cur + formatMoney(total) + '\n';
+  text += '═══════════════════════════════════════\n';
+
+  // Payment
+  const payParts = [];
+  if (v('bankName')) payParts.push('Bank: ' + v('bankName'));
+  if (v('sortCode')) payParts.push('Sort Code: ' + v('sortCode'));
+  if (v('accountNumber')) payParts.push('Account: ' + v('accountNumber'));
+  if (v('paypalEmail')) payParts.push('PayPal: ' + v('paypalEmail'));
+  if (payParts.length) {
+    text += '\nPAYMENT DETAILS:\n' + payParts.join('\n') + '\n';
+  }
+  if (v('paymentInstructions')) text += '\n' + v('paymentInstructions') + '\n';
+  if (v('invoiceNotes')) text += '\nNOTES: ' + v('invoiceNotes') + '\n';
+
+  navigator.clipboard.writeText(text).then(function() {
+    showToast('Invoice copied to clipboard ✓');
+  }).catch(function() {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('Invoice copied to clipboard ✓');
+  });
+}
+
+/* ═══════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════ */
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+function formatMoney(n) { return n.toFixed(2); }
+function formatNum(n) {
+  return n % 1 === 0 ? n.toString() : n.toFixed(2);
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2500);
+}
+</script>
+</body>
+</html>

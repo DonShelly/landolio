@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Landolio | Free Guides for Freelancers</title>
+    <meta name="description" content="Practical guides for freelancers on chasing late payments, writing invoice reminders, charging late fees, and getting paid on time. Free templates included.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://landolio.com/blog/">
+    <meta property="og:title" content="Blog — Landolio | Free Guides for Freelancers">
+    <meta property="og:description" content="Practical guides for freelancers on chasing late payments, writing invoice reminders, charging late fees, and getting paid on time.">
+    <meta property="og:url" content="https://landolio.com/blog/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blog — Landolio | Free Guides for Freelancers">
+    <meta name="twitter:description" content="Practical guides for freelancers on chasing late payments, writing invoice reminders, and getting paid on time.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1a1a1a;
+            --text: #e8e8e8;
+            --text-muted: #999;
+            --gold: #d4a843;
+            --gold-hover: #e0ba5a;
+            --border: #222;
+            --radius: 12px;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 96px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: background 0.25s, border-color 0.25s, transform 0.25s;
+        }
+
+        .blog-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .blog-card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.35;
+            margin-bottom: 10px;
+            color: var(--text);
+            transition: color 0.2s;
+        }
+
+        .blog-card:hover h2 {
+            color: var(--gold);
+        }
+
+        .blog-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.55;
+            margin-bottom: 16px;
+        }
+
+        .read-link {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.2s;
+        }
+
+        .blog-card:hover .read-link {
+            gap: 8px;
+            color: var(--gold-hover);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 56px 20px 36px;
+            }
+
+            .blog-grid {
+                padding: 0 16px 64px;
+            }
+
+            .blog-card {
+                padding: 24px;
+            }
+
+            .blog-card h2 {
+                font-size: 1.1rem;
+            }
+
+            .nav-inner {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="https://landolio.com" class="nav-logo">Landolio</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
+                <li><a href="/tools/">Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>The <span>Freelancer</span> Blog</h1>
+        <p>Practical guides on getting paid, chasing invoices, and protecting your freelance income — no fluff, just what works.</p>
+    </section>
+
+    <div class="blog-grid">
+
+        <a href="/blog/small-claims-court-freelancer-uk.html" class="blog-card">
+            <h2>Small Claims Court for Freelancers: How to Sue for Unpaid Invoices (UK Guide 2026)</h2>
+            <p>Everything you need to know about taking a non-paying client to Small Claims Court — fees, process, timelines, and what to expect.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/warning-signs-client-wont-pay.html" class="blog-card">
+            <h2>10 Red Flags a Client Won't Pay Your Invoice (Spot Them Before It's Too Late)</h2>
+            <p>The warning signs that predict payment problems — and exactly what to do when you spot them before starting work.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/net-30-vs-net-60-payment-terms.html" class="blog-card">
+            <h2>Net 30 vs Net 60 Payment Terms: What Freelancers Need to Know</h2>
+            <p>Which payment terms should you use? A practical comparison of net 30, net 60, and other options — with advice on when to negotiate.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/letter-before-action-unpaid-invoice-template.html" class="blog-card">
+            <h2>How to Write a Letter Before Action for Unpaid Invoices (Free Template)</h2>
+            <p>A free, ready-to-use Letter Before Action template with step-by-step instructions. The formal step before taking a client to court.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/how-to-fire-non-paying-client.html" class="blog-card">
+            <h2>How to Fire a Non-Paying Client (Without Burning Bridges or Losing Money)</h2>
+            <p>When to walk away from a client who won't pay — and how to do it professionally while protecting your income and reputation.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/automated-invoice-reminder-tools-freelancers.html" class="blog-card">
+            <h2>5 Best Automated Invoice Reminder Tools for Freelancers in 2026</h2>
+            <p>Honest comparison of the top invoice reminder tools — pricing, pros, cons, and which is best for your workflow.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/freelance-cash-flow-management-tips.html" class="blog-card">
+            <h2>Cash Flow for Freelancers: 9 Rules to Never Be Broke Between Projects</h2>
+            <p>Straight-talking cash flow rules that actually work — from invoicing immediately to building a buffer that saves you.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/freelance-invoice-best-practices.html" class="blog-card">
+            <h2>Invoice Like a Pro: 11 Best Practices to Get Paid Faster as a Freelancer</h2>
+            <p>Actionable invoicing tips from seasoned freelancers — from sending same-day to automating reminders. Stop leaving money on the table.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/freelance-payment-terms-contract.html" class="blog-card">
+            <h2>Freelance Payment Terms: How to Set Them So You Never Chase a Payment Again</h2>
+            <p>Net-15 vs net-30, deposits, milestone payments, kill fees — with ready-to-use contract clause templates you can copy straight into your agreement.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/client-ghosting-invoice-escalation-playbook.html" class="blog-card">
+            <h2>Client Ghosting Your Invoice? The Exact Escalation Playbook That Works</h2>
+            <p>What to do when a freelance client ignores your invoice. A step-by-step escalation playbook with copy-paste email and WhatsApp templates — from gentle nudge to legal action.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/how-to-add-late-fees-freelance-invoice.html" class="blog-card">
+            <h2>Can You Charge Late Fees as a Freelancer? Yes — Here's Exactly How</h2>
+            <p>Find out when you're legally allowed to add late fees to freelance invoices, how much to charge, and the exact contract wording that protects you.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/client-not-paying-invoice-uk.html" class="blog-card">
+            <h2>Client Won't Pay Your Invoice? A UK Freelancer's Step-by-Step Guide</h2>
+            <p>A clear escalation plan for UK freelancers dealing with non-paying clients — from friendly nudges all the way to Small Claims Court.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/freelancer-late-payment-email-sequence.html" class="blog-card">
+            <h2>The 5-Email Sequence That Gets Overdue Invoices Paid (Free Templates)</h2>
+            <p>Copy-and-paste email templates that escalate from a gentle reminder to a firm final notice. Proven to recover overdue freelance payments.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/how-to-chase-unpaid-invoices-freelancer.html" class="blog-card">
+            <h2>How to Chase Unpaid Invoices Without Burning Client Relationships</h2>
+            <p>Learn how to follow up on late invoices firmly but professionally so you get paid without losing the client or your reputation.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/polite-payment-reminder-emails.html" class="blog-card">
+            <h2>7 Polite Payment Reminder Emails That Actually Get You Paid (Copy &amp; Paste)</h2>
+            <p>Ready-to-send reminder emails for every stage of a late payment — from the day it's due to 60+ days overdue. Just fill in the blanks and hit send.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 <a href="https://landolio.com">Landolio</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

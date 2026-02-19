@@ -208,13 +208,14 @@
             text-decoration: none;
         }
         
-        /* Coming Soon Overlay */
-        .coming-soon {
+        /* Featured Product */
+        .featured {
+            border-color: var(--gold);
             position: relative;
         }
         
-        .coming-soon::after {
-            content: 'Coming Soon';
+        .featured::after {
+            content: '🔥 LIVE';
             position: absolute;
             top: 16px;
             right: 16px;
@@ -225,12 +226,33 @@
             font-size: 0.75rem;
             font-weight: 600;
         }
+        
+        .product-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+        
+        .product-cta:hover {
+            background: var(--gold-dark);
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <a href="/" class="logo">Landolio</a>
+            <nav style="display: flex; gap: 24px;">
+                <a href="/tools/" style="color: var(--gray); text-decoration: none; font-weight: 500; transition: color 0.2s;">Free Tools</a>
+                <a href="/blog/" style="color: var(--gray); text-decoration: none; font-weight: 500; transition: color 0.2s;">Blog</a>
+            </nav>
         </div>
     </header>
     
@@ -239,7 +261,7 @@
             <div class="container">
                 <h1>Stop Chasing <span>Invoices</span>.<br>Start Getting Paid.</h1>
                 <p>Practical automation tools for freelancers and small businesses. No fluff. No complexity. Just tools that work.</p>
-                <a href="#products" class="cta-button">See Our Tools →</a>
+                <a href="https://saas-mvp-omega.vercel.app/signup" class="cta-button">Start Free — No Card Required →</a>
             </div>
         </section>
         
@@ -249,24 +271,26 @@
                 <h2 class="section-heading">Tools That Pay for Themselves</h2>
                 
                 <div class="product-grid">
-                    <div class="product-card coming-soon">
-                        <span class="badge">SaaS</span>
+                    <div class="product-card featured">
+                        <span class="badge">SaaS — LIVE</span>
                         <h3>Invoice Follow-Up Automator</h3>
                         <p>Automated reminder sequences that get your invoices paid faster. Connect your invoicing tool, set your rules, forget about chasing payments.</p>
                         <p class="price">£9<span>/month</span></p>
+                        <a href="https://saas-mvp-omega.vercel.app/signup" class="product-cta">Start Free →</a>
                     </div>
                     
                     <div class="product-card">
-                        <span class="badge">Template</span>
-                        <h3>Freelancer Invoice Email Pack</h3>
-                        <p>12 battle-tested email templates for invoice reminders. From friendly nudges to firm final notices. Copy, paste, get paid.</p>
+                        <span class="badge">Template — NEW</span>
+                        <h3>Late Payment Email Swipe File</h3>
+                        <p>15 copy-paste email & WhatsApp templates covering the full escalation — from friendly nudge to legal notice. UK & US variants included.</p>
                         <p class="price">£7<span> one-time</span></p>
+                        <a href="https://buymeacoffee.com/landolio/e/511742" class="product-cta" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);">Buy Now →</a>
                     </div>
                     
                     <div class="product-card">
-                        <span class="badge">Guide</span>
-                        <h3>The Late Payment Playbook</h3>
-                        <p>A no-nonsense guide to dealing with late-paying clients. Scripts, timelines, and legal steps for UK freelancers.</p>
+                        <span class="badge">Coming Soon</span>
+                        <h3>Contract Payment Clause Templates</h3>
+                        <p>10 ready-to-use contract clauses that protect your payments. Late fees, kill fees, deposit terms, and more. UK & US legal language.</p>
                         <p class="price">£12<span> one-time</span></p>
                     </div>
                 </div>
@@ -294,6 +318,85 @@
                             <p>Need your tools to talk to each other? We build bespoke automations connecting your invoicing, accounting, and CRM systems.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="services">
+            <div class="container">
+                <p class="section-title">Free Tools</p>
+                <h2 class="section-heading">Useful Tools, Zero Cost</h2>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <span class="badge">Free Tool</span>
+                        <h3>Late Payment Interest Calculator</h3>
+                        <p>Calculate exactly how much statutory interest and compensation you're owed under UK law. Instant results, no signup.</p>
+                        <a href="/tools/late-payment-interest-calculator.html" class="product-cta" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);">Use Free →</a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <span class="badge">Free Tool</span>
+                        <h3>Free Invoice Generator</h3>
+                        <p>Create professional invoices in seconds. Fill in your details, preview, and print or save as PDF. No account needed.</p>
+                        <a href="/tools/invoice-generator.html" class="product-cta" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);">Use Free →</a>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="/tools/" style="color: var(--gold); text-decoration: none; font-weight: 600; font-size: 1.1rem;">View All Tools →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="services">
+            <div class="container">
+                <p class="section-title">Blog</p>
+                <h2 class="section-heading">Free Guides for Freelancers</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>7 Polite Payment Reminder Emails That Actually Get You Paid</h3>
+                        <p>Copy-paste email templates for every stage — from friendly nudge to final warning. Used by thousands of freelancers.</p>
+                        <a href="/blog/polite-payment-reminder-emails.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Read Free →</a>
+                    </div>
+                    <div class="service-card">
+                        <h3>How to Chase Unpaid Invoices Without Burning Client Relationships</h3>
+                        <p>A step-by-step escalation guide with scripts, UK legal options, and practical advice from freelancers who've been there.</p>
+                        <a href="/blog/how-to-chase-unpaid-invoices-freelancer.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Read Free →</a>
+                    </div>
+                    <div class="service-card">
+                        <h3>The 5-Email Sequence That Gets Overdue Invoices Paid</h3>
+                        <p>A complete Day 1 → Day 30 email sequence with the psychology behind each message. Copy, paste, get paid.</p>
+                        <a href="/blog/freelancer-late-payment-email-sequence.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Read Free →</a>
+                    </div>
+                    <div class="service-card">
+                        <h3>Client Won't Pay Your Invoice? A UK Freelancer's Step-by-Step Guide</h3>
+                        <p>UK legal options explained: statutory interest, Letter Before Action templates, Money Claim Online, and County Court enforcement.</p>
+                        <a href="/blog/client-not-paying-invoice-uk.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Read Free →</a>
+                    </div>
+                    <div class="service-card">
+                        <h3>Can You Charge Late Fees as a Freelancer? Yes — Here's Exactly How</h3>
+                        <p>UK and US legal breakdown with worked calculations, sample contract clauses, and a notification email template.</p>
+                        <a href="/blog/how-to-add-late-fees-freelance-invoice.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Read Free →</a>
+                    </div>
+                    <div class="service-card">
+                        <h3>Small Claims Court for Freelancers: UK Step-by-Step Guide (2026)</h3>
+                        <p>Everything you need to know about suing for unpaid invoices through the UK Small Claims Court — costs, process, and timelines.</p>
+                        <a href="/blog/small-claims-court-freelancer-uk.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Read Free →</a>
+                    </div>
+                    <div class="service-card">
+                        <h3>How to Write a Letter Before Action (Free Template)</h3>
+                        <p>A free, ready-to-use Letter Before Action template for unpaid invoices — plus step-by-step instructions for UK freelancers.</p>
+                        <a href="/blog/letter-before-action-unpaid-invoice-template.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Read Free →</a>
+                    </div>
+                    <div class="service-card">
+                        <h3>10 Red Flags a Client Won't Pay Your Invoice</h3>
+                        <p>Spot the warning signs before it's too late. Learn which client behaviours predict payment problems — and what to do about them.</p>
+                        <a href="/blog/warning-signs-client-wont-pay.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Read Free →</a>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="/blog/" style="color: var(--gold); text-decoration: none; font-weight: 600; font-size: 1.1rem;">View All Guides →</a>
                 </div>
             </div>
         </section>
