@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Terms Generator for Freelancers — Free Tool | Landolio</title>
+<meta name="description" content="Generate professional payment terms and contract clauses tailored to your industry, project size, and risk tolerance. Free tool for freelancers — no signup required.">
+<meta name="keywords" content="payment terms generator, freelance contract clauses, freelancer payment terms, invoice payment terms template, contract payment clause generator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://landolio.com/tools/payment-terms-generator.html">
+<meta property="og:title" content="Payment Terms Generator for Freelancers — Free Tool | Landolio">
+<meta property="og:description" content="Generate professional payment terms and contract clauses tailored to your industry, project size, and risk tolerance. Free tool for freelancers.">
+<meta property="og:url" content="https://landolio.com/tools/payment-terms-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Landolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Payment Terms Generator for Freelancers — Free Tool | Landolio">
+<meta name="twitter:description" content="Generate professional payment terms and contract clauses tailored to your industry, project size, and risk tolerance.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Payment Terms Generator for Freelancers",
+  "description": "Generate professional payment terms and contract clauses tailored to your industry, project size, and risk tolerance. Free tool for freelancers.",
+  "url": "https://landolio.com/tools/payment-terms-generator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Landolio",
+    "url": "https://landolio.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What payment terms should freelancers use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best payment terms depend on your industry, project size, and risk tolerance. For small projects under £500, many freelancers request 50-100% upfront. For larger projects, a milestone-based schedule (e.g. 30% deposit, 40% at midpoint, 30% on completion) protects both parties. Net 14 or Net 30 are the most common due dates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should freelancers ask for a deposit before starting work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Requesting a deposit (typically 25-50% of the project value) is standard practice and protects you against non-payment. It also demonstrates client commitment. For new clients or large projects, a higher deposit percentage is recommended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I include late payment fees in my freelance contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. In the UK, the Late Payment of Commercial Debts Act 1998 gives you a statutory right to charge 8% above the Bank of England base rate on overdue invoices, plus fixed compensation of £40-£100. You can also set contractual late fees, provided they are reasonable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a kill fee and should I include one in my contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A kill fee (or cancellation fee) compensates you if a client cancels a project after work has begun. Typical kill fees range from 25-50% of the remaining project value. Including one in your contract protects your time and deters casual cancellations."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #D4AF37;
+  --gold-light: #E8CC6E;
+  --gold-dark: #B8941F;
+  --bg: #0a0a0a;
+  --dark: #1A1A1A;
+  --dark-2: #222222;
+  --dark-3: #2a2a2a;
+  --border: #333333;
+  --border-light: #444444;
+  --text: #f0f0f0;
+  --text-muted: #999999;
+  --text-dim: #777777;
+  --white: #ffffff;
+  --green: #2ecc71;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.6);
+  --transition: all 0.25s ease;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══ HEADER ═══ */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(26,26,26,0.92);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo:hover { color: var(--gold-light); }
+
+/* ═══ HERO ═══ */
+.hero {
+  text-align: center;
+  padding: 3.5rem 2rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero .badge {
+  display: inline-block;
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.25);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.hero h1 .gold { color: var(--gold); }
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ═══ GENERATOR ═══ */
+.generator-wrap {
+  max-width: 720px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
+}
+.form-section {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+.form-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.form-section-title .icon { font-size: 1.2rem; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.form-group:last-child { margin-bottom: 0; }
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ═══ OPTION CARDS ═══ */
+.option-cards {
+  display: grid;
+  gap: 0.75rem;
+}
+.option-cards.cols-2 { grid-template-columns: 1fr 1fr; }
+.option-cards.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.option-card {
+  background: var(--dark-2);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  user-select: none;
+  position: relative;
+}
+.option-card:hover {
+  border-color: var(--border-light);
+  background: var(--dark-3);
+}
+.option-card.selected {
+  border-color: var(--gold);
+  background: rgba(212,175,55,0.08);
+}
+.option-card .card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+.option-card .card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+.option-card .card-desc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+.option-card.selected .card-title { color: var(--gold); }
+
+/* ═══ GENERATE BUTTON ═══ */
+.generate-wrap { text-align: center; margin: 2rem 0; }
+.btn-generate {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: #000;
+  border: none;
+  border-radius: var(--radius);
+  padding: 1rem 3rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 20px rgba(212,175,55,0.3);
+}
+.btn-generate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(212,175,55,0.45);
+}
+.btn-generate:active { transform: translateY(0); }
+.btn-generate:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ═══ RESULTS ═══ */
+.results-section {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  display: none;
+}
+.results-section.visible { display: block; }
+
+.result-card {
+  background: var(--dark);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+.result-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.result-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.summary-item {
+  background: var(--dark-2);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+.summary-item .s-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-dim);
+  margin-bottom: 0.3rem;
+}
+.summary-item .s-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.summary-item .s-value.gold { color: var(--gold); }
+
+.schedule-steps {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+.schedule-steps::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+.schedule-step {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 1rem;
+}
+.schedule-step:last-child { margin-bottom: 0; }
+.schedule-step::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--dark);
+}
+.schedule-step .step-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.schedule-step .step-detail {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ═══ CONTRACT CLAUSE ═══ */
+.clause-block {
+  position: relative;
+  margin-top: 1rem;
+}
+.clause-text {
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  font-family: inherit;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.btn-copy {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: var(--radius-sm);
+  color: var(--gold);
+  padding: 0.4rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.btn-copy:hover {
+  background: rgba(212,175,55,0.2);
+  border-color: var(--gold);
+}
+.btn-copy.copied {
+  background: rgba(46,204,113,0.15);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.tip-box {
+  background: rgba(212,175,55,0.06);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.tip-box strong { color: var(--gold); }
+
+/* ═══ CONTENT SECTIONS ═══ */
+.content-sections {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+.content-block {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+.content-block h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--white);
+}
+.content-block h2 .gold { color: var(--gold); }
+.content-block p, .content-block li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.content-block ul, .content-block ol {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+.content-block li { margin-bottom: 0.5rem; }
+.content-block li strong { color: var(--text); }
+
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.term-card {
+  background: var(--dark-2);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+}
+.term-card h4 {
+  color: var(--gold);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+.term-card p {
+  font-size: 0.85rem !important;
+  color: var(--text-dim) !important;
+}
+
+/* CTA */
+.cta-block {
+  background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(212,175,55,0.02) 100%);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.cta-block h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+.cta-block p { color: var(--text-muted); margin-bottom: 1.25rem; }
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: #000;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(212,175,55,0.25);
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(212,175,55,0.4); }
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.related-links a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: var(--transition);
+}
+.related-links a:hover { color: var(--gold-light); text-decoration: underline; }
+
+/* ═══ FOOTER ═══ */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+.site-footer a { color: var(--text-muted); text-decoration: none; }
+.site-footer a:hover { color: var(--gold); }
+
+/* ═══ TOAST ═══ */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--dark);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+  .option-cards.cols-2,
+  .option-cards.cols-3 { grid-template-columns: 1fr; }
+  .result-summary { grid-template-columns: 1fr; }
+  .content-block { padding: 1.75rem; }
+  .form-section { padding: 1.5rem; }
+  .header-inner { padding: 0; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.7rem; }
+  .option-card { padding: 0.9rem 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">Landolio</a>
+    <nav style="display: flex; gap: 24px;">
+      <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
+      <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">✦ Free Tool — No Signup</div>
+  <h1>Freelance <span class="gold">Payment Terms</span> Generator</h1>
+  <p>Get recommended payment terms and copy-paste contract clauses tailored to your industry, project size, and risk tolerance.</p>
+</section>
+
+<!-- GENERATOR -->
+<div class="generator-wrap">
+
+  <!-- STEP 1: INDUSTRY -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">🏷️</span> Step 1 — Your Industry</div>
+    <div class="form-group">
+      <label>What kind of work do you do?</label>
+      <div class="option-cards cols-2" id="industryCards">
+        <div class="option-card" data-value="design" onclick="selectCard(this, 'industry')">
+          <span class="card-icon">🎨</span>
+          <div class="card-title">Design</div>
+          <div class="card-desc">Graphic, web, UX/UI, branding</div>
+        </div>
+        <div class="option-card" data-value="development" onclick="selectCard(this, 'industry')">
+          <span class="card-icon">💻</span>
+          <div class="card-title">Development</div>
+          <div class="card-desc">Software, web, app, WordPress</div>
+        </div>
+        <div class="option-card" data-value="writing" onclick="selectCard(this, 'industry')">
+          <span class="card-icon">✍️</span>
+          <div class="card-title">Writing</div>
+          <div class="card-desc">Copywriting, content, editing</div>
+        </div>
+        <div class="option-card" data-value="consulting" onclick="selectCard(this, 'industry')">
+          <span class="card-icon">📊</span>
+          <div class="card-title">Consulting</div>
+          <div class="card-desc">Strategy, coaching, advisory</div>
+        </div>
+        <div class="option-card" data-value="photography" onclick="selectCard(this, 'industry')">
+          <span class="card-icon">📸</span>
+          <div class="card-title">Photography / Video</div>
+          <div class="card-desc">Photo, video, production</div>
+        </div>
+        <div class="option-card" data-value="marketing" onclick="selectCard(this, 'industry')">
+          <span class="card-icon">📣</span>
+          <div class="card-title">Marketing / SEO</div>
+          <div class="card-desc">Digital marketing, SEO, ads</div>
+        </div>
+        <div class="option-card" data-value="translation" onclick="selectCard(this, 'industry')">
+          <span class="card-icon">🌍</span>
+          <div class="card-title">Translation</div>
+          <div class="card-desc">Translation, localisation</div>
+        </div>
+        <div class="option-card" data-value="other" onclick="selectCard(this, 'industry')">
+          <span class="card-icon">🔧</span>
+          <div class="card-title">Other Services</div>
+          <div class="card-desc">Any other freelance work</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: PROJECT SIZE -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">💷</span> Step 2 — Project Size</div>
+    <div class="form-group">
+      <label>How much is the project worth?</label>
+      <div class="option-cards cols-3" id="sizeCards">
+        <div class="option-card" data-value="small" onclick="selectCard(this, 'size')">
+          <span class="card-icon">📌</span>
+          <div class="card-title">Small</div>
+          <div class="card-desc">Under £500</div>
+        </div>
+        <div class="option-card" data-value="medium" onclick="selectCard(this, 'size')">
+          <span class="card-icon">📋</span>
+          <div class="card-title">Medium</div>
+          <div class="card-desc">£500 – £2,000</div>
+        </div>
+        <div class="option-card" data-value="large" onclick="selectCard(this, 'size')">
+          <span class="card-icon">🏗️</span>
+          <div class="card-title">Large</div>
+          <div class="card-desc">Over £2,000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: RISK TOLERANCE -->
+  <div class="form-section">
+    <div class="form-section-title"><span class="icon">🛡️</span> Step 3 — Risk Tolerance</div>
+    <div class="form-group">
+      <label>How much protection do you want?</label>
+      <div class="option-cards cols-3" id="riskCards">
+        <div class="option-card" data-value="conservative" onclick="selectCard(this, 'risk')">
+          <span class="card-icon">🔒</span>
+          <div class="card-title">Conservative</div>
+          <div class="card-desc">Maximum protection — higher deposits, shorter terms</div>
+        </div>
+        <div class="option-card" data-value="balanced" onclick="selectCard(this, 'risk')">
+          <span class="card-icon">⚖️</span>
+          <div class="card-title">Balanced</div>
+          <div class="card-desc">Fair to both sides — standard deposits, reasonable terms</div>
+        </div>
+        <div class="option-card" data-value="flexible" onclick="selectCard(this, 'risk')">
+          <span class="card-icon">🤝</span>
+          <div class="card-title">Flexible</div>
+          <div class="card-desc">Client-friendly — lower deposits, longer terms</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERATE -->
+  <div class="generate-wrap">
+    <button class="btn-generate" id="btnGenerate" onclick="generate()" disabled>✦ Generate Payment Terms</button>
+    <p style="color: var(--text-dim); font-size: 0.82rem; margin-top: 0.75rem;">Select all three options above to generate your terms</p>
+  </div>
+
+</div>
+
+<!-- RESULTS -->
+<div class="results-section" id="results">
+
+  <!-- Summary -->
+  <div class="result-card">
+    <h3>📋 Recommended Payment Terms</h3>
+    <div class="result-summary" id="summaryGrid">
+      <!-- Populated by JS -->
+    </div>
+    <h3 style="margin-top: 0.5rem;">💰 Payment Schedule</h3>
+    <ul class="schedule-steps" id="scheduleSteps">
+      <!-- Populated by JS -->
+    </ul>
+    <div class="tip-box" id="tipBox">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- Contract Clause -->
+  <div class="result-card">
+    <h3>📄 Contract Clause — Copy &amp; Paste</h3>
+    <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">Paste this into your contract, proposal, or terms of service. Edit the bracketed items to match your project details.</p>
+    <div class="clause-block">
+      <button class="btn-copy" id="btnCopyClause" onclick="copyClause()">📋 Copy</button>
+      <div class="clause-text" id="clauseText">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Late Payment Clause -->
+  <div class="result-card">
+    <h3>⚠️ Late Payment Clause</h3>
+    <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">Add this alongside your payment terms to protect against late payers.</p>
+    <div class="clause-block">
+      <button class="btn-copy" id="btnCopyLate" onclick="copyLate()">📋 Copy</button>
+      <div class="clause-text" id="lateClauseText">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Kill Fee / Cancellation Clause -->
+  <div class="result-card">
+    <h3>🚫 Cancellation / Kill Fee Clause</h3>
+    <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">Protects you if the client cancels after work has started.</p>
+    <div class="clause-block">
+      <button class="btn-copy" id="btnCopyKill" onclick="copyKill()">📋 Copy</button>
+      <div class="clause-text" id="killClauseText">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CONTENT SECTIONS -->
+<div class="content-sections">
+
+  <div class="content-block">
+    <h2>Why <span class="gold">Payment Terms</span> Matter</h2>
+    <p>Clear payment terms set expectations before work begins. Without them, you're leaving your cash flow to chance — and giving clients an excuse to delay.</p>
+    <ul>
+      <li><strong>Protect your cash flow.</strong> Knowing when money arrives lets you plan your finances and avoid the feast-or-famine cycle.</li>
+      <li><strong>Reduce disputes.</strong> When payment milestones are agreed upfront, there's less room for "I didn't know I had to pay yet."</li>
+      <li><strong>Signal professionalism.</strong> Structured payment terms show clients you're a business, not a hobbyist. Serious freelancers get taken seriously.</li>
+      <li><strong>Legal protection.</strong> Written payment terms in your contract are enforceable. Verbal agreements are much harder to prove.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>Common <span class="gold">Payment Structures</span> for Freelancers</h2>
+    <div class="terms-grid">
+      <div class="term-card">
+        <h4>100% Upfront</h4>
+        <p>Best for small projects or new clients. Eliminates risk entirely but may deter some clients.</p>
+      </div>
+      <div class="term-card">
+        <h4>50/50 Split</h4>
+        <p>Half before work begins, half on completion. The most popular structure for mid-range projects.</p>
+      </div>
+      <div class="term-card">
+        <h4>Milestone Payments</h4>
+        <p>Split into 3+ payments tied to deliverables. Ideal for large or long-running projects.</p>
+      </div>
+      <div class="term-card">
+        <h4>100% on Completion</h4>
+        <p>Full payment after delivery. Carries the most risk — only use with trusted, established clients.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <h2>Tips for <span class="gold">Negotiating</span> Payment Terms</h2>
+    <ol>
+      <li><strong>Always get it in writing.</strong> Whether it's a formal contract or a simple email confirmation, written terms are your safety net.</li>
+      <li><strong>Don't start work without a deposit.</strong> Even a small deposit shows commitment and filters out time-wasters.</li>
+      <li><strong>Match terms to client risk.</strong> New clients get tighter terms. Long-standing, reliable clients can earn more flexibility over time.</li>
+      <li><strong>Include late payment consequences.</strong> Stating upfront what happens if they pay late (interest, paused work) deters delays.</li>
+      <li><strong>Be willing to walk away.</strong> If a client refuses reasonable payment terms, that tells you a lot about how they'll treat your invoices.</li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Automate Your Invoice Follow-Ups</h3>
+    <p>Great payment terms are step one. Landolio's free automated reminders handle step two — so you never have to chase a late invoice again.</p>
+    <a href="https://app.landolio.com/signup" class="cta-btn">Try Free Automated Reminders →</a>
+  </div>
+
+  <div class="content-block">
+    <h2>Related <span class="gold">Resources</span></h2>
+    <p>Go deeper on payments, contracts, and protecting your freelance income:</p>
+    <div class="related-links">
+      <a href="/tools/invoice-generator.html">🧾 Free Invoice Generator →</a>
+      <a href="/tools/late-payment-interest-calculator.html">🧮 Late Payment Interest Calculator →</a>
+      <a href="/blog/freelancer-deposit-policy-guide.html">💰 Freelancer Deposit Policy Guide →</a>
+      <a href="/blog/net-30-vs-net-60-payment-terms.html">📅 Net 30 vs Net 60 Explained →</a>
+      <a href="/blog/freelance-payment-terms-contract.html">📑 Payment Terms & Contracts Guide →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
+      <a href="/" style="color: #d4a843; text-decoration: none;">Home</a>
+      <a href="/tools/" style="color: #d4a843; text-decoration: none;">Free Tools</a>
+      <a href="/blog/" style="color: #d4a843; text-decoration: none;">Blog</a>
+      <a href="/products/getting-paid-toolkit.html" style="color: #d4a843; text-decoration: none;">Getting-Paid Toolkit</a>
+      <a href="/free-course.html" style="color: #d4a843; text-decoration: none;">Free Course</a>
+    </div>
+    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com" style="color: #d4a843;">hello@landolio.com</a></p>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ═══════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════ */
+var selections = { industry: null, size: null, risk: null };
+
+function selectCard(el, group) {
+  var container = el.parentElement;
+  container.querySelectorAll('.option-card').forEach(function(c) { c.classList.remove('selected'); });
+  el.classList.add('selected');
+  selections[group] = el.getAttribute('data-value');
+  checkReady();
+}
+
+function checkReady() {
+  var btn = document.getElementById('btnGenerate');
+  btn.disabled = !(selections.industry && selections.size && selections.risk);
+}
+
+/* ═══════════════════════════════════════════
+   TERMS DATA
+   ═══════════════════════════════════════════ */
+var industryLabels = {
+  design: 'Design',
+  development: 'Software Development',
+  writing: 'Writing & Copywriting',
+  consulting: 'Consulting & Strategy',
+  photography: 'Photography & Video',
+  marketing: 'Marketing & SEO',
+  translation: 'Translation & Localisation',
+  other: 'Freelance Services'
+};
+
+var industryDeliverables = {
+  design: { mid: 'initial concepts/wireframes', final: 'final design files' },
+  development: { mid: 'development milestone/beta', final: 'final delivery and deployment' },
+  writing: { mid: 'first draft', final: 'final approved copy' },
+  consulting: { mid: 'interim report/deliverable', final: 'final report and recommendations' },
+  photography: { mid: 'the shoot date', final: 'edited deliverables' },
+  marketing: { mid: 'campaign launch', final: 'final reporting and deliverables' },
+  translation: { mid: 'first batch of translated content', final: 'complete translated and proofread deliverables' },
+  other: { mid: 'project midpoint deliverable', final: 'final deliverables' }
+};
+
+var industryTips = {
+  design: '<strong>💡 Design tip:</strong> Specify the number of revision rounds included in your price (e.g. "2 rounds of revisions included; additional revisions billed at £[X]/hour"). This prevents scope creep and protects your time.',
+  development: '<strong>💡 Dev tip:</strong> Tie milestone payments to specific, measurable deliverables (e.g. "user authentication complete" rather than "50% done"). This avoids disputes over progress.',
+  writing: '<strong>💡 Writing tip:</strong> Clarify what\'s included in revisions vs. rewrites. A revision tweaks existing copy; a rewrite from scratch is new work that should be billed separately.',
+  consulting: '<strong>💡 Consulting tip:</strong> For retainer-based consulting, consider monthly invoicing in advance. If offering hourly rates, require a time estimate sign-off before exceeding budgeted hours.',
+  photography: '<strong>💡 Photography tip:</strong> Always collect the deposit before the shoot date — not after. Post-production (editing, retouching) should be a separate line item with its own timeline.',
+  marketing: '<strong>💡 Marketing tip:</strong> Separate setup/strategy fees from ongoing management fees. Clients who cancel early should still pay for the strategy and setup work completed.',
+  translation: '<strong>💡 Translation tip:</strong> Charge per source word (not target word) and specify whether proofreading/editing is included or a separate fee. Get the source material before quoting.',
+  other: '<strong>💡 Freelancer tip:</strong> Always define the scope of work precisely. Anything outside the agreed scope should require a written change order with its own payment terms.'
+};
+
+/* ═══════════════════════════════════════════
+   GENERATE
+   ═══════════════════════════════════════════ */
+function generate() {
+  var ind = selections.industry;
+  var size = selections.size;
+  var risk = selections.risk;
+  if (!ind || !size || !risk) return;
+
+  // Determine payment structure
+  var deposit, schedule, netDays, killFee, lateRate;
+  var deliverables = industryDeliverables[ind];
+
+  // Matrix: risk x size
+  if (risk === 'conservative') {
+    lateRate = '5%';
+    if (size === 'small') {
+      deposit = 100;
+      schedule = [{ pct: 100, when: 'Before work begins', desc: 'Full payment upfront' }];
+      netDays = 0;
+      killFee = 50;
+    } else if (size === 'medium') {
+      deposit = 50;
+      schedule = [
+        { pct: 50, when: 'Before work begins', desc: 'Non-refundable deposit' },
+        { pct: 50, when: 'On delivery of ' + deliverables.final, desc: 'Final payment' }
+      ];
+      netDays = 7;
+      killFee = 50;
+    } else {
+      deposit = 40;
+      schedule = [
+        { pct: 40, when: 'Before work begins', desc: 'Non-refundable deposit' },
+        { pct: 30, when: 'On delivery of ' + deliverables.mid, desc: 'Milestone payment' },
+        { pct: 30, when: 'On delivery of ' + deliverables.final, desc: 'Final payment' }
+      ];
+      netDays = 14;
+      killFee = 50;
+    }
+  } else if (risk === 'balanced') {
+    lateRate = '3%';
+    if (size === 'small') {
+      deposit = 50;
+      schedule = [
+        { pct: 50, when: 'Before work begins', desc: 'Deposit' },
+        { pct: 50, when: 'On delivery of ' + deliverables.final, desc: 'Final payment' }
+      ];
+      netDays = 14;
+      killFee = 35;
+    } else if (size === 'medium') {
+      deposit = 30;
+      schedule = [
+        { pct: 30, when: 'Before work begins', desc: 'Deposit' },
+        { pct: 70, when: 'On delivery of ' + deliverables.final, desc: 'Balance due' }
+      ];
+      netDays = 14;
+      killFee = 35;
+    } else {
+      deposit = 30;
+      schedule = [
+        { pct: 30, when: 'Before work begins', desc: 'Deposit' },
+        { pct: 40, when: 'On delivery of ' + deliverables.mid, desc: 'Milestone payment' },
+        { pct: 30, when: 'On delivery of ' + deliverables.final, desc: 'Final payment' }
+      ];
+      netDays = 14;
+      killFee = 40;
+    }
+  } else {
+    // flexible
+    lateRate = '2%';
+    if (size === 'small') {
+      deposit = 0;
+      schedule = [
+        { pct: 100, when: 'On delivery of ' + deliverables.final, desc: 'Full payment on completion' }
+      ];
+      netDays = 30;
+      killFee = 25;
+    } else if (size === 'medium') {
+      deposit = 20;
+      schedule = [
+        { pct: 20, when: 'Before work begins', desc: 'Deposit' },
+        { pct: 80, when: 'On delivery of ' + deliverables.final, desc: 'Balance due' }
+      ];
+      netDays = 30;
+      killFee = 25;
+    } else {
+      deposit = 25;
+      schedule = [
+        { pct: 25, when: 'Before work begins', desc: 'Deposit' },
+        { pct: 50, when: 'On delivery of ' + deliverables.mid, desc: 'Milestone payment' },
+        { pct: 25, when: 'On delivery of ' + deliverables.final, desc: 'Final payment' }
+      ];
+      netDays = 30;
+      killFee = 25;
+    }
+  }
+
+  var netLabel = netDays === 0 ? 'Due on Receipt' : 'Net ' + netDays;
+  var riskLabels = { conservative: 'Conservative', balanced: 'Balanced', flexible: 'Flexible' };
+
+  // Build Summary
+  var summaryHTML =
+    '<div class="summary-item"><div class="s-label">Industry</div><div class="s-value">' + industryLabels[ind] + '</div></div>' +
+    '<div class="summary-item"><div class="s-label">Deposit</div><div class="s-value gold">' + deposit + '%' + (deposit === 100 ? ' (Full Upfront)' : deposit === 0 ? ' (None)' : '') + '</div></div>' +
+    '<div class="summary-item"><div class="s-label">Payment Due</div><div class="s-value">' + netLabel + '</div></div>' +
+    '<div class="summary-item"><div class="s-label">Risk Level</div><div class="s-value">' + riskLabels[risk] + '</div></div>';
+
+  document.getElementById('summaryGrid').innerHTML = summaryHTML;
+
+  // Build Schedule
+  var stepsHTML = '';
+  schedule.forEach(function(s) {
+    stepsHTML += '<li class="schedule-step">' +
+      '<div class="step-label">' + s.pct + '% — ' + s.desc + '</div>' +
+      '<div class="step-detail">' + s.when + (s.pct !== 100 || schedule.length > 1 ? '' : '') + '</div>' +
+      '</li>';
+  });
+  document.getElementById('scheduleSteps').innerHTML = stepsHTML;
+
+  // Tip
+  document.getElementById('tipBox').innerHTML = industryTips[ind];
+
+  // Build Contract Clause
+  var clause = 'PAYMENT TERMS\n\n';
+  clause += '1. FEES AND PAYMENT SCHEDULE\n\n';
+  clause += 'The total fee for the Project shall be £[TOTAL AMOUNT] ("the Fee").\n\n';
+  clause += 'Payment shall be made in accordance with the following schedule:\n\n';
+  schedule.forEach(function(s, i) {
+    clause += '   ' + String.fromCharCode(97 + i) + ') ' + s.pct + '% of the Fee (£[AMOUNT]) — ' + s.desc + '.\n';
+    clause += '      Due: ' + s.when + '.\n\n';
+  });
+  clause += '2. PAYMENT METHOD\n\n';
+  clause += 'All payments shall be made via bank transfer to the account details provided on the invoice, or by such other method as the Contractor may specify. Payments are due within ' + (netDays === 0 ? 'the same day of receipt of invoice' : netDays + ' days of the invoice date') + '.\n\n';
+  clause += '3. DEPOSIT\n\n';
+  if (deposit > 0) {
+    clause += 'A non-refundable deposit of ' + deposit + '% of the Fee is required before work commences. Work will not begin until the deposit has been received in cleared funds. The deposit shall be applied toward the total Fee.\n\n';
+  } else {
+    clause += 'No deposit is required. The full Fee is due on completion and delivery of the agreed deliverables.\n\n';
+  }
+  clause += '4. SCOPE AND VARIATIONS\n\n';
+  clause += 'This fee covers the scope of work described in [PROJECT BRIEF / PROPOSAL]. Any work requested beyond the agreed scope shall be subject to a written change order and billed at £[HOURLY RATE]/hour or as otherwise agreed in writing.';
+
+  document.getElementById('clauseText').textContent = clause;
+
+  // Late Payment Clause
+  var lateClause = 'LATE PAYMENT\n\n';
+  lateClause += '1. If any payment is not received by the due date, the Contractor reserves the right to:\n\n';
+  lateClause += '   a) Charge interest on the overdue amount at a rate of ' + lateRate + ' per month (or the maximum rate permitted by law, whichever is lower), calculated from the due date until payment is received in full.\n\n';
+  lateClause += '   b) Claim statutory compensation under the Late Payment of Commercial Debts (Interest) Act 1998, where applicable.\n\n';
+  lateClause += '   c) Suspend all work on the Project until outstanding payments are received. Any project timelines or deadlines shall be extended by a period equal to the delay in payment.\n\n';
+  lateClause += '2. If payment remains outstanding for more than 30 days past the due date, the Contractor may terminate this agreement by written notice and retain all payments received to date, including the deposit.\n\n';
+  lateClause += '3. The Client shall be responsible for all reasonable costs incurred by the Contractor in recovering overdue payments, including but not limited to administration fees, debt collection charges, and legal costs.';
+
+  document.getElementById('lateClauseText').textContent = lateClause;
+
+  // Kill Fee / Cancellation Clause
+  var killClause = 'CANCELLATION AND KILL FEE\n\n';
+  killClause += '1. Either party may terminate this agreement by providing written notice to the other party.\n\n';
+  killClause += '2. CANCELLATION BY CLIENT\n\n';
+  killClause += '   a) If the Client cancels the Project before work has commenced, the deposit (if paid) shall be forfeited as a cancellation fee.\n\n';
+  killClause += '   b) If the Client cancels the Project after work has commenced, the Client shall pay:\n';
+  killClause += '      — 100% of any completed and delivered milestones; plus\n';
+  killClause += '      — A kill fee of ' + killFee + '% of the Fee for any remaining undelivered portion of the Project.\n\n';
+  killClause += '3. CANCELLATION BY CONTRACTOR\n\n';
+  killClause += '   If the Contractor terminates this agreement (other than due to Client breach), the Contractor shall deliver all work completed to date and refund any payment received for work not yet performed.\n\n';
+  killClause += '4. Upon cancellation, all intellectual property rights in completed and paid-for work shall transfer to the Client in accordance with the IP terms of this agreement. Rights in unpaid work shall remain with the Contractor.';
+
+  document.getElementById('killClauseText').textContent = killClause;
+
+  // Show results
+  var resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ═══════════════════════════════════════════
+   COPY FUNCTIONS
+   ═══════════════════════════════════════════ */
+function copyClause() {
+  copyText(document.getElementById('clauseText').textContent, document.getElementById('btnCopyClause'));
+}
+
+function copyLate() {
+  copyText(document.getElementById('lateClauseText').textContent, document.getElementById('btnCopyLate'));
+}
+
+function copyKill() {
+  copyText(document.getElementById('killClauseText').textContent, document.getElementById('btnCopyKill'));
+}
+
+function copyText(text, btn) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showCopied(btn);
+    }).catch(function() {
+      fallbackCopy(text, btn);
+    });
+  } else {
+    fallbackCopy(text, btn);
+  }
+}
+
+function fallbackCopy(text, btn) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    showCopied(btn);
+  } catch(e) {
+    showToast('Copy failed — please select and copy manually');
+  }
+  document.body.removeChild(ta);
+}
+
+function showCopied(btn) {
+  var orig = btn.innerHTML;
+  btn.innerHTML = '✓ Copied';
+  btn.classList.add('copied');
+  showToast('Copied to clipboard!');
+  setTimeout(function() {
+    btn.innerHTML = orig;
+    btn.classList.remove('copied');
+  }, 2000);
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2500);
+}
+</script>
+
+</body>
+</html>

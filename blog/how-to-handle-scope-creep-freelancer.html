@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope Creep Is Costing You Thousands — How UK Freelancers Can Stop Working for Free | Landolio</title>
+    <meta name="description" content="Scope creep costs the average UK freelancer ~£8,000 per year. Learn how to prevent it, push back mid-project, and invoice for out-of-scope work — with scripts and templates.">
+    <meta name="keywords" content="how to handle scope creep as a freelancer, scope creep freelance UK, client asking for extra work freelance, how to charge for extra work freelancer, freelance scope of work">
+    <meta name="author" content="Landolio">
+    <link rel="canonical" href="https://landolio.com/blog/how-to-handle-scope-creep-freelancer.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Scope Creep Is Costing You Thousands — How UK Freelancers Can Stop Working for Free">
+    <meta property="og:description" content="Scope creep costs the average UK freelancer ~£8,000/year. Here's how to prevent it, push back diplomatically, and invoice for the extra work.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://landolio.com/blog/how-to-handle-scope-creep-freelancer.html">
+    <meta property="og:site_name" content="Landolio">
+    <meta property="article:published_time" content="2026-02-20T12:00:00+00:00">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Scope Creep Is Costing You Thousands — How UK Freelancers Can Stop Working for Free">
+    <meta name="twitter:description" content="Scope creep costs the average UK freelancer ~£8,000/year. Practical scripts and templates to stop working for free.">
+
+    <style>
+        /* Reset & Base */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-card: #1a1a1a;
+            --text-primary: #e8e8e8;
+            --text-secondary: #a0a0a0;
+            --gold: #d4a843;
+            --gold-light: #e8c36a;
+            --gold-dim: #b8922e;
+            --border: #2a2a2a;
+            --template-bg: #111111;
+            --template-border: #2a2a2a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.75;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        .nav {
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .nav a:hover { color: var(--gold-light); }
+        .nav .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Article */
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        .article-meta {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            line-height: 1.25;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 2.8rem 0 1rem;
+            font-weight: 700;
+            padding-top: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin: 2rem 0 0.6rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+        a:hover { color: var(--gold-light); }
+
+        strong { color: #fff; font-weight: 600; }
+
+        ul, ol {
+            margin: 0 0 1.4rem 1.5rem;
+            color: var(--text-primary);
+        }
+        li { margin-bottom: 0.5rem; }
+
+        /* Template Blocks */
+        .template-block {
+            background: var(--template-bg);
+            border: 1px solid var(--template-border);
+            border-left: 3px solid var(--gold);
+            border-radius: 6px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.5rem 0 2rem;
+            position: relative;
+        }
+
+        .template-block .template-label {
+            display: inline-block;
+            background: var(--gold-dim);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .template-block .subject-line {
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .template-block p {
+            font-size: 0.92rem;
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .template-block p:last-child { margin-bottom: 0; }
+
+        /* Scenario cards */
+        .scenario-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.2rem 0;
+        }
+        .scenario-card h3 {
+            margin-top: 0;
+            font-size: 1.05rem;
+        }
+        .scenario-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+        .scenario-card p:last-child { margin-bottom: 0; }
+
+        /* Tip box */
+        .tip-box {
+            background: rgba(212, 168, 67, 0.08);
+            border: 1px solid rgba(212, 168, 67, 0.25);
+            border-radius: 6px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box strong { color: var(--gold); }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1500 0%, #141414 100%);
+            border: 1px solid var(--gold-dim);
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+        .cta-section h2 {
+            margin: 0 0 0.8rem;
+            font-size: 1.6rem;
+            color: var(--gold-light);
+            padding: 0;
+        }
+        .cta-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            margin: 0.4rem;
+        }
+        .cta-btn:hover {
+            background: var(--gold-light);
+            color: #000;
+            transform: translateY(-1px);
+        }
+        .cta-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+        .cta-btn-secondary:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            color: #fff;
+            margin: 0 0 0.6rem;
+            font-size: 1.05rem;
+        }
+        .faq-item p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Related posts */
+        .related-posts {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+        }
+        .related-posts h3 {
+            color: #fff;
+            margin: 0 0 1rem;
+            font-size: 1.05rem;
+        }
+        .related-posts ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+        .related-posts li {
+            margin-bottom: 0.6rem;
+        }
+        .related-posts li:last-child { margin-bottom: 0; }
+        .related-posts a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .related-posts a:hover { text-decoration: underline; }
+
+        /* TOC */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+        .toc h3 {
+            color: #fff;
+            margin: 0 0 0.8rem;
+            font-size: 1rem;
+        }
+        .toc ol { margin: 0 0 0 1.2rem; }
+        .toc li {
+            margin-bottom: 0.35rem;
+            font-size: 0.92rem;
+        }
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .toc a:hover { color: var(--gold); }
+
+        /* Footer */
+        .footer {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            h1 { font-size: 1.65rem; }
+            h2 { font-size: 1.3rem; }
+            article { padding: 2rem 1.1rem 3rem; }
+            .template-block { padding: 1.2rem 1rem; }
+            .cta-section { padding: 2rem 1.2rem; }
+            .nav { padding: 1rem 1.1rem; flex-direction: column; gap: 0.5rem; }
+            .nav-links { gap: 1rem; }
+            .scenario-card { padding: 1.2rem 1rem; }
+        }
+    </style>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Scope Creep Is Costing You Thousands — How UK Freelancers Can Stop Working for Free",
+        "description": "Scope creep costs the average UK freelancer ~£8,000 per year. Learn how to prevent it, push back mid-project, and invoice for out-of-scope work — with scripts and templates.",
+        "author": { "@type": "Organization", "name": "Landolio" },
+        "publisher": { "@type": "Organization", "name": "Landolio" },
+        "datePublished": "2026-02-20",
+        "dateModified": "2026-02-20",
+        "mainEntityOfPage": "https://landolio.com/blog/how-to-handle-scope-creep-freelancer.html"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is scope creep in freelancing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Scope creep is when a freelance project gradually expands beyond the original agreement — through extra revisions, additional deliverables, or an unclear brief that keeps growing — without a corresponding increase in pay. It's estimated to cost the average UK freelancer around £8,000 per year in unpaid work."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I tell a client that extra work costs extra?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Frame it positively: 'Absolutely, I can do that — it falls outside the original scope, so let me put together a quick quote for the additional work.' Reference the original agreement, provide a clear cost and timeline for the extra work, and get written approval before you start. Most clients respect this when it's handled professionally."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I prevent scope creep before a project starts?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Write a detailed scope of work that lists exactly what's included and what isn't. Define the number of revision rounds, specify deliverable formats, include a change-order clause in your contract, and agree on a process for handling additional requests. The clearer you are upfront, the easier it is to enforce boundaries later."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I include a change-order clause in my freelance contract?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — a change-order clause is essential. It states that any work outside the agreed scope will be quoted separately, must be approved in writing, and will be invoiced on top of the original project fee. This protects you legally and gives you a professional framework for handling additional requests without awkwardness."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I invoice for out-of-scope freelance work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Create a separate change-order invoice that references the original project and agreement, clearly describes the additional work requested, shows the additional cost, and notes the client's written approval. Send it as soon as the extra work is complete — or before you start, if you prefer payment upfront for additions."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<header style="padding: 1.2rem 2rem; border-bottom: 1px solid #2a2a2a; display: flex; justify-content: space-between; align-items: center;">
+    <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: #d4a843; text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
+    <nav style="display: flex; gap: 24px;">
+        <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
+        <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+    </nav>
+</header>
+
+<article>
+    <div class="article-meta">Freelance Guide · February 2026</div>
+
+    <h1>Scope Creep Is Costing You Thousands — How UK Freelancers Can Stop Working for Free</h1>
+
+    <p class="subtitle">That "quick extra thing" your client keeps asking for? It's not quick, it's not small, and over a year it adds up to roughly £8,000 in unpaid work. Here's how to spot scope creep, shut it down diplomatically, and get paid for every hour you actually work.</p>
+
+    <nav class="toc">
+        <h3>What's in This Guide</h3>
+        <ol>
+            <li><a href="#what-is-scope-creep">What Is Scope Creep and Why Freelancers Lose Money to It</a></li>
+            <li><a href="#five-scenarios">The 5 Most Common Scope Creep Scenarios</a></li>
+            <li><a href="#prevention">How to Prevent Scope Creep Before the Project Starts</a></li>
+            <li><a href="#pushing-back">Scripts and Templates for Pushing Back Mid-Project</a></li>
+            <li><a href="#invoicing-extra-work">How to Invoice for Out-of-Scope Work</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+    </nav>
+
+    <!-- Section 1: What Is Scope Creep -->
+    <h2 id="what-is-scope-creep">What Is Scope Creep and Why Freelancers Lose Money to It</h2>
+
+    <p>Scope creep is the slow, invisible expansion of a project beyond what was originally agreed — without a corresponding increase in pay. It rarely arrives as one dramatic demand. Instead, it creeps in through a dozen tiny requests that each feel too small to push back on: "Could you just…", "While you're at it…", "One more small thing…"</p>
+
+    <p>Individually, each request takes twenty minutes. Collectively, over a year, <strong>scope creep costs the average UK freelancer approximately £8,000 in unpaid work</strong>. That's not a rounding error. That's a holiday. That's three months of rent. That's the difference between a freelance business that thrives and one that quietly burns you out.</p>
+
+    <p>The reason scope creep is so damaging isn't just the money — it's the psychology. Every time you say yes to free work, you're training the client to expect it. You're also training yourself to undervalue your time. And because the requests feel small in isolation, you never have that one clear moment where you think, "Right, I need to stop this." It just… accumulates.</p>
+
+    <p>Here's the uncomfortable truth: <strong>scope creep is almost always the freelancer's fault</strong> — at least partly. Not because you're doing anything wrong, but because you haven't set up the systems to prevent it. The good news? Those systems are straightforward, and once they're in place, scope creep virtually disappears.</p>
+
+    <div class="tip-box">
+        <strong>💡 Quick maths:</strong> If you charge £40/hour and scope creep steals just 4 hours per week across your clients, that's £160/week — or <strong>£8,320/year</strong> — in work you delivered but never invoiced. That's not "being flexible." That's working for free.
+    </div>
+
+    <!-- Section 2: Five Scenarios -->
+    <h2 id="five-scenarios">The 5 Most Common Scope Creep Scenarios</h2>
+
+    <p>Scope creep wears disguises. Recognising these patterns is the first step to stopping them. Here are the five scenarios nearly every freelancer encounters:</p>
+
+    <div class="scenario-card">
+        <h3>1. "Just one small tweak"</h3>
+        <p>The project is done. You've delivered. The client comes back: "Looks great! Could you just move this bit here, change that colour, and add a paragraph about X?" Each tweak takes 10–30 minutes. None of them were in the brief. But saying "that's extra" for a 15-minute task feels petty — so you do it for free. Then they ask for another. And another.</p>
+        <p><strong>The trap:</strong> You feel guilty charging for "small" things, so you absorb hours of post-delivery work without invoicing it.</p>
+    </div>
+
+    <div class="scenario-card">
+        <h3>2. The never-ending revision cycle</h3>
+        <p>"We love it, but could you try a different approach?" Three rounds of revisions become six. Six become ten. Each round involves new feedback from a new stakeholder who wasn't in the original conversation. The project that should have taken two weeks is now in its second month.</p>
+        <p><strong>The trap:</strong> No revision limit was set at the start, so there's no clear point where you can say "we've exceeded the scope."</p>
+    </div>
+
+    <div class="scenario-card">
+        <h3>3. New deliverables appearing mid-project</h3>
+        <p>You were hired to redesign a website's homepage. Halfway through, the client says: "Oh, could you also do the About page? And maybe the Contact page while you're in there?" The project has doubled in size, but the fee hasn't moved.</p>
+        <p><strong>The trap:</strong> The extra deliverables feel like a "natural extension" of the work, so you absorb them rather than quoting separately.</p>
+    </div>
+
+    <div class="scenario-card">
+        <h3>4. The brief that was never really a brief</h3>
+        <p>The project started with a vague conversation: "We need some content for our website." No written brief. No list of deliverables. No clear definition of "done." So the goalposts move constantly, because the goalposts were never set in the first place. The client isn't being unreasonable — they genuinely don't know what they want, and they're figuring it out using your billable time.</p>
+        <p><strong>The trap:</strong> Without a documented scope, you can't point to a line and say "that's outside it."</p>
+    </div>
+
+    <div class="scenario-card">
+        <h3>5. The client's team piling on</h3>
+        <p>You agreed the project with Sarah from marketing. Now Sarah's boss wants changes. Then someone from the product team has "a few thoughts." Then the CEO sees it and wants a different direction entirely. Each person adds requests, and nobody is coordinating. You're taking instructions from four people with four different visions, and the scope has exploded.</p>
+        <p><strong>The trap:</strong> You don't have a single point of contact or a documented approval process, so every stakeholder treats you as their personal designer/writer/developer.</p>
+    </div>
+
+    <p>Sound familiar? If you've been freelancing for more than six months, you've experienced at least three of these. The question isn't whether scope creep will happen — it's whether you have a system to handle it when it does.</p>
+
+    <!-- Section 3: Prevention -->
+    <h2 id="prevention">How to Prevent Scope Creep Before the Project Starts</h2>
+
+    <p>Prevention is where the real money is saved. Ninety percent of scope creep problems can be eliminated before you write a single word or design a single pixel — by being ruthlessly clear about what the project includes and what it doesn't.</p>
+
+    <h3>Write a proper scope of work</h3>
+
+    <p>A scope of work (SOW) doesn't need to be a legal document. It just needs to answer three questions with zero ambiguity:</p>
+
+    <ol>
+        <li><strong>What exactly am I delivering?</strong> List every deliverable. "5 × 1,000-word blog posts" is a scope. "Some blog content" is not.</li>
+        <li><strong>What's included in the process?</strong> How many revision rounds? What format will deliverables be in? Who provides source materials?</li>
+        <li><strong>What's explicitly NOT included?</strong> This is the bit most freelancers skip — and it's the most important. If you're building a website, say "This quote does not include copywriting, stock photography, or ongoing maintenance." If you're writing copy, say "This does not include SEO keyword research, image sourcing, or CMS uploading." Be specific.</li>
+    </ol>
+
+    <p>The "not included" list is your armour. When a client asks for something outside the scope, you can point to it and say: "Great idea — that falls outside the current scope, so let me quote for it separately." No awkwardness. No confrontation. Just a professional process.</p>
+
+    <h3>Set revision limits in your contract</h3>
+
+    <p>State the number of revision rounds included in the project fee — and what happens after that. Two rounds is standard for most creative work. Three is generous. Unlimited is a trap.</p>
+
+    <div class="template-block">
+        <span class="template-label">Contract Clause — Revision Limits</span>
+        <p>This project includes <strong>[2]</strong> rounds of revisions based on consolidated client feedback. A "round" consists of one set of written feedback and the resulting amendments. Additional revision rounds beyond the included allowance will be quoted at £[RATE]/hour and require written approval before work begins.</p>
+    </div>
+
+    <p>For a complete guide to structuring these clauses, see our post on <a href="/blog/freelance-payment-terms-contract.html">freelance payment terms and contract clauses</a>.</p>
+
+    <h3>Include a change-order clause</h3>
+
+    <p>A change-order clause is the single most powerful weapon against scope creep. It's a standard clause in your contract that says: any work outside the agreed scope will be quoted separately, must be approved in writing before work starts, and will be invoiced on top of the original project fee.</p>
+
+    <div class="template-block">
+        <span class="template-label">Contract Clause — Change Orders</span>
+        <p>Any work not specified in the agreed scope of work constitutes a change order. Change orders will be quoted separately and require written client approval before work commences. Approved change orders will be invoiced in addition to the original project fee, either upon completion or as part of the next milestone invoice.</p>
+    </div>
+
+    <p>This clause doesn't mean you're inflexible. It means you're professional. Every agency uses change orders. Every construction company uses change orders. You should too.</p>
+
+    <h3>Define a single point of contact</h3>
+
+    <p>Agree upfront that all feedback comes from one person. This prevents the "five stakeholders, five different directions" problem. If the client needs to gather input from their team, that's their responsibility — not yours. You work from one consolidated set of feedback per revision round.</p>
+
+    <h3>Take a deposit</h3>
+
+    <p>A deposit — 25–50% upfront — isn't just about <a href="/blog/freelancer-deposit-policy-guide.html">protecting yourself against non-payment</a>. It also creates psychological commitment. A client who's invested money upfront is far more likely to respect the scope they agreed to. They've got skin in the game.</p>
+
+    <div class="tip-box">
+        <strong>⚡ Prevention checklist:</strong> Before starting any project, make sure you have: ✅ Written scope of work with deliverables listed ✅ "Not included" exclusions ✅ Revision limit clause ✅ Change-order clause ✅ Single point of contact agreed ✅ Deposit paid. If you're missing any of these, you're leaving yourself open to scope creep. Use our <a href="/tools/payment-terms-generator.html">payment terms generator</a> to build these clauses in minutes.
+    </div>
+
+    <!-- Section 4: Pushing Back -->
+    <h2 id="pushing-back">Scripts and Templates for Pushing Back Mid-Project</h2>
+
+    <p>Prevention is ideal. But let's be honest — you're reading this because scope creep is already happening on a live project, and you need to know what to say. Here are the exact scripts for every common situation.</p>
+
+    <p>The golden rule: <strong>always say yes to the work, but attach a price to it</strong>. You're not refusing. You're not being difficult. You're saying, "Absolutely — here's what that costs." This frames you as accommodating and professional, not obstructive.</p>
+
+    <h3>Script 1: "Can you just add this extra thing?"</h3>
+
+    <div class="template-block">
+        <span class="template-label">Email Template — Additional Request</span>
+        <div class="subject-line">Subject: Re: [PROJECT NAME] — additional request</div>
+        <p>Hi [NAME],</p>
+        <p>Thanks for this — great idea. That falls outside the scope we agreed for this project, so I'd need to quote it separately.</p>
+        <p>Based on what you've described, I'd estimate it at around £[AMOUNT] / [X] hours. I could turn it around by [DATE] if you'd like to go ahead.</p>
+        <p>Want me to put together a formal quote, or shall we keep the current project focused on the original brief for now?</p>
+        <p>Best,<br>[YOUR NAME]</p>
+    </div>
+
+    <p>Notice what this email does: it validates the idea ("great idea"), clearly names it as out of scope, gives a price and timeline, and offers a choice. The client doesn't feel rejected — they feel informed.</p>
+
+    <h3>Script 2: "We need more revisions"</h3>
+
+    <div class="template-block">
+        <span class="template-label">Email Template — Revisions Exceeded</span>
+        <div class="subject-line">Subject: Re: [PROJECT NAME] — revision rounds</div>
+        <p>Hi [NAME],</p>
+        <p>Absolutely happy to keep refining this until you're 100% happy with it. Just wanted to flag that we've now used the [2] revision rounds included in the project scope.</p>
+        <p>Any further revisions would be billed at £[RATE]/hour, as per our agreement. Based on your latest feedback, I'd estimate the next round at approximately [X] hours / £[AMOUNT].</p>
+        <p>Shall I go ahead? Happy to discuss if you have any questions.</p>
+        <p>Best,<br>[YOUR NAME]</p>
+    </div>
+
+    <h3>Script 3: "The brief has changed direction"</h3>
+
+    <div class="template-block">
+        <span class="template-label">Email Template — Scope Redirect</span>
+        <div class="subject-line">Subject: [PROJECT NAME] — scope update</div>
+        <p>Hi [NAME],</p>
+        <p>Thanks for the latest feedback. I can see the direction has evolved quite a bit from the original brief — which is completely fine, projects develop as they go.</p>
+        <p>I just want to be transparent: the work involved in this new direction is significantly different from what we scoped and priced. Rather than trying to squeeze it into the existing agreement, I think the fairest approach is for me to put together a revised scope and quote that reflects where the project is now.</p>
+        <p>I'll have that over to you by [DATE]. In the meantime, I'll pause work on the current deliverables so we're not burning hours in the wrong direction.</p>
+        <p>Sound good?</p>
+        <p>Best,<br>[YOUR NAME]</p>
+    </div>
+
+    <p>This script is essential when a project has fundamentally changed shape. Pausing work is a power move — it protects your time and forces the conversation about money to happen before more unpaid work is done.</p>
+
+    <h3>Script 4: "Multiple people are sending me feedback"</h3>
+
+    <div class="template-block">
+        <span class="template-label">Email Template — Single Point of Contact</span>
+        <div class="subject-line">Subject: Re: [PROJECT NAME] — streamlining feedback</div>
+        <p>Hi [NAME],</p>
+        <p>I've received feedback from [PERSON A], [PERSON B], and [PERSON C] this week — some of it conflicting, which makes it tricky to action efficiently.</p>
+        <p>To make sure we're using your budget wisely, could we agree that all feedback comes through you as a single consolidated set? That way I'm working from one clear direction, and we avoid unnecessary revision rounds.</p>
+        <p>Happy to jump on a quick call to discuss if helpful.</p>
+        <p>Best,<br>[YOUR NAME]</p>
+    </div>
+
+    <div class="tip-box">
+        <strong>💡 Tone matters:</strong> These scripts work because they're warm, professional, and solution-oriented. You're never saying "no." You're saying "yes, and here's the process for that." The client saves face, you protect your income, and the relationship stays intact.
+    </div>
+
+    <!-- Section 5: Invoicing Extra Work -->
+    <h2 id="invoicing-extra-work">How to Invoice for Out-of-Scope Work</h2>
+
+    <p>You've pushed back, the client agreed to the additional cost, and now you need to actually bill for it. Here's how to handle the invoicing side cleanly.</p>
+
+    <h3>Create a change-order invoice</h3>
+
+    <p>Don't tack extra charges onto your main project invoice and hope the client doesn't notice. Create a separate, clearly labelled change-order invoice. This keeps everything transparent and avoids disputes at payment time.</p>
+
+    <p>Your change-order invoice should include:</p>
+
+    <ul>
+        <li><strong>A reference to the original project.</strong> "Additional work — [PROJECT NAME], change order #1"</li>
+        <li><strong>A clear description of the extra work.</strong> What was requested, when, and by whom</li>
+        <li><strong>The agreed cost.</strong> Reference the quote or email where the client approved the additional spend</li>
+        <li><strong>The date of approval.</strong> "Approved by [NAME] via email on [DATE]"</li>
+        <li><strong>Standard payment terms.</strong> Use the same terms as your main contract — or shorter, if you prefer</li>
+    </ul>
+
+    <p>Use our <a href="/tools/invoice-generator.html">free invoice generator</a> to create professional change-order invoices in minutes.</p>
+
+    <h3>Get sign-off before you start</h3>
+
+    <p>This is non-negotiable: <strong>never start out-of-scope work until the client has approved the cost in writing</strong>. An email saying "Yes, go ahead with the additional work at £[AMOUNT]" is sufficient. You don't need a formal contract amendment — just a clear written record that they agreed to the price.</p>
+
+    <p>Why? Because if you do the extra work first and invoice afterwards, you've lost all your leverage. The work is done, and the client can dispute the charge or claim they never agreed to pay extra. Get the yes <em>before</em> you open the file.</p>
+
+    <h3>Invoice promptly</h3>
+
+    <p>Send the change-order invoice as soon as the extra work is delivered — ideally the same day. Don't batch it with other invoices or wait until the end of the month. The longer the gap between delivery and invoice, the more likely the client is to "forget" what they agreed to. For more on this, see our guide to <a href="/blog/freelance-invoice-best-practices.html">freelance invoicing best practices</a>.</p>
+
+    <h3>What if they refuse to pay for extra work?</h3>
+
+    <p>If a client acknowledges that additional work was done but refuses to pay for it, you have several options:</p>
+
+    <ul>
+        <li><strong>Reference the paper trail.</strong> Forward the email where they approved the additional cost. Most disputes dissolve when the client sees their own "yes" in writing.</li>
+        <li><strong>Reference your contract.</strong> Your change-order clause exists for exactly this moment. It's not a negotiation — it's an agreed term.</li>
+        <li><strong>Escalate formally.</strong> If they still refuse, follow the same escalation process as any unpaid invoice: formal demand, <a href="/blog/letter-before-action-unpaid-invoice-template.html">Letter Before Action</a>, and if necessary, <a href="/blog/small-claims-court-freelancer-uk.html">Small Claims Court</a>. The Late Payment of Commercial Debts Act applies to change orders just as it does to any other invoice.</li>
+        <li><strong>Calculate what they owe.</strong> Use our <a href="/tools/late-payment-interest-calculator.html">late payment interest calculator</a> to add statutory interest and fixed compensation to the overdue amount.</li>
+    </ul>
+
+    <p>If you're consistently running into clients who refuse to pay for extras, it may be time to <a href="/blog/warning-signs-client-wont-pay.html">reassess the types of clients you're taking on</a> — and <a href="/blog/how-to-credit-check-client-freelancer-uk.html">vet new clients more thoroughly</a> before agreeing to work.</p>
+
+    <div class="tip-box">
+        <strong>⚡ The mindset shift:</strong> Scope creep isn't about clients being evil. Most of the time, they genuinely don't realise they're asking for more than they're paying for. Your job isn't to resent them for it — it's to build a process that makes the boundaries visible. Once the process exists, the awkwardness disappears. Extra work is just… extra work, with a price tag and an invoice.
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2>🛡️ Stop Working for Free</h2>
+        <p>Landolio's free tools help you set clear payment terms, generate professional invoices, and chase late payments automatically — so scope creep doesn't eat your income.</p>
+        <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.8rem;">Built for UK freelancers. From contracts to change-order invoices.</p>
+        <div>
+            <a href="/tools/invoice-generator.html" class="cta-btn">Free Invoice Generator →</a>
+            <a href="/tools/payment-terms-generator.html" class="cta-btn cta-btn-secondary">Payment Terms Generator</a>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3>What is scope creep in freelancing?</h3>
+        <p>Scope creep is when a freelance project gradually expands beyond the original agreement — through extra revisions, additional deliverables, or an unclear brief that keeps growing — without a corresponding increase in pay. It's estimated to cost the average UK freelancer around £8,000 per year in unpaid work.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I tell a client that extra work costs extra?</h3>
+        <p>Frame it positively: "Absolutely, I can do that — it falls outside the original scope, so let me put together a quick quote for the additional work." Reference the original agreement, provide a clear cost and timeline, and get written approval before you start. Most clients respect this when it's handled professionally.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I prevent scope creep before a project starts?</h3>
+        <p>Write a detailed scope of work that lists exactly what's included and what isn't. Define the number of revision rounds, specify deliverable formats, include a change-order clause in your contract, and agree on a single point of contact for feedback. The clearer you are upfront, the easier it is to enforce boundaries later.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Should I include a change-order clause in my freelance contract?</h3>
+        <p>Yes — a change-order clause is essential. It states that any work outside the agreed scope will be quoted separately, must be approved in writing, and will be invoiced on top of the original project fee. This gives you a professional framework for handling extra requests without awkwardness.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I invoice for out-of-scope freelance work?</h3>
+        <p>Create a separate change-order invoice that references the original project, clearly describes the additional work, shows the agreed cost, and notes the client's written approval. Send it as soon as the extra work is delivered. Use the same payment terms as your main contract.</p>
+    </div>
+
+    <!-- Related Posts -->
+    <div class="related-posts">
+        <h3>📚 Related Guides</h3>
+        <ul>
+            <li><a href="/blog/freelance-payment-terms-contract.html">Freelance Payment Terms: How to Set Them So You Never Chase a Payment Again</a></li>
+            <li><a href="/blog/freelancer-deposit-policy-guide.html">Should Freelancers Ask for a Deposit? Yes — Here's How Much and When</a></li>
+            <li><a href="/blog/freelance-invoice-best-practices.html">Invoice Like a Pro: 11 Best Practices to Get Paid Faster as a Freelancer</a></li>
+            <li><a href="/blog/freelance-cash-flow-management-tips.html">Cash Flow for Freelancers: 9 Rules to Never Be Broke Between Projects</a></li>
+            <li><a href="/blog/client-ghosting-invoice-escalation-playbook.html">Client Ghosting Your Invoice? The Exact Escalation Playbook That Works</a></li>
+            <li><a href="/blog/how-to-fire-non-paying-client.html">How to Fire a Non-Paying Client (Without Burning Bridges or Losing Money)</a></li>
+            <li><a href="/blog/milestone-payments-freelancers-guide.html">Milestone Payments for Freelancers: How to Get Paid at Every Stage</a></li>
+            <li><a href="/blog/freelance-retainer-agreement-uk.html">The UK Freelancer's Guide to Retainer Agreements</a></li>
+            <li><a href="/blog/freelancer-cash-flow-management-uk.html">Freelancer Cash Flow Survival Guide: How to Stop Living Invoice to Invoice</a></li>
+        </ul>
+    </div>
+
+    <p style="margin-top: 2.5rem; text-align: center; color: var(--text-secondary); font-size: 0.9rem;">—</p>
+    <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">Written by the team at <a href="https://landolio.com">Landolio</a> — tools and templates for UK freelancers who'd rather do great work than chase payments.</p>
+    <p style="text-align: center; color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.5rem;"><em>This guide provides general information and is not legal advice. For complex contractual disputes, consider consulting a solicitor.</em></p>
+
+</article>
+
+<footer class="footer">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
+        <a href="/" style="color: #d4a843; text-decoration: none;">Home</a>
+        <a href="/tools/" style="color: #d4a843; text-decoration: none;">Free Tools</a>
+        <a href="/blog/" style="color: #d4a843; text-decoration: none;">Blog</a>
+        <a href="/products/getting-paid-toolkit.html" style="color: #d4a843; text-decoration: none;">Getting-Paid Toolkit</a>
+        <a href="/free-course.html" style="color: #d4a843; text-decoration: none;">Free Course</a>
+    </div>
+    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+</footer>
+
+</body>
+</html><!-- deploy 1771563859 -->

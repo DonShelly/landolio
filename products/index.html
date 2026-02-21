@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Products for Freelancers — Templates, Contracts & Toolkits | Landolio</title>
+    <meta name="description" content="Professional templates, contract clauses, and toolkits for freelancers. Get paid on time with proven email templates, legal contract clauses, and client onboarding systems. From £7.">
+    <meta name="keywords" content="freelance templates, freelancer contract templates UK, invoice email templates, client onboarding kit, freelancer toolkit, get paid freelance">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://landolio.com/products/">
+
+    <meta property="og:title" content="Digital Products for Freelancers — Landolio">
+    <meta property="og:description" content="Professional templates, contracts, and toolkits to help freelancers get paid on time. From £7.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://landolio.com/products/">
+    <meta property="og:site_name" content="Landolio">
+    <meta property="og:locale" content="en_GB">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Digital Products for Freelancers — Landolio">
+    <meta name="twitter:description" content="Professional templates, contracts, and toolkits to help freelancers get paid on time. From £7.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Digital Products for Freelancers",
+        "description": "Professional templates, contract clauses, and toolkits for freelancers to get paid on time.",
+        "url": "https://landolio.com/products/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Landolio",
+            "url": "https://landolio.com"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1a1a1a;
+            --text: #e8e8e8;
+            --text-muted: #999;
+            --gold: #d4a843;
+            --gold-hover: #e0ba5a;
+            --gold-dim: rgba(212, 168, 67, 0.15);
+            --green: #4ade80;
+            --green-dim: rgba(34, 197, 94, 0.12);
+            --border: #222;
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+        /* Hero */
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem 3rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold-dim);
+            color: var(--gold);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(212, 168, 67, 0.25);
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+        .hero h1 .gold { color: var(--gold); }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Trust bar */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .trust-item span.icon { font-size: 1.1rem; }
+
+        /* Product Grid */
+        .products-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        .product-card-body {
+            padding: 1.75rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-badge {
+            display: inline-block;
+            background: var(--gold-dim);
+            color: var(--gold);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.75rem;
+            align-self: flex-start;
+        }
+        .product-badge.bundle {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+        .product-badge.popular {
+            background: rgba(168, 85, 247, 0.12);
+            color: #c084fc;
+        }
+        .product-card h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .product-card .desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .product-features li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 0.25rem 0;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: -0.02em;
+        }
+        .product-price small {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .buy-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #0a0a0a;
+            padding: 10px 22px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .buy-btn:hover {
+            background: var(--gold-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Bundle CTA */
+        .bundle-cta {
+            max-width: 700px;
+            margin: 3rem auto 0;
+            background: linear-gradient(135deg, rgba(212, 168, 67, 0.08), rgba(212, 168, 67, 0.03));
+            border: 1px solid rgba(212, 168, 67, 0.2);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .bundle-cta h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .bundle-cta p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .bundle-cta .savings {
+            display: inline-block;
+            background: var(--green-dim);
+            color: var(--green);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            max-width: 600px;
+            margin: 3rem auto;
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+        .guarantee-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .guarantee h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .guarantee p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-copy {
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 640px) {
+            .trust-bar { gap: 1rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">Landolio</a>
+            <div class="nav-links">
+                <a href="/blog/">Blog</a>
+                <a href="/tools/">Tools</a>
+                <a href="/products/" class="active">Products</a>
+                <a href="https://app.landolio.com">App</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Digital Products</div>
+        <h1>Stop chasing payments.<br><span class="gold">Start getting paid.</span></h1>
+        <p>Professional templates, bulletproof contracts, and proven systems — everything a freelancer needs to get paid on time, every time. Instant download.</p>
+    </section>
+
+    <div class="trust-bar">
+        <div class="trust-item"><span class="icon">⚡</span> Instant download</div>
+        <div class="trust-item"><span class="icon">🔒</span> Secure checkout</div>
+        <div class="trust-item"><span class="icon">💷</span> 30-day guarantee</div>
+        <div class="trust-item"><span class="icon">🇬🇧</span> UK-focused</div>
+    </div>
+
+    <section class="products-section">
+        <div class="product-grid">
+
+            <!-- Product 1: Invoice Email Pack -->
+            <div class="product-card">
+                <div class="product-card-body">
+                    <span class="product-badge">Starter</span>
+                    <h2>Invoice Email Pack</h2>
+                    <p class="desc">12 professionally written email templates for every invoice situation — from friendly reminders to final demands. Copy, paste, get paid.</p>
+                    <ul class="product-features">
+                        <li>12 ready-to-send email templates</li>
+                        <li>Covers initial send → final demand</li>
+                        <li>UK and US variants included</li>
+                        <li>PDF + Markdown formats</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">£7 <small>one-time</small></div>
+                        <a href="/checkout/invoice-email-pack" class="buy-btn">Buy Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Client Onboarding Kit -->
+            <div class="product-card">
+                <div class="product-card-body">
+                    <span class="product-badge popular">Popular</span>
+                    <h2>Client Onboarding Kit</h2>
+                    <p class="desc">Set expectations from day one. A complete onboarding system with welcome emails, questionnaires, and payment terms — so clients pay on time from the start.</p>
+                    <ul class="product-features">
+                        <li>Welcome email sequence (5 templates)</li>
+                        <li>Client questionnaire template</li>
+                        <li>Project kickoff checklist</li>
+                        <li>Payment terms agreement</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">£12 <small>one-time</small></div>
+                        <a href="/checkout/client-onboarding-kit" class="buy-btn">Buy Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Contract Template Pack (NEW) -->
+            <div class="product-card">
+                <div class="product-card-body">
+                    <span class="product-badge">New</span>
+                    <h2>Freelancer Contract Template Pack</h2>
+                    <p class="desc">5 ready-to-use contract templates with bulletproof payment terms, late fee clauses, and scope protection. Professionally written for UK freelancers.</p>
+                    <ul class="product-features">
+                        <li>5 complete contract templates</li>
+                        <li>Late payment & kill fee clauses</li>
+                        <li>IP transfer & confidentiality terms</li>
+                        <li>Scope change protection built in</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">£15 <small>one-time</small></div>
+                        <a href="/checkout/contract-template-pack" class="buy-btn">Buy Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Getting-Paid Toolkit (Bundle) -->
+            <div class="product-card">
+                <div class="product-card-body">
+                    <span class="product-badge bundle">Best Value</span>
+                    <h2>The Getting-Paid Toolkit</h2>
+                    <p class="desc">The complete system: 37 email templates, 10 legal-grade contract clauses, late payment swipe file, and client onboarding kit. Everything in one bundle.</p>
+                    <ul class="product-features">
+                        <li>37 email templates (every scenario)</li>
+                        <li>10 legal-grade contract clauses</li>
+                        <li>Late payment escalation system</li>
+                        <li>Client onboarding kit included</li>
+                        <li>All future updates free</li>
+                    </ul>
+                    <div class="product-footer">
+                        <div class="product-price">£19 <small>one-time</small></div>
+                        <a href="/checkout/getting-paid-toolkit" class="buy-btn">Buy Now →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bundle CTA -->
+        <div class="bundle-cta">
+            <span class="savings">Save over 50%</span>
+            <h2>Want everything? Get the <span style="color: var(--gold);">Getting-Paid Toolkit</span></h2>
+            <p>All templates, contracts, and systems in one bundle for £19 — less than buying the individual packs separately (£34 value).</p>
+            <a href="/checkout/getting-paid-toolkit" class="buy-btn" style="padding: 14px 32px; font-size: 1rem;">Get the Complete Toolkit — £19 →</a>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="guarantee">
+            <div class="guarantee-icon">🛡️</div>
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p>If any product doesn't help you get paid faster, email us within 30 days for a full refund. No questions asked.</p>
+        </div>
+
+    </section>
+
+    <!-- Free Tools CTA -->
+    <section style="background: var(--bg-card); padding: 3rem 1.5rem; text-align: center; border-top: 1px solid var(--border);">
+        <h2 style="font-size: 1.3rem; margin-bottom: 0.75rem;">Not ready to buy? Try our free tools</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">Calculate late payment interest, generate invoices, and more — completely free, no signup required.</p>
+        <a href="/tools/" class="buy-btn" style="background: transparent; color: var(--gold); border: 1px solid var(--gold);">Browse Free Tools →</a>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/blog/">Blog</a>
+                <a href="/tools/">Free Tools</a>
+                <a href="/products/">Products</a>
+                <a href="https://app.landolio.com">App</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Landolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

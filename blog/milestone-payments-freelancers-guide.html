@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone Payments for Freelancers: How to Get Paid at Every Stage of a Project | Landolio</title>
+    <meta name="description" content="A practical guide to structuring milestone payments for freelance projects. Learn how to break any project into payment stages, set the right percentages, write contract clauses, and handle disputes.">
+    <meta name="keywords" content="how to structure milestone payments freelance project, freelance milestone payment schedule, payment schedule freelance project, when to invoice freelance project stages, milestone payments freelancer">
+    <meta name="author" content="Landolio">
+    <link rel="canonical" href="https://landolio.com/blog/milestone-payments-freelancers-guide.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Milestone Payments for Freelancers: How to Get Paid at Every Stage of a Project">
+    <meta property="og:description" content="Stop waiting until the end to get paid. Here's exactly how to structure milestone payments for any freelance project — with percentages, contract clauses, and dispute scripts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://landolio.com/blog/milestone-payments-freelancers-guide.html">
+    <meta property="og:site_name" content="Landolio">
+    <meta property="article:published_time" content="2026-02-20T12:00:00+00:00">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Milestone Payments for Freelancers: How to Get Paid at Every Stage of a Project">
+    <meta name="twitter:description" content="The definitive guide to milestone payments for UK freelancers. Percentages, contract clauses, worked examples, and what to do when clients stall.">
+
+    <style>
+        /* Reset & Base */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-card: #1a1a1a;
+            --text-primary: #e8e8e8;
+            --text-secondary: #a0a0a0;
+            --gold: #d4a843;
+            --gold-light: #e8c36a;
+            --gold-dim: #b8922e;
+            --border: #2a2a2a;
+            --template-bg: #111111;
+            --template-border: #2a2a2a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.75;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        .nav {
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .nav a:hover { color: var(--gold-light); }
+        .nav .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Article */
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        .article-meta {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            line-height: 1.25;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 2.8rem 0 1rem;
+            font-weight: 700;
+            padding-top: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin: 2rem 0 0.6rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+        a:hover { color: var(--gold-light); }
+
+        strong { color: #fff; font-weight: 600; }
+
+        ul, ol {
+            margin: 0 0 1.4rem 1.5rem;
+            color: var(--text-primary);
+        }
+        li { margin-bottom: 0.5rem; }
+
+        /* Template Blocks */
+        .template-block {
+            background: var(--template-bg);
+            border: 1px solid var(--template-border);
+            border-left: 3px solid var(--gold);
+            border-radius: 6px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.5rem 0 2rem;
+            position: relative;
+        }
+
+        .template-block .template-label {
+            display: inline-block;
+            background: var(--gold-dim);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .template-block .subject-line {
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .template-block p {
+            font-size: 0.92rem;
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .template-block p:last-child { margin-bottom: 0; }
+
+        /* Scenario cards */
+        .scenario-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.2rem 0;
+        }
+        .scenario-card h3 {
+            margin-top: 0;
+            font-size: 1.05rem;
+        }
+        .scenario-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+        .scenario-card p:last-child { margin-bottom: 0; }
+
+        /* Tip box */
+        .tip-box {
+            background: rgba(212, 168, 67, 0.08);
+            border: 1px solid rgba(212, 168, 67, 0.25);
+            border-radius: 6px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .tip-box strong { color: var(--gold); }
+
+        /* Milestone table */
+        .milestone-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            font-size: 0.92rem;
+        }
+        .milestone-table th {
+            background: var(--bg-card);
+            color: var(--gold);
+            font-weight: 600;
+            text-align: left;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .milestone-table td {
+            padding: 0.7rem 1rem;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+        .milestone-table tr:nth-child(even) td {
+            background: rgba(255,255,255,0.02);
+        }
+        .milestone-table .total-row td {
+            background: rgba(212, 168, 67, 0.08);
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1500 0%, #141414 100%);
+            border: 1px solid var(--gold-dim);
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+        .cta-section h2 {
+            margin: 0 0 0.8rem;
+            font-size: 1.6rem;
+            color: var(--gold-light);
+            padding: 0;
+        }
+        .cta-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            margin: 0.4rem;
+        }
+        .cta-btn:hover {
+            background: var(--gold-light);
+            color: #000;
+            transform: translateY(-1px);
+        }
+        .cta-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+        .cta-btn-secondary:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            color: #fff;
+            margin: 0 0 0.6rem;
+            font-size: 1.05rem;
+        }
+        .faq-item p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Related posts */
+        .related-posts {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+        }
+        .related-posts h3 {
+            color: #fff;
+            margin: 0 0 1rem;
+            font-size: 1.05rem;
+        }
+        .related-posts ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+        .related-posts li {
+            margin-bottom: 0.6rem;
+        }
+        .related-posts li:last-child { margin-bottom: 0; }
+        .related-posts a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .related-posts a:hover { text-decoration: underline; }
+
+        /* TOC */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+        .toc h3 {
+            color: #fff;
+            margin: 0 0 0.8rem;
+            font-size: 1rem;
+        }
+        .toc ol { margin: 0 0 0 1.2rem; }
+        .toc li {
+            margin-bottom: 0.35rem;
+            font-size: 0.92rem;
+        }
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .toc a:hover { color: var(--gold); }
+
+        /* Footer */
+        .footer {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            h1 { font-size: 1.65rem; }
+            h2 { font-size: 1.3rem; }
+            article { padding: 2rem 1.1rem 3rem; }
+            .template-block { padding: 1.2rem 1rem; }
+            .cta-section { padding: 2rem 1.2rem; }
+            .nav { padding: 1rem 1.1rem; flex-direction: column; gap: 0.5rem; }
+            .nav-links { gap: 1rem; }
+            .scenario-card { padding: 1.2rem 1rem; }
+            .milestone-table { font-size: 0.82rem; }
+            .milestone-table th, .milestone-table td { padding: 0.5rem 0.6rem; }
+        }
+    </style>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Milestone Payments for Freelancers: How to Get Paid at Every Stage of a Project",
+        "description": "A practical guide to structuring milestone payments for freelance projects. Learn how to break any project into payment stages, set the right percentages, write contract clauses, and handle disputes.",
+        "author": { "@type": "Organization", "name": "Landolio" },
+        "publisher": { "@type": "Organization", "name": "Landolio" },
+        "datePublished": "2026-02-20",
+        "dateModified": "2026-02-20",
+        "mainEntityOfPage": "https://landolio.com/blog/milestone-payments-freelancers-guide.html"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What are milestone payments in freelancing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Milestone payments are staged payments tied to specific deliverables or project phases. Instead of invoicing once at the end, you break the project into stages — such as deposit, first draft, mid-project review, and final delivery — and get paid at each one. This protects your cash flow and limits your financial exposure on large projects."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many milestones should a freelance project have?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most freelance projects work well with 3 to 5 milestones. A simple structure is: deposit on signing, payment at midpoint, and final payment on delivery. Larger or more complex projects might benefit from 4–5 stages. Too many milestones creates admin overhead; too few defeats the purpose of staging payments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What percentage should each milestone be?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A common split is 30% deposit, 30% at midpoint, and 40% on final delivery. For higher-risk projects or new clients, front-load more: 50% deposit, 25% midpoint, 25% final. The key principle is to never have more than 25–40% of the total fee outstanding at the point of final delivery."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if a client refuses milestone payments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A client who refuses any form of staged payment on a large project is a red flag. You can compromise — perhaps fewer milestones or a smaller deposit — but if they insist on paying 100% only on completion, you're carrying all the financial risk. For projects over £2,000, this is rarely worth it. Consider walking away or requiring full payment upfront instead."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I stop work if a milestone payment is late?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Your contract should include a clause stating that work pauses if a milestone payment is overdue. This is your most powerful enforcement mechanism — it creates urgency for the client to pay without requiring any confrontation. Frame it as protecting their timeline: 'I want to keep this on track, so once the payment clears I'll resume immediately.'"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do milestone payments differ from deposits?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A deposit is a single upfront payment before work begins — typically 25–50% of the project fee. Milestone payments are a broader structure that includes the deposit plus additional payments at defined stages throughout the project. Think of the deposit as the first milestone in a multi-stage payment schedule."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<header style="padding: 1.2rem 2rem; border-bottom: 1px solid #2a2a2a; display: flex; justify-content: space-between; align-items: center;">
+    <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: #d4a843; text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
+    <nav style="display: flex; gap: 24px;">
+        <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
+        <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+    </nav>
+</header>
+
+<article>
+    <div class="article-meta">Getting Paid · February 2026</div>
+
+    <h1>Milestone Payments for Freelancers: How to Get Paid at Every Stage of a Project</h1>
+
+    <p class="subtitle">Waiting until the end of a project to invoice is the single riskiest thing a freelancer can do. Milestone payments fix that — they keep cash flowing, limit your exposure, and give you leverage if things go sideways. Here's exactly how to structure them for any project.</p>
+
+    <nav class="toc">
+        <h3>What's in This Guide</h3>
+        <ol>
+            <li><a href="#never-wait">Why You Should Never Wait Until the End to Get Paid</a></li>
+            <li><a href="#break-it-down">How to Break Any Project Into Payment Milestones</a></li>
+            <li><a href="#percentages">The Ideal Milestone Percentages</a></li>
+            <li><a href="#contract-clauses">How to Write Milestone Terms Into Your Contract</a></li>
+            <li><a href="#disputes">Handling Milestone Disputes</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+    </nav>
+
+    <!-- Section 1: Why You Should Never Wait -->
+    <h2 id="never-wait">Why You Should Never Wait Until the End to Get Paid</h2>
+
+    <p>Picture this: you spend six weeks building a website for a new client. You pour in evenings and weekends. You turn down other work to hit the deadline. You deliver everything on time, send the invoice, and… silence. The client goes quiet. Two weeks pass. Then a month. You're now two and a half months deep with nothing to show for it but a Figma file and a growing sense of dread.</p>
+
+    <p>This isn't a hypothetical. It's the most common payment horror story in freelancing. And it's entirely avoidable.</p>
+
+    <p><strong>When you invoice only at the end of a project, you're giving the client maximum leverage and yourself zero protection.</strong> You've already delivered the work. They have the files. Your only recourse is to chase, escalate, and eventually consider <a href="/blog/small-claims-court-freelancer-uk.html">Small Claims Court</a> — a process that takes months and costs you time you could be spending on paying work.</p>
+
+    <p>Milestone payments flip this dynamic. Instead of one payment at the end, you break the project into stages and get paid at each one. The client never owes you more than a fraction of the total fee at any point. You never work for weeks without compensation. And if the relationship goes bad at stage three, you've already been paid for stages one and two.</p>
+
+    <h3>The cash flow argument</h3>
+
+    <p>Beyond risk, there's a pure cash flow reality. If you're working on a project for 8–12 weeks and only invoicing at the end, you're funding the client's project with your own money. Your rent doesn't wait. Your software subscriptions don't pause. Your tax bill doesn't care that your client hasn't paid yet.</p>
+
+    <p>Milestone payments keep money moving in while the project is active. Instead of one £6,000 invoice after three months, you get three £2,000 payments spread across the project. That's the difference between checking your bank account with anxiety and checking it with confidence. For a deeper dive into managing irregular income, read our guide to <a href="/blog/freelance-cash-flow-management-tips.html">freelancer cash flow management</a>.</p>
+
+    <h3>The psychology of client commitment</h3>
+
+    <p>There's a subtler benefit most freelancers miss: <strong>clients who pay as they go are better clients</strong>. Each payment is a moment of active commitment. They're reviewing the work, approving a milestone, and making a conscious decision to continue. That engagement leads to better feedback, faster approvals, and fewer "actually, let's scrap everything and start over" moments in week seven.</p>
+
+    <p>A client who hasn't paid anything until the end is a client who's been passively watching. They've had no financial checkpoints that force them to engage with the work in progress. And passive clients are the ones most likely to surprise you with massive change requests at the eleventh hour — or ghost you entirely.</p>
+
+    <div class="tip-box">
+        <strong>💡 The rule of thumb:</strong> If a project is worth more than £1,000 or will take longer than two weeks, it should have milestone payments. No exceptions. No "but this client seems trustworthy." Trust is wonderful — <strong>milestone payments are better</strong>.
+    </div>
+
+    <!-- Section 2: How to Break Any Project Into Milestones -->
+    <h2 id="break-it-down">How to Break Any Project Into Payment Milestones</h2>
+
+    <p>The key to milestone payments is tying each payment to a specific, verifiable deliverable. Not "when we're roughly halfway through" — that's subjective and invites disagreements. Instead: "when the first draft of all five pages is delivered." Clear. Measurable. Impossible to argue about.</p>
+
+    <h3>The universal milestone framework</h3>
+
+    <p>Regardless of your freelance discipline, most projects follow a natural rhythm that maps neatly to payment stages:</p>
+
+    <ol>
+        <li><strong>Deposit (project kick-off)</strong> — Paid before any work begins. This secures your availability and confirms the client's commitment. Think of it as stage zero.</li>
+        <li><strong>Concept / first draft / initial deliverable</strong> — The first tangible output. For designers, this might be wireframes or mood boards. For writers, a first draft. For developers, a working prototype. The client sees real work and pays for it.</li>
+        <li><strong>Mid-project review</strong> — The project is roughly half done. Revisions from the first milestone have been incorporated, and the work is taking shape. This is the "point of no return" payment — the client has confirmed the direction and is paying to continue.</li>
+        <li><strong>Final delivery and sign-off</strong> — The completed work is delivered. The final payment is due on delivery (or within a short window, e.g. 7 days). Files are handed over once payment clears.</li>
+    </ol>
+
+    <p>Not every project needs four stages. Smaller projects (£1,000–£3,000) often work fine with three: deposit, midpoint, and final. Very large projects (£10,000+) might benefit from five or six. The right number depends on the project length and complexity — but <strong>three milestones is the minimum</strong> for anything substantial.</p>
+
+    <h3>Milestone examples by freelance type</h3>
+
+    <p>What "milestones" look like in practice depends on what you do. Here's how to structure them for common freelance disciplines:</p>
+
+    <div class="scenario-card">
+        <h3>🎨 Graphic / Web Design</h3>
+        <p><strong>Milestone 1 — Deposit:</strong> Paid on contract signing. Covers discovery call, creative brief, research.</p>
+        <p><strong>Milestone 2 — Concepts:</strong> Wireframes, mood boards, or initial design concepts delivered. Client picks a direction.</p>
+        <p><strong>Milestone 3 — Refined design:</strong> Full design delivered based on chosen concept, including one round of revisions.</p>
+        <p><strong>Milestone 4 — Final files:</strong> Production-ready assets, all formats, handover documentation. Final payment on delivery.</p>
+    </div>
+
+    <div class="scenario-card">
+        <h3>✍️ Copywriting / Content</h3>
+        <p><strong>Milestone 1 — Deposit:</strong> Paid on contract signing. Covers brief development, research, outline creation.</p>
+        <p><strong>Milestone 2 — First drafts:</strong> All content delivered in first-draft form. Client reviews and provides consolidated feedback.</p>
+        <p><strong>Milestone 3 — Final copy:</strong> Revised, polished content delivered. Final payment due on delivery. One round of minor tweaks included.</p>
+    </div>
+
+    <div class="scenario-card">
+        <h3>💻 Web Development</h3>
+        <p><strong>Milestone 1 — Deposit:</strong> Paid on contract signing. Covers technical scoping, architecture planning, dev environment setup.</p>
+        <p><strong>Milestone 2 — Working prototype:</strong> Core functionality built and deployed to a staging environment. Client can test and provide feedback.</p>
+        <p><strong>Milestone 3 — Feature complete:</strong> All features implemented, content integrated, cross-browser/device testing done.</p>
+        <p><strong>Milestone 4 — Launch:</strong> Site goes live. Bug fixes and final QA. Final payment due. Post-launch support terms begin.</p>
+    </div>
+
+    <div class="scenario-card">
+        <h3>📊 Consulting / Strategy</h3>
+        <p><strong>Milestone 1 — Deposit:</strong> Paid on engagement signing. Covers initial stakeholder interviews and data gathering.</p>
+        <p><strong>Milestone 2 — Interim findings:</strong> Research complete, initial analysis and recommendations presented. Client reviews direction.</p>
+        <p><strong>Milestone 3 — Final deliverable:</strong> Complete strategy document / report / recommendations delivered. Final payment due on delivery.</p>
+    </div>
+
+    <div class="tip-box">
+        <strong>⚡ The deliverable test:</strong> Every milestone must be tied to something the client can see, review, or test. If you can't describe the milestone in one sentence — "First draft of all five blog posts delivered" — it's too vague. Make it concrete.
+    </div>
+
+    <!-- Section 3: The Ideal Milestone Percentages -->
+    <h2 id="percentages">The Ideal Milestone Percentages</h2>
+
+    <p>How much should each milestone be worth? The answer depends on how much work each stage requires and how much risk you're willing to carry. But the core principle is simple: <strong>front-load the payments</strong>. You should have received the majority of the project fee before you deliver the final work.</p>
+
+    <p>Why? Because the final deliverable is your leverage. Once you hand everything over, you've got no cards left to play. If the client's going to be difficult about payment, you want to discover that when they owe you 25% of the fee — not 100%.</p>
+
+    <h3>Three-milestone structure (most common)</h3>
+
+    <table class="milestone-table">
+        <thead>
+            <tr>
+                <th>Milestone</th>
+                <th>Trigger</th>
+                <th>%</th>
+                <th>Example (£5,000 project)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Deposit</td>
+                <td>Contract signed</td>
+                <td>40%</td>
+                <td>£2,000</td>
+            </tr>
+            <tr>
+                <td>2. Midpoint</td>
+                <td>First draft / prototype delivered</td>
+                <td>30%</td>
+                <td>£1,500</td>
+            </tr>
+            <tr>
+                <td>3. Final delivery</td>
+                <td>Completed work delivered</td>
+                <td>30%</td>
+                <td>£1,500</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="2">Total</td>
+                <td>100%</td>
+                <td>£5,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>This is the workhorse structure. It's simple to explain, easy to administer, and works for the vast majority of freelance projects. By the time you deliver the final work, you've already received 70% of the fee. If the client ghosts at that point, you've lost 30% — painful, but survivable.</p>
+
+    <h3>Four-milestone structure (for larger projects)</h3>
+
+    <table class="milestone-table">
+        <thead>
+            <tr>
+                <th>Milestone</th>
+                <th>Trigger</th>
+                <th>%</th>
+                <th>Example (£12,000 project)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Deposit</td>
+                <td>Contract signed</td>
+                <td>30%</td>
+                <td>£3,600</td>
+            </tr>
+            <tr>
+                <td>2. Concept approved</td>
+                <td>Initial concepts / first draft signed off</td>
+                <td>25%</td>
+                <td>£3,000</td>
+            </tr>
+            <tr>
+                <td>3. Build complete</td>
+                <td>Full deliverable ready for review</td>
+                <td>25%</td>
+                <td>£3,000</td>
+            </tr>
+            <tr>
+                <td>4. Final sign-off</td>
+                <td>Approved final deliverable</td>
+                <td>20%</td>
+                <td>£2,400</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="2">Total</td>
+                <td>100%</td>
+                <td>£12,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>On a £12,000 project, this means you've received £9,600 before handing over final files. Your maximum exposure at any point is £2,400 — a manageable risk even if the worst happens.</p>
+
+    <h3>High-risk client structure (new client, no track record)</h3>
+
+    <table class="milestone-table">
+        <thead>
+            <tr>
+                <th>Milestone</th>
+                <th>Trigger</th>
+                <th>%</th>
+                <th>Example (£4,000 project)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Deposit</td>
+                <td>Contract signed</td>
+                <td>50%</td>
+                <td>£2,000</td>
+            </tr>
+            <tr>
+                <td>2. Midpoint</td>
+                <td>First deliverable approved</td>
+                <td>25%</td>
+                <td>£1,000</td>
+            </tr>
+            <tr>
+                <td>3. Final delivery</td>
+                <td>Completed work delivered</td>
+                <td>25%</td>
+                <td>£1,000</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="2">Total</td>
+                <td>100%</td>
+                <td>£4,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>For new clients — especially those you haven't been able to <a href="/blog/how-to-credit-check-client-freelancer-uk.html">credit check</a> or who don't have an established track record — front-load harder. A 50% deposit is standard and reasonable. It's not paranoia; it's good business. See our <a href="/blog/freelancer-deposit-policy-guide.html">complete deposit policy guide</a> for scripts on how to ask confidently.</p>
+
+    <div class="tip-box">
+        <strong>💡 The 25% rule:</strong> Never have more than 25% of the total project fee unpaid at the point of final delivery. That's your maximum acceptable exposure. If your milestone split leaves more than that on the table at the end, adjust the percentages.
+    </div>
+
+    <!-- Section 4: Contract Clauses -->
+    <h2 id="contract-clauses">How to Write Milestone Terms Into Your Contract</h2>
+
+    <p>Milestone payments are only as strong as the contract that defines them. A verbal agreement — "we'll sort out payments as we go" — is worth nothing when a client decides they're not paying. You need clear, specific language that ties payments to deliverables, defines what happens when payments are late, and protects you if the project is cancelled mid-stream.</p>
+
+    <h3>The milestone payment schedule clause</h3>
+
+    <div class="template-block">
+        <span class="template-label">Contract Clause — Payment Schedule</span>
+        <p>The total project fee of £[TOTAL] shall be paid in the following instalments:</p>
+        <p><strong>Milestone 1 — Deposit (£[AMOUNT], [X]%):</strong> Due upon signing this agreement. Work will not commence until this payment has been received in full.</p>
+        <p><strong>Milestone 2 — [DELIVERABLE] (£[AMOUNT], [X]%):</strong> Due within [7] days of delivery of [specific deliverable, e.g. "wireframes and initial design concepts"].</p>
+        <p><strong>Milestone 3 — Final Delivery (£[AMOUNT], [X]%):</strong> Due within [7] days of delivery of the completed [project/deliverable]. Final source files and assets will be transferred upon receipt of this payment.</p>
+    </div>
+
+    <p>Notice two critical details: the deposit must be paid before work begins (non-negotiable), and final files are transferred <em>after</em> the final payment clears. That second point is your insurance policy.</p>
+
+    <h3>The late payment and work-pause clause</h3>
+
+    <p>This is the clause that gives milestone payments their teeth. Without it, a late milestone payment is just an awkward situation. With it, it's a contractual trigger that pauses the project until payment is received.</p>
+
+    <div class="template-block">
+        <span class="template-label">Contract Clause — Late Milestone Payment</span>
+        <p>If any milestone payment is not received within [7] days of the due date, the Freelancer reserves the right to pause all work on the project until payment is received in full. The project timeline will be extended by the number of days payment is overdue. The Freelancer shall not be liable for any delays, missed deadlines, or losses arising from paused work due to overdue payments.</p>
+        <p>Overdue payments will attract statutory interest under the Late Payment of Commercial Debts (Interest) Act 1998, currently 8% above the Bank of England base rate, plus the fixed statutory compensation of £40–£100 depending on the debt amount.</p>
+    </div>
+
+    <p>This clause does three things: it gives you the right to stop working (protecting your time), it shifts deadline responsibility to the client (protecting your reputation), and it references the <a href="/blog/uk-late-payment-law-explained.html">UK Late Payment of Commercial Debts Act</a> (protecting your legal rights). For a deeper guide to structuring all your payment terms, see our post on <a href="/blog/freelance-payment-terms-contract.html">freelance payment terms and contract clauses</a>.</p>
+
+    <h3>The cancellation clause</h3>
+
+    <p>What happens if the client cancels the project at milestone two? Without a cancellation clause, you'll end up in a messy negotiation about what you're owed. With one, it's already settled.</p>
+
+    <div class="template-block">
+        <span class="template-label">Contract Clause — Project Cancellation</span>
+        <p>Either party may terminate this agreement by providing [14] days' written notice. In the event of cancellation:</p>
+        <p>• All milestone payments already made are non-refundable.</p>
+        <p>• Any work completed beyond the last paid milestone will be invoiced at the Freelancer's standard rate of £[RATE]/hour, payable within [14] days.</p>
+        <p>• If the Client cancels after milestone [X] has been paid but before milestone [X+1] is due, the Client retains rights to all deliverables covered by paid milestones only. Unpaid deliverables remain the property of the Freelancer.</p>
+    </div>
+
+    <p>That last point is important: the client only owns what they've paid for. If they cancel at milestone two and haven't paid for milestone three, they don't get the milestone-three deliverables. This is standard practice and gives the client a strong incentive to either complete the project or pay a fair cancellation fee.</p>
+
+    <h3>The approval mechanism</h3>
+
+    <p>Milestone payments require milestone approvals. Without a defined approval process, a client can delay payment indefinitely by simply never "approving" the deliverable. Build a timeframe into the contract:</p>
+
+    <div class="template-block">
+        <span class="template-label">Contract Clause — Milestone Approval</span>
+        <p>Upon delivery of each milestone, the Client has [5] business days to review and provide feedback. If no response is received within this period, the milestone shall be deemed approved, and the corresponding payment becomes due immediately.</p>
+        <p>Feedback must be provided in a single consolidated set via [email/project management tool]. The Freelancer will action one round of revisions per milestone, included in the project fee. Additional revisions will be quoted separately as a change order.</p>
+    </div>
+
+    <p>The "deemed approved" clause is essential. It prevents the classic stalling tactic: the client goes quiet for three weeks, then comes back with extensive feedback and claims the milestone was never approved. Five business days is generous. After that, silence equals approval, and the invoice is due.</p>
+
+    <div class="tip-box">
+        <strong>⚡ Use these together:</strong> The four clauses above — payment schedule, late payment/work-pause, cancellation, and approval mechanism — form a complete milestone payment framework. Copy them into your contract, adjust the specifics, and you've got airtight protection. Use our <a href="/tools/payment-terms-generator.html">payment terms generator</a> to build a custom set in minutes.
+    </div>
+
+    <!-- Section 5: Handling Milestone Disputes -->
+    <h2 id="disputes">Handling Milestone Disputes</h2>
+
+    <p>Even with a solid contract, milestone disputes happen. A client might refuse to approve a milestone to delay payment. They might claim the deliverable "isn't what they expected." They might simply go quiet. Here's how to handle each scenario without losing your cool — or your money.</p>
+
+    <h3>Scenario 1: Client won't approve a milestone (to delay payment)</h3>
+
+    <p>This is the most common milestone dispute. The work is done, it matches the brief, but the client keeps finding reasons not to sign off. "It's not quite right." "I need to show it to my team." "Can we just tweak one more thing before I approve?"</p>
+
+    <p>What's really happening: they're either short on cash or testing whether they can delay payment. The solution is to <strong>enforce the approval timeframe in your contract</strong>.</p>
+
+    <div class="template-block">
+        <span class="template-label">Email Template — Milestone Approval Reminder</span>
+        <div class="subject-line">Subject: [PROJECT NAME] — milestone 2 review deadline</div>
+        <p>Hi [NAME],</p>
+        <p>I delivered the [specific deliverable] on [DATE] — just wanted to check in on your review. Per our agreement, the 5-business-day review period ends on [DATE], after which the milestone is considered approved and the payment of £[AMOUNT] becomes due.</p>
+        <p>If you need more time to review, I'm happy to discuss — but I'd need to pause the next phase of work until this milestone is formally approved and paid, to keep things on track.</p>
+        <p>Let me know how you'd like to proceed.</p>
+        <p>Best,<br>[YOUR NAME]</p>
+    </div>
+
+    <p>This email is firm but not hostile. It references the contract, states the deadline, and makes clear that the project pauses if they don't act. Most clients respond within hours.</p>
+
+    <h3>Scenario 2: Client claims the deliverable doesn't match the brief</h3>
+
+    <p>Sometimes this is legitimate — you misunderstood something. More often, the brief was vague, the client's expectations shifted mid-project, or a new stakeholder has a different opinion.</p>
+
+    <p>Your response depends on whether the deliverable actually matches the documented scope:</p>
+
+    <ul>
+        <li><strong>If it matches the brief:</strong> Reference the scope of work. "I've reviewed the brief and the deliverable covers everything we agreed. Happy to discuss specific concerns, but the milestone is complete as scoped."</li>
+        <li><strong>If it doesn't match (your mistake):</strong> Fix it. Fast. No charge. Then invoice the milestone once the corrected version is delivered. Taking responsibility builds trust.</li>
+        <li><strong>If the brief was vague and their expectations evolved:</strong> This is a <a href="/blog/how-to-handle-scope-creep-freelancer.html">scope creep</a> issue. Treat the additional requests as a change order — quote for the extra work, get approval, and invoice it separately.</li>
+    </ul>
+
+    <h3>Scenario 3: Client goes silent after receiving a deliverable</h3>
+
+    <p>You deliver. You hear nothing. Days pass. Then a week. The "deemed approved" clause in your contract handles the legal side — after 5 business days, the milestone is approved and payment is due. But you still need to communicate:</p>
+
+    <div class="template-block">
+        <span class="template-label">Email Template — Silence After Delivery</span>
+        <div class="subject-line">Subject: [PROJECT NAME] — following up on milestone delivery</div>
+        <p>Hi [NAME],</p>
+        <p>I delivered [specific deliverable] on [DATE] and haven't heard back yet. Just wanted to make sure everything came through okay and check whether you have any feedback.</p>
+        <p>As per our agreement, the review window closes on [DATE]. If I haven't heard from you by then, I'll treat the milestone as approved and send the invoice for £[AMOUNT].</p>
+        <p>No rush on feedback if you're happy with it — but do let me know either way so I can plan the next phase.</p>
+        <p>Best,<br>[YOUR NAME]</p>
+    </div>
+
+    <p>If silence continues after this, follow our complete <a href="/blog/client-ghosting-invoice-escalation-playbook.html">client ghosting escalation playbook</a>. The same principles apply: polite nudge → firm reminder → formal demand → <a href="/blog/letter-before-action-unpaid-invoice-template.html">Letter Before Action</a>.</p>
+
+    <h3>Scenario 4: Client wants to skip a milestone and "settle up at the end"</h3>
+
+    <p>This is a red flag. A client who agreed to milestone payments at contract stage but now wants to bundle everything into a final payment is either having cash flow problems or testing your boundaries. Either way, the answer is no.</p>
+
+    <div class="template-block">
+        <span class="template-label">Email Template — Sticking to the Schedule</span>
+        <div class="subject-line">Subject: Re: [PROJECT NAME] — payment schedule</div>
+        <p>Hi [NAME],</p>
+        <p>I understand the preference to consolidate, but the milestone payment structure is something I need to stick to — it's how I manage cash flow across all my projects, and it's in our signed agreement.</p>
+        <p>The good news is it's straightforward: once the £[AMOUNT] for milestone [X] clears, I'll move straight into the next phase. Happy to send the invoice now so we can keep momentum.</p>
+        <p>Best,<br>[YOUR NAME]</p>
+    </div>
+
+    <h3>The nuclear option: withholding deliverables</h3>
+
+    <p>If a client refuses to pay a milestone and you've exhausted polite options, you have one powerful card: <strong>you own the unpaid work</strong>. Under your contract, deliverables transfer on payment. If they haven't paid, you're under no obligation to hand over files, grant access, or continue working.</p>
+
+    <p>This isn't a tactic to use lightly. But when a client owes you thousands and is making no effort to pay, it's your right. Combine it with a formal demand referencing the <a href="/blog/uk-late-payment-law-explained.html">Late Payment of Commercial Debts Act</a> and calculate what they owe using our <a href="/tools/late-payment-interest-calculator.html">late payment interest calculator</a>.</p>
+
+    <div class="tip-box">
+        <strong>💡 Prevention beats cure:</strong> Most milestone disputes never happen when the contract is clear. The approval timeframe, the work-pause clause, and the deliverable-ownership terms do 90% of the work before a dispute even starts. The scripts above are your insurance policy for the other 10%.
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2>💰 Get Paid at Every Stage</h2>
+        <p>Landolio's free tools help you generate professional invoices for every milestone, set ironclad payment terms, and chase late payments automatically — so you never wait until the end again.</p>
+        <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.8rem;">Built for UK freelancers. From deposits to final delivery.</p>
+        <div>
+            <a href="/tools/invoice-generator.html" class="cta-btn">Free Invoice Generator →</a>
+            <a href="/tools/payment-terms-generator.html" class="cta-btn cta-btn-secondary">Payment Terms Generator</a>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3>What are milestone payments in freelancing?</h3>
+        <p>Milestone payments are staged payments tied to specific deliverables or project phases. Instead of invoicing once at the end, you break the project into stages — such as deposit, first draft, mid-project review, and final delivery — and get paid at each one. This protects your cash flow and limits your financial exposure on large projects.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How many milestones should a freelance project have?</h3>
+        <p>Most freelance projects work well with 3 to 5 milestones. A simple structure is: deposit on signing, payment at midpoint, and final payment on delivery. Larger or more complex projects might benefit from 4–5 stages. Too many milestones creates admin overhead; too few defeats the purpose of staging payments.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What percentage should each milestone be?</h3>
+        <p>A common split is 30–40% deposit, 25–30% at midpoint, and 25–30% on final delivery. For higher-risk projects or new clients, front-load more: 50% deposit, 25% midpoint, 25% final. The key principle is to never have more than 25–40% of the total fee outstanding at the point of final delivery.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What if a client refuses milestone payments?</h3>
+        <p>A client who refuses any form of staged payment on a large project is a red flag. You can compromise — perhaps fewer milestones or a smaller deposit — but if they insist on paying 100% only on completion, you're carrying all the financial risk. For projects over £2,000, this is rarely worth it. Consider walking away or requiring full payment upfront instead.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Should I stop work if a milestone payment is late?</h3>
+        <p>Yes. Your contract should include a clause stating that work pauses if a milestone payment is overdue. This is your most powerful enforcement mechanism — it creates urgency for the client to pay without requiring any confrontation. Frame it as protecting their timeline: "I want to keep this on track, so once the payment clears I'll resume immediately."</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do milestone payments differ from deposits?</h3>
+        <p>A deposit is a single upfront payment before work begins — typically 25–50% of the project fee. Milestone payments are a broader structure that includes the deposit plus additional payments at defined stages throughout the project. Think of the deposit as the first milestone in a multi-stage payment schedule.</p>
+    </div>
+
+    <!-- Related Posts -->
+    <div class="related-posts">
+        <h3>📚 Related Guides</h3>
+        <ul>
+            <li><a href="/blog/freelancer-deposit-policy-guide.html">Should Freelancers Ask for a Deposit? Yes — Here's How Much and When</a></li>
+            <li><a href="/blog/freelance-payment-terms-contract.html">Freelance Payment Terms: How to Set Them So You Never Chase a Payment Again</a></li>
+            <li><a href="/blog/how-to-handle-scope-creep-freelancer.html">Scope Creep Is Costing You Thousands — How UK Freelancers Can Stop Working for Free</a></li>
+            <li><a href="/blog/freelance-cash-flow-management-tips.html">Cash Flow for Freelancers: 9 Rules to Never Be Broke Between Projects</a></li>
+            <li><a href="/blog/how-to-credit-check-client-freelancer-uk.html">How to Check If a Client Will Actually Pay You (Before You Start Work)</a></li>
+            <li><a href="/blog/client-ghosting-invoice-escalation-playbook.html">Client Ghosting Your Invoice? The Exact Escalation Playbook That Works</a></li>
+            <li><a href="/blog/freelance-retainer-agreement-uk.html">The UK Freelancer's Guide to Retainer Agreements</a></li>
+            <li><a href="/blog/freelancer-cash-flow-management-uk.html">Freelancer Cash Flow Survival Guide: How to Stop Living Invoice to Invoice</a></li>
+        </ul>
+    </div>
+
+    <p style="margin-top: 2.5rem; text-align: center; color: var(--text-secondary); font-size: 0.9rem;">—</p>
+    <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">Written by the team at <a href="https://landolio.com">Landolio</a> — tools and templates for UK freelancers who'd rather do great work than chase payments.</p>
+    <p style="text-align: center; color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.5rem;"><em>This guide provides general information and is not legal advice. For complex contractual disputes, consider consulting a solicitor.</em></p>
+
+</article>
+
+<footer class="footer">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
+        <a href="/" style="color: #d4a843; text-decoration: none;">Home</a>
+        <a href="/tools/" style="color: #d4a843; text-decoration: none;">Free Tools</a>
+        <a href="/blog/" style="color: #d4a843; text-decoration: none;">Blog</a>
+        <a href="/products/getting-paid-toolkit.html" style="color: #d4a843; text-decoration: none;">Getting-Paid Toolkit</a>
+        <a href="/free-course.html" style="color: #d4a843; text-decoration: none;">Free Course</a>
+    </div>
+    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+</footer>
+
+</body>
+</html>

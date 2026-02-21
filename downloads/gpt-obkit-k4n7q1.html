@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Client Onboarding Kit — Landolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & BASE ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #E8CD6B;
+            --gold-bg: rgba(212, 175, 55, 0.08);
+            --black: #0A0A0A;
+            --dark: #1A1A1A;
+            --gray: #666;
+            --gray-light: #999;
+            --white: #FAFAFA;
+            --border: rgba(212, 175, 55, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* ========== PRINT STYLES ========== */
+        @media print {
+            :root {
+                --gold: #8B7528;
+                --gold-light: #A08830;
+                --gold-bg: #f5f0e0;
+                --black: #ffffff;
+                --dark: #f8f8f8;
+                --gray: #555;
+                --gray-light: #777;
+                --white: #111;
+                --border: #ddd;
+            }
+
+            body {
+                background: white;
+                color: #111;
+                font-size: 11pt;
+                line-height: 1.5;
+            }
+
+            .cover-page {
+                page-break-after: always;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .template-section {
+                page-break-before: always;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .fill-field {
+                border-bottom: 1px solid #999 !important;
+                background: none !important;
+                color: #111 !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+
+            .toc {
+                page-break-after: always;
+            }
+
+            .checklist-item input[type="checkbox"] {
+                -webkit-appearance: auto;
+                appearance: auto;
+            }
+        }
+
+        /* ========== LAYOUT ========== */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ========== COVER PAGE ========== */
+        .cover-page {
+            text-align: center;
+            padding: 120px 0 80px;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 60px;
+        }
+
+        .cover-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 48px;
+        }
+
+        .cover-page h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .cover-page h1 span {
+            color: var(--gold);
+        }
+
+        .cover-sub {
+            font-size: 1.15rem;
+            color: var(--gray-light);
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .cover-meta {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .cover-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 40px auto;
+            border-radius: 2px;
+        }
+
+        /* ========== TABLE OF CONTENTS ========== */
+        .toc {
+            padding: 40px 0 60px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        .toc h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: var(--gold);
+        }
+
+        .toc-list {
+            list-style: none;
+            counter-reset: toc-counter;
+        }
+
+        .toc-list li {
+            counter-increment: toc-counter;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 1.05rem;
+        }
+
+        .toc-list li::before {
+            content: counter(toc-counter, decimal-leading-zero);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            min-width: 28px;
+        }
+
+        .toc-list li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .toc-list li a:hover {
+            color: var(--gold);
+        }
+
+        .toc-desc {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--gray-light);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        /* ========== TEMPLATE SECTIONS ========== */
+        .template-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .template-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .template-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 8px;
+        }
+
+        .template-section h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .template-intro {
+            font-size: 1rem;
+            color: var(--gray-light);
+            margin-bottom: 36px;
+            max-width: 600px;
+            line-height: 1.65;
+        }
+
+        .template-section h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 32px 0 16px;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .template-section h3::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .template-section h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            color: var(--white);
+        }
+
+        .template-section p,
+        .template-section li {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        .template-section ul,
+        .template-section ol {
+            margin: 12px 0 12px 20px;
+        }
+
+        .template-section li {
+            margin-bottom: 8px;
+        }
+
+        /* ========== FILL-IN FIELDS ========== */
+        .fill-field {
+            display: inline-block;
+            min-width: 200px;
+            padding: 4px 12px;
+            background: var(--gold-bg);
+            border-bottom: 2px dashed var(--gold);
+            color: var(--gold-light);
+            font-style: italic;
+            font-size: 0.9rem;
+            border-radius: 4px 4px 0 0;
+            margin: 2px 4px;
+        }
+
+        .fill-field-wide {
+            display: block;
+            width: 100%;
+            min-height: 60px;
+            padding: 12px 16px;
+            background: var(--gold-bg);
+            border: 1px dashed var(--gold);
+            border-radius: 8px;
+            color: var(--gold-light);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin: 12px 0;
+        }
+
+        /* ========== CONTENT BLOCKS ========== */
+        .template-block {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px 0;
+        }
+
+        .template-block.email-block {
+            border-left: 4px solid var(--gold);
+        }
+
+        .email-header {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 8px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.9rem;
+        }
+
+        .email-label {
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .email-value {
+            color: var(--white);
+        }
+
+        .question-block {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 12px 0;
+        }
+
+        .question-block .q-label {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+
+        .question-block .q-text {
+            font-size: 0.95rem;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .question-block .q-hint {
+            font-size: 0.82rem;
+            color: var(--gray-light);
+            font-style: italic;
+        }
+
+        /* ========== TIMELINE TABLE ========== */
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+
+        .timeline-table th {
+            background: var(--gold-bg);
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .timeline-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            vertical-align: top;
+        }
+
+        .timeline-table tr:hover td {
+            background: rgba(212, 175, 55, 0.03);
+        }
+
+        .phase-tag {
+            display: inline-block;
+            background: var(--gold-bg);
+            color: var(--gold);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* ========== CHECKLIST ========== */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .checklist-text {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+        }
+
+        .checklist-text strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .checklist-category {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 28px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ========== CLAUSE BLOCK ========== */
+        .clause-block {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+            margin: 16px 0;
+            counter-increment: clause-counter;
+        }
+
+        .clause-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+        }
+
+        .clause-text {
+            font-size: 0.92rem;
+            color: var(--gray-light);
+            line-height: 1.75;
+        }
+
+        /* ========== TIPS / NOTES ========== */
+        .tip-box {
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .tip-box .tip-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        .tip-box p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        /* ========== FOOTER ========== */
+        .kit-footer {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .kit-footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* ========== SCOPE TABLE ========== */
+        .scope-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        .scope-table th {
+            background: var(--gold-bg);
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .scope-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            vertical-align: top;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 600px) {
+            .container { padding: 0 20px; }
+            .template-block { padding: 20px; }
+            .email-header { grid-template-columns: 1fr; }
+            .timeline-table { font-size: 0.82rem; }
+            .timeline-table th, .timeline-table td { padding: 10px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ========== COVER PAGE ========== -->
+        <div class="cover-page">
+            <div class="cover-logo">Landolio</div>
+            <h1>Freelancer Client<br><span>Onboarding Kit</span></h1>
+            <div class="cover-divider"></div>
+            <p class="cover-sub">6 professional templates to onboard every client with confidence — from first questions to final handoff.</p>
+            <p class="cover-meta">Version 1.0 · February 2026 · landolio.com</p>
+        </div>
+
+        <!-- ========== HOW TO USE ========== -->
+        <div class="tip-box no-print" style="margin-bottom: 48px;">
+            <p class="tip-label">💡 How to use this kit</p>
+            <p>
+                <strong>Fill in the blanks:</strong> Fields marked in <span class="fill-field" style="min-width: auto; display: inline;">[gold italic text]</span> are for you to customise.<br>
+                <strong>Print to PDF:</strong> Press Ctrl+P (or Cmd+P on Mac) → "Save as PDF" for a clean, professional document.<br>
+                <strong>Copy & paste:</strong> Copy any template into Google Docs, Notion, Word, or your favourite tool.<br>
+                <strong>Checkboxes are interactive:</strong> Click them to check items off as you go.
+            </p>
+        </div>
+
+        <!-- ========== TABLE OF CONTENTS ========== -->
+        <div class="toc">
+            <h2>What's Inside</h2>
+            <ol class="toc-list">
+                <li>
+                    <a href="#questionnaire">
+                        Client Questionnaire & Brief
+                        <span class="toc-desc">27 questions across 6 categories to gather everything before you start</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#welcome-email">
+                        Welcome Email Template
+                        <span class="toc-desc">Professional email to kick off the project and set expectations</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#timeline">
+                        Project Timeline Template
+                        <span class="toc-desc">Week-by-week framework with phases, milestones and deliverables</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#payment-terms">
+                        Payment Terms Agreement
+                        <span class="toc-desc">Professional terms covering deposits, milestones, late fees and UK statutory interest</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#scope-of-work">
+                        Scope of Work Template
+                        <span class="toc-desc">Comprehensive SOW with deliverables, exclusions, revisions and approval criteria</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#handoff-checklist">
+                        Project Completion & Handoff Checklist
+                        <span class="toc-desc">25-item checklist for closing projects cleanly and professionally</span>
+                    </a>
+                </li>
+            </ol>
+        </div>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 1: CLIENT QUESTIONNAIRE & BRIEF                        -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="questionnaire">
+            <p class="template-number">Template 01 of 06</p>
+            <h2>Client Questionnaire & Brief</h2>
+            <p class="template-intro">Send this to every new client before you start work. The answers become the foundation of your scope, timeline, and pricing. Better questions = fewer surprises.</p>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 Pro tip</p>
+                <p>Send this as a Google Form or Notion page so clients can fill it in at their own pace. Include a deadline — "Please complete by [date] so we can start on schedule."</p>
+            </div>
+
+            <!-- Section A -->
+            <h3>A. About Your Business</h3>
+
+            <div class="question-block">
+                <p class="q-label">Question 1</p>
+                <p class="q-text">What is your business name and what do you do?</p>
+                <p class="q-hint">e.g. "Smith Design Co — we're a branding agency for tech startups"</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 2</p>
+                <p class="q-text">Who is your target audience?</p>
+                <p class="q-hint">Describe your ideal customer — demographics, pain points, what they're looking for</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 3</p>
+                <p class="q-text">What sets you apart from your competitors?</p>
+                <p class="q-hint">Your unique selling proposition — why should customers choose you?</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 4</p>
+                <p class="q-text">Can you share your brand guidelines? (Logo, colours, fonts, tone of voice)</p>
+                <p class="q-hint">Attach files or share a link to your brand assets</p>
+                <div class="fill-field-wide">[Client's answer / link to assets]</div>
+            </div>
+
+            <!-- Section B -->
+            <h3>B. Project Overview</h3>
+
+            <div class="question-block">
+                <p class="q-label">Question 5</p>
+                <p class="q-text">What do you need done? Describe the project in your own words.</p>
+                <p class="q-hint">The more detail the better — don't worry about being too technical</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 6</p>
+                <p class="q-text">What problem does this project solve for your business?</p>
+                <p class="q-hint">Understanding the "why" helps deliver better results</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 7</p>
+                <p class="q-text">What does success look like? How will you measure it?</p>
+                <p class="q-hint">e.g. "More leads," "faster checkout," "brand recognition in X market"</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 8</p>
+                <p class="q-text">Are there any examples of work you love? (Competitors, inspiration, references)</p>
+                <p class="q-hint">Share links, screenshots, or descriptions of what you're aiming for</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 9</p>
+                <p class="q-text">Is there anything you definitely DON'T want?</p>
+                <p class="q-hint">Anti-examples are just as useful as examples</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <!-- Section C -->
+            <h3>C. Scope & Deliverables</h3>
+
+            <div class="question-block">
+                <p class="q-label">Question 10</p>
+                <p class="q-text">What specific deliverables do you expect?</p>
+                <p class="q-hint">e.g. "5-page website," "Brand identity package," "20 social media graphics"</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 11</p>
+                <p class="q-text">What file formats do you need?</p>
+                <p class="q-hint">e.g. PSD, AI, PDF, PNG, MP4, DOCX, Figma, etc.</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 12</p>
+                <p class="q-text">Are there any technical requirements or constraints?</p>
+                <p class="q-hint">e.g. CMS platform, hosting provider, screen sizes, accessibility standards</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 13</p>
+                <p class="q-text">Will you provide any content (copy, images, data)?</p>
+                <p class="q-hint">If yes, when can we expect it? If no, should we factor content creation into the scope?</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <!-- Section D -->
+            <h3>D. Timeline & Availability</h3>
+
+            <div class="question-block">
+                <p class="q-label">Question 14</p>
+                <p class="q-text">When do you need this completed by?</p>
+                <p class="q-hint">Is this a hard deadline or flexible?</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 15</p>
+                <p class="q-text">Is there a launch date or event driving the deadline?</p>
+                <p class="q-hint">e.g. product launch, conference, seasonal campaign</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 16</p>
+                <p class="q-text">Who is the main point of contact for this project?</p>
+                <p class="q-hint">Name, email, phone — and their role/authority level</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 17</p>
+                <p class="q-text">How quickly can you typically turn around feedback?</p>
+                <p class="q-hint">Same day? 2-3 days? A week? This affects the timeline.</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 18</p>
+                <p class="q-text">Are there any dates when you'll be unavailable for reviews?</p>
+                <p class="q-hint">Holidays, conferences, busy periods</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <!-- Section E -->
+            <h3>E. Budget & Payment</h3>
+
+            <div class="question-block">
+                <p class="q-label">Question 19</p>
+                <p class="q-text">What is your budget range for this project?</p>
+                <p class="q-hint">Even a rough range helps — it sets realistic expectations for both sides</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 20</p>
+                <p class="q-text">Do you have a preferred payment schedule?</p>
+                <p class="q-hint">e.g. 50% upfront / 50% on completion, monthly retainer, milestone-based</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 21</p>
+                <p class="q-text">What is your company's standard payment terms?</p>
+                <p class="q-hint">e.g. Net 14, Net 30. We'll align or negotiate upfront.</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <!-- Section F -->
+            <h3>F. Communication & Process</h3>
+
+            <div class="question-block">
+                <p class="q-label">Question 22</p>
+                <p class="q-text">How do you prefer to communicate?</p>
+                <p class="q-hint">Email, Slack, Teams, WhatsApp, phone calls, video calls?</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 23</p>
+                <p class="q-text">How often would you like progress updates?</p>
+                <p class="q-hint">Daily, weekly, at milestones only?</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 24</p>
+                <p class="q-text">Who else needs to approve the work?</p>
+                <p class="q-hint">e.g. Marketing director, CEO, legal team. Multiple approvers can affect timelines.</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 25</p>
+                <p class="q-text">Have you worked with a freelancer/agency before?</p>
+                <p class="q-hint">If yes, what worked well? What would you change?</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 26</p>
+                <p class="q-text">Is there anything else we should know before starting?</p>
+                <p class="q-hint">Internal politics, upcoming changes, sensitive topics — anything that affects the project</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+
+            <div class="question-block">
+                <p class="q-label">Question 27</p>
+                <p class="q-text">How did you hear about us?</p>
+                <p class="q-hint">Helps us understand what's working in our own marketing!</p>
+                <div class="fill-field-wide">[Client's answer]</div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 2: WELCOME EMAIL                                        -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="welcome-email">
+            <p class="template-number">Template 02 of 06</p>
+            <h2>Welcome Email Template</h2>
+            <p class="template-intro">Send this after the client signs the contract and pays the deposit. It sets the tone, confirms the details, and tells them exactly what to expect next.</p>
+
+            <div class="template-block email-block">
+                <div class="email-header">
+                    <span class="email-label">To:</span>
+                    <span class="email-value"><span class="fill-field" style="min-width: 120px;">[Client Name]</span> &lt;<span class="fill-field" style="min-width: 140px;">[client@email.com]</span>&gt;</span>
+
+                    <span class="email-label">From:</span>
+                    <span class="email-value"><span class="fill-field" style="min-width: 120px;">[Your Name]</span> &lt;<span class="fill-field" style="min-width: 140px;">[your@email.com]</span>&gt;</span>
+
+                    <span class="email-label">Subject:</span>
+                    <span class="email-value">Welcome aboard, <span class="fill-field" style="min-width: 100px;">[Client Name]</span>! Let's get started 🚀</span>
+                </div>
+
+                <p style="color: var(--white); margin-bottom: 16px;">
+                    Hi <span class="fill-field" style="min-width: 100px;">[Client First Name]</span>,
+                </p>
+
+                <p style="color: var(--gray-light); margin-bottom: 16px;">
+                    Delighted to officially kick off our project together! I'm really excited about <span class="fill-field" style="min-width: 150px;">[brief project description]</span> and I'm confident we're going to produce something great.
+                </p>
+
+                <p style="color: var(--gray-light); margin-bottom: 16px;">
+                    Here's a quick recap of what we've agreed:
+                </p>
+
+                <ul style="color: var(--gray-light); margin: 0 0 16px 20px;">
+                    <li><strong style="color: var(--white);">Project:</strong> <span class="fill-field" style="min-width: 180px;">[Project name / description]</span></li>
+                    <li><strong style="color: var(--white);">Deliverables:</strong> <span class="fill-field" style="min-width: 180px;">[Key deliverables]</span></li>
+                    <li><strong style="color: var(--white);">Timeline:</strong> <span class="fill-field" style="min-width: 120px;">[Start date]</span> → <span class="fill-field" style="min-width: 120px;">[End date]</span></li>
+                    <li><strong style="color: var(--white);">Total fee:</strong> <span class="fill-field" style="min-width: 80px;">[£X,XXX]</span></li>
+                    <li><strong style="color: var(--white);">Payment schedule:</strong> <span class="fill-field" style="min-width: 180px;">[e.g. 50% deposit paid, 50% on completion]</span></li>
+                </ul>
+
+                <p style="color: var(--white); font-weight: 600; margin-bottom: 12px;">
+                    What happens next:
+                </p>
+
+                <ol style="color: var(--gray-light); margin: 0 0 16px 20px;">
+                    <li style="margin-bottom: 8px;"><strong style="color: var(--white);">Client brief</strong> — I've attached the project questionnaire. Please fill this in by <span class="fill-field" style="min-width: 100px;">[date]</span> so I have everything I need to get started.</li>
+                    <li style="margin-bottom: 8px;"><strong style="color: var(--white);">Kick-off call</strong> — I've suggested <span class="fill-field" style="min-width: 120px;">[date/time]</span> for a 30-minute call to walk through the brief and answer any questions. Does that work for you?</li>
+                    <li style="margin-bottom: 8px;"><strong style="color: var(--white);">First update</strong> — You can expect the first progress update by <span class="fill-field" style="min-width: 100px;">[date]</span>.</li>
+                </ol>
+
+                <p style="color: var(--gray-light); margin-bottom: 16px;">
+                    <strong style="color: var(--white);">Communication:</strong> I'll be sending updates via <span class="fill-field" style="min-width: 80px;">[email / Slack / etc.]</span>. If you need me urgently, the best way to reach me is <span class="fill-field" style="min-width: 120px;">[preferred contact method]</span>. My working hours are <span class="fill-field" style="min-width: 120px;">[e.g. Mon–Fri, 9am–5pm GMT]</span>.
+                </p>
+
+                <p style="color: var(--gray-light); margin-bottom: 16px;">
+                    If anything's unclear or you have questions at any stage, just ask — that's what I'm here for.
+                </p>
+
+                <p style="color: var(--gray-light); margin-bottom: 8px;">
+                    Looking forward to working with you!
+                </p>
+
+                <p style="color: var(--white); margin-bottom: 4px; font-weight: 600;">
+                    <span class="fill-field" style="min-width: 120px;">[Your Name]</span>
+                </p>
+                <p style="color: var(--gray); font-size: 0.85rem;">
+                    <span class="fill-field" style="min-width: 150px;">[Your Business Name]</span><br>
+                    <span class="fill-field" style="min-width: 150px;">[your@email.com]</span> · <span class="fill-field" style="min-width: 100px;">[phone number]</span><br>
+                    <span class="fill-field" style="min-width: 150px;">[website URL]</span>
+                </p>
+            </div>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 Pro tip</p>
+                <p>Attach the Client Questionnaire (Template 01) and Scope of Work (Template 05) to this email. Send the Payment Terms (Template 04) with the contract/invoice instead.</p>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 3: PROJECT TIMELINE                                      -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="timeline">
+            <p class="template-number">Template 03 of 06</p>
+            <h2>Project Timeline Template</h2>
+            <p class="template-intro">Share this with the client after the kick-off call. It gives both sides clear expectations on what's happening when — and builds in buffer for feedback rounds.</p>
+
+            <div class="template-block">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
+                    <div>
+                        <p style="color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Project</p>
+                        <p style="color: var(--white); font-weight: 600;"><span class="fill-field" style="min-width: 200px;">[Project Name]</span></p>
+                    </div>
+                    <div>
+                        <p style="color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Client</p>
+                        <p style="color: var(--white); font-weight: 600;"><span class="fill-field" style="min-width: 150px;">[Client Name]</span></p>
+                    </div>
+                    <div>
+                        <p style="color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Duration</p>
+                        <p style="color: var(--white); font-weight: 600;"><span class="fill-field" style="min-width: 100px;">[X weeks]</span></p>
+                    </div>
+                </div>
+
+                <table class="timeline-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 100px;">Phase</th>
+                            <th style="width: 100px;">Timing</th>
+                            <th>Activities</th>
+                            <th style="width: 140px;">Deliverable</th>
+                            <th style="width: 80px;">Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="phase-tag">Discovery</span></td>
+                            <td><span class="fill-field" style="min-width: 70px;">[Week 1]</span></td>
+                            <td>Kick-off call · Review client brief · Research · Gather assets and content</td>
+                            <td>Completed brief, asset list</td>
+                            <td>Both</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="color: var(--gold); font-weight: 600;">🔑 Milestone: Brief signed off by client</td>
+                            <td></td>
+                            <td>Client</td>
+                        </tr>
+                        <tr>
+                            <td><span class="phase-tag">Create</span></td>
+                            <td><span class="fill-field" style="min-width: 70px;">[Week 2–3]</span></td>
+                            <td>Initial concepts · First draft / prototype · Internal review</td>
+                            <td>V1 draft for review</td>
+                            <td>Freelancer</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="color: var(--gold); font-weight: 600;">🔑 Milestone: V1 delivered for client feedback</td>
+                            <td></td>
+                            <td>Freelancer</td>
+                        </tr>
+                        <tr>
+                            <td><span class="phase-tag">Refine</span></td>
+                            <td><span class="fill-field" style="min-width: 70px;">[Week 3–4]</span></td>
+                            <td>Client feedback round · Revisions (up to <span class="fill-field" style="min-width: 20px;">[2]</span> rounds) · Second review</td>
+                            <td>Revised draft</td>
+                            <td>Both</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="color: var(--gold); font-weight: 600;">🔑 Milestone: Final version approved by client</td>
+                            <td></td>
+                            <td>Client</td>
+                        </tr>
+                        <tr>
+                            <td><span class="phase-tag">Deliver</span></td>
+                            <td><span class="fill-field" style="min-width: 70px;">[Week 5]</span></td>
+                            <td>Final polish · Asset packaging · Handoff · Documentation</td>
+                            <td>Final files &amp; handoff</td>
+                            <td>Freelancer</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="color: var(--gold); font-weight: 600;">🔑 Milestone: Project complete · Final invoice issued</td>
+                            <td></td>
+                            <td>Freelancer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 Pro tip</p>
+                <p><strong>Build in buffer.</strong> If you think something will take 5 days, tell the client 7. Under-promise and over-deliver. Also note that "Client feedback" phases are usually where projects stall — set explicit deadlines for feedback turnaround (e.g. "feedback within 3 working days").</p>
+            </div>
+
+            <h3>Key assumptions</h3>
+            <ul style="margin-left: 20px;">
+                <li>Client provides all required content/assets by <span class="fill-field" style="min-width: 100px;">[date]</span></li>
+                <li>Client feedback will be provided within <span class="fill-field" style="min-width: 60px;">[X]</span> working days of each deliverable</li>
+                <li>Up to <span class="fill-field" style="min-width: 20px;">[2]</span> rounds of revisions are included in the project fee</li>
+                <li>Additional revision rounds are charged at <span class="fill-field" style="min-width: 60px;">[£X]</span> per round</li>
+                <li>Delays caused by late feedback will push the completion date by the equivalent number of days</li>
+            </ul>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 4: PAYMENT TERMS AGREEMENT                              -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="payment-terms">
+            <p class="template-number">Template 04 of 06</p>
+            <h2>Payment Terms Agreement</h2>
+            <p class="template-intro">Include this in your contract or send alongside your first invoice. Clear payment terms prevent 90% of payment disputes. These include UK statutory interest references.</p>
+
+            <div class="template-block">
+                <div style="text-align: center; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">
+                    <h3 style="margin: 0; color: var(--white); font-size: 1.25rem;">Payment Terms Agreement</h3>
+                    <p style="color: var(--gray); font-size: 0.9rem; margin-top: 8px;">
+                        Between <span class="fill-field" style="min-width: 140px;">[Your Business Name]</span> ("the Supplier")
+                        and <span class="fill-field" style="min-width: 140px;">[Client Business Name]</span> ("the Client")
+                    </p>
+                    <p style="color: var(--gray); font-size: 0.85rem; margin-top: 4px;">
+                        Date: <span class="fill-field" style="min-width: 100px;">[Date]</span>
+                    </p>
+                </div>
+
+                <div class="clause-block">
+                    <p class="clause-number">Clause 1 — Project Fee</p>
+                    <p class="clause-text">
+                        The total fee for the project described in the Scope of Work is <span class="fill-field" style="min-width: 80px;">[£X,XXX]</span> (excluding VAT, if applicable). This fee covers all deliverables and up to <span class="fill-field" style="min-width: 20px;">[2]</span> rounds of revisions as outlined in the agreed scope.
+                    </p>
+                </div>
+
+                <div class="clause-block">
+                    <p class="clause-number">Clause 2 — Deposit</p>
+                    <p class="clause-text">
+                        A deposit of <span class="fill-field" style="min-width: 60px;">[50%]</span> of the total project fee (<span class="fill-field" style="min-width: 60px;">[£X,XXX]</span>) is required before work commences. Work will not begin until the deposit has been received in full.
+                    </p>
+                </div>
+
+                <div class="clause-block">
+                    <p class="clause-number">Clause 3 — Payment Schedule</p>
+                    <p class="clause-text">
+                        Payments are due as follows:
+                    </p>
+                    <ul style="margin: 12px 0 0 20px; color: var(--gray-light); font-size: 0.92rem;">
+                        <li><span class="fill-field" style="min-width: 40px;">[50%]</span> — On signing / before project commencement</li>
+                        <li><span class="fill-field" style="min-width: 40px;">[25%]</span> — On delivery of <span class="fill-field" style="min-width: 100px;">[mid-project milestone]</span></li>
+                        <li><span class="fill-field" style="min-width: 40px;">[25%]</span> — On project completion and final delivery</li>
+                    </ul>
+                </div>
+
+                <div class="clause-block">
+                    <p class="clause-number">Clause 4 — Payment Terms</p>
+                    <p class="clause-text">
+                        All invoices are payable within <span class="fill-field" style="min-width: 40px;">[14]</span> days of the invoice date. Payment should be made by bank transfer to the account details provided on the invoice.
+                    </p>
+                </div>
+
+                <div class="clause-block">
+                    <p class="clause-number">Clause 5 — Late Payment</p>
+                    <p class="clause-text">
+                        If payment is not received within the agreed terms, the Supplier reserves the right to:
+                    </p>
+                    <ul style="margin: 12px 0 0 20px; color: var(--gray-light); font-size: 0.92rem;">
+                        <li>Charge interest at <span class="fill-field" style="min-width: 40px;">[8%]</span> above the Bank of England base rate per annum on overdue amounts, in accordance with the Late Payment of Commercial Debts (Interest) Act 1998</li>
+                        <li>Claim statutory compensation of £40–£100 depending on the debt size</li>
+                        <li>Suspend all work until the outstanding balance is paid in full</li>
+                        <li>Withhold delivery of any completed work or files</li>
+                    </ul>
+                </div>
+
+                <div class="clause-block">
+                    <p class="clause-number">Clause 6 — Additional Work</p>
+                    <p class="clause-text">
+                        Any work beyond the agreed scope (including additional revision rounds beyond the <span class="fill-field" style="min-width: 20px;">[2]</span> included) will be quoted separately and must be approved by the Client in writing before work begins. Additional revisions are charged at <span class="fill-field" style="min-width: 60px;">[£X]</span> per round.
+                    </p>
+                </div>
+
+                <div class="clause-block">
+                    <p class="clause-number">Clause 7 — Cancellation</p>
+                    <p class="clause-text">
+                        If the Client cancels the project after work has commenced, the deposit is non-refundable. The Client will be invoiced for any additional work completed beyond the deposit amount at the agreed day rate of <span class="fill-field" style="min-width: 60px;">[£XXX]</span>/day.
+                    </p>
+                </div>
+
+                <div class="clause-block">
+                    <p class="clause-number">Clause 8 — Ownership & Intellectual Property</p>
+                    <p class="clause-text">
+                        Full ownership of the final deliverables transfers to the Client only upon receipt of full and final payment. Until payment is received, all work remains the intellectual property of the Supplier.
+                    </p>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                        <div>
+                            <p style="color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">Supplier</p>
+                            <p style="color: var(--white);">Name: <span class="fill-field" style="min-width: 150px;">[Your Name]</span></p>
+                            <p style="color: var(--white);">Business: <span class="fill-field" style="min-width: 150px;">[Your Business Name]</span></p>
+                            <p style="color: var(--white); margin-top: 16px;">Signed: ________________________</p>
+                            <p style="color: var(--white);">Date: <span class="fill-field" style="min-width: 100px;">[Date]</span></p>
+                        </div>
+                        <div>
+                            <p style="color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">Client</p>
+                            <p style="color: var(--white);">Name: <span class="fill-field" style="min-width: 150px;">[Client Name]</span></p>
+                            <p style="color: var(--white);">Business: <span class="fill-field" style="min-width: 150px;">[Client Business Name]</span></p>
+                            <p style="color: var(--white); margin-top: 16px;">Signed: ________________________</p>
+                            <p style="color: var(--white);">Date: <span class="fill-field" style="min-width: 100px;">[Date]</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <p class="tip-label">⚠️ Important</p>
+                <p>This template uses professional language based on UK contract law, but it is <strong>not legal advice</strong>. We recommend having a solicitor review your complete contract before use — especially if dealing with large projects or new clients.</p>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 5: SCOPE OF WORK                                         -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="scope-of-work">
+            <p class="template-number">Template 05 of 06</p>
+            <h2>Scope of Work Template</h2>
+            <p class="template-intro">The single most important document for preventing scope creep. Define what's included, what's excluded, and what happens when things change. Send this before starting any project.</p>
+
+            <div class="template-block">
+                <div style="text-align: center; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">
+                    <h3 style="margin: 0; color: var(--white); font-size: 1.25rem;">Scope of Work</h3>
+                    <p style="color: var(--gray); font-size: 0.9rem; margin-top: 8px;">
+                        <span class="fill-field" style="min-width: 200px;">[Project Name]</span>
+                    </p>
+                </div>
+
+                <!-- Overview -->
+                <h3>Project Overview</h3>
+                <table class="scope-table">
+                    <tbody>
+                        <tr>
+                            <td style="color: var(--gray); font-weight: 600; width: 160px;">Freelancer</td>
+                            <td><span class="fill-field" style="min-width: 200px;">[Your Name / Business Name]</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--gray); font-weight: 600;">Client</td>
+                            <td><span class="fill-field" style="min-width: 200px;">[Client Name / Business Name]</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--gray); font-weight: 600;">Project</td>
+                            <td><span class="fill-field" style="min-width: 200px;">[Project Name]</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--gray); font-weight: 600;">Start Date</td>
+                            <td><span class="fill-field" style="min-width: 120px;">[Date]</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--gray); font-weight: 600;">Target Completion</td>
+                            <td><span class="fill-field" style="min-width: 120px;">[Date]</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--gray); font-weight: 600;">Total Fee</td>
+                            <td><span class="fill-field" style="min-width: 80px;">[£X,XXX]</span> (excluding VAT)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Project Description -->
+                <h3>Project Description</h3>
+                <div class="fill-field-wide" style="min-height: 80px;">[Describe the project in 2-3 paragraphs. What is being created? What problem does it solve? What is the desired outcome? Be specific.]</div>
+
+                <!-- Deliverables -->
+                <h3>Deliverables — What's Included</h3>
+                <p style="color: var(--gray-light); margin-bottom: 16px;">The following deliverables are included in the agreed project fee:</p>
+
+                <table class="scope-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;">#</th>
+                            <th>Deliverable</th>
+                            <th style="width: 120px;">Format</th>
+                            <th style="width: 120px;">Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="fill-field" style="min-width: 200px;">[e.g. Homepage design]</span></td>
+                            <td><span class="fill-field" style="min-width: 60px;">[Figma]</span></td>
+                            <td><span class="fill-field" style="min-width: 80px;">[Week 2]</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="fill-field" style="min-width: 200px;">[e.g. Inner page templates x3]</span></td>
+                            <td><span class="fill-field" style="min-width: 60px;">[Figma]</span></td>
+                            <td><span class="fill-field" style="min-width: 80px;">[Week 3]</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="fill-field" style="min-width: 200px;">[e.g. Responsive development]</span></td>
+                            <td><span class="fill-field" style="min-width: 60px;">[HTML/CSS]</span></td>
+                            <td><span class="fill-field" style="min-width: 80px;">[Week 4]</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="fill-field" style="min-width: 200px;">[Add more rows as needed]</span></td>
+                            <td><span class="fill-field" style="min-width: 60px;">[Format]</span></td>
+                            <td><span class="fill-field" style="min-width: 80px;">[Week X]</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- What's NOT included -->
+                <h3>Exclusions — What's NOT Included</h3>
+                <p style="color: var(--gray-light); margin-bottom: 16px;">The following are <strong style="color: #ef4444;">not included</strong> in the project fee. If needed, they can be quoted as separate work:</p>
+
+                <ul style="margin-left: 20px; color: var(--gray-light);">
+                    <li><span class="fill-field" style="min-width: 200px;">[e.g. Copywriting / content creation]</span></li>
+                    <li><span class="fill-field" style="min-width: 200px;">[e.g. Photography / stock images]</span></li>
+                    <li><span class="fill-field" style="min-width: 200px;">[e.g. Hosting setup & maintenance]</span></li>
+                    <li><span class="fill-field" style="min-width: 200px;">[e.g. SEO optimisation]</span></li>
+                    <li><span class="fill-field" style="min-width: 200px;">[e.g. Ongoing support beyond handoff]</span></li>
+                    <li><span class="fill-field" style="min-width: 200px;">[Add more as needed]</span></li>
+                </ul>
+
+                <!-- Revisions -->
+                <h3>Revisions Policy</h3>
+                <ul style="margin-left: 20px; color: var(--gray-light);">
+                    <li>Up to <span class="fill-field" style="min-width: 20px;">[2]</span> rounds of revisions are included in the project fee</li>
+                    <li>A "revision round" is defined as one set of consolidated feedback from the Client, submitted in a single communication</li>
+                    <li>Additional rounds are charged at <span class="fill-field" style="min-width: 60px;">[£XXX]</span> per round</li>
+                    <li>Major scope changes (new pages, features, or directions) are not revisions — they require a separate quote</li>
+                    <li>Feedback must be provided within <span class="fill-field" style="min-width: 40px;">[X]</span> working days. Delays beyond this will push the project timeline accordingly</li>
+                </ul>
+
+                <!-- Approval -->
+                <h3>Approval & Sign-Off</h3>
+                <ul style="margin-left: 20px; color: var(--gray-light);">
+                    <li>Each phase requires written approval (email confirmation is sufficient) before moving to the next</li>
+                    <li>Once a phase is approved, revisiting that phase counts as a new revision round</li>
+                    <li>The authorised approver for this project is: <span class="fill-field" style="min-width: 140px;">[Client contact name]</span></li>
+                    <li>If no feedback is received within <span class="fill-field" style="min-width: 40px;">[X]</span> working days of a deliverable, it will be deemed approved</li>
+                </ul>
+
+                <!-- Client Responsibilities -->
+                <h3>Client Responsibilities</h3>
+                <p style="color: var(--gray-light); margin-bottom: 12px;">To keep the project on track, the Client agrees to:</p>
+                <ul style="margin-left: 20px; color: var(--gray-light);">
+                    <li>Provide all required content, assets, and access by the agreed dates</li>
+                    <li>Designate a single point of contact with decision-making authority</li>
+                    <li>Consolidate feedback from all stakeholders before submitting</li>
+                    <li>Respond to deliverables within <span class="fill-field" style="min-width: 40px;">[X]</span> working days</li>
+                    <li>Adhere to the agreed payment schedule</li>
+                </ul>
+
+                <!-- Change Requests -->
+                <h3>Change Request Process</h3>
+                <p style="color: var(--gray-light);">
+                    Any changes to the agreed scope must follow this process:
+                </p>
+                <ol style="margin: 12px 0 0 20px; color: var(--gray-light);">
+                    <li>Client submits a change request in writing (email is fine)</li>
+                    <li>Freelancer assesses the impact on timeline and cost within <span class="fill-field" style="min-width: 40px;">[2]</span> working days</li>
+                    <li>Client approves the revised quote and timeline in writing</li>
+                    <li>Work on the change begins only after written approval</li>
+                </ol>
+
+                <!-- Signatures -->
+                <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
+                    <p style="color: var(--gray-light); margin-bottom: 24px; font-size: 0.92rem;">By signing below, both parties agree to the scope, deliverables, and terms outlined in this document.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                        <div>
+                            <p style="color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">Freelancer</p>
+                            <p style="color: var(--white);">Name: <span class="fill-field" style="min-width: 150px;">[Your Name]</span></p>
+                            <p style="color: var(--white); margin-top: 16px;">Signed: ________________________</p>
+                            <p style="color: var(--white);">Date: <span class="fill-field" style="min-width: 100px;">[Date]</span></p>
+                        </div>
+                        <div>
+                            <p style="color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">Client</p>
+                            <p style="color: var(--white);">Name: <span class="fill-field" style="min-width: 150px;">[Client Name]</span></p>
+                            <p style="color: var(--white); margin-top: 16px;">Signed: ________________________</p>
+                            <p style="color: var(--white);">Date: <span class="fill-field" style="min-width: 100px;">[Date]</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 6: PROJECT COMPLETION & HANDOFF CHECKLIST                -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="handoff-checklist">
+            <p class="template-number">Template 06 of 06</p>
+            <h2>Project Completion & Handoff Checklist</h2>
+            <p class="template-intro">Use this at the end of every project. It ensures nothing gets missed, the client has everything they need, and you close the project professionally. Interactive checkboxes — click to tick them off.</p>
+
+            <div class="template-block">
+                <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+                    <p style="color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Project</p>
+                    <p style="color: var(--white); font-weight: 600; font-size: 1.1rem;"><span class="fill-field" style="min-width: 200px;">[Project Name]</span></p>
+                    <p style="color: var(--gray); margin-top: 8px;">Client: <span class="fill-field" style="min-width: 140px;">[Client Name]</span> · Completion date: <span class="fill-field" style="min-width: 100px;">[Date]</span></p>
+                </div>
+
+                <!-- Final Deliverables -->
+                <p class="checklist-category">A. Final Deliverables</p>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c1">
+                    <label class="checklist-text" for="c1"><strong>All deliverables completed</strong> — every item in the Scope of Work has been delivered</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c2">
+                    <label class="checklist-text" for="c2"><strong>Final files exported</strong> in all agreed formats (PDF, PNG, PSD, HTML, etc.)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c3">
+                    <label class="checklist-text" for="c3"><strong>Source files included</strong> — editable files (Figma, PSD, AI, DOCX) shared or transferred</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c4">
+                    <label class="checklist-text" for="c4"><strong>Quality check completed</strong> — all work reviewed for errors, typos, broken links, etc.</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c5">
+                    <label class="checklist-text" for="c5"><strong>Client has approved final version</strong> — written sign-off received (email confirmation)</label>
+                </div>
+
+                <!-- Asset Transfer -->
+                <p class="checklist-category">B. Asset Transfer</p>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c6">
+                    <label class="checklist-text" for="c6"><strong>Files organised and named clearly</strong> using a logical folder structure</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c7">
+                    <label class="checklist-text" for="c7"><strong>Files shared via agreed method</strong> — Google Drive, Dropbox, WeTransfer, USB, etc.</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c8">
+                    <label class="checklist-text" for="c8"><strong>Access credentials transferred</strong> — logins, API keys, hosting details, CMS access</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c9">
+                    <label class="checklist-text" for="c9"><strong>Third-party account ownership transferred</strong> (domains, hosting, analytics, etc.)</label>
+                </div>
+
+                <!-- Documentation -->
+                <p class="checklist-category">C. Documentation</p>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c10">
+                    <label class="checklist-text" for="c10"><strong>Handoff document / README created</strong> explaining what was built and how to use it</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c11">
+                    <label class="checklist-text" for="c11"><strong>Style guide / brand assets documented</strong> — fonts, colours, logo usage rules</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c12">
+                    <label class="checklist-text" for="c12"><strong>Technical documentation provided</strong> (if applicable) — setup instructions, dependencies, environment variables</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c13">
+                    <label class="checklist-text" for="c13"><strong>Training / walkthrough completed</strong> — client knows how to use, update, or maintain the deliverable</label>
+                </div>
+
+                <!-- Financial -->
+                <p class="checklist-category">D. Financial</p>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c14">
+                    <label class="checklist-text" for="c14"><strong>Final invoice sent</strong> for remaining balance</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c15">
+                    <label class="checklist-text" for="c15"><strong>All payments received</strong> — full project fee collected, no outstanding balance</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c16">
+                    <label class="checklist-text" for="c16"><strong>Expenses reconciled</strong> — any reimbursable costs invoiced and settled</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c17">
+                    <label class="checklist-text" for="c17"><strong>Receipt / payment confirmation sent</strong> to client for their records</label>
+                </div>
+
+                <!-- Relationship & Follow-up -->
+                <p class="checklist-category">E. Client Relationship</p>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c18">
+                    <label class="checklist-text" for="c18"><strong>Project completion email sent</strong> — thanking the client and summarising what was delivered</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c19">
+                    <label class="checklist-text" for="c19"><strong>Feedback requested</strong> — ask for a testimonial, review, or case study permission</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c20">
+                    <label class="checklist-text" for="c20"><strong>Support period communicated</strong> — let client know how long you'll be available for post-project questions (<span class="fill-field" style="min-width: 60px;">[X days/weeks]</span>)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c21">
+                    <label class="checklist-text" for="c21"><strong>Future work discussed</strong> — mention upcoming needs, retainer options, or referral discounts</label>
+                </div>
+
+                <!-- Internal -->
+                <p class="checklist-category">F. Internal (Your Records)</p>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c22">
+                    <label class="checklist-text" for="c22"><strong>Project archived</strong> — all files backed up in your project archive</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c23">
+                    <label class="checklist-text" for="c23"><strong>Time tracked and logged</strong> — actual hours vs. estimated hours recorded for future pricing</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c24">
+                    <label class="checklist-text" for="c24"><strong>Lessons learned noted</strong> — what went well? What would you do differently?</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="c25">
+                    <label class="checklist-text" for="c25"><strong>Portfolio updated</strong> — add this project to your website/portfolio (with client permission)</label>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 Pro tip</p>
+                <p>Send the client a "Project Closure" email that includes: a thank you, a summary of what was delivered, a link to the final files, the support period terms, and a request for a testimonial. It's a small touch that sets you apart from 95% of freelancers.</p>
+            </div>
+        </section>
+
+
+        <!-- ========== FOOTER ========== -->
+        <div class="kit-footer">
+            <div class="cover-divider"></div>
+            <p style="margin-bottom: 8px;">
+                <strong style="color: var(--gold);">Freelancer Client Onboarding Kit</strong>
+            </p>
+            <p>Created by <a href="https://landolio.com">Landolio</a> — helping UK freelancers get paid.</p>
+            <p style="margin-top: 8px;">Version 1.0 · February 2026</p>
+            <p style="margin-top: 16px; font-size: 0.8rem; color: var(--gray);">
+                ⚠️ This kit contains professional templates, not legal advice. Have a solicitor review your contracts before use.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
