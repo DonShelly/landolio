@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statement of Account Generator — Free UK Tool | Landolio</title>
+<meta name="description" content="Generate a professional statement of account for free. Enter multiple invoices, track paid/unpaid status, and create a printable statement to chase outstanding payments.">
+<meta name="keywords" content="statement of account template UK, freelance statement of account, outstanding invoice statement generator, statement of account generator, free statement of account, invoice statement template UK, freelancer statement generator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://landolio.com/tools/statement-generator.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Statement of Account Generator — Free UK Tool | Landolio">
+<meta property="og:description" content="Generate a professional statement of account showing all outstanding invoices, amounts, dates, and total owed. Free tool for UK freelancers and small businesses.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://landolio.com/tools/statement-generator.html">
+<meta property="og:image" content="https://landolio.com/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Landolio — Statement of Account Generator for freelancers">
+<meta name="twitter:image" content="https://landolio.com/images/og-default.png">
+<meta property="og:site_name" content="Landolio">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Statement of Account Generator — Free UK Tool | Landolio">
+<meta name="twitter:description" content="Generate a professional statement of account showing all outstanding invoices, amounts, dates, and total owed. Free for UK freelancers.">
+
+<!-- Schema.org WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Statement of Account Generator UK",
+  "description": "Generate a professional statement of account showing outstanding invoices, amounts, dates, and total owed. Free tool for UK freelancers and small businesses.",
+  "url": "https://landolio.com/tools/statement-generator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Landolio",
+    "url": "https://landolio.com"
+  }
+}
+</script>
+
+<!-- Schema.org FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a statement of account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A statement of account is a formal document that lists all outstanding invoices owed by a client, showing invoice numbers, dates, descriptions, amounts, and the total balance due. It's commonly used by freelancers and small businesses in the UK to chase multiple unpaid invoices at once and provide a clear summary of what's owed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I send a statement of account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Send a statement of account when a client has multiple outstanding invoices, at the end of each month as a routine reminder, before escalating to formal debt recovery, or when a client disputes what they owe. Regular statements help maintain cash flow and reduce the likelihood of invoices being forgotten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a statement of account the same as an invoice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. An invoice is a request for payment for a specific piece of work or delivery. A statement of account is a summary document that lists multiple invoices — both paid and unpaid — to give the client a complete picture of their account balance. Think of it as a consolidated view of all transactions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to include paid invoices on a statement of account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's good practice to include paid invoices marked as 'Paid' on your statement. This gives the client a complete picture of the account history and helps avoid disputes about which invoices have already been settled. Our generator lets you mark each invoice as Paid, Unpaid, or Partial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I charge interest on unpaid invoices shown on a statement of account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Under the Late Payment of Commercial Debts (Interest) Act 1998, you can charge 8% + Bank of England base rate on any overdue B2B invoice. Use our Late Payment Interest Calculator to work out exactly how much you're owed, then reference the interest in your statement of account."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a0a;
+    --dark: #1A1A1A;
+    --gold: #D4AF37;
+    --gold-dim: rgba(212, 175, 55, 0.15);
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --white: #FAFAFA;
+    --gray: #888;
+    --gray-light: #aaa;
+    --border: rgba(212, 175, 55, 0.2);
+    --radius: 12px;
+    --max-width: 900px;
+    --red: #e74c3c;
+    --green: #2ecc71;
+    --amber: #f39c12;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === HEADER === */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  nav { display: flex; gap: 28px; }
+  nav a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--white); }
+
+  /* === MAIN === */
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  /* === HERO === */
+  .hero {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold-dim);
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+  .hero h1 .gold { color: var(--gold); }
+  .hero p {
+    color: var(--gray-light);
+    font-size: 1.05rem;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* === CARD === */
+  .calc-card {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .calc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* === FORM ELEMENTS === */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    background: var(--bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--gold-dim);
+  }
+  textarea { resize: vertical; min-height: 60px; }
+
+  .select-wrap {
+    position: relative;
+  }
+  .select-wrap::after {
+    content: '▾';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    pointer-events: none;
+    font-size: 0.9rem;
+  }
+
+  /* === INVOICE TABLE === */
+  .invoice-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+  }
+  .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+  }
+  .invoice-table th {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .invoice-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: middle;
+  }
+  .invoice-table tr:last-child td { border-bottom: none; }
+  .invoice-table input,
+  .invoice-table select {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+    border-radius: 6px;
+  }
+  .invoice-table .col-inv { width: 13%; }
+  .invoice-table .col-date { width: 16%; }
+  .invoice-table .col-desc { width: 28%; }
+  .invoice-table .col-amt { width: 15%; }
+  .invoice-table .col-status { width: 16%; }
+  .invoice-table .col-partial { width: 12%; }
+  .invoice-table .col-action { width: 48px; text-align: center; }
+
+  .remove-row-btn {
+    background: rgba(231, 76, 60, 0.12);
+    color: var(--red);
+    border: 1px solid rgba(231, 76, 60, 0.25);
+    border-radius: 6px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .remove-row-btn:hover {
+    background: rgba(231, 76, 60, 0.25);
+    border-color: var(--red);
+  }
+
+  .add-row-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold-dim);
+    color: var(--gold);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .add-row-btn:hover {
+    background: rgba(212, 175, 55, 0.25);
+  }
+
+  /* Status colours */
+  .status-unpaid { color: var(--red); }
+  .status-paid { color: var(--green); }
+  .status-partial { color: var(--amber); }
+
+  /* === BUTTONS === */
+  .calc-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), #c9a030);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    padding: 16px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+  .calc-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+  }
+  .calc-btn:active { transform: translateY(0); }
+
+  .btn-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .copy-btn, .print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.05);
+    color: var(--gray-light);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover, .print-btn:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.2);
+  }
+  .copy-btn.copied {
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* === ERROR === */
+  .error-msg {
+    display: none;
+    color: var(--red);
+    font-size: 0.85rem;
+    margin-top: 8px;
+    padding: 10px 14px;
+    background: rgba(231, 76, 60, 0.08);
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    border-radius: 6px;
+  }
+  .error-msg.show { display: block; animation: fadeSlideIn 0.3s ease-out; }
+
+  /* === RESULTS === */
+  .results {
+    display: none;
+    margin-top: 32px;
+    animation: fadeSlideIn 0.5s ease-out;
+  }
+  .results.show { display: block; }
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === STATEMENT PREVIEW === */
+  .statement-preview {
+    background: #fff;
+    color: #1a1a1a;
+    border-radius: 10px;
+    padding: 48px 40px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    position: relative;
+  }
+  .stmt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #D4AF37;
+  }
+  .stmt-from h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .stmt-from p {
+    color: #666;
+    font-size: 0.88rem;
+    margin: 0;
+  }
+  .stmt-title {
+    text-align: right;
+  }
+  .stmt-title h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #D4AF37;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .stmt-title p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+  }
+
+  .stmt-client-block {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+  .stmt-client-block .label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .stmt-client-block .name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .stmt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+  }
+  .stmt-table th {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .stmt-table th:first-child { border-radius: 6px 0 0 6px; }
+  .stmt-table th:last-child { border-radius: 0 6px 6px 0; text-align: right; }
+  .stmt-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  .stmt-table td:last-child { text-align: right; font-weight: 600; }
+  .stmt-table tr:last-child td { border-bottom: none; }
+  .stmt-table .status-cell { font-weight: 600; font-size: 0.82rem; text-transform: uppercase; }
+  .stmt-table .status-cell.unpaid { color: #e74c3c; }
+  .stmt-table .status-cell.paid { color: #2ecc71; }
+  .stmt-table .status-cell.partial { color: #f39c12; }
+
+  .stmt-summary {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 32px;
+  }
+  .stmt-summary-box {
+    min-width: 280px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .stmt-summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+  }
+  .stmt-summary-row:last-child { border-bottom: none; }
+  .stmt-summary-row .label { color: #666; }
+  .stmt-summary-row .value { font-weight: 600; color: #1a1a1a; }
+  .stmt-summary-row.total {
+    background: #1a1a1a;
+    color: #fff;
+  }
+  .stmt-summary-row.total .label { color: #ccc; font-weight: 700; }
+  .stmt-summary-row.total .value { color: #D4AF37; font-size: 1.1rem; font-weight: 800; }
+
+  .stmt-footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 0.82rem;
+    color: #999;
+    text-align: center;
+  }
+  .stmt-footer p { margin-bottom: 4px; }
+  .stmt-notes {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border-left: 3px solid #D4AF37;
+  }
+  .stmt-notes .label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .stmt-notes p {
+    font-size: 0.88rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* === EDUCATIONAL CONTENT === */
+  .content-section {
+    margin-top: 72px;
+  }
+  .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .content-section h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    color: var(--gold);
+  }
+  .content-section p {
+    color: var(--gray-light);
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+  .content-section a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .content-section a:hover { text-decoration: underline; }
+  .content-section ul {
+    list-style: none;
+    margin: 16px 0;
+  }
+  .content-section ul li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    color: var(--gray-light);
+    font-size: 0.95rem;
+  }
+  .content-section ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* === FAQ === */
+  .faq-list { margin: 24px 0; }
+  .faq-item {
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .faq-item:hover { border-color: var(--border); }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: var(--dark);
+    transition: background 0.2s;
+    gap: 12px;
+  }
+  .faq-q:hover { background: rgba(26, 26, 26, 0.8); }
+  .faq-q h3 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0;
+    flex: 1;
+  }
+  .faq-toggle {
+    color: var(--gold);
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s;
+    background: var(--dark);
+  }
+  .faq-item.open .faq-a {
+    max-height: 500px;
+    padding: 0 20px 18px;
+  }
+  .faq-a p {
+    font-size: 0.88rem;
+    color: var(--gray-light);
+    line-height: 1.7;
+  }
+
+  /* === CTA BANNER === */
+  .cta-banner {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.04));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+    text-align: center;
+    margin: 48px 0;
+  }
+  .cta-banner h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+  .cta-banner p {
+    color: var(--gray-light);
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+  }
+  .cta-banner .btn-gold {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #c9a030);
+    color: var(--bg);
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    transition: all 0.3s;
+  }
+  .cta-banner .btn-gold:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    text-decoration: none;
+  }
+  .cta-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .cta-link:hover { text-decoration: underline; }
+
+  /* === RELATED ARTICLES === */
+  .related-links { margin: 32px 0; }
+  .related-links h3 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: var(--white);
+  }
+  .related-grid {
+    display: grid;
+    gap: 12px;
+  }
+  .related-grid a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--dark);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .related-grid a:hover {
+    border-color: var(--border);
+    transform: translateX(4px);
+    text-decoration: none;
+  }
+  .related-grid a .arrow { color: var(--gold); font-size: 1.1rem; }
+  .related-grid a span { color: var(--white); font-size: 0.9rem; font-weight: 500; }
+
+  /* === FOOTER === */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.82rem;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 640px) {
+    .form-grid { grid-template-columns: 1fr; gap: 16px; }
+    .calc-card { padding: 24px 16px; }
+    .statement-preview { padding: 24px 16px; }
+    .stmt-header { flex-direction: column; gap: 16px; }
+    .stmt-title { text-align: left; }
+    .stmt-summary { justify-content: stretch; }
+    .stmt-summary-box { min-width: 100%; }
+    .btn-row { flex-direction: column; }
+    .copy-btn, .print-btn { width: 100%; justify-content: center; }
+    main { padding: 32px 16px 60px; }
+    .cta-banner { padding: 28px 20px; }
+  }
+
+  /* === PRINT === */
+  @media print {
+    header, footer, .calc-card, .content-section, .cta-banner, .related-links,
+    .hero, .btn-row, .error-msg { display: none !important; }
+    .results { display: block !important; }
+    .statement-preview {
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+    body { background: white; color: black; }
+    main { padding: 0; max-width: 100%; }
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.7);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">Landolio</a>
+    <nav>
+      <a href="/tools/">Free Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/products/">Products</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Free UK Tool</div>
+    <h1>Statement of <span class="gold">Account Generator</span></h1>
+    <p>Enter your invoices, mark their status, and generate a professional printable statement of account — perfect for chasing multiple unpaid invoices at once.</p>
+  </section>
+
+  <!-- GENERATOR FORM -->
+  <section class="calc-card" id="generator">
+
+    <!-- Business Details -->
+    <div class="section-title">📋 Your Details</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="businessName">Your Business Name</label>
+        <input type="text" id="businessName" placeholder="e.g. Smith Design Ltd">
+      </div>
+      <div class="form-group">
+        <label for="businessAddress">Your Address / Contact (optional)</label>
+        <input type="text" id="businessAddress" placeholder="e.g. 123 High Street, London">
+      </div>
+      <div class="form-group">
+        <label for="clientName">Client / Company Name</label>
+        <input type="text" id="clientName" placeholder="e.g. Acme Corp">
+      </div>
+      <div class="form-group">
+        <label for="statementDate">Statement Date</label>
+        <input type="date" id="statementDate">
+      </div>
+    </div>
+
+    <!-- Optional Notes -->
+    <div class="form-grid" style="margin-bottom:28px;">
+      <div class="form-group full">
+        <label for="statementNotes">Notes / Payment Instructions (optional)</label>
+        <textarea id="statementNotes" rows="2" placeholder="e.g. Please remit payment within 14 days to Sort Code: 12-34-56, Account: 12345678"></textarea>
+      </div>
+    </div>
+
+    <!-- Invoice Rows -->
+    <div class="section-title">📄 Invoices</div>
+    <div class="invoice-table-wrap">
+      <table class="invoice-table" id="invoiceTable">
+        <thead>
+          <tr>
+            <th class="col-inv">Invoice #</th>
+            <th class="col-date">Date</th>
+            <th class="col-desc">Description</th>
+            <th class="col-amt">Amount (£)</th>
+            <th class="col-status">Status</th>
+            <th class="col-partial">Paid (£)</th>
+            <th class="col-action"></th>
+          </tr>
+        </thead>
+        <tbody id="invoiceRows">
+        </tbody>
+      </table>
+    </div>
+
+    <button class="add-row-btn" onclick="addRow()">+ Add Invoice</button>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <button class="calc-btn" onclick="generateStatement()">
+      Generate Statement of Account
+    </button>
+
+    <!-- RESULTS -->
+    <div class="results" id="results">
+      <div id="statementContainer"></div>
+      <div class="btn-row">
+        <button class="copy-btn" id="copyBtn" onclick="copyStatement()">📋 Copy as Text</button>
+        <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA 1 -->
+  <div class="cta-banner">
+    <h3>Get the Complete Getting-Paid Toolkit — £19</h3>
+    <p>Email templates, contract clauses, chaser sequences, and escalation scripts — everything you need to get paid on time, every time.</p>
+    <a href="/products/getting-paid-toolkit.html" class="btn-gold">Get the Toolkit →</a>
+    <br>
+    <a href="/tools/late-payment-interest-calculator.html" class="cta-link">Or calculate late payment interest for free →</a>
+  </div>
+
+  <!-- EDUCATIONAL CONTENT -->
+  <section class="content-section" id="guide">
+    <h2>How to Use a Statement of Account to Get Paid</h2>
+
+    <h3>What Is a Statement of Account?</h3>
+    <p>A statement of account is a formal document that summarises all invoices issued to a particular client over a given period. It shows each invoice number, date, description, amount, and whether it's been paid, partially paid, or remains outstanding. The statement concludes with a clear total of what's owed.</p>
+    <p>Unlike a single invoice (which requests payment for one job), a statement of account gives the client a complete picture of their account with you. It's one of the most effective tools for chasing multiple unpaid invoices — especially when a client has let several pile up.</p>
+
+    <h3>When Should You Send One?</h3>
+    <ul>
+      <li>When a client has <strong>two or more outstanding invoices</strong></li>
+      <li>At the <strong>end of each month</strong> as a routine account summary</li>
+      <li>Before escalating to a <strong>formal demand or letter before action</strong></li>
+      <li>When a client <strong>disputes what they owe</strong> — a statement provides clarity</li>
+      <li>Alongside a <strong>late payment interest claim</strong> to show the full picture</li>
+    </ul>
+
+    <h3>Tips for an Effective Statement</h3>
+    <p><strong>Be clear and professional.</strong> A well-formatted statement shows you take your business seriously. Include all invoice details so the client can cross-reference their records easily.</p>
+    <p><strong>Include payment instructions.</strong> Use the notes field to add your bank details, payment deadline, or preferred payment method. Make it as easy as possible for the client to pay.</p>
+    <p><strong>Follow up.</strong> Send the statement by email and follow up with a polite phone call or message. If you've been ghosted, a formal statement of account can be the nudge that gets things moving.</p>
+    <p><strong>Add late payment interest.</strong> If invoices are significantly overdue, you're entitled to charge statutory interest under the <a href="/tools/late-payment-interest-calculator.html">Late Payment of Commercial Debts Act 1998</a>. Use our <a href="/tools/late-payment-interest-calculator.html">free calculator</a> to work out the exact amount.</p>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>What is a statement of account?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <p>A statement of account is a formal document that lists all outstanding invoices owed by a client, showing invoice numbers, dates, descriptions, amounts, and the total balance due. It's commonly used by freelancers and small businesses in the UK to chase multiple unpaid invoices at once and provide a clear summary of what's owed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>When should I send a statement of account?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <p>Send a statement of account when a client has multiple outstanding invoices, at the end of each month as a routine reminder, before escalating to formal debt recovery, or when a client disputes what they owe. Regular statements help maintain cash flow and reduce the likelihood of invoices being forgotten.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Is a statement of account the same as an invoice?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <p>No. An invoice is a request for payment for a specific piece of work or delivery. A statement of account is a summary document that lists multiple invoices — both paid and unpaid — to give the client a complete picture of their account balance. Think of it as a consolidated view of all transactions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Do I need to include paid invoices on a statement of account?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <p>It's good practice to include paid invoices marked as "Paid" on your statement. This gives the client a complete picture of the account history and helps avoid disputes about which invoices have already been settled. Our generator lets you mark each invoice as Paid, Unpaid, or Partial.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Can I charge interest on unpaid invoices shown on a statement of account?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <p>Yes. Under the Late Payment of Commercial Debts (Interest) Act 1998, you can charge 8% + Bank of England base rate on any overdue B2B invoice. Use our <a href="/tools/late-payment-interest-calculator.html" style="color:var(--gold)">Late Payment Interest Calculator</a> to work out exactly how much you're owed, then reference the interest in your statement of account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS & ARTICLES -->
+  <div class="related-links">
+    <h3>Related Tools & Articles</h3>
+    <div class="related-grid">
+      <a href="/tools/late-payment-interest-calculator.html">
+        <span class="arrow">→</span>
+        <span>Late Payment Interest Calculator — How Much Are You Owed?</span>
+      </a>
+      <a href="/tools/invoice-generator.html">
+        <span class="arrow">→</span>
+        <span>Free Invoice Generator — Create & Print Professional Invoices</span>
+      </a>
+      <a href="/tools/payment-terms-generator.html">
+        <span class="arrow">→</span>
+        <span>Payment Terms Generator — Get Contract Clauses for Your Industry</span>
+      </a>
+      <a href="/blog/how-to-chase-unpaid-invoices-freelancer.html">
+        <span class="arrow">→</span>
+        <span>How to Chase Unpaid Invoices as a Freelancer</span>
+      </a>
+      <a href="/blog/letter-before-action-unpaid-invoice-template.html">
+        <span class="arrow">→</span>
+        <span>Letter Before Action Template for Unpaid Invoices</span>
+      </a>
+      <a href="/blog/polite-payment-reminder-emails.html">
+        <span class="arrow">→</span>
+        <span>Polite Payment Reminder Emails That Actually Work</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA 2 -->
+  <div class="cta-banner">
+    <h3>Stop Chasing — Start Automating</h3>
+    <p>Landolio's automated invoice follow-ups send polite reminders on your schedule, so you get paid without the awkward conversations.</p>
+    <a href="https://app.landolio.com/signup" class="btn-gold" target="_blank" rel="noopener">Start Free — Automate Invoice Chasing →</a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
+      <a href="/">Home</a>
+      <a href="/tools/">Free Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/products/getting-paid-toolkit.html">Getting-Paid Toolkit</a>
+      <a href="/free-course.html">Free Course</a>
+    </div>
+    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // Set default statement date to today
+  var today = new Date();
+  var todayStr = today.toISOString().split('T')[0];
+  document.getElementById('statementDate').value = todayStr;
+
+  // Add initial rows
+  addRow();
+  addRow();
+  addRow();
+
+  function createRowHTML(idx) {
+    return '<tr data-row="' + idx + '">' +
+      '<td><input type="text" placeholder="INV-001" class="inv-num"></td>' +
+      '<td><input type="date" class="inv-date"></td>' +
+      '<td><input type="text" placeholder="Web design services" class="inv-desc"></td>' +
+      '<td><input type="number" placeholder="0.00" min="0" step="0.01" class="inv-amount"></td>' +
+      '<td><div class="select-wrap"><select class="inv-status" onchange="handleStatusChange(this)">' +
+        '<option value="unpaid">Unpaid</option>' +
+        '<option value="paid">Paid</option>' +
+        '<option value="partial">Partial</option>' +
+      '</select></div></td>' +
+      '<td><input type="number" placeholder="0.00" min="0" step="0.01" class="inv-paid" disabled></td>' +
+      '<td><button class="remove-row-btn" onclick="removeRow(this)" title="Remove row">×</button></td>' +
+    '</tr>';
+  }
+
+  var rowIdx = 0;
+
+  window.addRow = function() {
+    rowIdx++;
+    var tbody = document.getElementById('invoiceRows');
+    tbody.insertAdjacentHTML('beforeend', createRowHTML(rowIdx));
+  };
+
+  window.removeRow = function(btn) {
+    var tbody = document.getElementById('invoiceRows');
+    if (tbody.rows.length <= 1) return; // keep at least one row
+    btn.closest('tr').remove();
+  };
+
+  window.handleStatusChange = function(sel) {
+    var row = sel.closest('tr');
+    var paidInput = row.querySelector('.inv-paid');
+    if (sel.value === 'partial') {
+      paidInput.disabled = false;
+      paidInput.placeholder = '0.00';
+    } else {
+      paidInput.disabled = true;
+      paidInput.value = '';
+    }
+  };
+
+  function formatCurrency(n) {
+    return '£' + n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function formatDateUK(dateStr) {
+    if (!dateStr) return '—';
+    var d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function formatDateShort(dateStr) {
+    if (!dateStr) return '—';
+    var d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  }
+
+  function showError(msg) {
+    var el = document.getElementById('errorMsg');
+    el.textContent = msg;
+    el.classList.add('show');
+    document.getElementById('results').classList.remove('show');
+  }
+
+  function clearError() {
+    var el = document.getElementById('errorMsg');
+    el.classList.remove('show');
+    el.textContent = '';
+  }
+
+  window.generateStatement = function() {
+    clearError();
+
+    var businessName = document.getElementById('businessName').value.trim();
+    var businessAddress = document.getElementById('businessAddress').value.trim();
+    var clientName = document.getElementById('clientName').value.trim();
+    var statementDateVal = document.getElementById('statementDate').value;
+    var notes = document.getElementById('statementNotes').value.trim();
+
+    if (!businessName) { showError('Please enter your business name.'); return; }
+    if (!clientName) { showError('Please enter the client / company name.'); return; }
+
+    // Gather invoices
+    var rows = document.querySelectorAll('#invoiceRows tr');
+    var invoices = [];
+    var hasAtLeastOne = false;
+
+    for (var i = 0; i < rows.length; i++) {
+      var num = rows[i].querySelector('.inv-num').value.trim();
+      var date = rows[i].querySelector('.inv-date').value;
+      var desc = rows[i].querySelector('.inv-desc').value.trim();
+      var amount = parseFloat(rows[i].querySelector('.inv-amount').value);
+      var status = rows[i].querySelector('.inv-status').value;
+      var paidAmt = parseFloat(rows[i].querySelector('.inv-paid').value) || 0;
+
+      // Skip completely empty rows
+      if (!num && !date && !desc && (isNaN(amount) || amount === 0)) continue;
+
+      if (!num) { showError('Please enter an invoice number for all rows (row ' + (i + 1) + ').'); return; }
+      if (isNaN(amount) || amount <= 0) { showError('Please enter a valid amount for invoice ' + num + '.'); return; }
+
+      var outstanding = amount;
+      if (status === 'paid') {
+        outstanding = 0;
+        paidAmt = amount;
+      } else if (status === 'partial') {
+        if (paidAmt <= 0) { showError('Please enter the amount already paid for invoice ' + num + ' (partial payment).'); return; }
+        if (paidAmt >= amount) { showError('Partial payment for invoice ' + num + ' should be less than the invoice amount.'); return; }
+        outstanding = amount - paidAmt;
+      }
+
+      invoices.push({
+        num: num,
+        date: date,
+        desc: desc || '—',
+        amount: amount,
+        status: status,
+        paidAmt: paidAmt,
+        outstanding: outstanding
+      });
+      hasAtLeastOne = true;
+    }
+
+    if (!hasAtLeastOne) { showError('Please add at least one invoice.'); return; }
+
+    // Calculate totals
+    var totalInvoiced = 0;
+    var totalPaid = 0;
+    var totalOutstanding = 0;
+    for (var j = 0; j < invoices.length; j++) {
+      totalInvoiced += invoices[j].amount;
+      totalPaid += invoices[j].paidAmt;
+      totalOutstanding += invoices[j].outstanding;
+    }
+
+    // Build statement HTML
+    var html = '<div class="statement-preview" id="statementPreview">';
+
+    // Header
+    html += '<div class="stmt-header">';
+    html += '<div class="stmt-from"><h2>' + escHtml(businessName) + '</h2>';
+    if (businessAddress) html += '<p>' + escHtml(businessAddress) + '</p>';
+    html += '</div>';
+    html += '<div class="stmt-title"><h1>Statement of Account</h1>';
+    html += '<p>' + formatDateUK(statementDateVal) + '</p>';
+    html += '</div></div>';
+
+    // Client
+    html += '<div class="stmt-client-block">';
+    html += '<div class="label">Statement To</div>';
+    html += '<div class="name">' + escHtml(clientName) + '</div>';
+    html += '</div>';
+
+    // Invoice table
+    html += '<table class="stmt-table"><thead><tr>';
+    html += '<th>Invoice #</th><th>Date</th><th>Description</th><th>Status</th><th style="text-align:right">Amount</th>';
+    html += '</tr></thead><tbody>';
+
+    for (var k = 0; k < invoices.length; k++) {
+      var inv = invoices[k];
+      var statusLabel = inv.status === 'paid' ? 'Paid' : inv.status === 'partial' ? 'Partial (' + formatCurrency(inv.paidAmt) + ' paid)' : 'Unpaid';
+      var statusClass = inv.status;
+      html += '<tr>';
+      html += '<td style="font-weight:600">' + escHtml(inv.num) + '</td>';
+      html += '<td>' + formatDateShort(inv.date) + '</td>';
+      html += '<td>' + escHtml(inv.desc) + '</td>';
+      html += '<td class="status-cell ' + statusClass + '">' + statusLabel + '</td>';
+      html += '<td style="text-align:right;font-weight:600">' + formatCurrency(inv.amount) + '</td>';
+      html += '</tr>';
+    }
+    html += '</tbody></table>';
+
+    // Summary
+    html += '<div class="stmt-summary"><div class="stmt-summary-box">';
+    html += '<div class="stmt-summary-row"><span class="label">Total Invoiced</span><span class="value">' + formatCurrency(totalInvoiced) + '</span></div>';
+    html += '<div class="stmt-summary-row"><span class="label">Total Paid</span><span class="value">' + formatCurrency(totalPaid) + '</span></div>';
+    html += '<div class="stmt-summary-row total"><span class="label">Balance Due</span><span class="value">' + formatCurrency(totalOutstanding) + '</span></div>';
+    html += '</div></div>';
+
+    // Notes
+    if (notes) {
+      html += '<div class="stmt-notes"><div class="label">Notes</div><p>' + escHtml(notes) + '</p></div>';
+    }
+
+    // Footer
+    html += '<div class="stmt-footer">';
+    html += '<p>This statement was generated on ' + formatDateUK(statementDateVal) + ' by ' + escHtml(businessName) + '.</p>';
+    html += '<p>If you have any queries regarding this statement, please contact us.</p>';
+    html += '</div>';
+
+    html += '</div>';
+
+    document.getElementById('statementContainer').innerHTML = html;
+
+    // Show results
+    var results = document.getElementById('results');
+    results.classList.remove('show');
+    void results.offsetWidth;
+    results.classList.add('show');
+
+    setTimeout(function() {
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  };
+
+  window.copyStatement = function() {
+    // Build plain text version
+    var businessName = document.getElementById('businessName').value.trim();
+    var businessAddress = document.getElementById('businessAddress').value.trim();
+    var clientName = document.getElementById('clientName').value.trim();
+    var statementDateVal = document.getElementById('statementDate').value;
+    var notes = document.getElementById('statementNotes').value.trim();
+
+    var rows = document.querySelectorAll('#invoiceRows tr');
+    var invoices = [];
+    var totalInvoiced = 0, totalPaid = 0, totalOutstanding = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+      var num = rows[i].querySelector('.inv-num').value.trim();
+      var date = rows[i].querySelector('.inv-date').value;
+      var desc = rows[i].querySelector('.inv-desc').value.trim();
+      var amount = parseFloat(rows[i].querySelector('.inv-amount').value);
+      var status = rows[i].querySelector('.inv-status').value;
+      var paidAmt = parseFloat(rows[i].querySelector('.inv-paid').value) || 0;
+
+      if (!num && !date && !desc && (isNaN(amount) || amount === 0)) continue;
+      if (isNaN(amount)) continue;
+
+      var outstanding = amount;
+      if (status === 'paid') { outstanding = 0; paidAmt = amount; }
+      else if (status === 'partial') { outstanding = amount - paidAmt; }
+
+      totalInvoiced += amount;
+      totalPaid += paidAmt;
+      totalOutstanding += outstanding;
+
+      var statusLabel = status === 'paid' ? 'PAID' : status === 'partial' ? 'PARTIAL (' + formatCurrency(paidAmt) + ' paid)' : 'UNPAID';
+      invoices.push({ num: num, date: formatDateShort(date), desc: desc || '—', amount: formatCurrency(amount), status: statusLabel });
+    }
+
+    var text = 'STATEMENT OF ACCOUNT\n';
+    text += '═══════════════════════════════════════════\n\n';
+    text += 'From:  ' + businessName + '\n';
+    if (businessAddress) text += '       ' + businessAddress + '\n';
+    text += 'To:    ' + clientName + '\n';
+    text += 'Date:  ' + formatDateUK(statementDateVal) + '\n\n';
+    text += '───────────────────────────────────────────\n';
+
+    // Table header
+    text += padRight('Invoice #', 14) + padRight('Date', 14) + padRight('Description', 24) + padRight('Status', 16) + padLeft('Amount', 12) + '\n';
+    text += '───────────────────────────────────────────\n';
+
+    for (var j = 0; j < invoices.length; j++) {
+      var inv = invoices[j];
+      text += padRight(inv.num, 14) + padRight(inv.date, 14) + padRight(inv.desc.substring(0, 22), 24) + padRight(inv.status, 16) + padLeft(inv.amount, 12) + '\n';
+    }
+
+    text += '───────────────────────────────────────────\n\n';
+    text += 'Total Invoiced:    ' + formatCurrency(totalInvoiced) + '\n';
+    text += 'Total Paid:        ' + formatCurrency(totalPaid) + '\n';
+    text += 'BALANCE DUE:       ' + formatCurrency(totalOutstanding) + '\n\n';
+
+    if (notes) {
+      text += 'Notes: ' + notes + '\n\n';
+    }
+
+    text += '═══════════════════════════════════════════\n';
+    text += 'Generated on ' + formatDateUK(statementDateVal) + ' by ' + businessName + '\n';
+
+    var copyBtn = document.getElementById('copyBtn');
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = '✅ Copied!';
+        setTimeout(function() {
+          copyBtn.classList.remove('copied');
+          copyBtn.innerHTML = '📋 Copy as Text';
+        }, 2500);
+      }).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+
+    function fallbackCopy() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = '✅ Copied!';
+        setTimeout(function() {
+          copyBtn.classList.remove('copied');
+          copyBtn.innerHTML = '📋 Copy as Text';
+        }, 2500);
+      } catch(e) {
+        alert('Copy failed. Please select the text manually.');
+      }
+      document.body.removeChild(ta);
+    }
+  };
+
+  function padRight(str, len) {
+    str = String(str);
+    while (str.length < len) str += ' ';
+    return str;
+  }
+
+  function padLeft(str, len) {
+    str = String(str);
+    while (str.length < len) str = ' ' + str;
+    return str;
+  }
+
+  function escHtml(s) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(s));
+    return div.innerHTML;
+  }
+
+  window.toggleFaq = function(el) {
+    var item = el.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+    if (!wasOpen) item.classList.add('open');
+  };
+
+})();
+</script>
+
+</body>
+</html>

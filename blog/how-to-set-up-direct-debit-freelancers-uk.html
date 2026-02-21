@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Set Up Direct Debit for Freelancers UK: Get Paid Automatically | Landolio</title>
+<meta name="description" content="How UK freelancers can set up Direct Debit to collect payments automatically from clients. GoCardless, Stripe, and alternatives compared — with setup guides and pricing.">
+<meta name="keywords" content="direct debit for freelancers UK, GoCardless freelancer, automatic payment collection freelancer, recurring payments freelancer UK">
+<link rel="canonical" href="https://landolio.com/blog/how-to-set-up-direct-debit-freelancers-uk.html">
+<meta property="og:title" content="How to Set Up Direct Debit for Freelancers UK: Get Paid Automatically">
+<meta property="og:description" content="How UK freelancers can set up Direct Debit to collect payments automatically from clients. GoCardless, Stripe, and alternatives compared.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://landolio.com/blog/how-to-set-up-direct-debit-freelancers-uk.html">
+<meta property="og:image" content="https://landolio.com/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Landolio — Automation tools for freelancers and small businesses">
+<meta name="twitter:image" content="https://landolio.com/images/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Set Up Direct Debit for Freelancers UK: Get Paid Automatically">
+<meta name="twitter:description" content="How UK freelancers can set up Direct Debit to collect payments automatically from clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Set Up Direct Debit for Freelancers UK: Get Paid Automatically",
+      "description": "How UK freelancers can set up Direct Debit to collect payments automatically from clients using GoCardless and alternatives.",
+      "author": {"@type": "Organization", "name": "Landolio"},
+      "publisher": {"@type": "Organization", "name": "Landolio", "url": "https://landolio.com"},
+      "datePublished": "2026-02-21",
+      "dateModified": "2026-02-21",
+      "mainEntityOfPage": "https://landolio.com/blog/how-to-set-up-direct-debit-freelancers-uk.html",
+      "keywords": "direct debit for freelancers UK, GoCardless freelancer, automatic payment collection freelancer",
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can freelancers use Direct Debit to collect payments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Services like GoCardless allow sole traders and freelancers to collect payments via Direct Debit without needing a special bank arrangement. You sign up, get approved, and can start collecting payments from any UK bank account within days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does GoCardless cost for freelancers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GoCardless charges 1% + 20p per domestic Direct Debit transaction (capped at £4). There's no monthly fee on the standard plan. For a £500 invoice, you'd pay £5.20 in fees — significantly cheaper than card payments via PayPal or Stripe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a Direct Debit payment take to clear?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Direct Debit payments typically take 3-5 working days to clear in the UK. The first payment from a new mandate can take slightly longer. Once established, recurring payments follow a predictable schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can clients cancel a Direct Debit mandate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Under the Direct Debit Guarantee, customers can cancel a Direct Debit mandate at any time by contacting their bank. They can also claim a full and immediate refund of any payment taken in error. This is a consumer protection feature, but in practice, cancellations by legitimate business clients are very rare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Direct Debit better than bank transfer for freelancers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For recurring clients, yes. Direct Debit means you control when payment is taken — no more chasing, no more forgotten invoices. For one-off projects, a standard bank transfer (BACS/Faster Payments) is simpler since there's no mandate to set up. The ideal approach: use Direct Debit for retainer clients and regular work, bank transfer for one-off projects."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--surface:#111;--surface2:#1a1a1a;--gold:#d4a843;--gold-dim:#b8922e;--text:#e0e0e0;--text-muted:#999;--radius:8px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration:none;transition:color .2s}
+a:hover{color:#f0c65a}
+.hero{max-width:780px;margin:0 auto;padding:4rem 1.5rem 2rem}
+.hero .kicker{text-transform:uppercase;font-size:.8rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:.75rem}
+h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;line-height:1.15;color:#fff;margin-bottom:1rem}
+.meta{font-size:.85rem;color:var(--text-muted);margin-bottom:2.5rem}
+article{max-width:780px;margin:0 auto;padding:0 1.5rem 4rem}
+article h2{font-size:1.45rem;font-weight:700;color:#fff;margin:2.5rem 0 .75rem;padding-left:.75rem;border-left:3px solid var(--gold)}
+article h3{font-size:1.1rem;font-weight:600;color:var(--gold);margin:2rem 0 .5rem}
+article p{margin-bottom:1.25rem;color:var(--text)}
+article ul,article ol{margin:0 0 1.25rem 1.5rem;color:var(--text)}
+article li{margin-bottom:.5rem}
+article strong{color:#fff}
+blockquote{border-left:3px solid var(--gold);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-style:italic;color:var(--text-muted)}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+th{background:var(--surface);color:var(--gold);text-align:left;padding:.75rem;border-bottom:2px solid #333}
+td{padding:.75rem;border-bottom:1px solid #222;color:var(--text)}
+tr:hover td{background:var(--surface)}
+.checklist{background:var(--surface);border:1px solid #222;border-radius:var(--radius);padding:1.5rem;margin:2rem 0}
+.checklist h3{color:var(--gold);margin-top:0;margin-bottom:1rem}
+.checklist ul{list-style:none;margin-left:0}
+.checklist li{padding-left:1.75rem;position:relative;margin-bottom:.6rem}
+.checklist li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.cta-box{background:linear-gradient(135deg,#1a1708,#1a1a1a);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:2rem;text-align:center;margin:3rem 0}
+.cta-box h3{color:#fff;font-size:1.3rem;margin-bottom:.5rem}
+.cta-box p{color:var(--text-muted);margin-bottom:1.25rem;font-size:.95rem}
+.cta-btn{display:inline-block;background:var(--gold);color:#0a0a0a;font-weight:700;padding:.8rem 2rem;border-radius:var(--radius);font-size:1rem;transition:background .2s,transform .15s}
+.cta-btn:hover{background:#f0c65a;color:#0a0a0a;transform:translateY(-1px)}
+.faq{max-width:780px;margin:0 auto;padding:0 1.5rem 3rem}
+.faq h2{font-size:1.45rem;font-weight:700;color:#fff;margin-bottom:1.5rem;padding-left:.75rem;border-left:3px solid var(--gold)}
+.faq details{background:var(--surface);border:1px solid #222;border-radius:var(--radius);margin-bottom:.75rem;padding:1rem 1.25rem}
+.faq summary{font-weight:600;cursor:pointer;color:#fff;font-size:1rem}
+.faq details[open] summary{margin-bottom:.75rem;color:var(--gold)}
+.faq details p{margin:0;color:var(--text-muted);font-size:.95rem;line-height:1.7}
+footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-muted);border-top:1px solid #1a1a1a}
+@media(max-width:600px){.hero{padding:2.5rem 1rem 1.5rem}article{padding:0 1rem 3rem}.cta-box{padding:1.5rem}table{font-size:.8rem}th,td{padding:.5rem}}
+</style>
+</head>
+<body>
+
+<header style="padding: 1.2rem 2rem; border-bottom: 1px solid #2a2a2a; display: flex; justify-content: space-between; align-items: center;">
+    <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: #d4a843; text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
+    <nav style="display: flex; gap: 24px;">
+        <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
+        <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+    </nav>
+</header>
+
+<header class="hero">
+  <div class="kicker">Getting Paid</div>
+  <h1>How to Set Up Direct Debit for Freelancers UK: Get Paid Automatically</h1>
+  <div class="meta">Published 21 February 2026 · 12 min read</div>
+</header>
+
+<article>
+
+<p>Chasing invoices is the worst part of freelancing. You've done the work, sent the invoice, and now you're waiting. And chasing. And waiting some more. For retainer clients or ongoing work, there's a better way: <strong>Direct Debit</strong>.</p>
+
+<p>With Direct Debit, <em>you</em> collect the payment from your client's bank account on the date it's due. No chasing. No "I forgot." No payment sitting in someone's inbox for three weeks. The money simply arrives.</p>
+
+<p>Here's how UK freelancers can set up Direct Debit — including which services to use, what it costs, and how to pitch it to clients without scaring them off.</p>
+
+<h2>What Is Direct Debit (and How Is It Different from a Standing Order)?</h2>
+
+<p>Both Direct Debit and standing orders are ways to make recurring bank payments, but they work differently:</p>
+
+<ul>
+  <li><strong>Standing Order:</strong> The <em>payer</em> (your client) sets it up and controls it. They decide when and how much to pay. You have no control over timing or amount.</li>
+  <li><strong>Direct Debit:</strong> The <em>payee</em> (you) initiates the collection after the payer authorises a "mandate." You control when payment is taken and for how much — within the terms of the mandate.</li>
+</ul>
+
+<p>For freelancers, Direct Debit is far superior because <strong>you're in control</strong>. You decide when to collect, and you can vary the amount each month (perfect for variable-hours work). The client doesn't need to remember to pay you — it just happens.</p>
+
+<h2>Can Freelancers Actually Use Direct Debit?</h2>
+
+<p>Yes. Historically, setting up Direct Debit required a bespoke arrangement with your bank — paperwork, Service User Numbers, and minimum volumes that made it impractical for individuals. But services like <strong>GoCardless</strong> have changed that completely.</p>
+
+<p>GoCardless acts as a "bureau" — they hold the Service User Number and handle all the banking infrastructure. You just sign up, get approved (usually within 1-2 days), and start collecting. You don't need a business bank account. You don't need a limited company. Sole traders can use it.</p>
+
+<h2>The Best Direct Debit Services for UK Freelancers</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Service</th>
+      <th>Cost per Transaction</th>
+      <th>Monthly Fee</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>GoCardless</strong></td>
+      <td>1% + 20p (capped at £4)</td>
+      <td>Free (standard)</td>
+      <td>Most freelancers — simple, cheap, integrates with everything</td>
+    </tr>
+    <tr>
+      <td><strong>Stripe (BACS Direct Debit)</strong></td>
+      <td>1% (capped at £5)</td>
+      <td>Free</td>
+      <td>Freelancers already using Stripe for card payments</td>
+    </tr>
+    <tr>
+      <td><strong>Xero + GoCardless</strong></td>
+      <td>1% + 20p (via GoCardless)</td>
+      <td>From £15/mo (Xero)</td>
+      <td>Freelancers wanting invoicing + DD in one system</td>
+    </tr>
+    <tr>
+      <td><strong>FreeAgent + GoCardless</strong></td>
+      <td>1% + 20p (via GoCardless)</td>
+      <td>From £14.50/mo (FreeAgent)</td>
+      <td>Sole traders using FreeAgent for accounting</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>For most freelancers, GoCardless standalone is the best starting point.</strong> It's the cheapest, has no monthly fee, and integrates with most <a href="/blog/best-accounting-software-freelancers-uk.html">accounting software</a> and <a href="/blog/best-invoice-software-uk-freelancers.html">invoicing tools</a>.</p>
+
+<h2>How to Set Up GoCardless (Step by Step)</h2>
+
+<h3>Step 1: Create Your Account</h3>
+
+<p>Go to gocardless.com and sign up. You'll need:</p>
+
+<ul>
+  <li>Your name and business name (or just your name if you're a sole trader)</li>
+  <li>Your UK bank account details (where payments will be deposited)</li>
+  <li>Some form of ID verification (usually completed online)</li>
+</ul>
+
+<p>Approval typically takes 1-2 business days.</p>
+
+<h3>Step 2: Create a Payment Link or Mandate</h3>
+
+<p>Once approved, you can create a "mandate" — an authorisation for you to collect payments from a client's bank account. GoCardless gives you two ways to do this:</p>
+
+<ul>
+  <li><strong>Payment link:</strong> Generate a link that you email to your client. They click it, enter their bank details, and authorise the mandate. Takes about 60 seconds for them.</li>
+  <li><strong>API / integration:</strong> If you use Xero, FreeAgent, or another integrated platform, the mandate setup can happen directly within your invoicing flow.</li>
+</ul>
+
+<h3>Step 3: Send Your Client the Mandate Link</h3>
+
+<p>This is the part that feels awkward. You're asking a client to give you permission to take money from their account. Here's a script that works:</p>
+
+<blockquote>
+"Hi [Name], I've been streamlining my payment process to make things smoother for both of us. I now collect payments via Direct Debit through GoCardless — it means you don't need to remember to make a transfer each month, and I can process payments automatically on the agreed date. Here's a quick link to set it up [link] — it takes about a minute, and you're protected by the Direct Debit Guarantee. Let me know if you have any questions."
+</blockquote>
+
+<p>Most clients will appreciate the convenience. The Direct Debit Guarantee — which protects them against unauthorised payments — usually resolves any concerns.</p>
+
+<h3>Step 4: Schedule Payments</h3>
+
+<p>Once the mandate is active, you can:</p>
+
+<ul>
+  <li><strong>Create one-off payments:</strong> Collect a specific amount on a specific date (ideal for project invoices)</li>
+  <li><strong>Set up recurring payments:</strong> Automatically collect the same amount monthly (ideal for <a href="/blog/freelance-retainer-agreement-uk.html">retainer clients</a>)</li>
+  <li><strong>Create variable-amount payments:</strong> Collect different amounts each cycle based on hours worked</li>
+</ul>
+
+<p>Payments are typically collected 3-5 working days after you initiate them. GoCardless notifies your client in advance (as required by the Direct Debit rules), so there are no surprises.</p>
+
+<h2>The Economics: Is It Worth Paying the Fees?</h2>
+
+<p>GoCardless charges 1% + 20p per transaction, capped at £4. Let's compare this to the real cost of manual invoicing:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Invoice Amount</th>
+      <th>GoCardless Fee</th>
+      <th>Bank Transfer Fee</th>
+      <th>PayPal Fee (for comparison)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>£500</td>
+      <td>£4.00 (capped)</td>
+      <td>Free</td>
+      <td>£15.20 (2.9% + 30p)</td>
+    </tr>
+    <tr>
+      <td>£1,000</td>
+      <td>£4.00 (capped)</td>
+      <td>Free</td>
+      <td>£29.30</td>
+    </tr>
+    <tr>
+      <td>£2,500</td>
+      <td>£4.00 (capped)</td>
+      <td>Free</td>
+      <td>£72.80</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Yes, bank transfer is technically free. But what's the real cost of chasing an invoice for 14 extra days? If you bill at £400/day and spend even one hour over a month chasing payments, that's £50 lost. The £4 GoCardless fee is a bargain by comparison — and that's before considering the <a href="/blog/freelancer-cash-flow-management-uk.html">cash flow benefit</a> of getting paid on time, every time.</p>
+
+<h2>When Direct Debit Works Best (and When It Doesn't)</h2>
+
+<h3>Ideal for:</h3>
+
+<ul>
+  <li><strong>Retainer clients:</strong> Fixed monthly amount, collected automatically. Perfect.</li>
+  <li><strong>Ongoing clients with regular invoicing:</strong> Even if amounts vary month to month, DD removes the chasing entirely.</li>
+  <li><strong>Clients with a history of late payment:</strong> Rather than continuing to chase, suggest switching to DD. Framed as "convenience for both of us," most will agree.</li>
+  <li><strong>Subscription-style services:</strong> If you offer monthly maintenance, hosting, or support packages.</li>
+</ul>
+
+<h3>Not ideal for:</h3>
+
+<ul>
+  <li><strong>One-off projects:</strong> Setting up a mandate for a single payment is overkill. Just use a bank transfer or payment link.</li>
+  <li><strong>International clients:</strong> GoCardless supports some international payments, but it's primarily designed for UK and SEPA (Eurozone) collections. For overseas clients, see our guide on <a href="/blog/how-to-invoice-international-clients-uk.html">invoicing international clients</a>.</li>
+  <li><strong>Very small amounts:</strong> The 1% + 20p fee means it's proportionally more expensive for very small invoices (under £100).</li>
+</ul>
+
+<h2>How to Pitch Direct Debit to Clients</h2>
+
+<p>The key insight: frame it as a benefit for <em>them</em>, not for you. Clients don't care that you hate chasing invoices. They do care about:</p>
+
+<ul>
+  <li><strong>Convenience:</strong> "You won't need to remember to make a transfer each month."</li>
+  <li><strong>Protection:</strong> "You're fully protected by the Direct Debit Guarantee — you can cancel anytime and claim back any payment taken in error."</li>
+  <li><strong>Predictability:</strong> "Payments happen on the same date each month, so it's easier for your own cash flow planning."</li>
+  <li><strong>Speed:</strong> "Setup takes about 60 seconds — just click the link and enter your sort code and account number."</li>
+</ul>
+
+<p>If a client pushes back, don't force it. Some people are uncomfortable with Direct Debit, and that's fine. Just make sure your <a href="/blog/freelance-payment-terms-contract.html">payment terms</a> are clear and you have a solid <a href="/blog/how-to-chase-unpaid-invoices-freelancer.html">follow-up process</a> for manual payments.</p>
+
+<h2>Integrating Direct Debit with Your Workflow</h2>
+
+<p>The real power of Direct Debit comes when you connect it to your existing systems:</p>
+
+<ul>
+  <li><strong>Xero + GoCardless:</strong> Create invoices in Xero, and GoCardless automatically collects payment on the due date. Paid invoices are reconciled automatically.</li>
+  <li><strong>FreeAgent + GoCardless:</strong> Same integration — create invoice, payment collected automatically, marked as paid in your accounts.</li>
+  <li><strong>QuickBooks + GoCardless:</strong> Works via the GoCardless app in the QuickBooks marketplace.</li>
+  <li><strong>Custom / manual:</strong> Use GoCardless standalone and manage invoices separately. Still saves you the chasing.</li>
+</ul>
+
+<p>Whichever approach you use, the result is the same: you invoice, you get paid, you never have to send an awkward "just checking in on that invoice" email again.</p>
+
+<div class="checklist">
+  <h3>📋 Direct Debit Setup Checklist</h3>
+  <ul>
+    <li>Sign up for GoCardless (or your preferred provider)</li>
+    <li>Complete identity verification</li>
+    <li>Connect your UK bank account</li>
+    <li>Identify retainer/recurring clients who'd benefit</li>
+    <li>Send mandate links with a friendly explanation</li>
+    <li>Set up recurring or one-off payment schedules</li>
+    <li>Connect to your accounting software if available</li>
+    <li>Update your payment terms to mention Direct Debit as an option</li>
+    <li>Monitor first few collections for any issues</li>
+  </ul>
+</div>
+
+<blockquote>Direct Debit doesn't replace good invoicing practices — it automates the collection step so you can focus on the work, not on chasing the money.</blockquote>
+
+<div class="cta-box">
+  <h3>Get Your Entire Payment System Right</h3>
+  <p>The Getting-Paid Toolkit includes invoice templates, payment terms clauses, follow-up email sequences, and a complete guide to getting paid on time — every time.</p>
+  <a href="/products/getting-paid-toolkit.html" class="cta-btn">Get the Toolkit — £19 →</a>
+</div>
+
+</article>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>Can freelancers use Direct Debit to collect payments?</summary>
+    <p>Yes. Services like GoCardless allow sole traders and freelancers to collect payments via Direct Debit without needing a special bank arrangement. You sign up, get approved, and can start collecting payments from any UK bank account within days.</p>
+  </details>
+
+  <details>
+    <summary>How much does GoCardless cost for freelancers?</summary>
+    <p>GoCardless charges 1% + 20p per domestic Direct Debit transaction (capped at £4). There's no monthly fee on the standard plan. For a £500 invoice, you'd pay £5.20 in fees — significantly cheaper than card payments via PayPal or Stripe.</p>
+  </details>
+
+  <details>
+    <summary>How long does a Direct Debit payment take to clear?</summary>
+    <p>Direct Debit payments typically take 3-5 working days to clear in the UK. The first payment from a new mandate can take slightly longer. Once established, recurring payments follow a predictable schedule.</p>
+  </details>
+
+  <details>
+    <summary>Can clients cancel a Direct Debit mandate?</summary>
+    <p>Yes. Under the Direct Debit Guarantee, customers can cancel a Direct Debit mandate at any time by contacting their bank. They can also claim a full and immediate refund of any payment taken in error. This is a consumer protection feature, but in practice, cancellations by legitimate business clients are very rare.</p>
+  </details>
+
+  <details>
+    <summary>Is Direct Debit better than bank transfer for freelancers?</summary>
+    <p>For recurring clients, yes. Direct Debit means you control when payment is taken — no more chasing, no more forgotten invoices. For one-off projects, a standard bank transfer (BACS/Faster Payments) is simpler since there's no mandate to set up. The ideal approach: use Direct Debit for retainer clients and regular work, bank transfer for one-off projects.</p>
+  </details>
+</section>
+
+<footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
+        <a href="/" style="color: #d4a843; text-decoration: none;">Home</a>
+        <a href="/tools/" style="color: #d4a843; text-decoration: none;">Free Tools</a>
+        <a href="/blog/" style="color: #d4a843; text-decoration: none;">Blog</a>
+        <a href="/products/getting-paid-toolkit.html" style="color: #d4a843; text-decoration: none;">Getting-Paid Toolkit</a>
+        <a href="/free-course.html" style="color: #d4a843; text-decoration: none;">Free Course</a>
+    </div>
+    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+</footer>
+
+</body>
+</html>

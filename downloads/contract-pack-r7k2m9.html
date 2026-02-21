@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Contract Template Pack — Landolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & BASE ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #E8CD6B;
+            --gold-bg: rgba(212, 175, 55, 0.08);
+            --black: #0A0A0A;
+            --dark: #1A1A1A;
+            --gray: #666;
+            --gray-light: #999;
+            --white: #FAFAFA;
+            --border: rgba(212, 175, 55, 0.2);
+            --green: #22C55E;
+            --green-bg: rgba(34, 197, 94, 0.08);
+            --red: #EF4444;
+            --red-bg: rgba(239, 68, 68, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* ========== PRINT STYLES ========== */
+        @media print {
+            :root {
+                --gold: #8B7528;
+                --gold-light: #A08830;
+                --gold-bg: #f5f0e0;
+                --black: #ffffff;
+                --dark: #f8f8f8;
+                --gray: #555;
+                --gray-light: #777;
+                --white: #111;
+                --border: #ddd;
+                --green: #16A34A;
+                --green-bg: #f0fdf4;
+                --red: #DC2626;
+                --red-bg: #fef2f2;
+            }
+
+            body {
+                background: white;
+                color: #111;
+                font-size: 11pt;
+                line-height: 1.5;
+            }
+
+            .cover-page {
+                page-break-after: always;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .template-section {
+                page-break-before: always;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .fill-field {
+                border-bottom: 1px solid #999 !important;
+                background: none !important;
+                color: #111 !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+
+            .toc {
+                page-break-after: always;
+            }
+
+            .clause-block, .template-block, .contract-body {
+                break-inside: avoid;
+            }
+        }
+
+        /* ========== LAYOUT ========== */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ========== COVER PAGE ========== */
+        .cover-page {
+            text-align: center;
+            padding: 120px 0 80px;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 60px;
+        }
+
+        .cover-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 48px;
+        }
+
+        .cover-page h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .cover-page h1 span {
+            color: var(--gold);
+        }
+
+        .cover-sub {
+            font-size: 1.15rem;
+            color: var(--gray-light);
+            max-width: 540px;
+            margin: 0 auto 40px;
+        }
+
+        .cover-meta {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .cover-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 40px auto;
+            border-radius: 2px;
+        }
+
+        .cover-badges {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 36px;
+            flex-wrap: wrap;
+        }
+
+        .cover-badge {
+            background: var(--gold-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        /* ========== DISCLAIMER ========== */
+        .disclaimer {
+            background: var(--red-bg);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 48px;
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .disclaimer .disclaimer-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .disclaimer p {
+            color: var(--gray-light);
+        }
+
+        /* ========== TABLE OF CONTENTS ========== */
+        .toc {
+            padding: 40px 0 60px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        .toc h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: var(--gold);
+        }
+
+        .toc-section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 28px 0 12px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .toc-section-label:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .toc-list {
+            list-style: none;
+            counter-reset: toc-counter;
+        }
+
+        .toc-list li {
+            counter-increment: toc-counter;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 1.05rem;
+        }
+
+        .toc-list li::before {
+            content: counter(toc-counter, decimal-leading-zero);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            min-width: 28px;
+        }
+
+        .toc-list li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .toc-list li a:hover {
+            color: var(--gold);
+        }
+
+        .toc-desc {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--gray-light);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        /* ========== TEMPLATE SECTIONS ========== */
+        .template-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .template-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .template-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 8px;
+        }
+
+        .template-section h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .template-intro {
+            font-size: 1rem;
+            color: var(--gray-light);
+            margin-bottom: 36px;
+            max-width: 600px;
+            line-height: 1.65;
+        }
+
+        .template-section h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 32px 0 16px;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .template-section h3::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .template-section h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            color: var(--white);
+        }
+
+        .template-section p,
+        .template-section li {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        .template-section ul,
+        .template-section ol {
+            margin: 12px 0 12px 20px;
+        }
+
+        .template-section li {
+            margin-bottom: 8px;
+        }
+
+        /* ========== FILL-IN FIELDS ========== */
+        .fill-field {
+            display: inline-block;
+            min-width: 180px;
+            padding: 4px 12px;
+            background: var(--gold-bg);
+            border-bottom: 2px dashed var(--gold);
+            color: var(--gold-light);
+            font-style: italic;
+            font-size: 0.9rem;
+            border-radius: 4px 4px 0 0;
+            margin: 2px 4px;
+        }
+
+        .fill-field-sm {
+            min-width: 80px;
+        }
+
+        .fill-field-wide {
+            display: block;
+            width: 100%;
+            min-height: 60px;
+            padding: 12px 16px;
+            background: var(--gold-bg);
+            border: 1px dashed var(--gold);
+            border-radius: 8px;
+            color: var(--gold-light);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin: 12px 0;
+        }
+
+        /* ========== CONTRACT BODY ========== */
+        .contract-body {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px 32px;
+            margin: 24px 0;
+        }
+
+        .contract-body .contract-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 8px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .contract-body .contract-subtitle {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contract-body .parties {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contract-body .party-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+        }
+
+        .contract-body .party-detail {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        .contract-clause {
+            margin-bottom: 24px;
+        }
+
+        .contract-clause .clause-num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .contract-clause .clause-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .contract-clause p {
+            font-size: 0.92rem;
+            color: var(--gray-light);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .contract-clause ul, .contract-clause ol {
+            margin: 8px 0 12px 20px;
+        }
+
+        .contract-clause li {
+            font-size: 0.92rem;
+            color: var(--gray-light);
+            line-height: 1.75;
+            margin-bottom: 6px;
+        }
+
+        .signature-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 2px solid var(--gold);
+        }
+
+        .signature-block .sig-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 12px;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid var(--gray);
+            height: 50px;
+            margin-bottom: 8px;
+        }
+
+        .signature-field-label {
+            font-size: 0.82rem;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        /* ========== CLAUSE BLOCKS (Payment Clauses Section) ========== */
+        .clause-block {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 20px 0;
+        }
+
+        .clause-block .clause-block-num {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+
+        .clause-block .clause-block-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .clause-text {
+            font-size: 0.92rem;
+            color: var(--gray-light);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .clause-text blockquote {
+            border-left: 3px solid var(--gold);
+            padding-left: 16px;
+            margin: 12px 0;
+            font-style: italic;
+        }
+
+        .clause-variant {
+            background: rgba(212, 175, 55, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 12px 0;
+        }
+
+        .clause-variant .variant-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+
+        /* ========== TIP / NOTE BOXES ========== */
+        .tip-box {
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .tip-box .tip-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        .tip-box p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        .when-to-use {
+            background: var(--green-bg);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 12px 0;
+        }
+
+        .when-to-use .use-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+
+        .when-to-use p, .when-to-use li {
+            font-size: 0.88rem;
+            color: var(--gray-light);
+        }
+
+        .when-to-use ul {
+            margin: 6px 0 0 16px;
+        }
+
+        /* ========== FLOWCHART TABLE ========== */
+        .decision-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+
+        .decision-table th {
+            background: var(--gold-bg);
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .decision-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            vertical-align: top;
+        }
+
+        .decision-table tr:hover td {
+            background: rgba(212, 175, 55, 0.03);
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--gold-bg);
+            color: var(--gold);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 1px 2px;
+        }
+
+        .tag-essential {
+            background: var(--green-bg);
+            color: var(--green);
+        }
+
+        /* ========== PLACEHOLDER KEY TABLE ========== */
+        .placeholder-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        .placeholder-table th {
+            background: var(--gold-bg);
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .placeholder-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.88rem;
+            color: var(--gray-light);
+        }
+
+        .placeholder-table td:first-child {
+            font-family: monospace;
+            color: var(--gold-light);
+            font-size: 0.82rem;
+            white-space: nowrap;
+        }
+
+        /* ========== FOOTER ========== */
+        .kit-footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .kit-footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .kit-footer .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 24px;
+            border-radius: 2px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 600px) {
+            .container { padding: 0 20px; }
+            .contract-body { padding: 24px 20px; }
+            .contract-body .parties { grid-template-columns: 1fr; }
+            .signature-block { grid-template-columns: 1fr; gap: 32px; }
+            .cover-badges { flex-direction: column; align-items: center; }
+            .decision-table { font-size: 0.82rem; }
+            .decision-table th, .decision-table td { padding: 10px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ========== COVER PAGE ========== -->
+        <div class="cover-page">
+            <div class="cover-logo">Landolio</div>
+            <h1>Freelancer Contract<br><span>Template Pack</span></h1>
+            <div class="cover-divider"></div>
+            <p class="cover-sub">6 ready-to-use contract templates and 10 payment protection clauses — professionally written, UK-focused, and built to protect your freelance income.</p>
+            <p class="cover-meta">Version 1.0 · February 2026 · landolio.com</p>
+            <div class="cover-badges">
+                <div class="cover-badge">📄 6 Contract Templates</div>
+                <div class="cover-badge">🛡️ 10 Payment Clauses</div>
+                <div class="cover-badge">🇬🇧 UK Legal Framework</div>
+            </div>
+        </div>
+
+        <!-- ========== HOW TO USE ========== -->
+        <div class="tip-box no-print" style="margin-bottom: 32px;">
+            <p class="tip-label">💡 How to use this pack</p>
+            <p>
+                <strong>Fill in the blanks:</strong> Fields marked in <span class="fill-field" style="min-width: auto; display: inline;">[gold italic text]</span> are for you to customise with your details.<br>
+                <strong>Print to PDF:</strong> Press Ctrl+P (or Cmd+P on Mac) → "Save as PDF" for a clean, professional document.<br>
+                <strong>Copy & paste:</strong> Copy any template into Google Docs, Notion, Word, or your favourite tool.<br>
+                <strong>Mix and match:</strong> Use the contract templates as starting points, then add payment clauses from Part 2 as needed.
+            </p>
+        </div>
+
+        <!-- ========== DISCLAIMER ========== -->
+        <div class="disclaimer">
+            <p class="disclaimer-label">⚠️ Important Legal Disclaimer</p>
+            <p>These templates are provided for <strong>informational and educational purposes only</strong>. They do not constitute legal advice and should not be treated as a substitute for professional legal counsel. Laws vary by jurisdiction. You should consult a qualified solicitor (UK) or attorney (US) before using any template or clause in a binding contract. The author and Landolio accept no liability for any loss arising from the use of these templates. These templates are based on English and Welsh law as of February 2026.</p>
+        </div>
+
+        <!-- ========== PLACEHOLDER KEY ========== -->
+        <div class="tip-box" style="margin-bottom: 48px;">
+            <p class="tip-label">🔑 Placeholder Key</p>
+            <p style="margin-bottom: 12px;">Replace these placeholders throughout every template:</p>
+            <table class="placeholder-table">
+                <thead>
+                    <tr><th>Placeholder</th><th>What to Enter</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>[FREELANCER NAME]</td><td>Your full legal name or registered business name</td></tr>
+                    <tr><td>[CLIENT NAME]</td><td>Client's full legal name or registered business name</td></tr>
+                    <tr><td>[PROJECT NAME]</td><td>Short description or title of the project</td></tr>
+                    <tr><td>[AMOUNT]</td><td>Monetary value (e.g. £5,000)</td></tr>
+                    <tr><td>[PERCENTAGE]</td><td>A percentage figure (e.g. 50%)</td></tr>
+                    <tr><td>[NUMBER]</td><td>A numerical value (e.g. 30)</td></tr>
+                    <tr><td>[DATE]</td><td>A specific date (e.g. 1 March 2026)</td></tr>
+                    <tr><td>[EMAIL]</td><td>An email address for correspondence</td></tr>
+                    <tr><td>[ADDRESS]</td><td>A business or registered address</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ========== TABLE OF CONTENTS ========== -->
+        <div class="toc">
+            <h2>What's Inside</h2>
+
+            <p class="toc-section-label">Part 1 — Contract Templates</p>
+            <ol class="toc-list">
+                <li>
+                    <a href="#basic-freelance">
+                        Basic Freelance Services Agreement
+                        <span class="toc-desc">Your core contract — covers scope, payment, IP, liability, and termination</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#retainer">
+                        Retainer Agreement
+                        <span class="toc-desc">For ongoing monthly engagements with recurring fees and rollover terms</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#project-based">
+                        Project-Based Contract
+                        <span class="toc-desc">Milestone-driven contract for defined projects with phased delivery and payment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#nda">
+                        Non-Disclosure Agreement (NDA)
+                        <span class="toc-desc">Mutual confidentiality agreement to protect both parties' sensitive information</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#scope-change">
+                        Scope Change Amendment
+                        <span class="toc-desc">Formal addendum when the project scope, budget, or timeline needs to change</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#kill-fee">
+                        Kill Fee &amp; Early Termination Agreement
+                        <span class="toc-desc">Standalone clause document for cancellation protection and compensation</span>
+                    </a>
+                </li>
+            </ol>
+
+            <p class="toc-section-label">Part 2 — Payment Protection Clauses</p>
+            <ol class="toc-list" style="counter-reset: toc-counter 6;">
+                <li>
+                    <a href="#payment-clauses">
+                        10 Payment Protection Clauses
+                        <span class="toc-desc">Drop-in clauses covering deposits, late fees, milestones, currency, disputes, and more</span>
+                    </a>
+                </li>
+            </ol>
+
+            <p class="toc-section-label">Part 3 — Quick Reference</p>
+            <ol class="toc-list" style="counter-reset: toc-counter 7;">
+                <li>
+                    <a href="#decision-guide">
+                        Which Template &amp; Clauses Do You Need?
+                        <span class="toc-desc">Decision flowchart and recommended combinations by project type</span>
+                    </a>
+                </li>
+            </ol>
+        </div>
+
+
+        <!-- ================================================================ -->
+        <!--  PART 1: CONTRACT TEMPLATES                                      -->
+        <!-- ================================================================ -->
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 1: BASIC FREELANCE SERVICES AGREEMENT                   -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="basic-freelance">
+            <p class="template-number">Template 01 of 06</p>
+            <h2>Basic Freelance Services Agreement</h2>
+            <p class="template-intro">Your essential, all-purpose freelance contract. Use this for any project — it covers scope, payment, intellectual property, confidentiality, liability, and termination in a single document.</p>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 When to use this</p>
+                <p>This is your default contract. Use it for one-off projects, short engagements, or whenever you need a straightforward agreement. For ongoing monthly work, use Template 02 (Retainer) instead. For complex multi-phase projects, use Template 03 (Project-Based).</p>
+            </div>
+
+            <div class="contract-body">
+                <p class="contract-title">Freelance Services Agreement</p>
+                <p class="contract-subtitle">This Agreement is entered into on <span class="fill-field fill-field-sm">[DATE]</span></p>
+
+                <div class="parties">
+                    <div>
+                        <p class="party-label">The Freelancer</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[FREELANCER NAME]</span><br>
+                            <span class="fill-field">[ADDRESS]</span><br>
+                            <span class="fill-field">[EMAIL]</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="party-label">The Client</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[CLIENT NAME]</span><br>
+                            <span class="fill-field">[ADDRESS]</span><br>
+                            <span class="fill-field">[EMAIL]</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 1</p>
+                    <p class="clause-heading">Scope of Services</p>
+                    <p>The Freelancer agrees to provide the following services (the "Services") to the Client:</p>
+                    <div class="fill-field-wide">[Describe the services in detail — e.g. "Design and development of a 5-page responsive website including homepage, about, services, portfolio, and contact pages, using WordPress with a custom theme."]</div>
+                    <p>The Services shall include <span class="fill-field fill-field-sm">[NUMBER]</span> rounds of revisions per deliverable. Any work beyond the scope described above shall be subject to a separate written agreement or Change Order (see Clause 8).</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 2</p>
+                    <p class="clause-heading">Fees and Payment</p>
+                    <p>The Client shall pay the Freelancer a total fee of <span class="fill-field">[AMOUNT]</span> (the "Fee") for the Services, payable as follows:</p>
+                    <ul>
+                        <li>A non-refundable deposit of <span class="fill-field">[AMOUNT / PERCENTAGE]</span> due upon signing this Agreement</li>
+                        <li>The remaining balance of <span class="fill-field">[AMOUNT]</span> due within <span class="fill-field fill-field-sm">[NUMBER]</span> calendar days of the Freelancer's final invoice</li>
+                    </ul>
+                    <p>Invoices shall be submitted to <span class="fill-field">[EMAIL]</span>. All fees are exclusive of VAT, which shall be charged where applicable at the prevailing rate.</p>
+                    <p>Payment shall be made by <span class="fill-field">[bank transfer / PayPal / Wise / Stripe]</span> to the account details provided on the Freelancer's invoice.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 3</p>
+                    <p class="clause-heading">Late Payment</p>
+                    <p>If any payment is not received by the due date, the Freelancer reserves the right to:</p>
+                    <ol type="a">
+                        <li>charge interest at the rate of 8% per annum above the Bank of England base rate, in accordance with the Late Payment of Commercial Debts (Interest) Act 1998 (as amended);</li>
+                        <li>claim fixed-sum compensation as prescribed by the said Act (£40 for debts up to £999.99; £70 for debts between £1,000 and £9,999.99; £100 for debts of £10,000 or more);</li>
+                        <li>suspend all work until payment is received in full; and</li>
+                        <li>recover all reasonable costs of collection, including solicitor's fees.</li>
+                    </ol>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 4</p>
+                    <p class="clause-heading">Timeline and Delivery</p>
+                    <p>The Freelancer shall use reasonable endeavours to deliver the Services by <span class="fill-field">[DATE or "within [NUMBER] weeks of receiving the deposit and all required materials"]</span>. Delivery timelines are estimates and not binding deadlines unless expressly stated otherwise in writing.</p>
+                    <p>The timeline shall be extended by a reasonable period where delays are caused by the Client, including but not limited to late provision of materials, feedback, content, or approvals.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 5</p>
+                    <p class="clause-heading">Intellectual Property</p>
+                    <p>Upon receipt of payment in full, the Freelancer assigns to the Client all intellectual property rights in the final delivered work product (the "Deliverables"), including copyright, to the fullest extent permitted by law.</p>
+                    <p>The following are expressly excluded from this assignment:</p>
+                    <ul>
+                        <li>Any pre-existing materials, tools, frameworks, or code owned by the Freelancer prior to this engagement (the "Freelancer's Background IP"), which are licensed to the Client on a non-exclusive, perpetual basis for use in connection with the Deliverables only</li>
+                        <li>Any third-party materials (e.g. stock images, open-source libraries) which remain subject to their respective licences</li>
+                        <li>Draft, unused, or rejected concepts, which remain the property of the Freelancer</li>
+                    </ul>
+                    <p>Until payment is received in full, all rights in the Deliverables remain with the Freelancer.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 6</p>
+                    <p class="clause-heading">Confidentiality</p>
+                    <p>Each party agrees to keep confidential all information received from the other party that is marked as confidential or that a reasonable person would understand to be confidential (the "Confidential Information"). Neither party shall disclose Confidential Information to any third party without the prior written consent of the disclosing party, except:</p>
+                    <ul>
+                        <li>to professional advisers bound by a duty of confidentiality;</li>
+                        <li>as required by law, regulation, or court order; or</li>
+                        <li>where the information is already in the public domain through no fault of the receiving party.</li>
+                    </ul>
+                    <p>This obligation shall survive the termination of this Agreement for a period of <span class="fill-field fill-field-sm">[NUMBER — e.g. 2]</span> years.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 7</p>
+                    <p class="clause-heading">Limitation of Liability</p>
+                    <p>The Freelancer's total aggregate liability under or in connection with this Agreement, whether in contract, tort (including negligence), breach of statutory duty, or otherwise, shall not exceed the total Fees paid or payable under this Agreement.</p>
+                    <p>The Freelancer shall not be liable for any indirect, consequential, or special losses, including but not limited to loss of profits, loss of revenue, loss of data, or loss of business opportunity, howsoever arising.</p>
+                    <p>Nothing in this Agreement shall limit or exclude liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be lawfully limited or excluded.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 8</p>
+                    <p class="clause-heading">Change Orders</p>
+                    <p>Any work requested by the Client that falls outside the Scope of Services described in Clause 1 shall constitute a "Change Order." No Change Order shall be commenced until the Freelancer has provided a written estimate and the Client has approved it in writing (email shall suffice). Change Orders shall be billed at the Freelancer's standard rate of <span class="fill-field">[AMOUNT]</span> per hour, or at such other rate as mutually agreed.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 9</p>
+                    <p class="clause-heading">Termination</p>
+                    <p>Either party may terminate this Agreement by giving <span class="fill-field fill-field-sm">[NUMBER — e.g. 14]</span> days' written notice to the other party.</p>
+                    <p>Upon termination by the Client:</p>
+                    <ul>
+                        <li>The Client shall pay the Freelancer for all work completed to date, plus a cancellation fee of <span class="fill-field fill-field-sm">[PERCENTAGE — e.g. 25%]</span> of the remaining contract value</li>
+                        <li>Any deposit paid shall be non-refundable</li>
+                    </ul>
+                    <p>Upon termination by the Freelancer, the Freelancer shall refund any prepaid amounts for work not yet completed. Upon full payment, the Client shall receive a licence to use all completed Deliverables as per Clause 5.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 10</p>
+                    <p class="clause-heading">Dispute Resolution</p>
+                    <p>The parties shall first attempt to resolve any dispute through good-faith negotiation within <span class="fill-field fill-field-sm">[NUMBER — e.g. 14]</span> business days. If unresolved, either party may refer the dispute to mediation through the Centre for Effective Dispute Resolution (CEDR). If mediation fails, either party may commence court proceedings. The Freelancer may commence proceedings for unpaid fees without first engaging in negotiation or mediation.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 11</p>
+                    <p class="clause-heading">General</p>
+                    <p><strong>Governing Law.</strong> This Agreement shall be governed by and construed in accordance with the laws of England and Wales. The parties submit to the exclusive jurisdiction of the courts of England and Wales.</p>
+                    <p><strong>Entire Agreement.</strong> This Agreement, together with any schedules or appendices, constitutes the entire agreement between the parties and supersedes all prior negotiations, representations, or agreements.</p>
+                    <p><strong>Amendments.</strong> No amendment to this Agreement shall be effective unless made in writing and signed by both parties.</p>
+                    <p><strong>Freelancer Status.</strong> The Freelancer is an independent contractor and not an employee, worker, agent, or partner of the Client. Nothing in this Agreement creates a relationship of employment, agency, or partnership.</p>
+                    <p><strong>Severability.</strong> If any provision of this Agreement is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+                </div>
+
+                <div class="signature-block">
+                    <div>
+                        <p class="sig-label">Signed by the Freelancer</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Date</p>
+                    </div>
+                    <div>
+                        <p class="sig-label">Signed by the Client</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Date</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 2: RETAINER AGREEMENT                                    -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="retainer">
+            <p class="template-number">Template 02 of 06</p>
+            <h2>Retainer Agreement</h2>
+            <p class="template-intro">For ongoing client relationships with recurring monthly fees. Covers service hours, rollover policy, scope of recurring work, and termination notice periods.</p>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 When to use this</p>
+                <p>Use this when a client wants ongoing access to your services — e.g. monthly design support, regular content creation, ongoing consulting, or maintenance work. It provides predictable income for you and guaranteed availability for the client.</p>
+            </div>
+
+            <div class="contract-body">
+                <p class="contract-title">Retainer Services Agreement</p>
+                <p class="contract-subtitle">This Agreement is entered into on <span class="fill-field fill-field-sm">[DATE]</span></p>
+
+                <div class="parties">
+                    <div>
+                        <p class="party-label">The Freelancer</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[FREELANCER NAME]</span><br>
+                            <span class="fill-field">[ADDRESS]</span><br>
+                            <span class="fill-field">[EMAIL]</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="party-label">The Client</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[CLIENT NAME]</span><br>
+                            <span class="fill-field">[ADDRESS]</span><br>
+                            <span class="fill-field">[EMAIL]</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 1</p>
+                    <p class="clause-heading">Retainer Services</p>
+                    <p>The Freelancer agrees to provide the following recurring services (the "Retainer Services") to the Client:</p>
+                    <div class="fill-field-wide">[Describe the ongoing services — e.g. "Monthly website maintenance, content updates, performance monitoring, security patches, and up to 4 hours of design work per month."]</div>
+                    <p>The Retainer Services include up to <span class="fill-field fill-field-sm">[NUMBER]</span> hours of work per calendar month (the "Included Hours").</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 2</p>
+                    <p class="clause-heading">Retainer Fee and Payment</p>
+                    <p>The Client shall pay a recurring retainer fee of <span class="fill-field">[AMOUNT]</span> per calendar month (the "Retainer Fee"), due on or before the <span class="fill-field fill-field-sm">[NUMBER — e.g. 1st]</span> day of each month. The first Retainer Fee is due upon signing this Agreement.</p>
+                    <p>The Retainer Fee is payable in advance. The Freelancer shall not be obligated to perform the Retainer Services for any month in which the Retainer Fee has not been received.</p>
+                    <p>All fees are exclusive of VAT, which shall be charged where applicable.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 3</p>
+                    <p class="clause-heading">Additional Hours</p>
+                    <p>Work exceeding the Included Hours in any calendar month shall be billed at the Freelancer's standard rate of <span class="fill-field">[AMOUNT]</span> per hour. The Freelancer shall notify the Client before commencing work that would exceed the Included Hours and shall not proceed without written approval (email shall suffice).</p>
+                    <p>Additional hours shall be invoiced at the end of the relevant month and are payable within <span class="fill-field fill-field-sm">[NUMBER]</span> calendar days.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 4</p>
+                    <p class="clause-heading">Unused Hours</p>
+                    <p>Unused Included Hours shall <strong>not</strong> roll over to subsequent months unless expressly agreed in writing. The Retainer Fee remains payable in full regardless of whether the Client utilises all Included Hours in any given month.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 5</p>
+                    <p class="clause-heading">Response Times and Availability</p>
+                    <p>During the term of this Agreement, the Freelancer shall use reasonable endeavours to respond to Client requests within <span class="fill-field fill-field-sm">[NUMBER — e.g. 24]</span> hours during normal business hours (Monday to Friday, 9:00–17:30 GMT/BST, excluding English bank holidays).</p>
+                    <p>The Freelancer is not required to be available outside these hours. Urgent out-of-hours requests may be accommodated at the Freelancer's discretion and may incur a rush fee surcharge of <span class="fill-field fill-field-sm">[PERCENTAGE]</span>%.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 6</p>
+                    <p class="clause-heading">Term and Termination</p>
+                    <p>This Agreement shall commence on <span class="fill-field fill-field-sm">[DATE]</span> and shall continue on a rolling monthly basis until terminated by either party.</p>
+                    <p>Either party may terminate this Agreement by giving <span class="fill-field fill-field-sm">[NUMBER — e.g. 30]</span> days' written notice. Upon termination:</p>
+                    <ul>
+                        <li>The Client shall pay for all work completed to date, including any additional hours incurred</li>
+                        <li>The current month's Retainer Fee shall be non-refundable</li>
+                        <li>The Freelancer shall deliver all completed work within <span class="fill-field fill-field-sm">[NUMBER]</span> business days of the termination date</li>
+                    </ul>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 7</p>
+                    <p class="clause-heading">Late Payment</p>
+                    <p>If the Retainer Fee or any additional charges are not received by the due date, the provisions of the Late Payment of Commercial Debts (Interest) Act 1998 (as amended) shall apply. The Freelancer may suspend the Retainer Services until all outstanding amounts are paid in full.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 8</p>
+                    <p class="clause-heading">Intellectual Property, Confidentiality, Liability, and General Terms</p>
+                    <p>The intellectual property, confidentiality, limitation of liability, dispute resolution, and general provisions set out in the Freelancer's standard terms (as attached or previously agreed) shall apply to this Agreement. Where the Freelancer's standard terms conflict with this Agreement, this Agreement shall prevail.</p>
+                </div>
+
+                <div class="signature-block">
+                    <div>
+                        <p class="sig-label">Signed by the Freelancer</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                    <div>
+                        <p class="sig-label">Signed by the Client</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 3: PROJECT-BASED CONTRACT                                -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="project-based">
+            <p class="template-number">Template 03 of 06</p>
+            <h2>Project-Based Contract</h2>
+            <p class="template-intro">For defined projects with multiple phases, milestones, and deliverables. Includes a built-in milestone payment schedule so you get paid as you go — not just at the end.</p>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 When to use this</p>
+                <p>Use this for projects worth more than £1,000 or lasting longer than 2–4 weeks. The milestone structure protects you from doing 80% of the work and never getting paid. Each phase has a deliverable and a payment — no payment, no next phase.</p>
+            </div>
+
+            <div class="contract-body">
+                <p class="contract-title">Project-Based Services Agreement</p>
+                <p class="contract-subtitle">This Agreement is entered into on <span class="fill-field fill-field-sm">[DATE]</span></p>
+
+                <div class="parties">
+                    <div>
+                        <p class="party-label">The Freelancer</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[FREELANCER NAME]</span><br>
+                            <span class="fill-field">[ADDRESS]</span><br>
+                            <span class="fill-field">[EMAIL]</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="party-label">The Client</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[CLIENT NAME]</span><br>
+                            <span class="fill-field">[ADDRESS]</span><br>
+                            <span class="fill-field">[EMAIL]</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 1</p>
+                    <p class="clause-heading">Project Description</p>
+                    <p>The Freelancer agrees to deliver the following project (the "Project"):</p>
+                    <div class="fill-field-wide">[Project Name — e.g. "Complete Brand Identity Package for Acme Ltd"]</div>
+                    <p>The detailed scope, specifications, and deliverables for the Project are set out in Schedule A attached to this Agreement.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 2</p>
+                    <p class="clause-heading">Milestone Schedule</p>
+                    <p>The Project shall be delivered in the following phases. Each milestone payment is due within <span class="fill-field fill-field-sm">[NUMBER]</span> calendar days of the Freelancer's invoice for that milestone.</p>
+
+                    <table class="decision-table" style="margin: 20px 0;">
+                        <thead>
+                            <tr>
+                                <th>Phase</th>
+                                <th>Deliverable</th>
+                                <th>Amount</th>
+                                <th>Due</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="tag">Phase 1</span></td>
+                                <td><span class="fill-field" style="min-width: 140px;">[e.g. Research & Discovery]</span></td>
+                                <td><span class="fill-field fill-field-sm">[AMOUNT]</span></td>
+                                <td>Upon signing</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag">Phase 2</span></td>
+                                <td><span class="fill-field" style="min-width: 140px;">[e.g. Initial Concepts]</span></td>
+                                <td><span class="fill-field fill-field-sm">[AMOUNT]</span></td>
+                                <td>On delivery</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag">Phase 3</span></td>
+                                <td><span class="fill-field" style="min-width: 140px;">[e.g. Revisions & Refinement]</span></td>
+                                <td><span class="fill-field fill-field-sm">[AMOUNT]</span></td>
+                                <td>On delivery</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag">Phase 4</span></td>
+                                <td><span class="fill-field" style="min-width: 140px;">[e.g. Final Delivery & Handoff]</span></td>
+                                <td><span class="fill-field fill-field-sm">[AMOUNT]</span></td>
+                                <td>On delivery</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>Total Project Fee: <span class="fill-field">[TOTAL AMOUNT]</span></strong></p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 3</p>
+                    <p class="clause-heading">Work Progression</p>
+                    <p>The Freelancer shall not be obligated to commence work on any subsequent phase until payment for the preceding phase has been received in full.</p>
+                    <p>The Client shall have <span class="fill-field fill-field-sm">[NUMBER — e.g. 5]</span> business days from delivery of each milestone to review and request revisions. If no written feedback is received within this period, the milestone shall be deemed approved.</p>
+                    <p>Each milestone includes <span class="fill-field fill-field-sm">[NUMBER]</span> rounds of revisions. Additional revisions shall be billed as a Change Order at <span class="fill-field">[AMOUNT]</span> per hour.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 4</p>
+                    <p class="clause-heading">Timeline</p>
+                    <p>The estimated project timeline is <span class="fill-field">[NUMBER]</span> weeks from commencement. The project start date shall be the date on which the Freelancer receives both the signed Agreement and the Phase 1 payment.</p>
+                    <p>The timeline shall be extended proportionately where:</p>
+                    <ul>
+                        <li>The Client causes delays in providing materials, content, feedback, or approvals</li>
+                        <li>Change Orders are approved that expand the scope</li>
+                        <li>Milestone payments are received late</li>
+                    </ul>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 5</p>
+                    <p class="clause-heading">Early Termination</p>
+                    <p>If the Client terminates this Agreement before all milestones are complete:</p>
+                    <ol type="a">
+                        <li>The Client shall pay for all completed milestones in full</li>
+                        <li>The Client shall pay for any partially completed work on a pro-rata or hourly basis (at <span class="fill-field">[AMOUNT]</span> per hour), whichever is greater</li>
+                        <li>The Client shall pay a cancellation fee of <span class="fill-field fill-field-sm">[PERCENTAGE]</span>% of the remaining unpaid milestones</li>
+                        <li>Any Phase 1 deposit shall be non-refundable</li>
+                    </ol>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 6</p>
+                    <p class="clause-heading">Late Payment, IP, Confidentiality &amp; General Terms</p>
+                    <p>The late payment, intellectual property, confidentiality, limitation of liability, dispute resolution, and general provisions shall be as set out in the Freelancer's standard terms (as attached or previously agreed, or as per the Basic Freelance Services Agreement). In the event of any conflict, this Project-Based Agreement shall prevail.</p>
+                </div>
+
+                <div class="signature-block">
+                    <div>
+                        <p class="sig-label">Signed by the Freelancer</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                    <div>
+                        <p class="sig-label">Signed by the Client</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 4: NON-DISCLOSURE AGREEMENT (NDA)                        -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="nda">
+            <p class="template-number">Template 04 of 06</p>
+            <h2>Non-Disclosure Agreement (NDA)</h2>
+            <p class="template-intro">A mutual NDA that protects both parties' confidential information. Use this before sharing sensitive business details, proprietary processes, client lists, or trade secrets.</p>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 When to use this</p>
+                <p>Sign this <strong>before</strong> starting work — ideally before the discovery call or brief. It protects you both. Mutual NDAs (where both sides agree to confidentiality) are standard practice and more professional than one-sided ones.</p>
+            </div>
+
+            <div class="contract-body">
+                <p class="contract-title">Mutual Non-Disclosure Agreement</p>
+                <p class="contract-subtitle">This Agreement is entered into on <span class="fill-field fill-field-sm">[DATE]</span></p>
+
+                <div class="parties">
+                    <div>
+                        <p class="party-label">Party A (The Freelancer)</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[FREELANCER NAME]</span><br>
+                            <span class="fill-field">[ADDRESS]</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="party-label">Party B (The Client)</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[CLIENT NAME]</span><br>
+                            <span class="fill-field">[ADDRESS]</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 1</p>
+                    <p class="clause-heading">Purpose</p>
+                    <p>The parties intend to exchange certain confidential and proprietary information for the purpose of:</p>
+                    <div class="fill-field-wide">[Describe the purpose — e.g. "Evaluating and undertaking a potential web development project for Party B's e-commerce platform."]</div>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 2</p>
+                    <p class="clause-heading">Definition of Confidential Information</p>
+                    <p>"Confidential Information" means all information disclosed by either party (the "Disclosing Party") to the other party (the "Receiving Party"), whether orally, in writing, electronically, or by any other means, that:</p>
+                    <ol type="a">
+                        <li>is marked or designated as "confidential," "proprietary," or similar; or</li>
+                        <li>by its nature or the circumstances of its disclosure, a reasonable person would understand to be confidential.</li>
+                    </ol>
+                    <p>Confidential Information includes, but is not limited to: business plans, financial information, client lists, pricing, technical specifications, designs, source code, trade secrets, marketing strategies, and any information relating to the Purpose described above.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 3</p>
+                    <p class="clause-heading">Obligations</p>
+                    <p>The Receiving Party agrees to:</p>
+                    <ol type="a">
+                        <li>keep all Confidential Information strictly confidential;</li>
+                        <li>not disclose Confidential Information to any third party without the Disclosing Party's prior written consent;</li>
+                        <li>use Confidential Information solely for the Purpose described above;</li>
+                        <li>take all reasonable measures to protect the confidentiality of the information, using at least the same degree of care it uses to protect its own confidential information; and</li>
+                        <li>limit access to Confidential Information to those of its employees, contractors, or advisers who need to know it for the Purpose and who are bound by confidentiality obligations no less restrictive than those in this Agreement.</li>
+                    </ol>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 4</p>
+                    <p class="clause-heading">Exclusions</p>
+                    <p>Confidential Information does not include information that:</p>
+                    <ol type="a">
+                        <li>is or becomes publicly available through no fault of the Receiving Party;</li>
+                        <li>was already known to the Receiving Party before disclosure, as evidenced by written records;</li>
+                        <li>is independently developed by the Receiving Party without reference to the Confidential Information; or</li>
+                        <li>is lawfully received from a third party without restriction on disclosure.</li>
+                    </ol>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 5</p>
+                    <p class="clause-heading">Required Disclosure</p>
+                    <p>If the Receiving Party is compelled by law, regulation, or court order to disclose Confidential Information, it shall (to the extent legally permitted) promptly notify the Disclosing Party and cooperate with any efforts to obtain protective treatment of the information.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 6</p>
+                    <p class="clause-heading">Return of Information</p>
+                    <p>Upon written request or termination of this Agreement, the Receiving Party shall promptly return or destroy all copies of Confidential Information in its possession and provide written confirmation of such destruction if requested.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 7</p>
+                    <p class="clause-heading">Term</p>
+                    <p>This Agreement shall remain in effect for a period of <span class="fill-field fill-field-sm">[NUMBER — e.g. 2]</span> years from the date of signing, or until terminated by either party with <span class="fill-field fill-field-sm">[NUMBER — e.g. 30]</span> days' written notice. The confidentiality obligations shall survive termination for a further period of <span class="fill-field fill-field-sm">[NUMBER — e.g. 2]</span> years.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 8</p>
+                    <p class="clause-heading">Remedies</p>
+                    <p>The parties acknowledge that a breach of this Agreement may cause irreparable harm for which monetary damages would be inadequate. The Disclosing Party shall be entitled to seek injunctive relief or specific performance in addition to any other remedies available at law or in equity.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 9</p>
+                    <p class="clause-heading">Governing Law</p>
+                    <p>This Agreement shall be governed by and construed in accordance with the laws of England and Wales. The parties submit to the exclusive jurisdiction of the courts of England and Wales.</p>
+                </div>
+
+                <div class="signature-block">
+                    <div>
+                        <p class="sig-label">Signed by Party A</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                    <div>
+                        <p class="sig-label">Signed by Party B</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 5: SCOPE CHANGE AMENDMENT                                -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="scope-change">
+            <p class="template-number">Template 05 of 06</p>
+            <h2>Scope Change Amendment</h2>
+            <p class="template-intro">A formal addendum to attach to any existing contract when the scope, budget, or timeline needs to change. This prevents scope creep and creates a paper trail for every change.</p>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 When to use this</p>
+                <p>Use this every time a client says "can we just add…" or "actually, I was thinking…" If it's not in the original scope, it gets a Change Order. No exceptions. This single document will protect more of your income than any other template in this pack.</p>
+            </div>
+
+            <div class="contract-body">
+                <p class="contract-title">Amendment to Services Agreement</p>
+                <p class="contract-subtitle">Change Order No. <span class="fill-field fill-field-sm">[NUMBER]</span> · Dated <span class="fill-field fill-field-sm">[DATE]</span></p>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Reference</p>
+                    <p class="clause-heading">Original Agreement</p>
+                    <p>This Amendment relates to the Services Agreement dated <span class="fill-field">[ORIGINAL DATE]</span> between <span class="fill-field">[FREELANCER NAME]</span> (the "Freelancer") and <span class="fill-field">[CLIENT NAME]</span> (the "Client") for the project known as <span class="fill-field">[PROJECT NAME]</span> (the "Original Agreement").</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Section 1</p>
+                    <p class="clause-heading">Description of Changes</p>
+                    <p>The parties agree to the following changes to the scope of the Original Agreement:</p>
+
+                    <h4 style="margin-top: 16px;">Work to be Added:</h4>
+                    <div class="fill-field-wide">[Describe the additional work in detail — e.g. "Addition of an e-commerce shop page with product listings for up to 20 items, shopping cart functionality, and Stripe payment integration."]</div>
+
+                    <h4>Work to be Removed (if any):</h4>
+                    <div class="fill-field-wide">[Describe any work being removed from the original scope, or write "None"]</div>
+
+                    <h4>Reason for Change:</h4>
+                    <div class="fill-field-wide">[Brief explanation — e.g. "Client has decided to launch an online shop alongside the brochure website."]</div>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Section 2</p>
+                    <p class="clause-heading">Impact on Fees</p>
+                    <p><strong>Original Fee:</strong> <span class="fill-field">[ORIGINAL AMOUNT]</span></p>
+                    <p><strong>Additional Fee for this Change Order:</strong> <span class="fill-field">[ADDITIONAL AMOUNT]</span></p>
+                    <p><strong>Revised Total Fee:</strong> <span class="fill-field">[NEW TOTAL]</span></p>
+                    <p>The additional fee shall be payable <span class="fill-field">[upon completion / 50% upfront and 50% on delivery / as a new milestone]</span>.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Section 3</p>
+                    <p class="clause-heading">Impact on Timeline</p>
+                    <p><strong>Original Delivery Date:</strong> <span class="fill-field">[ORIGINAL DATE]</span></p>
+                    <p><strong>Revised Delivery Date:</strong> <span class="fill-field">[NEW DATE]</span></p>
+                    <p>The timeline extension of <span class="fill-field fill-field-sm">[NUMBER]</span> working days reflects the additional scope and shall not constitute a breach of the Original Agreement.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Section 4</p>
+                    <p class="clause-heading">Agreement</p>
+                    <p>All other terms and conditions of the Original Agreement remain unchanged and in full force and effect. In the event of any conflict between this Amendment and the Original Agreement, this Amendment shall prevail.</p>
+                    <p>This Amendment shall not be effective until signed by both parties.</p>
+                </div>
+
+                <div class="signature-block">
+                    <div>
+                        <p class="sig-label">Signed by the Freelancer</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                    <div>
+                        <p class="sig-label">Signed by the Client</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!-- TEMPLATE 6: KILL FEE & EARLY TERMINATION                         -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="kill-fee">
+            <p class="template-number">Template 06 of 06</p>
+            <h2>Kill Fee &amp; Early Termination Agreement</h2>
+            <p class="template-intro">A standalone agreement (or addendum) that protects you when a client cancels a project mid-way. Ensures you get paid for completed work plus compensation for lost income and scheduling disruption.</p>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 When to use this</p>
+                <p>Use this as a standalone document when your main contract doesn't include kill fee provisions, or when you want more detailed termination terms than your standard contract provides. Particularly important for large projects where you've blocked out weeks or months of calendar time.</p>
+            </div>
+
+            <div class="contract-body">
+                <p class="contract-title">Kill Fee &amp; Early Termination Agreement</p>
+                <p class="contract-subtitle">Supplementary to the Services Agreement dated <span class="fill-field fill-field-sm">[DATE]</span></p>
+
+                <div class="parties">
+                    <div>
+                        <p class="party-label">The Freelancer</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[FREELANCER NAME]</span><br>
+                            <span class="fill-field">[EMAIL]</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="party-label">The Client</p>
+                        <p class="party-detail">
+                            <span class="fill-field">[CLIENT NAME]</span><br>
+                            <span class="fill-field">[EMAIL]</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 1</p>
+                    <p class="clause-heading">Applicability</p>
+                    <p>This Kill Fee Agreement applies to the project described as <span class="fill-field">[PROJECT NAME]</span> with a total contract value of <span class="fill-field">[TOTAL FEE]</span>, as set out in the Services Agreement dated <span class="fill-field fill-field-sm">[DATE]</span> (the "Main Agreement").</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 2</p>
+                    <p class="clause-heading">Notice Period</p>
+                    <p>Either party may terminate the Main Agreement by providing <span class="fill-field fill-field-sm">[NUMBER — e.g. 14]</span> days' written notice (the "Notice Period"). During the Notice Period, the Freelancer shall continue to perform the Services unless instructed otherwise by the Client.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 3</p>
+                    <p class="clause-heading">Client-Initiated Cancellation — Kill Fee Schedule</p>
+                    <p>In the event of termination by the Client prior to completion, the following fees shall be payable:</p>
+
+                    <table class="decision-table" style="margin: 20px 0;">
+                        <thead>
+                            <tr>
+                                <th>When Cancelled</th>
+                                <th>Work Completed Fee</th>
+                                <th>Kill Fee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Before work begins (after signing)</td>
+                                <td>Deposit non-refundable</td>
+                                <td>Deposit amount only</td>
+                            </tr>
+                            <tr>
+                                <td>During Phase 1 (0–25% complete)</td>
+                                <td>Pro-rata or hourly, whichever is greater</td>
+                                <td><span class="fill-field fill-field-sm">[e.g. 25%]</span> of remaining value</td>
+                            </tr>
+                            <tr>
+                                <td>During Phase 2 (25–50% complete)</td>
+                                <td>All completed milestones + pro-rata current</td>
+                                <td><span class="fill-field fill-field-sm">[e.g. 35%]</span> of remaining value</td>
+                            </tr>
+                            <tr>
+                                <td>During Phase 3+ (50%+ complete)</td>
+                                <td>All completed milestones + pro-rata current</td>
+                                <td><span class="fill-field fill-field-sm">[e.g. 50%]</span> of remaining value</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>For the avoidance of doubt, "pro-rata" means the proportion of the current phase that has been completed, calculated by the Freelancer in good faith based on time spent and deliverables produced.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 4</p>
+                    <p class="clause-heading">Freelancer-Initiated Termination</p>
+                    <p>If the Freelancer terminates the Main Agreement, the Freelancer shall:</p>
+                    <ol type="a">
+                        <li>refund any prepaid amounts for work not yet completed;</li>
+                        <li>deliver all completed work to the Client within <span class="fill-field fill-field-sm">[NUMBER]</span> business days; and</li>
+                        <li>not charge a kill fee.</li>
+                    </ol>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 5</p>
+                    <p class="clause-heading">Ownership of Work Upon Cancellation</p>
+                    <p>Upon payment of all amounts due under this Agreement (including the kill fee), the Client shall receive a licence to use all <strong>completed</strong> deliverables as per the intellectual property provisions of the Main Agreement.</p>
+                    <p>Incomplete, draft, or rejected work shall remain the property of the Freelancer unless separately purchased by the Client at the Freelancer's standard hourly rate.</p>
+                </div>
+
+                <div class="contract-clause">
+                    <p class="clause-num">Clause 6</p>
+                    <p class="clause-heading">Genuine Pre-Estimate of Loss</p>
+                    <p>The kill fees set out in Clause 3 represent a genuine pre-estimate of the Freelancer's losses arising from early termination, including but not limited to: lost income from declined engagements, rescheduling costs, administrative burden, and the difficulty of replacing cancelled work at short notice. These fees are not intended as a penalty and shall be enforceable as liquidated damages under English law.</p>
+                </div>
+
+                <div class="signature-block">
+                    <div>
+                        <p class="sig-label">Signed by the Freelancer</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                    <div>
+                        <p class="sig-label">Signed by the Client</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Signature</p>
+                        <div class="signature-line"></div>
+                        <p class="signature-field-label">Print Name &amp; Date</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!--  PART 2: PAYMENT PROTECTION CLAUSES                              -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="payment-clauses">
+            <p class="template-number">Part 2 — Payment Protection</p>
+            <h2>10 Payment Protection Clauses</h2>
+            <p class="template-intro">Drop these clauses into any contract to protect your income. Each clause is self-contained — copy the ones you need and add them to your agreement. UK variant is primary; US variant included where relevant.</p>
+
+            <div class="tip-box">
+                <p class="tip-label">💡 How to use these clauses</p>
+                <p><strong>1.</strong> Copy the clause text into your contract. <strong>2.</strong> Replace all <span class="fill-field" style="min-width: auto; display: inline;">[PLACEHOLDER]</span> fields. <strong>3.</strong> Choose UK or US variant. <strong>4.</strong> Combine multiple clauses — most contracts need 3–6 of these. <strong>5.</strong> Renumber clauses sequentially in your final contract.</p>
+            </div>
+
+            <!-- CLAUSE 1: Standard Net-30 -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 01</p>
+                <p class="clause-block-title">Standard Net-30 Payment Terms</p>
+                <div class="clause-text">
+                    <p><strong>Payment Terms.</strong> The Client (<span class="fill-field">[CLIENT NAME]</span>) shall pay the Freelancer (<span class="fill-field">[FREELANCER NAME]</span>) the total fee of <span class="fill-field">[AMOUNT]</span> (the "Fee") for the services described in this Agreement (the "Services"). The Fee shall become due and payable within <span class="fill-field fill-field-sm">[NUMBER]</span> calendar days of the date of the Freelancer's invoice (the "Payment Period"). Invoices shall be submitted by the Freelancer to <span class="fill-field">[EMAIL]</span> upon completion of the Services, or at such other intervals as agreed in writing. Payment shall be deemed received on the date funds are cleared and available in the Freelancer's designated account.</p>
+                </div>
+                <div class="clause-variant">
+                    <p class="variant-label">🇬🇧 UK Variant</p>
+                    <p class="clause-text">For the avoidance of doubt, this Agreement constitutes a contract for the supply of goods or services for the purposes of the Late Payment of Commercial Debts (Interest) Act 1998 (as amended), and the Freelancer reserves all rights and remedies under that Act.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <p><strong>Every contract.</strong> This is your baseline payment clause. Even if you add milestone payments or deposits, you still need a clause defining the overall payment terms. Best for simple, one-deliverable projects.</p>
+                </div>
+            </div>
+
+            <!-- CLAUSE 2: Milestone Payments -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 02</p>
+                <p class="clause-block-title">Milestone / Phase Payment Schedule</p>
+                <div class="clause-text">
+                    <p><strong>Milestone Payments.</strong> The total Fee of <span class="fill-field">[AMOUNT]</span> shall be payable in the following instalments, each due upon the Freelancer's completion of the corresponding milestone and submission of an invoice:</p>
+                    <table class="decision-table" style="margin: 12px 0;">
+                        <thead><tr><th>Milestone</th><th>Description</th><th>Amount</th><th>Due Upon</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td><span class="fill-field" style="min-width:120px">[Description]</span></td><td><span class="fill-field fill-field-sm">[Amount]</span></td><td>Completion &amp; invoice</td></tr>
+                            <tr><td>2</td><td><span class="fill-field" style="min-width:120px">[Description]</span></td><td><span class="fill-field fill-field-sm">[Amount]</span></td><td>Completion &amp; invoice</td></tr>
+                            <tr><td>3</td><td><span class="fill-field" style="min-width:120px">[Description]</span></td><td><span class="fill-field fill-field-sm">[Amount]</span></td><td>Completion &amp; invoice</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Each milestone payment shall be due within <span class="fill-field fill-field-sm">[NUMBER]</span> calendar days of the relevant invoice date. The Freelancer shall not be obligated to commence work on any subsequent milestone until payment for the preceding milestone has been received in full. The Client shall have <span class="fill-field fill-field-sm">[NUMBER]</span> business days from delivery to request reasonable revisions. Approval shall be deemed given if no written objection is received within that period.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <ul>
+                        <li>Projects worth more than £1,000</li>
+                        <li>Projects lasting longer than 2–4 weeks</li>
+                        <li>Any project with distinct phases</li>
+                        <li>New clients you haven't built trust with yet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CLAUSE 3: Deposit / Retainer -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 03</p>
+                <p class="clause-block-title">Deposit / Retainer Clause</p>
+                <div class="clause-text">
+                    <p><strong>Deposit.</strong> The Client shall pay a non-refundable deposit of <span class="fill-field">[AMOUNT]</span> (<span class="fill-field fill-field-sm">[PERCENTAGE]</span>% of the total Fee) (the "Deposit") prior to the commencement of any work. The Deposit shall be due within <span class="fill-field fill-field-sm">[NUMBER]</span> calendar days of execution of this Agreement. The Freelancer shall not be obligated to commence the Services until the Deposit has been received in full and cleared funds are available. The Deposit shall be applied against the final invoice. The remaining balance of <span class="fill-field">[AMOUNT]</span> shall be invoiced upon completion and payable within <span class="fill-field fill-field-sm">[NUMBER]</span> calendar days.</p>
+                </div>
+                <div class="clause-variant">
+                    <p class="variant-label">🇬🇧 UK Variant</p>
+                    <p class="clause-text">The Deposit is non-refundable and represents a genuine pre-estimate of the Freelancer's costs in reserving capacity and declining other engagements. This clause shall not be construed as a penalty clause for the purposes of English law.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <p><strong>Always recommended.</strong> Even a 25% deposit dramatically reduces your risk. 50% upfront / 50% on completion is the most common structure. Especially important for new clients, large projects, or international work.</p>
+                </div>
+            </div>
+
+            <!-- CLAUSE 4: Late Payment Fee -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 04</p>
+                <p class="clause-block-title">Late Payment Fee Clause</p>
+                <div class="clause-text">
+                    <p><strong>Late Payment.</strong> If the Client fails to make any payment due under this Agreement by the due date, the Freelancer shall be entitled, without prejudice to any other rights or remedies, to:</p>
+                    <ol type="a" style="margin: 8px 0 8px 20px;">
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;">charge interest on the overdue amount at the rate of 8% per annum above the Bank of England base rate, in accordance with the Late Payment of Commercial Debts (Interest) Act 1998 (as amended);</li>
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;">claim fixed-sum compensation as prescribed by the said Act (£40 for debts up to £999.99; £70 for debts between £1,000 and £9,999.99; £100 for debts of £10,000 or more);</li>
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;">recover all reasonable costs of collecting the overdue amount, including solicitor's fees, court fees, and debt recovery agency fees.</li>
+                    </ol>
+                    <p>Interest shall accrue on a daily basis from the due date until the date of actual payment, whether before or after any judgment.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <p><strong>Every contract.</strong> Even if you never enforce it, its presence discourages late payment. In the UK, the Late Payment Act gives you this right automatically — but having it in the contract makes enforcement easier and reminds the client what they're agreeing to.</p>
+                </div>
+            </div>
+
+            <!-- CLAUSE 5: Kill Fee -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 05</p>
+                <p class="clause-block-title">Kill Fee / Cancellation Clause</p>
+                <div class="clause-text">
+                    <p><strong>Cancellation and Kill Fee.</strong> Either party may terminate this Agreement by providing <span class="fill-field fill-field-sm">[NUMBER]</span> days' written notice.</p>
+                    <p>In the event of termination by the Client prior to completion:</p>
+                    <ol type="a" style="margin: 8px 0 8px 20px;">
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;">The Client shall pay for all work completed to date, calculated on a pro-rata basis or at <span class="fill-field">[AMOUNT]</span> per hour, whichever is greater;</li>
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;">The Client shall pay a cancellation fee of <span class="fill-field fill-field-sm">[PERCENTAGE]</span>% of the remaining balance (the "Kill Fee");</li>
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;">Any Deposit paid shall be non-refundable.</li>
+                    </ol>
+                    <p>Upon full payment, the Client receives a licence to use all completed deliverables. Incomplete work remains the Freelancer's property.</p>
+                </div>
+                <div class="clause-variant">
+                    <p class="variant-label">🇬🇧 UK Variant</p>
+                    <p class="clause-text">This cancellation fee represents a genuine pre-estimate of the Freelancer's losses arising from early termination, including lost opportunity cost, rescheduling costs, and administrative burden. It is not intended as a penalty and shall be enforceable as a liquidated damages clause under English law.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <p><strong>Every contract.</strong> Essential for large projects where you've blocked out weeks/months. A typical kill fee is 25–50% of the remaining balance.</p>
+                </div>
+            </div>
+
+            <!-- CLAUSE 6: Scope Creep Protection -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 06</p>
+                <p class="clause-block-title">Scope Creep Protection Clause</p>
+                <div class="clause-text">
+                    <p><strong>Scope of Work and Change Orders.</strong> The Services are limited to those described in the Scope of Work. Any work outside the Scope constitutes a "Change Order."</p>
+                    <p>No Change Order shall be commenced until: (a) the Freelancer has provided a written estimate of the additional cost and timeline impact; (b) the Client has approved in writing (email shall suffice); and (c) any required additional deposit has been received.</p>
+                    <p>Change Orders shall be billed at <span class="fill-field">[AMOUNT]</span> per hour. This Agreement includes <span class="fill-field fill-field-sm">[NUMBER]</span> rounds of revisions per deliverable. Additional revisions are Change Orders. The project timeline shall be extended proportionately for any approved Change Order.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <p><strong>Every single contract. No exceptions.</strong> Scope creep is the #1 profit killer for freelancers. Define a specific number of revision rounds (typically 2–3). Attach a detailed Scope of Work — the more specific, the better.</p>
+                </div>
+            </div>
+
+            <!-- CLAUSE 7: Rush Fee -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 07</p>
+                <p class="clause-block-title">Rush Fee Clause</p>
+                <div class="clause-text">
+                    <p><strong>Expedited Timeline / Rush Fee.</strong> The standard delivery timeline is <span class="fill-field fill-field-sm">[NUMBER]</span> business days from commencement. If the Client requests delivery in a shorter timeframe, the following surcharges apply:</p>
+                    <table class="decision-table" style="margin: 12px 0;">
+                        <thead><tr><th>Requested Timeline</th><th>Surcharge</th></tr></thead>
+                        <tbody>
+                            <tr><td>Less than 75% of standard</td><td><span class="fill-field fill-field-sm">[e.g. 25%]</span> surcharge</td></tr>
+                            <tr><td>Less than 50% of standard</td><td><span class="fill-field fill-field-sm">[e.g. 50%]</span> surcharge</td></tr>
+                            <tr><td>Less than 25% of standard</td><td><span class="fill-field fill-field-sm">[e.g. 100%]</span> surcharge</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Rush fees are subject to availability and acceptance. Where a rush fee is agreed and the Client subsequently causes delays, the rush fee remains payable in full.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <ul>
+                        <li>When your services have a standard turnaround time</li>
+                        <li>Common in design, copywriting, translation, and development</li>
+                        <li>If you regularly work with clients who have "urgent" requests</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CLAUSE 8: Payment Method -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 08</p>
+                <p class="clause-block-title">Payment Method Specification</p>
+                <div class="clause-text">
+                    <p><strong>Payment Method.</strong> All payments shall be made via <span class="fill-field">[PAYMENT METHOD]</span> to the account details provided on the Freelancer's invoice.</p>
+                    <p>All bank charges, transfer fees, and transaction costs shall be borne by the Client. The Freelancer shall receive the full invoiced amount without deduction.</p>
+                    <p>The Client shall not make payment by any method other than those specified without prior written consent. Payments by cheque are not accepted unless explicitly agreed, and shall not be considered received until cleared.</p>
+                    <p>The Client shall provide remittance advice or proof of payment to <span class="fill-field">[EMAIL]</span> within <span class="fill-field fill-field-sm">[NUMBER]</span> business days of each payment.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <p><strong>Every contract.</strong> Always specify how you want to be paid. Use bank transfer for larger amounts (lower fees). Use Wise for international payments. The proof-of-payment requirement prevents "but I already paid you" disputes.</p>
+                </div>
+            </div>
+
+            <!-- CLAUSE 9: Currency -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 09</p>
+                <p class="clause-block-title">Currency and Exchange Rate Clause</p>
+                <div class="clause-text">
+                    <p><strong>Currency.</strong> All amounts in this Agreement are denominated in <span class="fill-field">[CURRENCY CODE — e.g. GBP]</span> (the "Contract Currency"). All invoices and payments shall be in the Contract Currency.</p>
+                    <p><strong>Exchange Rate Risk.</strong> If the Client pays from an account in a different currency, the Client bears all exchange rate risk and conversion fees. The Freelancer shall receive the full invoiced amount without shortfall.</p>
+                    <p><strong>Long-Term Adjustment.</strong> Where this Agreement exceeds <span class="fill-field fill-field-sm">[NUMBER]</span> months and the exchange rate fluctuates by more than <span class="fill-field fill-field-sm">[PERCENTAGE]</span>%, either party may request a good-faith renegotiation of the Fee.</p>
+                    <p><strong>Withholding Tax.</strong> The Client shall not withhold taxes from payments unless legally required. Where withholding is required, the Client shall gross up the payment so the Freelancer receives the full invoiced amount.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <ul>
+                        <li>Any contract with an international client</li>
+                        <li>Contracts denominated in a foreign currency</li>
+                        <li>Long-term contracts (3+ months) where rates could shift</li>
+                        <li>Clients in jurisdictions that impose withholding taxes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CLAUSE 10: Dispute Resolution -->
+            <div class="clause-block">
+                <p class="clause-block-num">Payment Clause 10</p>
+                <p class="clause-block-title">Dispute Resolution Clause</p>
+                <div class="clause-text">
+                    <p><strong>Dispute Resolution.</strong> In the event of any dispute arising from this Agreement, the parties shall:</p>
+                    <ol type="a" style="margin: 8px 0 8px 20px;">
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;"><strong>Negotiate</strong> — the aggrieved party shall give written notice and the parties shall use reasonable endeavours to resolve the dispute within <span class="fill-field fill-field-sm">[NUMBER]</span> business days;</li>
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;"><strong>Mediate</strong> — if unresolved, either party may refer the dispute to mediation administered by the Centre for Effective Dispute Resolution (CEDR). Costs shall be borne equally;</li>
+                        <li style="font-size:0.92rem; color: var(--gray-light); margin-bottom: 6px;"><strong>Litigate</strong> — if mediation fails, either party may commence court proceedings. This Agreement is governed by the laws of England and Wales, and the parties submit to the exclusive jurisdiction of the courts of England and Wales.</li>
+                    </ol>
+                    <p><strong>Exception:</strong> The Freelancer may commence proceedings for the recovery of unpaid fees without first engaging in negotiation or mediation.</p>
+                </div>
+                <div class="when-to-use">
+                    <p class="use-label">✅ When to use</p>
+                    <p><strong>Every contract.</strong> The escalation ladder (negotiate → mediate → litigate) saves time and money. The carve-out for unpaid fees is critical — don't agree to mandatory mediation for simple debt recovery.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================ -->
+        <!--  PART 3: DECISION GUIDE                                          -->
+        <!-- ================================================================ -->
+        <section class="template-section" id="decision-guide">
+            <p class="template-number">Part 3 — Quick Reference</p>
+            <h2>Which Template &amp; Clauses Do You Need?</h2>
+            <p class="template-intro">Use this guide to quickly identify the right contract template and payment clauses for your situation.</p>
+
+            <h3>Choose Your Contract Template</h3>
+
+            <table class="decision-table">
+                <thead>
+                    <tr><th>Your Situation</th><th>Use This Template</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>One-off project, straightforward scope</td>
+                        <td><strong>Template 01</strong> — Basic Freelance Agreement</td>
+                    </tr>
+                    <tr>
+                        <td>Ongoing monthly work, recurring fees</td>
+                        <td><strong>Template 02</strong> — Retainer Agreement</td>
+                    </tr>
+                    <tr>
+                        <td>Large project with multiple phases</td>
+                        <td><strong>Template 03</strong> — Project-Based Contract</td>
+                    </tr>
+                    <tr>
+                        <td>Sharing sensitive information before starting</td>
+                        <td><strong>Template 04</strong> — NDA (sign this first)</td>
+                    </tr>
+                    <tr>
+                        <td>Client wants to add/change scope mid-project</td>
+                        <td><strong>Template 05</strong> — Scope Change Amendment</td>
+                    </tr>
+                    <tr>
+                        <td>Need stronger cancellation protection</td>
+                        <td><strong>Template 06</strong> — Kill Fee Agreement</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Recommended Payment Clauses by Project Type</h3>
+
+            <table class="decision-table">
+                <thead>
+                    <tr><th>Project Type</th><th>Recommended Clauses</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Small one-off (under £1,000)</td>
+                        <td>
+                            <span class="tag tag-essential">01 Payment Terms</span>
+                            <span class="tag tag-essential">04 Late Fees</span>
+                            <span class="tag tag-essential">05 Kill Fee</span>
+                            <span class="tag tag-essential">06 Scope Creep</span>
+                            <span class="tag tag-essential">08 Payment Method</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Medium project (£1k–£5k)</td>
+                        <td>
+                            <span class="tag tag-essential">01</span>
+                            <span class="tag tag-essential">02 Milestones</span>
+                            <span class="tag tag-essential">03 Deposit</span>
+                            <span class="tag tag-essential">04</span>
+                            <span class="tag tag-essential">05</span>
+                            <span class="tag tag-essential">06</span>
+                            <span class="tag tag-essential">08</span>
+                            <span class="tag">10 Disputes</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Large project (£5k+)</td>
+                        <td>
+                            <span class="tag tag-essential">All 10 clauses</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ongoing retainer</td>
+                        <td>
+                            <span class="tag tag-essential">01</span>
+                            <span class="tag tag-essential">03</span>
+                            <span class="tag tag-essential">04</span>
+                            <span class="tag tag-essential">06</span>
+                            <span class="tag">07 Rush Fee</span>
+                            <span class="tag tag-essential">08</span>
+                            <span class="tag">10</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>International client</td>
+                        <td>
+                            <span class="tag tag-essential">01</span>
+                            <span class="tag tag-essential">03</span>
+                            <span class="tag tag-essential">04</span>
+                            <span class="tag tag-essential">05</span>
+                            <span class="tag tag-essential">06</span>
+                            <span class="tag tag-essential">08</span>
+                            <span class="tag tag-essential">09 Currency</span>
+                            <span class="tag">10</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Minimum Viable Contract</h3>
+
+            <div class="tip-box">
+                <p class="tip-label">🛡️ At minimum, every contract should include</p>
+                <p>
+                    <strong>Clause 01</strong> — Standard Payment Terms<br>
+                    <strong>Clause 04</strong> — Late Payment Fee<br>
+                    <strong>Clause 05</strong> — Kill Fee / Cancellation<br>
+                    <strong>Clause 06</strong> — Scope Creep Protection<br>
+                    <strong>Clause 08</strong> — Payment Method Specification<br><br>
+                    These five clauses form the backbone of any freelance contract. Add more based on your specific situation using the table above.
+                </p>
+            </div>
+
+            <h3>Final Tips</h3>
+
+            <div class="clause-block">
+                <p class="clause-block-title">Before You Use These Templates</p>
+                <div class="clause-text">
+                    <ul style="margin: 8px 0 0 16px;">
+                        <li><strong>Combine templates + clauses</strong> — Use a contract template from Part 1, then drop in payment clauses from Part 2 as needed</li>
+                        <li><strong>Number clauses sequentially</strong> — Renumber everything in your final contract for clarity</li>
+                        <li><strong>Attach a Scope of Work</strong> — The more specific your scope document, the better protected you are</li>
+                        <li><strong>Keep records</strong> — Save signed copies of all contracts, amendments, and correspondence</li>
+                        <li><strong>Review annually</strong> — Laws change. Update your templates at least once a year</li>
+                        <li><strong>Get professional advice</strong> — Use these as a starting point, then have a solicitor review your final contract at least once. The cost of a single legal review is far less than the cost of one bad contract</li>
+                        <li><strong>Send the NDA first</strong> — If you'll be discussing sensitive information, sign the NDA before the discovery call</li>
+                        <li><strong>Use Change Orders religiously</strong> — Every "small addition" gets a written Change Order. No exceptions.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========== FOOTER ========== -->
+        <div class="kit-footer">
+            <div class="footer-divider"></div>
+            <p style="margin-bottom: 12px;">
+                <strong style="color: var(--gold);">Freelancer Contract Template Pack</strong><br>
+                Version 1.0 · February 2026
+            </p>
+            <p style="margin-bottom: 12px;">
+                © 2026 <a href="https://landolio.com">Landolio</a>. All rights reserved.<br>
+                Licensed for use by the purchaser only. Redistribution is prohibited.
+            </p>
+            <p style="font-size: 0.8rem; max-width: 500px; margin: 0 auto;">
+                These templates are for informational and educational purposes only and do not constitute legal advice. Consult a qualified solicitor before using any template in a binding contract.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
