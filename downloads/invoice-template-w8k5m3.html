@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Freelance Invoice Template</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header {
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .company-details {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .invoice-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2563eb;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .invoice-meta {
+            text-align: right;
+            color: #666;
+        }
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2563eb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        thead {
+            background-color: #2563eb;
+            color: white;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            font-weight: bold;
+        }
+        .align-right {
+            text-align: right;
+        }
+        .totals {
+            margin-left: auto;
+            width: 300px;
+        }
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+        .totals-row.total {
+            font-size: 20px;
+            font-weight: bold;
+            border-top: 2px solid #2563eb;
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+        .payment-details {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+        @media print {
+            body {
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+            <div>
+                <div class="company-details">[YOUR BUSINESS NAME]</div>
+                <div style="color: #666;">
+                    [Your Address Line 1]<br>
+                    [City, Postcode]<br>
+                    [Phone Number]<br>
+                    [Email Address]
+                </div>
+            </div>
+            <div>
+                <div class="invoice-title">INVOICE</div>
+                <div class="invoice-meta">
+                    <strong>Invoice No:</strong> [INV-001]<br>
+                    <strong>Date:</strong> [DD/MM/YYYY]<br>
+                    <strong>Due Date:</strong> [DD/MM/YYYY]
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="two-column">
+        <div>
+            <div class="section-title">BILL TO:</div>
+            <div>
+                <strong>[Client Name]</strong><br>
+                [Client Company Name]<br>
+                [Client Address Line 1]<br>
+                [City, Postcode]<br>
+                [Client Email]
+            </div>
+        </div>
+        <div>
+            <div class="section-title">PAYMENT TERMS:</div>
+            <div>
+                <strong>Terms:</strong> Net 14 Days<br>
+                <strong>Due Date:</strong> [DD/MM/YYYY]<br>
+                <strong>Late Payment:</strong> 8% per annum statutory interest applies to overdue invoices (Late Payment of Commercial Debts Act 1998)
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th class="align-right">Quantity</th>
+                <th class="align-right">Rate</th>
+                <th class="align-right">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>[Service/Product Description]</td>
+                <td class="align-right">[Qty]</td>
+                <td class="align-right">£[Rate]</td>
+                <td class="align-right">£[Amount]</td>
+            </tr>
+            <tr>
+                <td>[Service/Product Description]</td>
+                <td class="align-right">[Qty]</td>
+                <td class="align-right">£[Rate]</td>
+                <td class="align-right">£[Amount]</td>
+            </tr>
+            <tr>
+                <td>[Service/Product Description]</td>
+                <td class="align-right">[Qty]</td>
+                <td class="align-right">£[Rate]</td>
+                <td class="align-right">£[Amount]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="totals">
+        <div class="totals-row">
+            <span>Subtotal:</span>
+            <span>£[Subtotal]</span>
+        </div>
+        <div class="totals-row">
+            <span>VAT (20%):</span>
+            <span>£[VAT]</span>
+        </div>
+        <div class="totals-row total">
+            <span>TOTAL DUE:</span>
+            <span>£[Total]</span>
+        </div>
+    </div>
+
+    <div class="payment-details">
+        <div class="section-title">PAYMENT DETAILS</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <strong>Bank Name:</strong> [Your Bank]<br>
+                <strong>Account Name:</strong> [Account Holder Name]<br>
+                <strong>Sort Code:</strong> [XX-XX-XX]<br>
+                <strong>Account Number:</strong> [XXXXXXXX]
+            </div>
+            <div>
+                <strong>Payment Reference:</strong> [INV-001]<br>
+                <strong>Accepted Methods:</strong><br>
+                • Bank Transfer (Preferred)<br>
+                • Cheque payable to [Your Business Name]
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>VAT Registration:</strong> [Your VAT Number - if VAT registered] | <strong>Company Registration:</strong> [Your Company Number - if limited company]</p>
+        <p>Thank you for your business. Please ensure payment is made by the due date to avoid late payment charges.</p>
+    </div>
+
+    <div class="no-print" style="margin-top: 30px; padding: 20px; background-color: #fef3c7; border-radius: 5px;">
+        <strong>How to use this template:</strong>
+        <ol>
+            <li>Replace all text in square brackets [like this] with your details</li>
+            <li>Delete rows you don't need from the items table</li>
+            <li>Calculate subtotal, VAT (if registered), and total</li>
+            <li>If not VAT registered, remove VAT row and update total calculation</li>
+            <li>Print or save as PDF to send to client</li>
+        </ol>
+        <p><strong>HMRC Requirements:</strong> UK invoices must include: unique invoice number, your business name and address, client details, date, payment terms, itemized description, amounts, and VAT details (if registered).</p>
+    </div>
+<script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+</body>
+</html>

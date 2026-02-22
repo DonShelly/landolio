@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Tax Calculator UK 2025/26 — Free Self-Employed Tax Estimator | Landolio</title>
+<meta name="description" content="Free freelance tax calculator for UK self-employed workers. Estimate your Income Tax, National Insurance, and take-home pay for the 2025/26 tax year. Instant results, no signup required.">
+<meta name="keywords" content="freelance tax calculator UK, self employed tax calculator, freelancer tax UK 2025, self assessment calculator, sole trader tax calculator, how much tax do freelancers pay UK">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://landolio.com/tools/freelance-tax-calculator.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Freelance Tax Calculator UK 2025/26 — Free Self-Employed Tax Estimator | Landolio">
+<meta property="og:description" content="Estimate your Income Tax, National Insurance, and take-home pay as a UK freelancer. Free, instant, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://landolio.com/tools/freelance-tax-calculator.html">
+<meta property="og:image" content="https://landolio.com/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Landolio — Free Freelance Tax Calculator for UK Self-Employed">
+<meta property="og:site_name" content="Landolio">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Freelance Tax Calculator UK 2025/26 — Free Self-Employed Tax Estimator | Landolio">
+<meta name="twitter:description" content="Estimate your Income Tax, National Insurance, and take-home pay as a UK freelancer. Free, instant, no signup.">
+<meta name="twitter:image" content="https://landolio.com/images/og-default.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Freelance Tax Calculator UK 2025/26",
+  "description": "Free tool to estimate Income Tax, National Insurance (Class 2 and Class 4), and take-home pay for UK freelancers and sole traders. Based on 2025/26 HMRC tax rates.",
+  "url": "https://landolio.com/tools/freelance-tax-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "creator": { "@type": "Organization", "name": "Landolio", "url": "https://landolio.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much tax do freelancers pay in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "UK freelancers pay Income Tax on profits above the £12,570 Personal Allowance. The basic rate is 20% (up to £50,270), higher rate 40% (up to £125,140), and additional rate 45% above that. You also pay Class 2 NI (£3.45/week if profits exceed £12,570) and Class 4 NI (6% on profits between £12,570–£50,270, then 2% above)." }
+    },
+    {
+      "@type": "Question",
+      "name": "What expenses can freelancers deduct?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can deduct business expenses that are wholly and exclusively for your trade. Common deductions include: office supplies, software subscriptions, travel, professional development, marketing, insurance, accountancy fees, and a proportion of home office costs (heating, electricity, broadband). HMRC allows a flat-rate £6/week for working from home without receipts." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to register as self-employed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You must register with HMRC as self-employed by 5 October following the tax year you started freelancing. You can register online at gov.uk. Failure to register can result in penalties." }
+    },
+    {
+      "@type": "Question",
+      "name": "When is the Self Assessment deadline?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For the 2025/26 tax year: paper returns must be filed by 31 October 2026, online returns by 31 January 2027. Tax owed must be paid by 31 January 2027. If you have payments on account, the second payment is due 31 July 2026." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this calculator accurate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses the official 2025/26 HMRC tax rates and thresholds. It provides a good estimate but does not account for student loan repayments, pension tax relief, marriage allowance, or other specific circumstances. For exact figures, consult a qualified accountant." }
+    }
+  ]
+}
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --bg: #0a0a0f; --surface: #12121a; --surface2: #1a1a25; --border: #2a2a3a; --text: #e8e8f0; --text-muted: #8888a0; --gold: #d4a843; --gold-dim: #b8922e; --green: #2ecc71; --red: #e74c3c; --blue: #3498db; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--gold); text-decoration: none; } a:hover { text-decoration: underline; }
+
+/* Nav */
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.nav-brand { font-size: 1.4rem; font-weight: 700; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.nav-links a { color: var(--text-muted); font-size: 0.95rem; } .nav-links a:hover { color: var(--gold); text-decoration: none; }
+
+/* Layout */
+.container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--gold); }
+.subtitle { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
+
+/* Form */
+.calc-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+.calc-section h2 { font-size: 1.2rem; color: var(--gold); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.field { margin-bottom: 1.5rem; }
+.field label { display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.95rem; }
+.field .hint { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+.field input, .field select { width: 100%; padding: 0.75rem 1rem; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--gold); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+
+/* Button */
+.btn { display: inline-block; padding: 0.85rem 2rem; background: linear-gradient(135deg, var(--gold), var(--gold-dim)); color: #000; font-weight: 700; font-size: 1.05rem; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.15s; }
+.btn:hover { transform: translateY(-1px); }
+
+/* Results */
+.results { display: none; }
+.results.show { display: block; }
+.result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 1.5rem; }
+.result-card h3 { color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem; }
+.result-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+.result-row:last-child { border-bottom: none; }
+.result-label { color: var(--text-muted); font-size: 0.95rem; }
+.result-value { font-weight: 700; font-size: 1.05rem; }
+.result-value.green { color: var(--green); }
+.result-value.red { color: var(--red); }
+.result-value.gold { color: var(--gold); }
+.big-number { text-align: center; padding: 2rem; }
+.big-number .amount { font-size: 2.8rem; font-weight: 800; color: var(--green); }
+.big-number .label { color: var(--text-muted); font-size: 1rem; margin-top: 0.3rem; }
+.bar-container { margin: 1rem 0; }
+.bar { height: 32px; border-radius: 8px; display: flex; overflow: hidden; }
+.bar-segment { display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: #000; min-width: 30px; }
+.bar-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.75rem; font-size: 0.85rem; }
+.bar-legend span::before { content: ''; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 0.4rem; vertical-align: middle; }
+
+/* CTA */
+.cta-box { background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid var(--gold); border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0; }
+.cta-box h3 { color: var(--gold); margin-bottom: 0.5rem; }
+.cta-box p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* FAQ */
+.faq { margin-top: 3rem; }
+.faq h2 { font-size: 1.4rem; color: var(--gold); margin-bottom: 1.5rem; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
+.faq-q { padding: 1rem 1.25rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+.faq-q:hover { background: var(--surface2); }
+.faq-a { padding: 0 1.25rem 1rem; color: var(--text-muted); display: none; line-height: 1.7; }
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-arrow { transition: transform 0.2s; color: var(--gold); }
+
+/* Footer */
+.footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; margin-top: 4rem; }
+.footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.footer-links a { color: var(--text-muted); font-size: 0.9rem; } .footer-links a:hover { color: var(--gold); }
+.footer p { color: var(--text-muted); font-size: 0.85rem; }
+
+/* Analytics */
+.tracker { display: none; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">Landolio</a>
+  <div class="nav-links">
+    <a href="/tools/">Free Tools</a>
+    <a href="/products/">Products</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://app.landolio.com">SaaS App</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>🧮 Freelance Tax Calculator UK 2025/26</h1>
+  <p class="subtitle">Estimate your Income Tax, National Insurance, and take-home pay as a UK sole trader or freelancer. Based on official 2025/26 HMRC rates.</p>
+
+  <div class="calc-section">
+    <h2>Your Income & Expenses</h2>
+    
+    <div class="field">
+      <label for="income">Annual Gross Income (£)</label>
+      <div class="hint">Total revenue before expenses — everything clients pay you in the tax year</div>
+      <input type="number" id="income" placeholder="e.g. 45000" min="0" step="100">
+    </div>
+
+    <div class="field">
+      <label for="expenses">Allowable Business Expenses (£)</label>
+      <div class="hint">Software, equipment, travel, home office, insurance, accountancy fees, etc.</div>
+      <input type="number" id="expenses" placeholder="e.g. 3000" min="0" step="100" value="0">
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="otherIncome">Other Taxable Income (£)</label>
+        <div class="hint">Employment income, rental, dividends, etc.</div>
+        <input type="number" id="otherIncome" placeholder="0" min="0" step="100" value="0">
+      </div>
+      <div class="field">
+        <label for="pensionContrib">Pension Contributions (£)</label>
+        <div class="hint">Personal pension payments (get tax relief)</div>
+        <input type="number" id="pensionContrib" placeholder="0" min="0" step="100" value="0">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="studentLoan">Student Loan Plan</label>
+        <select id="studentLoan">
+          <option value="none">None</option>
+          <option value="plan1">Plan 1 (pre-2012)</option>
+          <option value="plan2">Plan 2 (post-2012)</option>
+          <option value="plan4">Plan 4 (Scotland)</option>
+          <option value="plan5">Plan 5 (post-2023)</option>
+          <option value="postgrad">Postgraduate Loan</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="vatRegistered">VAT Registered?</label>
+        <select id="vatRegistered">
+          <option value="no">No</option>
+          <option value="yes">Yes (standard rate)</option>
+          <option value="flat">Yes (flat rate scheme)</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 1rem;">
+      <button class="btn" onclick="calculate()">Calculate My Tax →</button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    
+    <div class="result-card">
+      <div class="big-number">
+        <div class="amount" id="takeHome">—</div>
+        <div class="label">Estimated Take-Home Pay (per year)</div>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Per month</span>
+        <span class="result-value green" id="takeHomeMonth">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Per week</span>
+        <span class="result-value green" id="takeHomeWeek">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Effective tax rate</span>
+        <span class="result-value gold" id="effectiveRate">—</span>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <h3>📊 Where Your Money Goes</h3>
+      <div class="bar-container">
+        <div class="bar" id="taxBar"></div>
+        <div class="bar-legend" id="taxBarLegend"></div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <h3>💰 Income Breakdown</h3>
+      <div class="result-row">
+        <span class="result-label">Gross Income</span>
+        <span class="result-value" id="resGross">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Business Expenses</span>
+        <span class="result-value red" id="resExpenses">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Pension Contributions</span>
+        <span class="result-value red" id="resPension">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label"><strong>Taxable Profit</strong></span>
+        <span class="result-value gold" id="resProfit">—</span>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <h3>🏛️ Tax Breakdown</h3>
+      <div class="result-row">
+        <span class="result-label">Income Tax</span>
+        <span class="result-value red" id="resIncomeTax">—</span>
+      </div>
+      <div class="result-row" id="rowBasic" style="padding-left: 1.5rem;">
+        <span class="result-label">Basic rate (20%)</span>
+        <span class="result-value" id="resBasic">—</span>
+      </div>
+      <div class="result-row" id="rowHigher" style="display:none; padding-left: 1.5rem;">
+        <span class="result-label">Higher rate (40%)</span>
+        <span class="result-value" id="resHigher">—</span>
+      </div>
+      <div class="result-row" id="rowAdditional" style="display:none; padding-left: 1.5rem;">
+        <span class="result-label">Additional rate (45%)</span>
+        <span class="result-value" id="resAdditional">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Class 2 NI</span>
+        <span class="result-value red" id="resNI2">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Class 4 NI</span>
+        <span class="result-value red" id="resNI4">—</span>
+      </div>
+      <div class="result-row" id="rowStudentLoan" style="display:none;">
+        <span class="result-label">Student Loan Repayment</span>
+        <span class="result-value red" id="resStudentLoan">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label"><strong>Total Tax & NI</strong></span>
+        <span class="result-value red" id="resTotalTax">—</span>
+      </div>
+    </div>
+
+    <div class="result-card" id="vatCard" style="display:none;">
+      <h3>🧾 VAT Estimate</h3>
+      <div class="result-row">
+        <span class="result-label">VAT collected</span>
+        <span class="result-value" id="resVatCollected">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">VAT to pay HMRC</span>
+        <span class="result-value red" id="resVatDue">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label hint" style="font-size:0.85rem; color: var(--text-muted);" id="vatNote"></span>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <h3>📅 Payment Deadlines</h3>
+      <div class="result-row">
+        <span class="result-label">31 Jan 2027 — First payment</span>
+        <span class="result-value gold" id="payJan">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">31 Jul 2027 — Second payment on account</span>
+        <span class="result-value gold" id="payJul">—</span>
+      </div>
+      <div class="result-row" style="padding-top: 0.8rem;">
+        <span class="result-label" style="font-size: 0.85rem; color: var(--text-muted);">Payments on account are 50% of current year's tax bill, payable in advance. First year may differ.</span>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>🚀 Automate Your Invoice Follow-Ups</h3>
+      <p>Getting paid on time means less tax stress. Our free tool sends automatic payment reminders so you never have to chase invoices manually.</p>
+      <a href="https://app.landolio.com" class="btn">Try Invoice Follow-Up Free →</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How much tax do freelancers pay in the UK?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">UK freelancers pay Income Tax on profits above the £12,570 Personal Allowance. The basic rate is 20% (up to £50,270 total income), higher rate is 40% (up to £125,140), and additional rate is 45% above that. You also pay Class 2 National Insurance (£3.45/week if profits exceed £12,570) and Class 4 NI (6% on profits between £12,570–£50,270, then 2% above that). Use the calculator above to see your exact breakdown.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What expenses can I deduct as a freelancer?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">You can deduct expenses that are "wholly and exclusively" for business. Common deductions: office supplies, software subscriptions (Adobe, accounting tools), travel to client sites, professional development courses, marketing costs, professional insurance, accountancy fees, and a proportion of home office costs. HMRC allows a simplified £6/week (£312/year) home office deduction without receipts. Keep all receipts for at least 5 years.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do I need to register for VAT?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">You must register for VAT if your taxable turnover exceeds £90,000 in any 12-month period (2025/26 threshold). You can voluntarily register below this threshold, which lets you reclaim VAT on purchases but means charging clients 20% VAT. The Flat Rate Scheme simplifies VAT by letting you pay a fixed percentage of turnover (varies by trade, typically 10-16.5%).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        When do I need to pay my tax bill?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">For the 2025/26 tax year (6 April 2025 – 5 April 2026): file your Self Assessment online by 31 January 2027 and pay any tax owed by the same date. If your tax bill exceeds £1,000, HMRC will also require payments on account — two advance payments of 50% each, due 31 January and 31 July. You can reduce payments on account if you expect lower income next year.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Is this calculator accurate?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">This calculator uses official 2025/26 HMRC tax rates, NI thresholds, and student loan repayment rates. It provides a good estimate for most sole traders and freelancers. It does not account for marriage allowance transfers, blind person's allowance, tax code adjustments, or complex dividend/rental income scenarios. For exact figures, consult a qualified accountant or use HMRC's own Self Assessment tools.</div>
+    </div>
+  </div>
+
+  <!-- SEO content -->
+  <div style="margin-top: 3rem;">
+    <h2 style="color: var(--gold); margin-bottom: 1rem;">How to Use This Freelance Tax Calculator</h2>
+    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem;">Enter your total annual gross income — that's everything clients pay you before deducting expenses. Then enter your allowable business expenses (software, travel, equipment, home office costs). The calculator works out your taxable profit and shows exactly how much you'll owe in Income Tax, Class 2 NI, and Class 4 NI.</p>
+    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem;">If you have other income (employment, rental, dividends), add it in the "Other Taxable Income" field — this affects which tax band your freelance profits fall into. Pension contributions reduce your taxable income, so include those too.</p>
+    <p style="color: var(--text-muted); line-height: 1.8;">For more help managing your freelance finances, check out our <a href="/blog/freelance-bookkeeping-basics-uk.html">Freelance Bookkeeping Guide</a>, <a href="/tools/day-rate-calculator.html">Day Rate Calculator</a>, and <a href="/blog/uk-freelancer-tax-deadlines-2026.html">UK Tax Deadlines Calendar</a>.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/tools/">Free Tools</a>
+    <a href="/products/">Products</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://app.landolio.com">SaaS App</a>
+  </div>
+  <p>© 2026 Landolio. Built for UK freelancers who want to get paid.</p>
+</footer>
+
+<script>
+// 2025/26 HMRC rates
+const PERSONAL_ALLOWANCE = 12570;
+const PA_TAPER_START = 100000;
+const BASIC_LIMIT = 37700; // basic rate band width
+const HIGHER_LIMIT = 125140;
+const BASIC_RATE = 0.20;
+const HIGHER_RATE = 0.40;
+const ADDITIONAL_RATE = 0.45;
+
+// NI 2025/26
+const NI2_WEEKLY = 3.45;
+const NI2_THRESHOLD = 12570;
+const NI4_LOWER = 12570;
+const NI4_UPPER = 50270;
+const NI4_MAIN_RATE = 0.06;
+const NI4_UPPER_RATE = 0.02;
+
+// Student loan thresholds 2025/26
+const STUDENT_LOANS = {
+  plan1: { threshold: 24990, rate: 0.09 },
+  plan2: { threshold: 27295, rate: 0.09 },
+  plan4: { threshold: 31395, rate: 0.09 },
+  plan5: { threshold: 25000, rate: 0.09 },
+  postgrad: { threshold: 21000, rate: 0.06 }
+};
+
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+function fmtDec(n) { return '£' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+
+function calculate() {
+  const gross = parseFloat(document.getElementById('income').value) || 0;
+  const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+  const otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
+  const pension = parseFloat(document.getElementById('pensionContrib').value) || 0;
+  const studentLoanType = document.getElementById('studentLoan').value;
+  const vatType = document.getElementById('vatRegistered').value;
+
+  if (gross <= 0) { alert('Please enter your annual gross income.'); return; }
+
+  const profit = Math.max(0, gross - expenses);
+  const totalIncome = profit + otherIncome;
+  const taxableIncome = Math.max(0, totalIncome - pension);
+
+  // Personal Allowance (tapered above £100k)
+  let pa = PERSONAL_ALLOWANCE;
+  if (taxableIncome > PA_TAPER_START) {
+    pa = Math.max(0, PERSONAL_ALLOWANCE - Math.floor((taxableIncome - PA_TAPER_START) / 2));
+  }
+
+  // Income Tax
+  const taxable = Math.max(0, taxableIncome - pa);
+  let basicTax = 0, higherTax = 0, additionalTax = 0;
+  
+  if (taxable > 0) {
+    const basicBand = Math.min(taxable, BASIC_LIMIT);
+    basicTax = basicBand * BASIC_RATE;
+    
+    if (taxable > BASIC_LIMIT) {
+      const higherBand = Math.min(taxable - BASIC_LIMIT, HIGHER_LIMIT - PERSONAL_ALLOWANCE - BASIC_LIMIT);
+      higherTax = higherBand * HIGHER_RATE;
+      
+      if (taxable > (HIGHER_LIMIT - pa)) {
+        const addBand = taxable - (HIGHER_LIMIT - pa);
+        // recalc: additional is above £125,140 total income
+        additionalTax = Math.max(0, taxableIncome - HIGHER_LIMIT) * ADDITIONAL_RATE;
+        higherTax = Math.max(0, Math.min(taxableIncome, HIGHER_LIMIT) - pa - BASIC_LIMIT - pa) * HIGHER_RATE;
+        // Simpler recalculation
+      }
+    }
+  }
+
+  // Recalculate properly with bands
+  let incomeTax = 0;
+  let basicAmt = 0, higherAmt = 0, additionalAmt = 0;
+  let remaining = taxable;
+
+  // Basic rate band
+  const basicPortion = Math.min(remaining, BASIC_LIMIT);
+  basicAmt = basicPortion * BASIC_RATE;
+  remaining -= basicPortion;
+
+  // Higher rate band (£37,701 to £125,140 = £87,440 after PA, but with tapered PA it changes)
+  const higherBandTop = HIGHER_LIMIT - pa - BASIC_LIMIT;
+  if (remaining > 0 && higherBandTop > 0) {
+    const higherPortion = Math.min(remaining, higherBandTop);
+    higherAmt = higherPortion * HIGHER_RATE;
+    remaining -= higherPortion;
+  }
+
+  // Additional rate
+  if (remaining > 0) {
+    additionalAmt = remaining * ADDITIONAL_RATE;
+  }
+
+  incomeTax = basicAmt + higherAmt + additionalAmt;
+
+  // Apportion tax to freelance income (if other income exists)
+  const freelanceProportion = totalIncome > 0 ? profit / totalIncome : 1;
+  const freelanceIncomeTax = incomeTax * freelanceProportion;
+
+  // Class 2 NI
+  let ni2 = 0;
+  if (profit > NI2_THRESHOLD) {
+    ni2 = NI2_WEEKLY * 52;
+  }
+
+  // Class 4 NI (on profits only, not other income)
+  let ni4 = 0;
+  if (profit > NI4_LOWER) {
+    const mainBand = Math.min(profit, NI4_UPPER) - NI4_LOWER;
+    ni4 = mainBand * NI4_MAIN_RATE;
+    if (profit > NI4_UPPER) {
+      ni4 += (profit - NI4_UPPER) * NI4_UPPER_RATE;
+    }
+  }
+
+  // Student Loan
+  let studentLoan = 0;
+  if (studentLoanType !== 'none') {
+    const sl = STUDENT_LOANS[studentLoanType];
+    if (taxableIncome > sl.threshold) {
+      studentLoan = (taxableIncome - sl.threshold) * sl.rate;
+    }
+  }
+
+  const totalTax = freelanceIncomeTax + ni2 + ni4 + studentLoan;
+  const takeHome = profit - totalTax;
+  const effectiveRate = profit > 0 ? (totalTax / profit * 100) : 0;
+
+  // Update DOM
+  document.getElementById('takeHome').textContent = fmt(takeHome);
+  document.getElementById('takeHomeMonth').textContent = fmt(takeHome / 12);
+  document.getElementById('takeHomeWeek').textContent = fmt(takeHome / 52);
+  document.getElementById('effectiveRate').textContent = effectiveRate.toFixed(1) + '%';
+
+  document.getElementById('resGross').textContent = fmt(gross);
+  document.getElementById('resExpenses').textContent = expenses > 0 ? '-' + fmt(expenses) : '£0';
+  document.getElementById('resPension').textContent = pension > 0 ? '-' + fmt(pension) : '£0';
+  document.getElementById('resProfit').textContent = fmt(profit);
+
+  document.getElementById('resIncomeTax').textContent = '-' + fmt(freelanceIncomeTax);
+  document.getElementById('resBasic').textContent = fmt(basicAmt * freelanceProportion);
+  
+  const rowHigher = document.getElementById('rowHigher');
+  const rowAdditional = document.getElementById('rowAdditional');
+  rowHigher.style.display = higherAmt > 0 ? 'flex' : 'none';
+  rowAdditional.style.display = additionalAmt > 0 ? 'flex' : 'none';
+  document.getElementById('resHigher').textContent = fmt(higherAmt * freelanceProportion);
+  document.getElementById('resAdditional').textContent = fmt(additionalAmt * freelanceProportion);
+
+  document.getElementById('resNI2').textContent = ni2 > 0 ? '-' + fmt(ni2) : '£0';
+  document.getElementById('resNI4').textContent = ni4 > 0 ? '-' + fmt(ni4) : '£0';
+
+  const rowSL = document.getElementById('rowStudentLoan');
+  rowSL.style.display = studentLoan > 0 ? 'flex' : 'none';
+  document.getElementById('resStudentLoan').textContent = '-' + fmt(studentLoan);
+
+  document.getElementById('resTotalTax').textContent = '-' + fmt(totalTax);
+
+  // Payment deadlines
+  const janPayment = totalTax; // full bill + first POA
+  const julPayment = totalTax / 2; // second POA
+  document.getElementById('payJan').textContent = fmt(janPayment);
+  document.getElementById('payJul').textContent = fmt(julPayment);
+
+  // VAT
+  const vatCard = document.getElementById('vatCard');
+  if (vatType !== 'no') {
+    vatCard.style.display = 'block';
+    const vatCollected = gross * 0.20;
+    let vatDue, note;
+    if (vatType === 'flat') {
+      vatDue = gross * 1.20 * 0.145; // 14.5% average flat rate
+      note = 'Flat Rate Scheme estimate (14.5% of gross + VAT). Your actual rate depends on your trade sector.';
+    } else {
+      vatDue = vatCollected - (expenses * 0.20);
+      note = 'Standard scheme: VAT collected minus VAT on expenses. Actual may vary based on which expenses include VAT.';
+    }
+    document.getElementById('resVatCollected').textContent = fmt(vatCollected);
+    document.getElementById('resVatDue').textContent = '-' + fmt(Math.max(0, vatDue));
+    document.getElementById('vatNote').textContent = note;
+  } else {
+    vatCard.style.display = 'none';
+  }
+
+  // Tax bar
+  const segments = [];
+  if (takeHome > 0) segments.push({ label: 'Take-Home', value: takeHome, color: '#2ecc71' });
+  if (freelanceIncomeTax > 0) segments.push({ label: 'Income Tax', value: freelanceIncomeTax, color: '#e74c3c' });
+  if (ni2 + ni4 > 0) segments.push({ label: 'NI', value: ni2 + ni4, color: '#e67e22' });
+  if (studentLoan > 0) segments.push({ label: 'Student Loan', value: studentLoan, color: '#9b59b6' });
+  if (expenses > 0) segments.push({ label: 'Expenses', value: expenses, color: '#3498db' });
+
+  const total = segments.reduce((s, x) => s + x.value, 0);
+  const bar = document.getElementById('taxBar');
+  const legend = document.getElementById('taxBarLegend');
+  bar.innerHTML = segments.map(s => {
+    const pct = (s.value / total * 100).toFixed(1);
+    return `<div class="bar-segment" style="width:${pct}%;background:${s.color};" title="${s.label}: ${fmt(s.value)}">${pct > 8 ? Math.round(s.value/total*100)+'%' : ''}</div>`;
+  }).join('');
+  legend.innerHTML = segments.map(s =>
+    `<span style="color:var(--text-muted)"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:${s.color};margin-right:4px;vertical-align:middle;"></span>${s.label}: ${fmt(s.value)}</span>`
+  ).join('');
+
+  document.getElementById('results').classList.add('show');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+<!-- Analytics -->
+<script>
+(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',body:JSON.stringify({p:location.pathname,r:document.referrer}),headers:{'Content-Type':'application/json'},mode:'cors'}).catch(function(){});}catch(e){}})();
+</script>
+
+</body>
+</html>

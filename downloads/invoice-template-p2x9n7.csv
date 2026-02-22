@@ -1,0 +1,51 @@
+INVOICE
+
+FROM:
+[YOUR BUSINESS NAME]
+[Your Address Line 1]
+[City Postcode]
+[Phone Number]
+[Email Address]
+
+INVOICE NO:,[INV-001]
+DATE:,[DD/MM/YYYY]
+DUE DATE:,[DD/MM/YYYY]
+
+TO:
+[Client Name]
+[Client Company Name]
+[Client Address Line 1]
+[City Postcode]
+[Client Email]
+
+PAYMENT TERMS:,Net 14 Days
+LATE PAYMENT:,8% statutory interest applies (Late Payment of Commercial Debts Act 1998)
+
+INVOICE ITEMS
+Description,Quantity,Rate (£),Amount (£)
+[Service/Product Description],[Qty],[Rate],[=B18*C18]
+[Service/Product Description],[Qty],[Rate],[=B19*C19]
+[Service/Product Description],[Qty],[Rate],[=B20*C20]
+[Add more rows as needed]
+
+TOTALS
+Subtotal:,[=SUM(D18:D20)]
+VAT (20%):,[=D24*0.20]
+TOTAL DUE:,[=D24+D25]
+
+PAYMENT DETAILS
+Bank Name:,[Your Bank]
+Account Name:,[Account Holder Name]
+Sort Code:,[XX-XX-XX]
+Account Number:,[XXXXXXXX]
+Payment Reference:,[INV-001]
+
+NOTES
+- Replace all text in square brackets with your details
+- Formulas in column D will auto-calculate if opened in Excel/Google Sheets
+- If not VAT registered delete the VAT row and update total formula to =D24
+- Ensure payment reference matches invoice number
+- HMRC requires: invoice number your business name & address client details date payment terms itemised descriptions amounts VAT details (if registered)
+
+VAT REGISTRATION:,[Your VAT Number - leave blank if not registered]
+COMPANY NUMBER:,[Your Company Number - leave blank if sole trader]

@@ -300,4 +300,19 @@
     <lastmod>2026-02-21</lastmod>
     <priority>0.8</priority>
   </url>
+    <url>
+        <loc>https://landolio.com/products/cold-email-templates.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+  <url>
+    <loc>https://landolio.com/tools/payment-reminder-generator.html</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url><loc>https://landolio.com/tools/freelance-tax-calculator.html</loc><lastmod>2026-02-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://landolio.com/tools/payment-chaser.html</loc><lastmod>2026-02-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://landolio.com/tools/scope-of-work.html</loc><lastmod>2026-02-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
