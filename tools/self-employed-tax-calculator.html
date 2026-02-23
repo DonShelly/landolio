@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Employed Tax Calculator UK 2025/26 — Free | Landolio</title>
+    <meta name="description" content="Free UK self-employed tax calculator for 2025/26. Calculate your Income Tax, National Insurance, take-home pay and effective tax rate instantly.">
+    <meta name="keywords" content="self employed tax calculator UK, freelancer tax calculator, sole trader tax, income tax calculator 2025 26, national insurance self employed">
+    <link rel="canonical" href="https://landolio.com/tools/self-employed-tax-calculator.html">
+    <meta property="og:title" content="Self-Employed Tax Calculator UK 2025/26 — Free">
+    <meta property="og:description" content="Calculate your Income Tax, National Insurance, and take-home pay as a UK self-employed person. Free, instant results.">
+    <meta property="og:url" content="https://landolio.com/tools/self-employed-tax-calculator.html">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Self-Employed Tax Calculator UK 2025/26",
+      "url": "https://landolio.com/tools/self-employed-tax-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+      "description": "Free UK self-employed tax calculator for the 2025/26 tax year. Calculates Income Tax, Class 2 and Class 4 National Insurance, and take-home pay."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much tax do I pay as self-employed UK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As a self-employed person in the UK (2025/26), you pay Income Tax on profits above your £12,570 Personal Allowance at rates of 20% (Basic), 40% (Higher), and 45% (Additional). You also pay Class 2 NI (£3.45/week if profits exceed £12,570) and Class 4 NI (6% on profits between £12,570-£50,270, plus 2% above £50,270)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When do I need to pay self-employed tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You must file your Self Assessment tax return by 31 January following the end of the tax year (5 April). Payments on account are due 31 January and 31 July. For the 2025/26 tax year (6 April 2025 - 5 April 2026), the filing deadline is 31 January 2027."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What expenses can I deduct as self-employed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can deduct allowable business expenses including: office costs, travel costs, clothing expenses (uniforms), staff costs, stock/materials, financial costs, premises costs, advertising, and professional fees. You can only claim expenses that are 'wholly and exclusively' for business purposes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to register as self-employed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you must register with HMRC as self-employed by 5 October following the tax year in which you started self-employment. You can register online through the Government Gateway. Failure to register can result in penalties."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --gold: #D4AF37; --gold-dark: #B8962E; --black: #0A0A0A; --dark: #1A1A1A; --darker: #141414; --gray: #888; --light-gray: #ccc; --white: #FAFAFA; --green: #22C55E; --red: #EF4444; --blue: #3B82F6; }
+        body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); min-height: 100vh; }
+        header { padding: 20px 0; border-bottom: 1px solid rgba(212,175,55,0.2); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--gray); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: var(--gold); }
+        
+        .hero { text-align: center; padding: 48px 0 32px; }
+        .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+        .hero h1 span { color: var(--gold); }
+        .hero p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .tax-year-badge { display: inline-block; background: rgba(212,175,55,0.15); color: var(--gold); padding: 4px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+        
+        .calculator { background: var(--dark); border: 1px solid rgba(212,175,55,0.2); border-radius: 16px; padding: 32px; margin: 24px 0; }
+        .input-group { margin-bottom: 24px; }
+        .input-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.95rem; }
+        .input-group .hint { color: var(--gray); font-size: 0.8rem; margin-bottom: 8px; }
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 600px) { .input-row { grid-template-columns: 1fr; } }
+        input[type="number"], select { width: 100%; padding: 14px 16px; background: var(--darker); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: var(--white); font-size: 1.05rem; font-family: inherit; }
+        input:focus, select:focus { outline: none; border-color: var(--gold); }
+        input::placeholder { color: #555; }
+        
+        .checkbox-group { display: flex; align-items: center; gap: 10px; margin-top: 8px; cursor: pointer; }
+        .checkbox-group input { width: 18px; height: 18px; accent-color: var(--gold); }
+        .checkbox-group label { font-size: 0.9rem; color: var(--light-gray); cursor: pointer; }
+        
+        .btn { display: block; width: 100%; padding: 16px; background: var(--gold); color: var(--black); font-size: 1.1rem; font-weight: 700; border: none; border-radius: 10px; cursor: pointer; margin-top: 8px; }
+        .btn:hover { background: var(--gold-dark); }
+        
+        .results { display: none; margin-top: 32px; }
+        .results.show { display: block; }
+        
+        .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .summary-card { background: var(--darker); border-radius: 12px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .summary-card .label { color: var(--gray); font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .summary-card .value { font-size: 1.6rem; font-weight: 800; }
+        .summary-card .value.green { color: var(--green); }
+        .summary-card .value.red { color: var(--red); }
+        .summary-card .value.blue { color: var(--blue); }
+        .summary-card .value.gold { color: var(--gold); }
+        .summary-card .sub { color: var(--gray); font-size: 0.8rem; margin-top: 4px; }
+        
+        .breakdown { background: var(--darker); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+        .breakdown h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--gold); }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+        .breakdown-row:last-child { border-bottom: none; }
+        .breakdown-row .label { color: var(--light-gray); }
+        .breakdown-row .amount { font-weight: 600; }
+        .breakdown-row.total { border-top: 2px solid var(--gold); margin-top: 8px; padding-top: 12px; font-weight: 700; }
+        .breakdown-row.total .label { color: var(--white); }
+        
+        .bar-chart { margin: 24px 0; }
+        .bar-chart h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--gold); }
+        .bar { display: flex; height: 40px; border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
+        .bar-segment { display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: var(--black); min-width: 30px; transition: width 0.5s ease; }
+        .bar-legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--light-gray); }
+        .legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+        
+        .monthly { background: var(--darker); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+        .monthly h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--gold); }
+        .monthly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 500px) { .monthly-grid { grid-template-columns: 1fr; } }
+        .monthly-item { display: flex; justify-content: space-between; padding: 8px 0; }
+        .monthly-item .label { color: var(--light-gray); font-size: 0.9rem; }
+        .monthly-item .value { font-weight: 600; font-size: 0.9rem; }
+        
+        .tips { background: var(--darker); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .tips h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--gold); }
+        .tip { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .tip:last-child { border-bottom: none; }
+        .tip strong { color: var(--gold); }
+        .tip p { color: var(--light-gray); font-size: 0.9rem; line-height: 1.5; margin-top: 4px; }
+        
+        .faq { margin: 48px 0; }
+        .faq h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
+        .faq-item { background: var(--dark); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; cursor: pointer; border: 1px solid rgba(255,255,255,0.05); }
+        .faq-item:hover { border-color: rgba(212,175,55,0.3); }
+        .faq-q { font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+        .faq-a { color: var(--light-gray); font-size: 0.9rem; line-height: 1.6; margin-top: 12px; display: none; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-arrow { transition: transform 0.2s; color: var(--gold); }
+        
+        .cta-box { text-align: center; padding: 40px 24px; background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(212,175,55,0.05)); border: 1px solid rgba(212,175,55,0.2); border-radius: 16px; margin: 32px 0; }
+        .cta-box h3 { font-size: 1.3rem; margin-bottom: 8px; }
+        .cta-box p { color: var(--gray); margin-bottom: 20px; }
+        .cta-btn { display: inline-block; padding: 14px 32px; background: var(--gold); color: var(--black); font-weight: 700; text-decoration: none; border-radius: 8px; }
+        .cta-btn:hover { background: var(--gold-dark); }
+        
+        footer { padding: 48px 0; border-top: 1px solid rgba(212,175,55,0.1); text-align: center; color: var(--gray); font-size: 0.875rem; }
+        footer a { color: var(--gold); text-decoration: none; }
+        .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="/" class="logo">Landolio</a>
+            <nav>
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Blog</a>
+                <a href="/products/">Products</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="hero">
+            <span class="tax-year-badge">Tax Year 2025/26</span>
+            <h1>Self-Employed <span>Tax Calculator</span> UK</h1>
+            <p>Calculate your Income Tax, National Insurance, and take-home pay in seconds. Updated for the 2025/26 tax year.</p>
+        </div>
+
+        <div class="calculator">
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Annual Revenue (Turnover)</label>
+                    <div class="hint">Your total business income before expenses</div>
+                    <input type="number" id="revenue" placeholder="e.g. 45000" min="0" step="100">
+                </div>
+                <div class="input-group">
+                    <label>Business Expenses</label>
+                    <div class="hint">Allowable expenses you can deduct</div>
+                    <input type="number" id="expenses" placeholder="e.g. 5000" min="0" step="100" value="0">
+                </div>
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Other Income</label>
+                    <div class="hint">Employment income, rental, dividends etc.</div>
+                    <input type="number" id="otherIncome" placeholder="0" min="0" step="100" value="0">
+                </div>
+                <div class="input-group">
+                    <label>Student Loan</label>
+                    <select id="studentLoan">
+                        <option value="none">No student loan</option>
+                        <option value="plan1">Plan 1 (pre-2012)</option>
+                        <option value="plan2">Plan 2 (post-2012)</option>
+                        <option value="plan4">Plan 4 (Scotland)</option>
+                        <option value="plan5">Plan 5 (post-2023)</option>
+                        <option value="postgrad">Postgraduate Loan</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="blind">
+                <label for="blind">Blind Person's Allowance (extra £3,070)</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="marriageAllowance">
+                <label for="marriageAllowance">Marriage Allowance transferred to me (+£1,260)</label>
+            </div>
+
+            <button class="btn" onclick="calculate()">Calculate My Tax →</button>
+        </div>
+
+        <div class="results" id="results">
+            <div class="summary-cards" id="summaryCards"></div>
+            
+            <div class="bar-chart" id="barChart"></div>
+            
+            <div class="breakdown" id="taxBreakdown"></div>
+            
+            <div class="monthly" id="monthlyBreakdown"></div>
+            
+            <div class="tips" id="taxTips"></div>
+            
+            <div class="cta-box">
+                <h3>Need help managing your freelance finances?</h3>
+                <p>Our Getting-Paid Toolkit includes invoice templates, payment chasing scripts, and financial planning spreadsheets.</p>
+                <a href="/products/getting-paid-toolkit.html" class="cta-btn">Get the Toolkit — £19</a>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How much tax do I pay as self-employed UK? <span class="faq-arrow">▼</span></div>
+                <div class="faq-a">As a self-employed person in the UK (2025/26), you pay Income Tax on profits above your £12,570 Personal Allowance at rates of 20% (Basic rate), 40% (Higher rate on income £50,271–£125,140), and 45% (Additional rate above £125,140). You also pay Class 2 NI (£3.45/week if profits exceed £12,570) and Class 4 NI (6% on profits between £12,570–£50,270, plus 2% above £50,270).</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">When do I need to file my Self Assessment? <span class="faq-arrow">▼</span></div>
+                <div class="faq-a">For the 2025/26 tax year (6 April 2025 – 5 April 2026), the paper filing deadline is 31 October 2026 and the online filing deadline is 31 January 2027. You must also pay any tax owed by 31 January 2027. If your bill is over £1,000, you may need to make Payments on Account (due 31 January and 31 July).</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">What business expenses can I claim? <span class="faq-arrow">▼</span></div>
+                <div class="faq-a">Common allowable expenses include: office supplies, phone/internet bills, travel costs, professional subscriptions, software/tools, marketing costs, accountancy fees, insurance, and use-of-home costs. You can use simplified expenses (flat rate) for working from home (£6/week without evidence, or £26/month for 25-50 hours). All expenses must be "wholly and exclusively" for business.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Do I need to register as self-employed? <span class="faq-arrow">▼</span></div>
+                <div class="faq-a">Yes — you must register with HMRC for Self Assessment by 5 October following the end of the tax year in which you became self-employed. You can register online at gov.uk. You'll receive a Unique Taxpayer Reference (UTR) number within 10 days (21 if abroad).</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">What's the difference between turnover and profit? <span class="faq-arrow">▼</span></div>
+                <div class="faq-a">Turnover (revenue) is your total business income before any deductions. Profit is what's left after deducting allowable business expenses. You pay tax on your <strong>profit</strong>, not your turnover. This is why tracking expenses carefully can significantly reduce your tax bill.</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/tools/">Free Tools</a>
+                <a href="/blog/">Blog</a>
+                <a href="/products/">Products</a>
+                <a href="/free-course.html">Free Course</a>
+            </div>
+            <p>© 2026 Landolio. Built for UK freelancers & sole traders.</p>
+            <p style="margin-top: 8px; font-size: 0.75rem;">This calculator provides estimates only and should not be considered tax advice. Always consult HMRC or a qualified accountant for your specific situation.</p>
+        </div>
+    </footer>
+
+    <script>
+    function fmt(n) { return '£' + n.toLocaleString('en-GB', {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+    function fmtP(n) { return n.toFixed(1) + '%'; }
+
+    function calculate() {
+        const revenue = parseFloat(document.getElementById('revenue').value) || 0;
+        const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+        const otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
+        const studentLoan = document.getElementById('studentLoan').value;
+        const blind = document.getElementById('blind').checked;
+        const marriage = document.getElementById('marriageAllowance').checked;
+
+        const profit = Math.max(0, revenue - expenses);
+        const totalIncome = profit + otherIncome;
+
+        // Personal Allowance (tapered above £100k)
+        let pa = 12570;
+        if (blind) pa += 3070;
+        if (marriage) pa += 1260;
+        if (totalIncome > 100000) {
+            pa = Math.max(0, pa - Math.floor((totalIncome - 100000) / 2));
+        }
+
+        // Income Tax
+        const taxable = Math.max(0, totalIncome - pa);
+        let incomeTax = 0;
+        let taxBands = [];
+
+        if (taxable > 0) {
+            const basic = Math.min(taxable, 37700);
+            const higher = Math.min(Math.max(0, taxable - 37700), 87430);
+            const additional = Math.max(0, taxable - 125130);
+            
+            const basicTax = basic * 0.20;
+            const higherTax = higher * 0.40;
+            const additionalTax = additional * 0.45;
+            
+            incomeTax = basicTax + higherTax + additionalTax;
+            
+            if (basic > 0) taxBands.push({ band: 'Basic Rate (20%)', income: basic, tax: basicTax });
+            if (higher > 0) taxBands.push({ band: 'Higher Rate (40%)', income: higher, tax: higherTax });
+            if (additional > 0) taxBands.push({ band: 'Additional Rate (45%)', income: additional, tax: additionalTax });
+        }
+
+        // Class 2 NI
+        let class2 = 0;
+        if (profit >= 12570) {
+            class2 = 3.45 * 52; // £179.40/year
+        }
+
+        // Class 4 NI
+        let class4 = 0;
+        let class4Main = 0;
+        let class4Upper = 0;
+        if (profit > 12570) {
+            class4Main = Math.min(profit, 50270) - 12570;
+            class4 += class4Main * 0.06;
+        }
+        if (profit > 50270) {
+            class4Upper = profit - 50270;
+            class4 += class4Upper * 0.02;
+        }
+        const totalNI = class2 + class4;
+
+        // Student Loan
+        let studentLoanPayment = 0;
+        const slThresholds = {
+            plan1: { threshold: 24990, rate: 0.09 },
+            plan2: { threshold: 27295, rate: 0.09 },
+            plan4: { threshold: 31395, rate: 0.09 },
+            plan5: { threshold: 25000, rate: 0.09 },
+            postgrad: { threshold: 21000, rate: 0.06 }
+        };
+        if (studentLoan !== 'none') {
+            const sl = slThresholds[studentLoan];
+            if (totalIncome > sl.threshold) {
+                studentLoanPayment = (totalIncome - sl.threshold) * sl.rate;
+            }
+        }
+
+        const totalTax = incomeTax + totalNI + studentLoanPayment;
+        const takeHome = revenue - expenses - totalTax;
+        const effectiveRate = totalIncome > 0 ? (totalTax / totalIncome * 100) : 0;
+        const marginalRate = totalIncome > 125140 ? 47 : totalIncome > 100000 ? 60 : totalIncome > 50270 ? 42 : totalIncome > 12570 ? 26 : 0;
+
+        // Summary cards
+        document.getElementById('summaryCards').innerHTML = `
+            <div class="summary-card">
+                <div class="label">Take-Home Pay</div>
+                <div class="value green">${fmt(takeHome)}</div>
+                <div class="sub">${fmt(takeHome/12)}/month</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Total Tax</div>
+                <div class="value red">${fmt(totalTax)}</div>
+                <div class="sub">${fmt(totalTax/12)}/month</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Effective Tax Rate</div>
+                <div class="value gold">${fmtP(effectiveRate)}</div>
+                <div class="sub">Marginal: ${marginalRate}%</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Taxable Profit</div>
+                <div class="value blue">${fmt(profit)}</div>
+                <div class="sub">After ${fmt(expenses)} expenses</div>
+            </div>
+        `;
+
+        // Bar chart
+        const segments = [];
+        const total = revenue;
+        if (total > 0) {
+            if (expenses > 0) segments.push({ label: 'Expenses', value: expenses, color: '#6B7280', pct: expenses/total*100 });
+            segments.push({ label: 'Personal Allowance', value: Math.min(pa, profit), color: '#22C55E', pct: Math.min(pa, profit)/total*100 });
+            if (incomeTax > 0) segments.push({ label: 'Income Tax', value: incomeTax, color: '#EF4444', pct: incomeTax/total*100 });
+            if (totalNI > 0) segments.push({ label: 'National Insurance', value: totalNI, color: '#F59E0B', pct: totalNI/total*100 });
+            if (studentLoanPayment > 0) segments.push({ label: 'Student Loan', value: studentLoanPayment, color: '#8B5CF6', pct: studentLoanPayment/total*100 });
+            const netPay = takeHome - Math.min(pa, profit);
+            if (netPay > 0) segments.push({ label: 'Net Pay', value: netPay, color: '#10B981', pct: netPay/total*100 });
+        }
+
+        let barHTML = '<h3>Where Every £1 of Revenue Goes</h3><div class="bar">';
+        segments.forEach(s => {
+            if (s.pct > 1) barHTML += `<div class="bar-segment" style="width:${s.pct}%;background:${s.color}" title="${s.label}: ${fmt(s.value)}">${s.pct > 6 ? fmtP(s.pct) : ''}</div>`;
+        });
+        barHTML += '</div><div class="bar-legend">';
+        segments.forEach(s => {
+            barHTML += `<div class="legend-item"><div class="legend-dot" style="background:${s.color}"></div>${s.label}: ${fmt(s.value)}</div>`;
+        });
+        barHTML += '</div>';
+        document.getElementById('barChart').innerHTML = barHTML;
+
+        // Tax breakdown
+        let bdHTML = '<h3>Tax Breakdown</h3>';
+        bdHTML += `<div class="breakdown-row"><span class="label">Gross Revenue</span><span class="amount">${fmt(revenue)}</span></div>`;
+        bdHTML += `<div class="breakdown-row"><span class="label">Less: Business Expenses</span><span class="amount">-${fmt(expenses)}</span></div>`;
+        bdHTML += `<div class="breakdown-row"><span class="label">Net Profit</span><span class="amount">${fmt(profit)}</span></div>`;
+        if (otherIncome > 0) bdHTML += `<div class="breakdown-row"><span class="label">Plus: Other Income</span><span class="amount">${fmt(otherIncome)}</span></div>`;
+        bdHTML += `<div class="breakdown-row"><span class="label">Total Income</span><span class="amount">${fmt(totalIncome)}</span></div>`;
+        bdHTML += `<div class="breakdown-row"><span class="label">Personal Allowance</span><span class="amount">-${fmt(pa)}</span></div>`;
+        bdHTML += `<div class="breakdown-row"><span class="label">Taxable Income</span><span class="amount">${fmt(taxable)}</span></div>`;
+        bdHTML += '<br>';
+        taxBands.forEach(b => {
+            bdHTML += `<div class="breakdown-row"><span class="label">${b.band} on ${fmt(b.income)}</span><span class="amount">${fmt(b.tax)}</span></div>`;
+        });
+        bdHTML += `<div class="breakdown-row total"><span class="label">Income Tax</span><span class="amount">${fmt(incomeTax)}</span></div>`;
+        bdHTML += '<br>';
+        bdHTML += `<div class="breakdown-row"><span class="label">Class 2 NI (£3.45/week × 52)</span><span class="amount">${fmt(class2)}</span></div>`;
+        if (class4Main > 0) bdHTML += `<div class="breakdown-row"><span class="label">Class 4 NI (6% on ${fmt(class4Main)})</span><span class="amount">${fmt(class4Main * 0.06)}</span></div>`;
+        if (class4Upper > 0) bdHTML += `<div class="breakdown-row"><span class="label">Class 4 NI (2% on ${fmt(class4Upper)})</span><span class="amount">${fmt(class4Upper * 0.02)}</span></div>`;
+        bdHTML += `<div class="breakdown-row total"><span class="label">National Insurance</span><span class="amount">${fmt(totalNI)}</span></div>`;
+        if (studentLoanPayment > 0) {
+            bdHTML += '<br>';
+            bdHTML += `<div class="breakdown-row total"><span class="label">Student Loan Repayment</span><span class="amount">${fmt(studentLoanPayment)}</span></div>`;
+        }
+        bdHTML += '<br>';
+        bdHTML += `<div class="breakdown-row total"><span class="label">TOTAL TAX + NI</span><span class="amount" style="color:var(--red)">${fmt(totalTax)}</span></div>`;
+        bdHTML += `<div class="breakdown-row total"><span class="label">TAKE-HOME PAY</span><span class="amount" style="color:var(--green)">${fmt(takeHome)}</span></div>`;
+        document.getElementById('taxBreakdown').innerHTML = bdHTML;
+
+        // Monthly breakdown
+        document.getElementById('monthlyBreakdown').innerHTML = `
+            <h3>Monthly & Weekly Breakdown</h3>
+            <div class="monthly-grid">
+                <div class="monthly-item"><span class="label">Monthly take-home</span><span class="value" style="color:var(--green)">${fmt(takeHome/12)}</span></div>
+                <div class="monthly-item"><span class="label">Weekly take-home</span><span class="value" style="color:var(--green)">${fmt(takeHome/52)}</span></div>
+                <div class="monthly-item"><span class="label">Daily take-home</span><span class="value" style="color:var(--green)">${fmt(takeHome/365)}</span></div>
+                <div class="monthly-item"><span class="label">Hourly (37.5h/wk)</span><span class="value" style="color:var(--green)">${fmt(takeHome/1950)}</span></div>
+                <div class="monthly-item"><span class="label">Monthly tax set-aside</span><span class="value" style="color:var(--red)">${fmt(totalTax/12)}</span></div>
+                <div class="monthly-item"><span class="label">Tax per day worked</span><span class="value" style="color:var(--red)">${fmt(totalTax/260)}</span></div>
+            </div>
+        `;
+
+        // Tax tips
+        let tipsHTML = '<h3>💡 Tax-Saving Tips for Your Income Level</h3>';
+        if (profit < 12570) {
+            tipsHTML += '<div class="tip"><strong>You\'re within your Personal Allowance</strong><p>Your profit is below £12,570, so you won\'t pay any Income Tax. Make sure you\'re still registered with HMRC and filing a Self Assessment return.</p></div>';
+        }
+        if (profit > 12570 && profit < 50270) {
+            tipsHTML += '<div class="tip"><strong>Maximise your expenses</strong><p>Every £1 of legitimate expense saves you 26p in tax (20% IT + 6% NI). Are you claiming for home office (£6/week flat rate), phone, software, travel, and professional development?</p></div>';
+        }
+        if (profit > 50270) {
+            tipsHTML += '<div class="tip"><strong>Consider pension contributions</strong><p>At your income level, pension contributions save you 40%+ in tax. A £10,000 contribution would save you £4,000+ in tax while building your retirement fund.</p></div>';
+        }
+        if (totalIncome > 100000) {
+            tipsHTML += '<div class="tip"><strong>Watch the £100k trap</strong><p>Between £100k-£125,140, your effective marginal rate is 60% due to Personal Allowance tapering. Pension contributions are especially valuable here — they restore your Personal Allowance.</p></div>';
+        }
+        if (revenue > 85000) {
+            tipsHTML += '<div class="tip"><strong>VAT registration may be required</strong><p>If your turnover exceeds £90,000 you must register for VAT. Check our <a href="/tools/vat-threshold-calculator.html" style="color:var(--gold)">VAT Threshold Calculator</a> for personalised advice.</p></div>';
+        }
+        tipsHTML += '<div class="tip"><strong>Set aside tax monthly</strong><p>Put <strong>' + fmt(totalTax/12) + '/month</strong> into a separate savings account so you\'re ready when your Self Assessment bill arrives on 31 January.</p></div>';
+        document.getElementById('taxTips').innerHTML = tipsHTML;
+
+        document.getElementById('results').classList.add('show');
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Auto-calculate on Enter
+    document.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+        el.addEventListener('change', () => { if (document.getElementById('results').classList.contains('show')) calculate(); });
+    });
+    </script>
+    <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+</body>
+</html>
