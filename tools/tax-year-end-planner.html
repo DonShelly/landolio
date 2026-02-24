@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Year-End Planner 2026 | Free Tool for UK Freelancers</title>
+    <meta name="description" content="Calculate your 2025/26 tax bill, optimise pension contributions, and plan your tax year-end strategy before the 5 April 2026 deadline.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .deadline-warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        .deadline-warning strong {
+            color: #856404;
+        }
+        .input-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .help-text {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 4px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .results {
+            margin-top: 30px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+        .results.show {
+            display: block;
+        }
+        .result-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .result-label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .result-value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .result-value.warning {
+            color: #dc3545;
+        }
+        .result-value.success {
+            color: #28a745;
+        }
+        .breakdown {
+            margin-top: 10px;
+            font-size: 0.95em;
+            color: #666;
+        }
+        .breakdown-item {
+            margin: 5px 0;
+        }
+        .recommendations {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 4px;
+        }
+        .recommendations h3 {
+            color: #1976D2;
+            margin-bottom: 15px;
+        }
+        .recommendations ul {
+            list-style-position: inside;
+            color: #555;
+        }
+        .recommendations li {
+            margin: 10px 0;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .cta-box h3 {
+            margin-bottom: 15px;
+        }
+        .cta-box .btn {
+            background: white;
+            color: #667eea;
+            margin-top: 15px;
+        }
+        .disclaimer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff3cd;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💷 Tax Year-End Planner 2026</h1>
+        <p class="subtitle">Calculate your tax bill, optimise pension contributions, and maximise tax relief before 5 April 2026</p>
+        
+        <div class="deadline-warning">
+            <strong>⏰ 2025/26 Tax Year Ends: 5 April 2026</strong><br>
+            After this date, you can't claim expenses, make pension contributions, or use your £20,000 ISA allowance for this tax year.
+        </div>
+
+        <form id="taxForm">
+            <div class="input-group">
+                <label for="income">Total Self-Employment Income (2025/26)</label>
+                <input type="number" id="income" placeholder="50000" min="0" step="100" required>
+                <div class="help-text">All freelance/sole trader income before expenses (£)</div>
+            </div>
+
+            <div class="input-group">
+                <label for="expenses">Total Business Expenses (2025/26)</label>
+                <input type="number" id="expenses" placeholder="15000" min="0" step="100" required>
+                <div class="help-text">All claimable business expenses including travel, equipment, software (£)</div>
+            </div>
+
+            <div class="input-group">
+                <label for="pension">Planned Pension Contribution</label>
+                <input type="number" id="pension" placeholder="0" min="0" step="100" value="0">
+                <div class="help-text">Amount you'll pay into a personal pension before 5 April 2026 (£)</div>
+            </div>
+
+            <div class="input-group">
+                <label for="capitalAllowances">Capital Allowances (Equipment Purchases)</label>
+                <input type="number" id="capitalAllowances" placeholder="0" min="0" step="100" value="0">
+                <div class="help-text">Laptops, cameras, vehicles, machinery bought in 2025/26 (£)</div>
+            </div>
+
+            <div class="input-group">
+                <label for="otherIncome">Other Taxable Income (Optional)</label>
+                <input type="number" id="otherIncome" placeholder="0" min="0" step="100" value="0">
+                <div class="help-text">Employment income, rental income, savings interest, dividends (£)</div>
+            </div>
+
+            <button type="submit" class="btn">Calculate My Tax Bill</button>
+        </form>
+
+        <div id="results" class="results">
+            <div class="result-item">
+                <div class="result-label">Estimated Tax Bill (2025/26)</div>
+                <div class="result-value warning" id="totalTax">£0</div>
+                <div class="breakdown">
+                    <div class="breakdown-item">Income Tax: <strong id="incomeTax">£0</strong></div>
+                    <div class="breakdown-item">Class 2 NI: <strong id="class2NI">£0</strong></div>
+                    <div class="breakdown-item">Class 4 NI: <strong id="class4NI">£0</strong></div>
+                </div>
+            </div>
+
+            <div class="result-item">
+                <div class="result-label">Taxable Profit</div>
+                <div class="result-value" id="profit">£0</div>
+                <div class="breakdown">
+                    <div class="breakdown-item">Income: <strong id="showIncome">£0</strong></div>
+                    <div class="breakdown-item">Expenses: <strong id="showExpenses">£0</strong></div>
+                    <div class="breakdown-item">Capital Allowances: <strong id="showCapital">£0</strong></div>
+                    <div class="breakdown-item">Pension Contribution: <strong id="showPension">£0</strong></div>
+                </div>
+            </div>
+
+            <div class="result-item">
+                <div class="result-label">Effective Tax Rate</div>
+                <div class="result-value" id="effectiveRate">0%</div>
+                <div class="help-text">Percentage of your profit paid in tax</div>
+            </div>
+
+            <div id="recommendations" class="recommendations">
+                <h3>💡 Recommendations</h3>
+                <ul id="recommendationList"></ul>
+            </div>
+
+            <div class="cta-box">
+                <h3>Need Help Planning Your Tax Year-End?</h3>
+                <p>Get the complete Tax Year-End Toolkit with expense trackers, calculators, and checklists.</p>
+                <a href="https://buy.stripe.com/test_28o6r328FcCM3169AE" class="btn">Get the Toolkit (£14)</a>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This tool provides estimates for UK freelancers and sole traders. Actual tax liability may vary based on your specific circumstances. Tax calculations assume standard Personal Allowance and thresholds for 2025/26. Consult an accountant or HMRC for personalised advice.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('taxForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get inputs
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+            const pension = parseFloat(document.getElementById('pension').value) || 0;
+            const capitalAllowances = parseFloat(document.getElementById('capitalAllowances').value) || 0;
+            const otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
+            
+            // Calculate profit
+            const profit = Math.max(0, income - expenses - capitalAllowances);
+            const totalIncome = profit + otherIncome - pension;
+            
+            // Tax thresholds 2025/26
+            const personalAllowance = 12570;
+            const basicRateLimit = 50270;
+            const higherRateLimit = 125140;
+            
+            // Calculate Income Tax
+            let incomeTax = 0;
+            let taxableIncome = Math.max(0, totalIncome);
+            
+            // Reduce Personal Allowance if income > £100,000
+            let adjustedPA = personalAllowance;
+            if (totalIncome > 100000) {
+                adjustedPA = Math.max(0, personalAllowance - ((totalIncome - 100000) / 2));
+            }
+            
+            taxableIncome = Math.max(0, totalIncome - adjustedPA);
+            
+            if (taxableIncome <= (basicRateLimit - adjustedPA)) {
+                // Basic rate only
+                incomeTax = taxableIncome * 0.20;
+            } else if (taxableIncome <= (higherRateLimit - adjustedPA)) {
+                // Basic + Higher rate
+                incomeTax = (basicRateLimit - adjustedPA) * 0.20;
+                incomeTax += (taxableIncome - (basicRateLimit - adjustedPA)) * 0.40;
+            } else {
+                // Basic + Higher + Additional rate
+                incomeTax = (basicRateLimit - adjustedPA) * 0.20;
+                incomeTax += (higherRateLimit - basicRateLimit) * 0.40;
+                incomeTax += (taxableIncome - (higherRateLimit - adjustedPA)) * 0.45;
+            }
+            
+            // Calculate Class 2 NI
+            let class2NI = 0;
+            if (profit >= personalAllowance) {
+                class2NI = 3.45 * 52; // £3.45 per week
+            }
+            
+            // Calculate Class 4 NI
+            let class4NI = 0;
+            if (profit > personalAllowance) {
+                const lowerProfitsLimit = personalAllowance;
+                const upperProfitsLimit = basicRateLimit;
+                
+                if (profit <= upperProfitsLimit) {
+                    class4NI = (profit - lowerProfitsLimit) * 0.09;
+                } else {
+                    class4NI = (upperProfitsLimit - lowerProfitsLimit) * 0.09;
+                    class4NI += (profit - upperProfitsLimit) * 0.02;
+                }
+            }
+            
+            const totalTax = incomeTax + class2NI + class4NI;
+            const effectiveRate = profit > 0 ? ((totalTax / profit) * 100).toFixed(1) : 0;
+            
+            // Display results
+            document.getElementById('totalTax').textContent = '£' + Math.round(totalTax).toLocaleString();
+            document.getElementById('incomeTax').textContent = '£' + Math.round(incomeTax).toLocaleString();
+            document.getElementById('class2NI').textContent = '£' + Math.round(class2NI).toLocaleString();
+            document.getElementById('class4NI').textContent = '£' + Math.round(class4NI).toLocaleString();
+            document.getElementById('profit').textContent = '£' + profit.toLocaleString();
+            document.getElementById('showIncome').textContent = '£' + income.toLocaleString();
+            document.getElementById('showExpenses').textContent = '-£' + expenses.toLocaleString();
+            document.getElementById('showCapital').textContent = '-£' + capitalAllowances.toLocaleString();
+            document.getElementById('showPension').textContent = '-£' + pension.toLocaleString();
+            document.getElementById('effectiveRate').textContent = effectiveRate + '%';
+            
+            // Generate recommendations
+            const recommendations = [];
+            
+            if (expenses < income * 0.15) {
+                recommendations.push('<strong>Review your expenses:</strong> You\'re claiming only ' + ((expenses/income)*100).toFixed(0) + '% of income as expenses. Most freelancers claim 20-40%. Review bank statements for missing deductions (mileage, software, home office).');
+            }
+            
+            if (pension === 0 && profit > 20000) {
+                const suggestedPension = Math.min(5000, profit * 0.1);
+                const pensionSaving = suggestedPension * 0.29; // 20% IT + 9% NI
+                recommendations.push('<strong>Consider pension contributions:</strong> A £' + suggestedPension.toLocaleString() + ' pension contribution would save you approximately £' + Math.round(pensionSaving).toLocaleString() + ' in tax and NI.');
+            }
+            
+            if (profit > 49000 && profit < 52000) {
+                const excessOverThreshold = profit - 50270;
+                const pensionToReduceRate = excessOverThreshold + 1;
+                recommendations.push('<strong>Higher rate threshold optimization:</strong> You\'re just over the higher rate threshold. A £' + Math.round(pensionToReduceRate).toLocaleString() + ' pension contribution would pull you back into the basic rate (20% vs 40%).');
+            }
+            
+            if (totalIncome > 100000 && totalIncome < 125140) {
+                recommendations.push('<strong>Personal Allowance tapering:</strong> Your Personal Allowance is being reduced because your income exceeds £100,000. Every £2 earned over £100k reduces your allowance by £1 (effective 60% tax rate). Consider pension contributions to protect your allowance.');
+            }
+            
+            if (profit > 85000 && profit < 95000) {
+                recommendations.push('<strong>VAT threshold warning:</strong> You\'re approaching the £90,000 VAT registration threshold. Consider deferring invoices until after 5 April 2026 to stay below the limit, or prepare to register for VAT.');
+            }
+            
+            if (capitalAllowances === 0) {
+                recommendations.push('<strong>Capital allowances:</strong> If you bought any business equipment in 2025/26 (laptop, camera, furniture), claim it as a capital allowance before 5 April 2026 to reduce your tax bill.');
+            }
+            
+            recommendations.push('<strong>ISA allowance:</strong> Don\'t forget to use your £20,000 ISA allowance before 5 April 2026. This is separate from your tax bill but lets you shelter savings from tax.');
+            
+            recommendations.push('<strong>Deadline:</strong> You have until <strong>midnight on 5 April 2026</strong> to make pension contributions, claim expenses, and use your ISA allowance for the 2025/26 tax year.');
+            
+            const recommendationList = document.getElementById('recommendationList');
+            recommendationList.innerHTML = '';
+            recommendations.forEach(rec => {
+                const li = document.createElement('li');
+                li.innerHTML = rec;
+                recommendationList.appendChild(li);
+            });
+            
+            // Show results
+            document.getElementById('results').classList.add('show');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>

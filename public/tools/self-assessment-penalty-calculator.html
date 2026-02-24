@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Assessment Penalty Calculator 2026 | UK Freelancers</title>
+    <meta name="description" content="Calculate HMRC Self-Assessment late filing and payment penalties. Instant results for 2024/25 tax year missed deadlines.">
+    <link rel="canonical" href="https://landolio.com/tools/self-assessment-penalty-calculator">
+    
+    <meta property="og:title" content="Self-Assessment Penalty Calculator 2026">
+    <meta property="og:description" content="Calculate HMRC late filing penalties instantly. Find out what you owe if you missed the 31 January 2026 deadline.">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .calc-container { max-width: 700px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333; }
+        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #4361ee; }
+        .calc-button { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 4px; cursor: pointer; width: 100%; margin: 1rem 0; }
+        .calc-button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .results { background: #f8f9fa; border: 2px solid #4361ee; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; display: none; }
+        .results.show { display: block; }
+        .penalty-row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #dee2e6; }
+        .penalty-row:last-child { border-bottom: none; font-weight: 700; font-size: 1.2rem; background: #fff; margin: 0.5rem -1rem -1rem -1rem; padding: 1rem; border-top: 2px solid #4361ee; }
+        .warning-box { background: #FFF4E5; border-left: 4px solid #FF9500; padding: 1rem; margin: 1.5rem 0; font-size: 0.95rem; }
+        .info-box { background: #E8F5E8; border-left: 4px solid #4CAF50; padding: 1rem; margin: 1.5rem 0; font-size: 0.95rem; }
+        .cta-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 8px; margin: 2rem 0; text-align: center; }
+        .cta-box h3 { color: white; margin-top: 0; }
+        .cta-button { background: white; color: #667eea; padding: 1rem 2rem; border: none; border-radius: 4px; font-weight: 600; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-block; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Landolio</a>
+            <ul class="nav-links">
+                <li><a href="/#tools">Tools</a></li>
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header style="text-align: center; max-width: 700px; margin: 2rem auto;">
+            <h1>Self-Assessment Penalty Calculator</h1>
+            <p class="lead">Missed the 31 January 2026 deadline? Calculate your HMRC penalties instantly.</p>
+        </header>
+
+        <div class="warning-box">
+            <strong>⚠️ Important:</strong> This calculator shows filing and payment penalties for the 2024/25 tax year (deadline: 31 January 2026). Interest charges are calculated separately by HMRC and accrue daily on unpaid tax.
+        </div>
+
+        <div class="calc-container">
+            <h2>Enter Your Details</h2>
+            
+            <div class="form-group">
+                <label for="taxOwed">How much tax do you owe? (£)</label>
+                <input type="number" id="taxOwed" min="0" step="100" placeholder="e.g. 5000">
+                <small style="color: #666;">Enter 0 if you owe no tax — you still get penalties for late filing</small>
+            </div>
+
+            <div class="form-group">
+                <label for="filingDate">When will you file? (or when did you file?)</label>
+                <input type="date" id="filingDate" min="2026-02-01" max="2027-12-31">
+            </div>
+
+            <div class="form-group">
+                <label for="paymentDate">When will you pay the tax?</label>
+                <input type="date" id="paymentDate" min="2026-02-01" max="2027-12-31">
+                <small style="color: #666;">Can be later than filing date — penalties are separate</small>
+            </div>
+
+            <button class="calc-button" onclick="calculatePenalties()">Calculate Penalties</button>
+
+            <div class="results" id="results">
+                <h3>Your Penalty Breakdown</h3>
+                <div id="breakdown"></div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>How HMRC Penalties Work</h3>
+            <ul style="margin: 0.5rem 0;">
+                <li><strong>£100 immediate penalty</strong> — charged from 1 February 2026, even if you owe £0 tax</li>
+                <li><strong>£10/day after 3 months</strong> — starts 1 May 2026, up to £900 (90 days)</li>
+                <li><strong>£300 or 5% after 6 months</strong> — whichever is greater (1 August 2026)</li>
+                <li><strong>Another £300 or 5% after 12 months</strong> — whichever is greater (1 February 2027)</li>
+                <li><strong>Plus interest on unpaid tax</strong> — currently around 7.75% per year, charged daily</li>
+            </ul>
+        </div>
+
+        <h2>What Should I Do?</h2>
+        
+        <ol style="max-width: 700px; margin: 2rem auto; font-size: 1.05rem; line-height: 1.7;">
+            <li><strong>File immediately</strong> — even if you can't pay. Filing stops penalties escalating.</li>
+            <li><strong>Set up a payment plan</strong> — HMRC offers "Time to Pay" for up to 12 months if you owe under £30,000.</li>
+            <li><strong>Appeal if you have grounds</strong> — serious illness, bereavement, or disaster may get the £100 penalty waived.</li>
+            <li><strong>Don't wait</strong> — 1 May 2026 is when daily penalties start (£10/day = £300/month).</li>
+        </ol>
+
+        <div class="cta-box">
+            <h3>Self-Assessment Recovery Kit — £9</h3>
+            <p>Everything you need to get back on track:</p>
+            <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                <li>✅ Step-by-step filing checklist</li>
+                <li>✅ Penalty appeal letter templates</li>
+                <li>✅ 12-month self-assessment calendar</li>
+                <li>✅ Tax-saving spreadsheet</li>
+                <li>✅ Time to Pay negotiation guide</li>
+            </ul>
+            <a href="https://buy.stripe.com/8x2fZhaOP8kRgTG3CPf7i0h" class="cta-button">Get the Recovery Kit — £9</a>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Instant download. Never miss another deadline.</p>
+        </div>
+
+        <h2>Related Resources</h2>
+        <ul style="max-width: 700px; margin: 2rem auto;">
+            <li><a href="/blog/missed-self-assessment-deadline-2026">Missed Self-Assessment Deadline? Here's What Happens Next</a> — full guide to penalties and next steps</li>
+            <li><a href="https://www.gov.uk/log-in-file-self-assessment-tax-return" target="_blank" rel="noopener">HMRC Self-Assessment Online</a> — file your return</li>
+            <li><a href="https://www.gov.uk/pay-self-assessment-tax-bill" target="_blank" rel="noopener">HMRC Payment Plans</a> — set up Time to Pay</li>
+        </ul>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Landolio. Built for UK freelancers.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set today's date as default for date inputs
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('filingDate').value = today;
+        document.getElementById('paymentDate').value = today;
+
+        function calculatePenalties() {
+            const taxOwed = parseFloat(document.getElementById('taxOwed').value) || 0;
+            const filingDate = new Date(document.getElementById('filingDate').value);
+            const paymentDate = new Date(document.getElementById('paymentDate').value);
+            
+            const deadline = new Date('2026-01-31');
+            const threeMonths = new Date('2026-05-01');
+            const sixMonths = new Date('2026-08-01');
+            const twelveMonths = new Date('2027-02-01');
+            
+            let filingPenalties = 0;
+            let paymentPenalties = 0;
+            let breakdown = '';
+            
+            // Filing penalties
+            if (filingDate > deadline) {
+                filingPenalties += 100;
+                breakdown += `<div class="penalty-row"><span>Immediate filing penalty (£100)</span><span>£100</span></div>`;
+                
+                // Daily penalties (3-6 months)
+                if (filingDate >= threeMonths) {
+                    const endDate = filingDate < sixMonths ? filingDate : sixMonths;
+                    const daysLate = Math.min(90, Math.floor((endDate - threeMonths) / (1000 * 60 * 60 * 24)));
+                    const dailyPenalty = daysLate * 10;
+                    filingPenalties += dailyPenalty;
+                    breakdown += `<div class="penalty-row"><span>Daily penalties (${daysLate} days × £10)</span><span>£${dailyPenalty}</span></div>`;
+                }
+                
+                // 6-month penalty
+                if (filingDate >= sixMonths) {
+                    const sixMonthPenalty = Math.max(300, taxOwed * 0.05);
+                    filingPenalties += sixMonthPenalty;
+                    breakdown += `<div class="penalty-row"><span>6-month penalty (£300 or 5% of tax)</span><span>£${sixMonthPenalty.toFixed(2)}</span></div>`;
+                }
+                
+                // 12-month penalty
+                if (filingDate >= twelveMonths) {
+                    const twelveMonthPenalty = Math.max(300, taxOwed * 0.05);
+                    filingPenalties += twelveMonthPenalty;
+                    breakdown += `<div class="penalty-row"><span>12-month penalty (£300 or 5% of tax)</span><span>£${twelveMonthPenalty.toFixed(2)}</span></div>`;
+                }
+            }
+            
+            // Payment penalties (5% at 30 days, 6 months, 12 months)
+            if (paymentDate > deadline && taxOwed > 0) {
+                const thirtyDays = new Date('2026-03-02'); // 31 Jan + 30 days
+                const paymentSixMonths = new Date('2026-08-01');
+                const paymentTwelveMonths = new Date('2027-02-01');
+                
+                if (paymentDate >= thirtyDays) {
+                    const penalty1 = taxOwed * 0.05;
+                    paymentPenalties += penalty1;
+                    breakdown += `<div class="penalty-row"><span>Late payment penalty (30 days) — 5%</span><span>£${penalty1.toFixed(2)}</span></div>`;
+                }
+                
+                if (paymentDate >= paymentSixMonths) {
+                    const penalty2 = taxOwed * 0.05;
+                    paymentPenalties += penalty2;
+                    breakdown += `<div class="penalty-row"><span>Late payment penalty (6 months) — 5%</span><span>£${penalty2.toFixed(2)}</span></div>`;
+                }
+                
+                if (paymentDate >= paymentTwelveMonths) {
+                    const penalty3 = taxOwed * 0.05;
+                    paymentPenalties += penalty3;
+                    breakdown += `<div class="penalty-row"><span>Late payment penalty (12 months) — 5%</span><span>£${penalty3.toFixed(2)}</span></div>`;
+                }
+                
+                // Interest estimate (simplified)
+                const daysLate = Math.floor((paymentDate - deadline) / (1000 * 60 * 60 * 24));
+                const interestRate = 0.0775; // 7.75% annual
+                const interest = (taxOwed * interestRate * daysLate) / 365;
+                breakdown += `<div class="penalty-row"><span>Estimated interest (${daysLate} days at 7.75%)</span><span>£${interest.toFixed(2)}</span></div>`;
+                paymentPenalties += interest;
+            }
+            
+            const totalPenalties = filingPenalties + paymentPenalties;
+            
+            if (totalPenalties > 0) {
+                breakdown += `<div class="penalty-row"><span><strong>TOTAL PENALTIES</strong></span><span><strong>£${totalPenalties.toFixed(2)}</strong></span></div>`;
+                
+                if (taxOwed > 0) {
+                    breakdown += `<div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 4px;"><strong>Total amount due:</strong> £${taxOwed.toFixed(2)} (tax) + £${totalPenalties.toFixed(2)} (penalties) = <strong>£${(taxOwed + totalPenalties).toFixed(2)}</strong></div>`;
+                }
+            } else {
+                breakdown = `<div style="text-align: center; color: #4CAF50; font-weight: 600; font-size: 1.1rem;">✅ No penalties — you filed and paid on time!</div>`;
+            }
+            
+            document.getElementById('breakdown').innerHTML = breakdown;
+            document.getElementById('results').classList.add('show');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT Registration for UK Freelancers: Complete Guide 2026</title>
+    <meta name="description" content="Complete guide to VAT registration for UK freelancers. When to register, how the £90k threshold works, what it costs, and whether voluntary registration makes sense.">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">Landolio</a>
+            <div class="nav-links">
+                <a href="/blog/">Blog</a>
+                <a href="/tools/">Tools</a>
+                <a href="/products/">Products</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-post">
+        <article>
+            <header>
+                <h1>VAT Registration for UK Freelancers: Complete Guide 2026</h1>
+                <p class="meta">Updated February 2026 • 18 min read</p>
+            </header>
+
+            <p class="lead">Hitting £90,000 turnover triggers mandatory VAT registration within 30 days — but most freelancers don't realise they're close until it's too late. This guide covers everything: when you must register, how the threshold works, what it costs your business, and whether voluntary registration makes financial sense.</p>
+
+            <div class="tool-embed">
+                <h3>📊 VAT Threshold Tracker</h3>
+                <p>Track your rolling 12-month turnover and see when you need to register:</p>
+                
+                <div id="vat-calculator" style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <label style="display: block; margin-bottom: 10px;">
+                        <strong>Current rolling 12-month turnover (£):</strong><br>
+                        <input type="number" id="turnover" value="75000" min="0" step="1000" style="width: 100%; padding: 8px; margin-top: 5px; font-size: 16px;">
+                    </label>
+                    
+                    <label style="display: block; margin-bottom: 10px;">
+                        <strong>Average monthly revenue (£):</strong><br>
+                        <input type="number" id="monthly" value="7000" min="0" step="100" style="width: 100%; padding: 8px; margin-top: 5px; font-size: 16px;">
+                    </label>
+                    
+                    <button onclick="calculateVAT()" style="background: #2563eb; color: white; padding: 12px 24px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; margin-top: 10px;">Calculate</button>
+                    
+                    <div id="vat-result" style="margin-top: 20px; padding: 15px; background: white; border-radius: 6px; display: none;">
+                        <div id="vat-status" style="font-size: 18px; font-weight: bold; margin-bottom: 10px;"></div>
+                        <div id="vat-details"></div>
+                        <div id="vat-action" style="margin-top: 15px; padding: 15px; border-left: 4px solid #2563eb; background: #eff6ff;"></div>
+                    </div>
+                </div>
+
+                <script>
+                function calculateVAT() {
+                    const turnover = parseFloat(document.getElementById('turnover').value) || 0;
+                    const monthly = parseFloat(document.getElementById('monthly').value) || 0;
+                    const threshold = 90000;
+                    const remaining = threshold - turnover;
+                    const monthsToThreshold = remaining > 0 ? Math.floor(remaining / monthly) : 0;
+                    
+                    const resultDiv = document.getElementById('vat-result');
+                    const statusDiv = document.getElementById('vat-status');
+                    const detailsDiv = document.getElementById('vat-details');
+                    const actionDiv = document.getElementById('vat-action');
+                    
+                    resultDiv.style.display = 'block';
+                    
+                    if (turnover >= threshold) {
+                        statusDiv.innerHTML = '🚨 VAT registration REQUIRED';
+                        statusDiv.style.color = '#dc2626';
+                        detailsDiv.innerHTML = `<p>You've exceeded the £${threshold.toLocaleString()} threshold.</p>
+                        <p><strong>Current turnover:</strong> £${turnover.toLocaleString()}<br>
+                        <strong>Over by:</strong> £${(turnover - threshold).toLocaleString()}</p>`;
+                        actionDiv.innerHTML = '<strong>Action required:</strong> You must register for VAT within 30 days of exceeding the threshold. Late registration carries penalties of £400+ and backdated VAT charges.';
+                    } else if (remaining <= monthly * 2) {
+                        statusDiv.innerHTML = '⚠️ Approaching threshold FAST';
+                        statusDiv.style.color = '#ea580c';
+                        detailsDiv.innerHTML = `<p><strong>Current turnover:</strong> £${turnover.toLocaleString()}<br>
+                        <strong>Remaining headroom:</strong> £${remaining.toLocaleString()}<br>
+                        <strong>Months to threshold:</strong> ~${monthsToThreshold} months at current rate</p>`;
+                        actionDiv.innerHTML = '<strong>Action recommended:</strong> Start preparing for VAT registration now. Set up accounting software with VAT tracking, research the Flat Rate Scheme, and plan for the price impact on your clients.';
+                    } else if (remaining <= monthly * 6) {
+                        statusDiv.innerHTML = '⏰ Monitor closely';
+                        statusDiv.style.color = '#d97706';
+                        detailsDiv.innerHTML = `<p><strong>Current turnover:</strong> £${turnover.toLocaleString()}<br>
+                        <strong>Remaining headroom:</strong> £${remaining.toLocaleString()}<br>
+                        <strong>Months to threshold:</strong> ~${monthsToThreshold} months at current rate</p>`;
+                        actionDiv.innerHTML = '<strong>Action recommended:</strong> Track your rolling 12-month turnover monthly. Consider whether voluntary registration makes sense (can reclaim VAT on business expenses).';
+                    } else {
+                        statusDiv.innerHTML = '✅ Comfortably below threshold';
+                        statusDiv.style.color = '#059669';
+                        detailsDiv.innerHTML = `<p><strong>Current turnover:</strong> £${turnover.toLocaleString()}<br>
+                        <strong>Remaining headroom:</strong> £${remaining.toLocaleString()}<br>
+                        <strong>Months to threshold:</strong> ~${monthsToThreshold} months at current rate</p>`;
+                        actionDiv.innerHTML = '<strong>No action needed</strong> yet, but keep tracking. VAT registration becomes mandatory once you hit £90,000 in any rolling 12-month period.';
+                    }
+                }
+                
+                // Auto-calculate on page load
+                window.addEventListener('load', calculateVAT);
+                </script>
+            </div>
+
+            <h2>What Is VAT Registration?</h2>
+            
+            <p>VAT (Value Added Tax) registration means you charge 20% VAT on top of your prices, collect it from clients, and pass it to HMRC quarterly. In return, you can reclaim VAT you've paid on business expenses.</p>
+
+            <p><strong>Example:</strong> You invoice a client £1,000 + £200 VAT = £1,200 total. The client pays £1,200. You keep £1,000 (your fee) and owe HMRC £200 (the VAT). If you spent £500 + £100 VAT on business expenses, you reclaim the £100 VAT from HMRC. Net VAT payment to HMRC: £200 - £100 = £100.</p>
+
+            <p>VAT registration is:</p>
+            <ul>
+                <li><strong>Mandatory</strong> if your turnover exceeds £90,000 in any rolling 12-month period</li>
+                <li><strong>Voluntary</strong> if you're below the threshold but want to reclaim VAT on expenses</li>
+                <li><strong>Irreversible</strong> (for 12 months) — once registered, you can't deregister immediately</li>
+            </ul>
+
+            <h2>The £90,000 Threshold: How It Works</h2>
+
+            <h3>Rolling 12-Month Rule</h3>
+            
+            <p>The threshold is based on <strong>rolling 12-month turnover</strong>, not calendar year or tax year. HMRC looks backwards from any point in time:</p>
+
+            <ul>
+                <li>On 15 March 2026, HMRC checks: "Did you invoice more than £90,000 between 16 March 2025 and 15 March 2026?"</li>
+                <li>If yes, you exceeded the threshold on 15 March 2026 and must register within 30 days.</li>
+            </ul>
+
+            <p><strong>Why this matters:</strong> You can't just watch your annual total. You need to track a moving 12-month window.</p>
+
+            <div class="callout warning">
+                <strong>⚠️ Common mistake:</strong> Freelancers assume "I made £85k last year, I'm fine this year." Wrong. If you invoiced £85k in 2025 and £60k in Q1 2026, your rolling 12-month total could exceed £90k by April 2026.
+            </div>
+
+            <h3>What Counts Towards the Threshold?</h3>
+
+            <p><strong>Included:</strong></p>
+            <ul>
+                <li>All sales/services to UK clients (VAT-inclusive if you're already registered)</li>
+                <li>Sales to EU/international clients (if they're UK-based or you deliver in the UK)</li>
+                <li>Zero-rated supplies (exports, digital services to non-UK consumers)</li>
+            </ul>
+
+            <p><strong>Excluded:</strong></p>
+            <ul>
+                <li>VAT-exempt supplies (rent, insurance, finance)</li>
+                <li>Capital asset sales (selling your laptop, company car)</li>
+                <li>Wages (if you employ yourself via a limited company)</li>
+            </ul>
+
+            <p>For most freelancers, it's simple: total invoiced fees in a 12-month period.</p>
+
+            <h2>When Must You Register?</h2>
+
+            <p>You must register for VAT within <strong>30 days</strong> of exceeding the threshold.</p>
+
+            <p><strong>Example timeline:</strong></p>
+            <ul>
+                <li>15 March 2026: You invoice £5,000, bringing your rolling 12-month total to £92,000</li>
+                <li>15 March 2026: Threshold exceeded (£92k > £90k)</li>
+                <li>By 14 April 2026: You must complete VAT registration</li>
+                <li>1 May 2026: VAT registration effective date (you start charging VAT)</li>
+            </ul>
+
+            <p>The "effective date" is usually the first day of the month following the month you exceeded the threshold.</p>
+
+            <h3>What Happens If You Register Late?</h3>
+
+            <p>HMRC penalties for late VAT registration:</p>
+
+            <ul>
+                <li><strong>Backdated VAT:</strong> HMRC will backdate your VAT registration to the date you should have registered. You owe VAT on all sales from that date forward — but you can't retrospectively charge clients. <em>You pay the VAT out of pocket.</em></li>
+                <li><strong>Penalties:</strong> £400 for first-time late registration (can escalate to 15% of VAT owed for serious delays)</li>
+                <li><strong>Interest charges:</strong> HMRC charges interest on unpaid VAT from the date it was due</li>
+            </ul>
+
+            <p><strong>Real cost example:</strong> If you're 3 months late and invoiced £30,000 in that period, you owe £6,000 VAT (20% of £30,000) + £400 penalty + interest. Total: £6,500+ out of your own pocket.</p>
+
+            <div class="callout danger">
+                <strong>🚨 Do NOT ignore the threshold.</strong> "I didn't know" is not a valid defence. HMRC can see your Self-Assessment returns and will know if you've exceeded £90k.
+            </div>
+
+            <h2>How to Register for VAT</h2>
+
+            <p>VAT registration is done online through HMRC's VAT registration service. The process takes 5-10 working days.</p>
+
+            <h3>Step-by-Step Registration Process</h3>
+
+            <ol>
+                <li><strong>Gather information:</strong>
+                    <ul>
+                        <li>Business details (name, address, UTR, NINO)</li>
+                        <li>Bank account for VAT payments/refunds</li>
+                        <li>Estimated turnover for next 12 months</li>
+                        <li>Date you exceeded the threshold (or want to register if voluntary)</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Choose a VAT scheme:</strong>
+                    <ul>
+                        <li><strong>Standard VAT:</strong> Charge 20%, reclaim all VAT on expenses, submit quarterly returns</li>
+                        <li><strong>Flat Rate Scheme:</strong> Charge 20%, pay HMRC a fixed percentage (industry-dependent), keep the difference, can't reclaim VAT on most expenses</li>
+                        <li><strong>Cash Accounting:</strong> Pay VAT when clients actually pay (not when you invoice)</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Register online:</strong> <a href="https://www.gov.uk/register-for-vat">gov.uk/register-for-vat</a></li>
+                
+                <li><strong>Receive VAT number:</strong> HMRC sends your 9-digit VAT number within 10 days</li>
+                
+                <li><strong>Update invoices:</strong> Add VAT number, 20% VAT line, and new total to all invoices</li>
+                
+                <li><strong>Set up accounting:</strong> Use VAT-ready software (Xero, QuickBooks, FreeAgent)</li>
+            </ol>
+
+            <h3>Which VAT Scheme Should You Choose?</h3>
+
+            <p><strong>Standard VAT Scheme</strong></p>
+            <ul>
+                <li><strong>Best for:</strong> Businesses with high expenses (you reclaim VAT on everything)</li>
+                <li><strong>How it works:</strong> Charge 20% VAT on sales, reclaim 20% VAT on expenses, pay HMRC the difference quarterly</li>
+                <li><strong>Pros:</strong> Full VAT reclaim, transparent, easy to understand</li>
+                <li><strong>Cons:</strong> More admin (track every expense), quarterly returns</li>
+            </ul>
+
+            <p><strong>Flat Rate Scheme (FRS)</strong></p>
+            <ul>
+                <li><strong>Best for:</strong> Service businesses with low expenses (freelancers, consultants, designers)</li>
+                <li><strong>How it works:</strong> Charge 20% VAT on sales, pay HMRC a fixed % of your <em>gross</em> turnover (including VAT), keep the difference</li>
+                <li><strong>Flat rate %:</strong> Varies by industry (12-14.5% for most freelancers, 16.5% for "limited cost trader")</li>
+                <li><strong>Pros:</strong> Less admin, can be more profitable if your expenses are low</li>
+                <li><strong>Cons:</strong> Can't reclaim VAT on expenses (except capital assets >£2,000)</li>
+            </ul>
+
+            <p><strong>Example comparison (£100k turnover, £10k expenses):</strong></p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <tr style="background: #f5f5f5;">
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Scheme</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">VAT charged</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">VAT reclaimed</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Net VAT paid</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Standard VAT</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">£20,000</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">£2,000</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">£18,000</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Flat Rate (14%)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">£20,000</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">£0</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">£16,800 (14% of £120k)</td>
+                </tr>
+            </table>
+
+            <p><strong>Winner:</strong> Flat Rate saves £1,200/year in this scenario (because you can't reclaim much VAT anyway).</p>
+
+            <p><strong>Limited Cost Trader rule:</strong> If your expenses are less than 2% of turnover <em>or</em> less than £1,000/year, you're a "limited cost trader" and must use the 16.5% flat rate (not your industry rate). This makes FRS much less attractive.</p>
+
+            <div class="cta-box">
+                <h3>📘 VAT Registration Toolkit (£19)</h3>
+                <p>Everything you need to register correctly and choose the right VAT scheme:</p>
+                <ul>
+                    <li>Step-by-step HMRC registration walkthrough</li>
+                    <li>VAT scheme comparison (Standard vs Flat Rate vs Cash Accounting)</li>
+                    <li>First VAT return guide</li>
+                    <li>Record-keeping templates</li>
+                    <li>Common mistakes checklist</li>
+                </ul>
+                <a href="https://buy.stripe.com/bJe7sLf5530xfPC3CPf7i0i" class="button">Get VAT Toolkit →</a>
+            </div>
+
+            <h2>What VAT Registration Costs Your Business</h2>
+
+            <p>VAT registration has zero direct costs (it's free to register), but it has indirect costs:</p>
+
+            <h3>1. Price Impact on Clients</h3>
+
+            <p>If your clients are:</p>
+            <ul>
+                <li><strong>VAT-registered businesses:</strong> No impact (they reclaim the VAT)</li>
+                <li><strong>Consumers or non-VAT businesses:</strong> 20% price increase (they can't reclaim VAT)</li>
+            </ul>
+
+            <p><strong>Example:</strong> You charged £1,000 for a website. After VAT registration, you charge £1,000 + £200 VAT = £1,200. If your client is a small sole trader (not VAT-registered), they pay 20% more.</p>
+
+            <p><strong>Your options:</strong></p>
+            <ul>
+                <li><strong>Absorb the VAT:</strong> Reduce your fee to £833.33 so the VAT-inclusive price stays £1,000. (You lose 16.67% of revenue.)</li>
+                <li><strong>Pass it on:</strong> Client pays £1,200. (You risk losing price-sensitive clients.)</li>
+                <li><strong>Negotiate:</strong> Split the difference (you drop to £900, client pays £1,080).</li>
+            </ul>
+
+            <h3>2. Admin Burden</h3>
+
+            <ul>
+                <li><strong>Quarterly VAT returns:</strong> Submit online every 3 months (due 1 month + 7 days after quarter end)</li>
+                <li><strong>Invoice updates:</strong> Every invoice must show VAT number, VAT amount, and VAT-inclusive total</li>
+                <li><strong>Record-keeping:</strong> Track VAT on every sale and expense (digitally, for MTD compliance)</li>
+                <li><strong>Software costs:</strong> VAT-ready accounting software (Xero, QuickBooks, FreeAgent) costs £10-30/month</li>
+            </ul>
+
+            <p>Time cost: 2-4 hours/quarter for returns + ongoing invoice updates.</p>
+
+            <h3>3. Cash Flow Impact</h3>
+
+            <p>You collect VAT from clients and pay it to HMRC quarterly. If clients pay late, you still owe HMRC the VAT on the due date — even if you haven't been paid.</p>
+
+            <p><strong>Cash Accounting Scheme</strong> solves this: You only pay VAT when clients actually pay (not when you invoice). Eligibility: turnover under £1.35m.</p>
+
+            <h2>Should You Register Voluntarily?</h2>
+
+            <p>If you're below £90k, you can voluntarily register for VAT. This makes sense if:</p>
+
+            <h3>When Voluntary Registration Makes Sense</h3>
+
+            <ul>
+                <li><strong>High expenses:</strong> You spend £20k+/year on VAT-able items (equipment, software, office space). Reclaiming 20% VAT = £4k/year saved.</li>
+                <li><strong>B2B clients:</strong> All your clients are VAT-registered (they reclaim your VAT, so no price impact).</li>
+                <li><strong>Professional image:</strong> VAT registration signals "established business" (though this is mostly psychological).</li>
+                <li><strong>Approaching threshold:</strong> You'll hit £90k in 6-12 months anyway — register early to avoid scrambling.</li>
+            </ul>
+
+            <h3>When to Stay Unregistered</h3>
+
+            <ul>
+                <li><strong>Consumer clients:</strong> You sell to non-VAT businesses or individuals (they can't reclaim VAT, so you price yourself out).</li>
+                <li><strong>Low expenses:</strong> You spend <£5k/year on business costs (VAT reclaim isn't worth the admin).</li>
+                <li><strong>Turnover under £50k:</strong> Unlikely to hit the threshold soon, admin burden outweighs benefits.</li>
+            </ul>
+
+            <h2>VAT and Making Tax Digital (MTD)</h2>
+
+            <p>From April 2026, <strong>all VAT-registered businesses must use MTD-compatible software</strong> to submit VAT returns. This means:</p>
+
+            <ul>
+                <li>You can't use spreadsheets or manual records</li>
+                <li>You must use HMRC-approved software (Xero, QuickBooks, Sage, FreeAgent, etc.)</li>
+                <li>Your software must connect directly to HMRC's systems</li>
+            </ul>
+
+            <p><strong>MTD for VAT rollout:</strong></p>
+            <ul>
+                <li>April 2022: Businesses with turnover >£85k (already live)</li>
+                <li>April 2026: Extended to <em>all</em> VAT-registered businesses (including voluntary)</li>
+            </ul>
+
+            <p>If you register for VAT in 2026 or later, you're immediately subject to MTD. Plan for software costs (£10-30/month).</p>
+
+            <div class="cta-box">
+                <h3>📘 VAT Registration Toolkit (£19)</h3>
+                <p>Navigate VAT registration confidently with our complete guide:</p>
+                <ul>
+                    <li>When to register (£90k threshold + voluntary registration rules)</li>
+                    <li>VAT scheme selector (which saves you most money)</li>
+                    <li>HMRC registration step-by-step</li>
+                    <li>Making Tax Digital (MTD) compliance guide</li>
+                    <li>Invoice templates (VAT-compliant)</li>
+                </ul>
+                <a href="https://buy.stripe.com/bJe7sLf5530xfPC3CPf7i0i" class="button">Get VAT Toolkit →</a>
+            </div>
+
+            <h2>Common VAT Registration Mistakes</h2>
+
+            <h3>1. "I'll wait until I hit £90k exactly"</h3>
+            
+            <p><strong>Wrong.</strong> The threshold is <em>exceeded</em>, not <em>reached</em>. If you hit £90,001, you're over. Don't wait until £89,999 and hope your next invoice is under £1,000.</p>
+
+            <h3>2. "I'll register next tax year"</h3>
+            
+            <p><strong>Wrong.</strong> VAT threshold is rolling 12-month, not tax year. If you exceed £90k in July 2026, you must register by August — even though the tax year doesn't end until April 2027.</p>
+
+            <h3>3. "I can deregister after 6 months"</h3>
+            
+            <p><strong>Wrong.</strong> You must stay VAT-registered for 12 months minimum. HMRC won't let you deregister earlier unless your business closes.</p>
+
+            <h3>4. "I don't need to track rolling turnover"</h3>
+            
+            <p><strong>Wrong.</strong> You must check your rolling 12-month total monthly. Use a spreadsheet or accounting software with automated tracking.</p>
+
+            <h3>5. "Flat Rate Scheme is always better"</h3>
+            
+            <p><strong>Wrong.</strong> FRS only saves money if your expenses are low. If you spend >10% of turnover on VAT-able items, Standard VAT is usually cheaper.</p>
+
+            <h2>VAT Registration Checklist</h2>
+
+            <div class="checklist">
+                <h3>Before You Register</h3>
+                <ul>
+                    <li>☐ Confirm rolling 12-month turnover exceeds £90k (or decide to register voluntarily)</li>
+                    <li>☐ Calculate the exact date you exceeded the threshold</li>
+                    <li>☐ Decide: Standard VAT or Flat Rate Scheme?</li>
+                    <li>☐ Decide: Cash Accounting or normal accrual basis?</li>
+                    <li>☐ Gather business details (UTR, NINO, bank account)</li>
+                </ul>
+
+                <h3>During Registration</h3>
+                <ul>
+                    <li>☐ Complete online VAT registration: <a href="https://www.gov.uk/register-for-vat">gov.uk/register-for-vat</a></li>
+                    <li>☐ Choose effective date (usually 1st of next month)</li>
+                    <li>☐ Select VAT schemes (FRS, Cash Accounting if eligible)</li>
+                    <li>☐ Set up VAT return frequency (quarterly for most)</li>
+                </ul>
+
+                <h3>After Registration</h3>
+                <ul>
+                    <li>☐ Receive VAT number (9 digits, arrives within 10 days)</li>
+                    <li>☐ Update invoice template (add VAT number, VAT line, new totals)</li>
+                    <li>☐ Set up MTD-compatible accounting software</li>
+                    <li>☐ Notify existing clients of price change (if passing on VAT)</li>
+                    <li>☐ Update website/proposals with VAT-inclusive pricing</li>
+                    <li>☐ Set calendar reminder for first VAT return deadline</li>
+                </ul>
+            </div>
+
+            <h2>FAQs</h2>
+
+            <h3>Can I backdate VAT registration?</h3>
+            
+            <p>No. You can't voluntarily backdate registration. HMRC will backdate it if you register late (and you'll owe VAT for the backdated period).</p>
+
+            <h3>What if I exceed £90k temporarily (one-off project)?</h3>
+            
+            <p>Doesn't matter. If your rolling 12-month turnover exceeds £90k, you must register — even if it's a one-off spike and you expect to drop below next year.</p>
+
+            <h3>Can I deregister if my turnover drops below £90k?</h3>
+            
+            <p>Yes, but only after 12 months of registration. If your turnover falls below the <em>deregistration threshold</em> (£88,000), you can apply to deregister.</p>
+
+            <h3>Do I charge VAT to international clients?</h3>
+            
+            <p><strong>Depends:</strong></p>
+            <ul>
+                <li><strong>B2B clients outside UK:</strong> No VAT (reverse charge — they account for VAT in their country)</li>
+                <li><strong>Consumers outside UK:</strong> Depends on service type (digital services to EU consumers = VAT at their country's rate; physical goods = no UK VAT)</li>
+            </ul>
+            
+            <p>VAT on international sales is complex. Consult an accountant if you have significant non-UK revenue.</p>
+
+            <h3>What happens if I forget to charge VAT?</h3>
+            
+            <p>You still owe HMRC the VAT — even if you didn't charge the client. You pay it out of pocket. <strong>Solution:</strong> Issue a corrected invoice immediately.</p>
+
+            <h2>Next Steps</h2>
+
+            <p>If you're approaching the £90k threshold:</p>
+            <ol>
+                <li><strong>Track your rolling turnover monthly</strong> (use the calculator above or a spreadsheet)</li>
+                <li><strong>Plan for registration 3 months before you hit £90k</strong> (don't wait until the last minute)</li>
+                <li><strong>Research VAT schemes</strong> (Standard vs Flat Rate — which saves you money?)</li>
+                <li><strong>Set up MTD-compatible software</strong> (Xero, QuickBooks, FreeAgent)</li>
+                <li><strong>Notify clients</strong> if you'll need to increase prices</li>
+            </ol>
+
+            <div class="cta-box">
+                <h3>📘 VAT Registration Toolkit (£19)</h3>
+                <p>Avoid costly mistakes with our complete VAT registration guide:</p>
+                <ul>
+                    <li>£90k threshold rules (what counts, what doesn't)</li>
+                    <li>Voluntary registration decision framework</li>
+                    <li>VAT scheme comparison (save £1,000s/year)</li>
+                    <li>First VAT return walkthrough</li>
+                    <li>Record-keeping checklist + templates</li>
+                </ul>
+                <a href="https://buy.stripe.com/bJe7sLf5530xfPC3CPf7i0i" class="button">Get VAT Toolkit →</a>
+            </div>
+
+            <hr style="margin: 40px 0;">
+
+            <p><strong>Still not sure if you need to register?</strong> Use our <a href="#vat-calculator">VAT Threshold Tracker</a> (top of page) to check your status.</p>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Landolio. VAT registration guidance for UK freelancers.</p>
+    </footer>
+</body>
+</html>
