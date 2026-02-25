@@ -1,0 +1,343 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Payment on Account Calculator - Landolio">
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold mb-4">Payment on Account Calculator</h1>
+      <p class="text-xl text-gray-600">Calculate your 31 July 2026 second payment on account — and see what penalties you'll face if you pay late.</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+      <form id="calculator-form" class="space-y-6">
+        <div>
+          <label for="taxBill" class="block text-lg font-semibold mb-2">Last Year's Total Tax Bill (£)</label>
+          <input 
+            type="number" 
+            id="taxBill" 
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:outline-none text-lg"
+            placeholder="e.g. 8000"
+            min="0"
+            step="0.01"
+            required
+          />
+          <p class="text-sm text-gray-500 mt-1">From your SA302 or 2024/25 tax calculation</p>
+        </div>
+
+        <div>
+          <label for="taxDeducted" class="block text-lg font-semibold mb-2">Tax Already Deducted at Source (£)</label>
+          <input 
+            type="number" 
+            id="taxDeducted" 
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:outline-none text-lg"
+            placeholder="e.g. 2000"
+            min="0"
+            step="0.01"
+            value="0"
+          />
+          <p class="text-sm text-gray-500 mt-1">PAYE or CIS tax deducted (if any)</p>
+        </div>
+
+        <div>
+          <label class="block text-lg font-semibold mb-2">When Will You Pay?</label>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="radio" name="paymentTiming" value="onTime" class="mr-3" checked />
+              <span>On time (by 31 July 2026)</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="paymentTiming" value="30days" class="mr-3" />
+              <span>30 days late (30 August 2026)</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="paymentTiming" value="6months" class="mr-3" />
+              <span>6 months late (31 January 2027)</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="paymentTiming" value="12months" class="mr-3" />
+              <span>12 months late (31 July 2027)</span>
+            </label>
+          </div>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors"
+        >
+          Calculate Payment
+        </button>
+      </form>
+    </div>
+
+    <div id="results" class="hidden bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-lg shadow-lg mb-8">
+      <h2 class="text-2xl font-bold mb-6 text-emerald-800">Your Payment on Account</h2>
+      
+      <div id="noPaymentRequired" class="hidden">
+        <div class="bg-green-100 border-2 border-green-500 p-6 rounded-lg mb-6">
+          <p class="text-xl font-bold text-green-800 mb-2">✅ No Payment on Account Required</p>
+          <p class="text-green-700">Your remaining tax bill is under £1,000, so you don't need to make payments on account.</p>
+        </div>
+      </div>
+
+      <div id="paymentRequired" class="hidden">
+        <div class="grid gap-6 mb-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <p class="text-sm text-gray-600 mb-1">Second Payment on Account</p>
+            <p class="text-4xl font-bold text-emerald-600" id="paymentAmount">£0</p>
+            <p class="text-sm text-gray-500 mt-1">Due: 31 July 2026</p>
+          </div>
+
+          <div id="penaltySection" class="hidden">
+            <div class="bg-red-50 border-2 border-red-300 p-6 rounded-lg">
+              <p class="text-sm text-red-600 mb-1">Total Cost If You Pay Late</p>
+              <p class="text-4xl font-bold text-red-600 mb-4" id="totalCost">£0</p>
+              
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Payment on account:</span>
+                  <span class="font-semibold" id="breakdownPayment">£0</span>
+                </div>
+                <div class="flex justify-between" id="penalty30Row" style="display: none;">
+                  <span>30-day penalty (5%):</span>
+                  <span class="font-semibold" id="penalty30">£0</span>
+                </div>
+                <div class="flex justify-between" id="penalty6Row" style="display: none;">
+                  <span>6-month penalty (5%):</span>
+                  <span class="font-semibold" id="penalty6">£0</span>
+                </div>
+                <div class="flex justify-between" id="penalty12Row" style="display: none;">
+                  <span>12-month penalty (5%):</span>
+                  <span class="font-semibold" id="penalty12">£0</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Interest (<span id="interestDays">0</span> days @ 7.75% annual):</span>
+                  <span class="font-semibold" id="interest">£0</span>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-4 border-t border-red-200">
+                <p class="text-sm text-red-700 font-semibold">Extra cost from paying late: <span id="extraCost">£0</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border-2 border-amber-300 p-6 rounded-lg">
+          <p class="font-bold text-amber-800 mb-2">💡 What to Do Next</p>
+          <div id="actionAdvice" class="text-sm text-amber-900 space-y-2">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>How This Calculator Works</h2>
+      
+      <h3>Payment on Account Formula</h3>
+      <p>Your second payment on account = <strong>(Last year's tax bill - Tax deducted at source) ÷ 2</strong></p>
+      
+      <p><strong>Example:</strong></p>
+      <ul>
+        <li>Last year's tax bill: £8,000</li>
+        <li>PAYE tax deducted: £2,000</li>
+        <li>Remaining tax: £8,000 - £2,000 = £6,000</li>
+        <li>Payment on account: £6,000 ÷ 2 = <strong>£3,000</strong></li>
+      </ul>
+
+      <h3>Penalties for Late Payment</h3>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Delay</th>
+            <th>Penalty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 day late</td>
+            <td>Daily interest starts (7.75% annual)</td>
+          </tr>
+          <tr>
+            <td>30 days late</td>
+            <td>5% penalty</td>
+          </tr>
+          <tr>
+            <td>6 months late</td>
+            <td>Additional 5% penalty</td>
+          </tr>
+          <tr>
+            <td>12 months late</td>
+            <td>Additional 5% penalty</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Who Needs to Pay?</h3>
+      <p>You need to make a payment on account if:</p>
+      <ul>
+        <li>Your last year's tax bill was <strong>£1,000 or more</strong> (after deducting tax at source)</li>
+        <li>Less than 80% of your tax was deducted at source (PAYE, CIS, etc.)</li>
+      </ul>
+
+      <p>If your remaining tax is under £1,000, you don't need to pay on account.</p>
+
+      <h3>Can't Afford to Pay?</h3>
+      <p>If you can't pay by 31 July 2026:</p>
+      <ul>
+        <li><strong>Reduce your payment</strong> — if your income dropped, apply to reduce your payment on account before the deadline</li>
+        <li><strong>Set up a payment plan</strong> — call HMRC (0300 200 3822) or apply online to spread payments over 3-12 months</li>
+        <li><strong>Pay as much as you can</strong> — penalties only apply to unpaid amounts</li>
+      </ul>
+
+      <h2>Already Behind on Tax?</h2>
+      <p>Our <strong><a href="/products/self-assessment-recovery-kit">Self-Assessment Recovery Kit</a></strong> (£9) includes:</p>
+      <ul>
+        <li>HMRC payment plan request templates</li>
+        <li>Penalty appeal letter templates (if you have a reasonable excuse)</li>
+        <li>Week-by-week recovery action plan</li>
+        <li>2026-2027 compliance calendar</li>
+      </ul>
+      <p><a href="/products/self-assessment-recovery-kit" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">Get the Recovery Kit →</a></p>
+
+      <h2>Related Tools</h2>
+      <ul>
+        <li><a href="/tools/self-assessment-penalty-calculator">Self-Assessment Penalty Calculator</a></li>
+        <li><a href="/tools/mtd-penalty-calculator">MTD Penalty Calculator</a></li>
+        <li><a href="/tools/profit-margin-calculator">Profit Margin Calculator</a></li>
+      </ul>
+
+      <h2>Questions?</h2>
+      <p>Read our full guide: <a href="/blog/second-payment-on-account-2026">Second Payment on Account 2026: Complete Guide</a></p>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('calculator-form');
+    const results = document.getElementById('results');
+    const noPaymentRequired = document.getElementById('noPaymentRequired');
+    const paymentRequired = document.getElementById('paymentRequired');
+    const penaltySection = document.getElementById('penaltySection');
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const taxBill = parseFloat((document.getElementById('taxBill') as HTMLInputElement).value);
+      const taxDeducted = parseFloat((document.getElementById('taxDeducted') as HTMLInputElement).value) || 0;
+      const paymentTiming = (document.querySelector('input[name="paymentTiming"]:checked') as HTMLInputElement).value;
+
+      const remainingTax = taxBill - taxDeducted;
+
+      // Check if payment on account required
+      if (remainingTax < 1000) {
+        results?.classList.remove('hidden');
+        noPaymentRequired?.classList.remove('hidden');
+        paymentRequired?.classList.add('hidden');
+        return;
+      }
+
+      // Calculate payment on account
+      const paymentOnAccount = remainingTax / 2;
+
+      // Calculate penalties and interest
+      let penalty30 = 0;
+      let penalty6 = 0;
+      let penalty12 = 0;
+      let interestDays = 0;
+
+      if (paymentTiming === '30days') {
+        penalty30 = paymentOnAccount * 0.05;
+        interestDays = 30;
+      } else if (paymentTiming === '6months') {
+        penalty30 = paymentOnAccount * 0.05;
+        penalty6 = paymentOnAccount * 0.05;
+        interestDays = 184; // ~6 months
+      } else if (paymentTiming === '12months') {
+        penalty30 = paymentOnAccount * 0.05;
+        penalty6 = paymentOnAccount * 0.05;
+        penalty12 = paymentOnAccount * 0.05;
+        interestDays = 365;
+      }
+
+      const interest = (paymentOnAccount * 0.0775 * interestDays) / 365;
+      const totalPenalties = penalty30 + penalty6 + penalty12;
+      const totalCost = paymentOnAccount + totalPenalties + interest;
+      const extraCost = totalPenalties + interest;
+
+      // Update UI
+      document.getElementById('paymentAmount')!.textContent = `£${paymentOnAccount.toFixed(2)}`;
+      document.getElementById('breakdownPayment')!.textContent = `£${paymentOnAccount.toFixed(2)}`;
+      document.getElementById('totalCost')!.textContent = `£${totalCost.toFixed(2)}`;
+      document.getElementById('extraCost')!.textContent = `£${extraCost.toFixed(2)}`;
+      document.getElementById('interest')!.textContent = `£${interest.toFixed(2)}`;
+      document.getElementById('interestDays')!.textContent = interestDays.toString();
+
+      // Show/hide penalty rows
+      const penalty30Row = document.getElementById('penalty30Row');
+      const penalty6Row = document.getElementById('penalty6Row');
+      const penalty12Row = document.getElementById('penalty12Row');
+
+      if (penalty30 > 0) {
+        penalty30Row!.style.display = 'flex';
+        document.getElementById('penalty30')!.textContent = `£${penalty30.toFixed(2)}`;
+      } else {
+        penalty30Row!.style.display = 'none';
+      }
+
+      if (penalty6 > 0) {
+        penalty6Row!.style.display = 'flex';
+        document.getElementById('penalty6')!.textContent = `£${penalty6.toFixed(2)}`;
+      } else {
+        penalty6Row!.style.display = 'none';
+      }
+
+      if (penalty12 > 0) {
+        penalty12Row!.style.display = 'flex';
+        document.getElementById('penalty12')!.textContent = `£${penalty12.toFixed(2)}`;
+      } else {
+        penalty12Row!.style.display = 'none';
+      }
+
+      // Show/hide penalty section
+      if (paymentTiming !== 'onTime') {
+        penaltySection?.classList.remove('hidden');
+      } else {
+        penaltySection?.classList.add('hidden');
+      }
+
+      // Action advice
+      const actionAdvice = document.getElementById('actionAdvice');
+      let advice = '';
+
+      if (paymentTiming === 'onTime') {
+        advice = `
+          <p>✅ Pay by <strong>31 July 2026</strong> to avoid penalties.</p>
+          <p>💡 Set a calendar reminder for mid-July to check your HMRC account.</p>
+          <p>💰 Budget tip: Set aside 30% of every invoice into a tax savings account.</p>
+        `;
+      } else {
+        advice = `
+          <p>⚠️ Paying late will cost you an extra <strong>£${extraCost.toFixed(2)}</strong> in penalties and interest.</p>
+          <p>💡 If you can't pay on time:</p>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Apply to <strong>reduce your payment</strong> if your income dropped</li>
+            <li>Call HMRC (0300 200 3822) to set up a <strong>payment plan</strong></li>
+            <li>Consider our <a href="/products/self-assessment-recovery-kit" class="underline font-semibold">Recovery Kit</a> (£9) for letter templates</li>
+          </ul>
+        `;
+      }
+
+      actionAdvice!.innerHTML = advice;
+
+      // Show results
+      results?.classList.remove('hidden');
+      noPaymentRequired?.classList.add('hidden');
+      paymentRequired?.classList.remove('hidden');
+
+      // Scroll to results
+      results?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  </script>
+</Layout>

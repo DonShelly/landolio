@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTD Compliance Cost Calculator — Landolio</title>
+    <meta name="description" content="Calculate your total annual Making Tax Digital compliance costs: software, time, and accountant fees. See if DIY or outsourcing makes sense for your business.">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .calculator-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .help-text {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 0.25rem;
+        }
+        .results-container {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #3498db;
+            display: none;
+        }
+        .results-container.show {
+            display: block;
+        }
+        .cost-breakdown {
+            margin: 1.5rem 0;
+        }
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        .cost-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding-top: 1rem;
+            border-top: 2px solid #2c3e50;
+        }
+        .cost-label {
+            color: #2c3e50;
+        }
+        .cost-value {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        .comparison-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #e8f5e9;
+            border-radius: 8px;
+        }
+        .comparison-section h3 {
+            color: #27ae60;
+            margin-top: 0;
+        }
+        .savings-highlight {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #27ae60;
+            margin: 1rem 0;
+        }
+        .cta-box {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: #3498db;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .cta-box h3 {
+            margin-top: 0;
+            color: white;
+        }
+        .cta-box p {
+            margin: 1rem 0;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #3498db;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        .info-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #fff9e6;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+        }
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977053494"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17977053494');
+</script>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">Landolio</a>
+            <div class="nav-links">
+                <a href="/blog/">Blog</a>
+                <a href="/tools/">Tools</a>
+                <a href="/products/">Products</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="tool-header">
+            <h1>MTD Compliance Cost Calculator</h1>
+            <p class="lead">Calculate your total annual Making Tax Digital compliance costs. See exactly what you'll spend on software, time, and accountant fees.</p>
+        </div>
+
+        <div class="calculator-container">
+            <div class="input-group">
+                <label for="revenue">Annual Revenue (£)</label>
+                <input type="number" id="revenue" placeholder="50000" min="30000" max="500000" value="50000">
+                <div class="help-text">Your total business income (turnover, not profit)</div>
+            </div>
+
+            <div class="input-group">
+                <label for="businessType">Business Type</label>
+                <select id="businessType">
+                    <option value="soletrader">Sole Trader / Freelancer</option>
+                    <option value="landlord">Property Landlord</option>
+                    <option value="partnership">Partnership</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="hourlyRate">Your Hourly Rate (£)</label>
+                <input type="number" id="hourlyRate" placeholder="50" min="10" max="500" value="50">
+                <div class="help-text">What's your time worth? This calculates the cost of hours spent on compliance.</div>
+            </div>
+
+            <div class="input-group">
+                <label for="techSavvy">Your Tech Confidence</label>
+                <select id="techSavvy">
+                    <option value="high">High — I'm comfortable with software</option>
+                    <option value="medium">Medium — I can learn with guidance</option>
+                    <option value="low">Low — I prefer minimal tech</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="approach">Your Preferred Approach</label>
+                <select id="approach">
+                    <option value="diy">DIY — I'll handle it myself</option>
+                    <option value="hybrid">Hybrid — Software + accountant review</option>
+                    <option value="outsource">Fully Outsourced — Accountant does everything</option>
+                </select>
+            </div>
+
+            <button onclick="calculateCosts()" class="button-large">Calculate My MTD Costs →</button>
+        </div>
+
+        <div id="results" class="results-container">
+            <h2>Your Annual MTD Compliance Costs</h2>
+            
+            <div class="cost-breakdown">
+                <div class="cost-item">
+                    <span class="cost-label">MTD Software Subscription</span>
+                    <span class="cost-value" id="softwareCost">£0</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Your Time (quarterly submissions + record-keeping)</span>
+                    <span class="cost-value" id="timeCost">£0</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Accountant/Bookkeeper Fees</span>
+                    <span class="cost-value" id="accountantCost">£0</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Total Annual Cost</span>
+                    <span class="cost-value" id="totalCost">£0</span>
+                </div>
+            </div>
+
+            <div id="breakdown-details" style="margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 4px;">
+                <!-- Details populated by JS -->
+            </div>
+
+            <div class="comparison-section">
+                <h3>💡 Cost-Saving Alternative</h3>
+                <p><strong>Our MTD Readiness Toolkit (£14 one-time payment)</strong> includes:</p>
+                <ul>
+                    <li>Complete software comparison guide (12 MTD platforms reviewed)</li>
+                    <li>Step-by-step setup instructions for free/cheap options</li>
+                    <li>Quarterly submission checklist (reduces time to 1 hour per quarter)</li>
+                    <li>Record-keeping templates (spreadsheets if you don't want expensive software)</li>
+                    <li>Compliance calendar (never miss a deadline)</li>
+                </ul>
+                <div class="savings-highlight" id="savings">
+                    You could save up to £<span id="savingsAmount">0</span>/year by going DIY with our toolkit.
+                </div>
+                <p><strong>Break-even:</strong> The toolkit pays for itself if it saves you even <strong>1 hour</strong> of accountant time.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3>Get the MTD Readiness Toolkit</h3>
+                <p>Everything you need to comply with Making Tax Digital for £14 — less than 20 minutes of accountant time.</p>
+                <a href="/products/mtd-readiness-toolkit.html" class="cta-button">View Toolkit — £14 →</a>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>How We Calculate These Costs</h2>
+            
+            <h3>Software Costs</h3>
+            <p><strong>DIY:</strong> £10-15/month for basic MTD software (FreeAgent, QuickBooks Self-Employed, Crunch). Some free options exist but lack features.</p>
+            <p><strong>Hybrid:</strong> £20-30/month for mid-tier software with better reporting (QuickBooks, Xero, Sage).</p>
+            <p><strong>Outsourced:</strong> £30-40/month for premium software with accountant access (FreeAgent, Xero with advisor access).</p>
+
+            <h3>Time Costs</h3>
+            <p><strong>Quarterly submissions:</strong> 1-3 hours per quarter (4x/year) depending on transaction volume and software familiarity.</p>
+            <p><strong>Record-keeping:</strong> 30 minutes to 2 hours per month (depends on receipts, invoices, reconciliation needs).</p>
+            <p><strong>Annual totals:</strong> 10-40 hours/year depending on your approach and efficiency.</p>
+
+            <h3>Accountant/Bookkeeper Costs</h3>
+            <p><strong>DIY:</strong> £0 (you do it all) or £200-300 for annual review.</p>
+            <p><strong>Hybrid:</strong> £50-100/quarter for bookkeeper review + £300-500 annual tax return = £500-900/year.</p>
+            <p><strong>Fully Outsourced:</strong> £100-150/month for full bookkeeping + quarterly MTD submissions = £1,200-1,800/year.</p>
+
+            <h3>Tech Confidence Impact</h3>
+            <p><strong>High:</strong> You'll learn software quickly (less time cost).</p>
+            <p><strong>Medium:</strong> Moderate learning curve (average time cost).</p>
+            <p><strong>Low:</strong> Higher time cost OR you'll need more accountant help.</p>
+        </div>
+
+        <section class="cta-section">
+            <h2>Related Resources</h2>
+            <ul>
+                <li><a href="/blog/mtd-income-tax-2026-complete-guide.html">Making Tax Digital 2026: Complete Guide</a></li>
+                <li><a href="/blog/mtd-software-comparison-uk.html">MTD Software Comparison (12 Platforms Reviewed)</a></li>
+                <li><a href="/tools/mtd-readiness-checker.html">MTD Readiness Checker (Free Tool)</a></li>
+                <li><a href="/tools/mtd-penalty-calculator.html">MTD Penalty Calculator</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Landolio. Digital products for UK freelancers.</p>
+    </footer>
+
+    <script>
+        function calculateCosts() {
+            const revenue = parseInt(document.getElementById('revenue').value) || 50000;
+            const businessType = document.getElementById('businessType').value;
+            const hourlyRate = parseInt(document.getElementById('hourlyRate').value) || 50;
+            const techSavvy = document.getElementById('techSavvy').value;
+            const approach = document.getElementById('approach').value;
+
+            let softwareCost, timeHours, accountantCost;
+
+            // Software costs (annual)
+            if (approach === 'diy') {
+                softwareCost = techSavvy === 'high' ? 120 : 180; // £10-15/month
+            } else if (approach === 'hybrid') {
+                softwareCost = 300; // £25/month
+            } else {
+                softwareCost = 420; // £35/month
+            }
+
+            // Time costs (hours per year)
+            if (approach === 'diy') {
+                if (techSavvy === 'high') {
+                    timeHours = 10; // Efficient
+                } else if (techSavvy === 'medium') {
+                    timeHours = 20;
+                } else {
+                    timeHours = 35; // Struggle
+                }
+            } else if (approach === 'hybrid') {
+                timeHours = 6; // Minimal (accountant does most)
+            } else {
+                timeHours = 2; // Just review
+            }
+
+            // Adjust for business complexity
+            if (businessType === 'landlord') {
+                timeHours *= 0.8; // Usually simpler (fewer transactions)
+            } else if (businessType === 'partnership') {
+                timeHours *= 1.3; // More complex
+            }
+
+            // Accountant costs (annual)
+            if (approach === 'diy') {
+                accountantCost = 250; // Annual review only
+            } else if (approach === 'hybrid') {
+                accountantCost = 700; // Quarterly reviews + annual return
+            } else {
+                accountantCost = 1500; // Full-service
+            }
+
+            // Calculate totals
+            const timeCost = Math.round(timeHours * hourlyRate);
+            const totalCost = softwareCost + timeCost + accountantCost;
+
+            // Potential savings (vs full-service)
+            const fullServiceCost = 420 + (2 * hourlyRate) + 1500;
+            const savings = Math.max(0, fullServiceCost - totalCost);
+
+            // Display results
+            document.getElementById('softwareCost').textContent = `£${softwareCost}`;
+            document.getElementById('timeCost').textContent = `£${timeCost}`;
+            document.getElementById('accountantCost').textContent = `£${accountantCost}`;
+            document.getElementById('totalCost').textContent = `£${totalCost}`;
+            document.getElementById('savingsAmount').textContent = savings > 0 ? savings : 'varies';
+
+            // Breakdown details
+            const breakdownHTML = `
+                <p><strong>Software:</strong> ${approach === 'diy' ? 'Basic MTD software' : approach === 'hybrid' ? 'Mid-tier accounting platform' : 'Premium software with accountant access'} — £${Math.round(softwareCost/12)}/month × 12 months = £${softwareCost}/year</p>
+                <p><strong>Your Time:</strong> ~${Math.round(timeHours)} hours/year × £${hourlyRate}/hour = £${timeCost}</p>
+                <p><strong>Accountant:</strong> ${approach === 'diy' ? 'Annual review only' : approach === 'hybrid' ? 'Quarterly reviews + tax return' : 'Full bookkeeping + submissions'} = £${accountantCost}/year</p>
+            `;
+            document.getElementById('breakdown-details').innerHTML = breakdownHTML;
+
+            // Show results
+            document.getElementById('results').classList.add('show');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Auto-calculate on page load if coming from another tool
+        if (window.location.hash === '#calculate') {
+            setTimeout(calculateCosts, 500);
+        }
+    </script>
+</body>
+</html>

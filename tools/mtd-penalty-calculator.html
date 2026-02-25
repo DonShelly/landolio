@@ -3,426 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTD Penalty Calculator: What Late Submission Costs You | Landolio</title>
-    <meta name="description" content="Calculate Making Tax Digital (MTD) late submission penalties. See what missed quarterly deadlines cost + how to avoid HMRC fines.">
-    <meta name="keywords" content="MTD penalty calculator, making tax digital fines, MTD late submission penalty, HMRC MTD penalties, quarterly deadline penalties">
-    <link rel="canonical" href="https://landolio.com/tools/mtd-penalty-calculator.html">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="MTD Penalty Calculator: What Late Submission Costs You">
-    <meta property="og:description" content="Free calculator — see exactly what MTD late submission penalties cost. Avoid £200+ HMRC fines.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://landolio.com/tools/mtd-penalty-calculator.html">
-    <meta property="og:image" content="https://landolio.com/images/og-default.png">
-    <meta property="og:site_name" content="Landolio">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MTD Penalty Calculator: What Late Submission Costs You">
-    <meta name="twitter:description" content="Free calculator — see exactly what MTD late submission penalties cost.">
-
+    <title>MTD Quarterly Penalty Calculator 2026 | Calculate Your Risk | Landolio</title>
+    <meta name="description" content="Calculate your Making Tax Digital quarterly penalty exposure. See how late submissions stack up to £200+ fines. Free calculator for UK sole traders & landlords.">
+    <link rel="stylesheet" href="../style.css">
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --bg-card: #1a1a1a;
-            --text-primary: #e8e8e8;
-            --text-secondary: #a0a0a0;
-            --gold: #d4a843;
-            --gold-light: #e8c36a;
-            --gold-dim: #b8922e;
-            --border: #2a2a2a;
-            --red: #e74c3c;
-            --red-bg: rgba(231, 76, 60, 0.1);
-            --red-border: rgba(231, 76, 60, 0.3);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .nav {
-            padding: 1.2rem 2rem;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .nav a {
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        .nav a:hover { color: var(--gold-light); }
-        .nav .logo {
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-        }
-        .nav-links { display: flex; gap: 1.5rem; }
-
-        .container {
+        .calculator-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
-        h1 {
-            font-size: 2.2rem;
-            color: #fff;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
-
-        .tool-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2.5rem;
+        .calculator-section {
             margin-bottom: 2rem;
         }
-
-        .form-group {
-            margin-bottom: 2rem;
+        .input-group {
+            margin-bottom: 1.5rem;
         }
-
         label {
             display: block;
-            color: var(--gold-light);
             font-weight: 600;
             margin-bottom: 0.5rem;
-            font-size: 0.95rem;
+            color: #1a1a1a;
         }
-
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: var(--text-primary);
-            font-weight: 400;
-            cursor: pointer;
-        }
-
-        input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-
         input[type="number"] {
             width: 100%;
-            padding: 0.9rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-primary);
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
             font-size: 1rem;
+            transition: border-color 0.3s;
         }
-
         input[type="number"]:focus {
             outline: none;
-            border-color: var(--gold);
+            border-color: #0066cc;
         }
-
-        .btn-calculate {
-            width: 100%;
-            background: var(--gold);
-            color: #0a0a0a;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-calculate:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-        }
-
-        .result {
-            background: var(--red-bg);
-            border: 2px solid var(--red-border);
-            border-radius: 12px;
-            padding: 2rem;
+        .result-box {
+            background: #f8f9fa;
+            border-left: 4px solid #0066cc;
+            padding: 1.5rem;
             margin-top: 2rem;
-            display: none;
         }
-
-        .result.show { display: block; }
-
-        .result h2 {
-            color: var(--red);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .result-box.warning {
+            border-left-color: #ff6b6b;
+            background: #fff5f5;
         }
-
-        .penalty-amount {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--red);
-            margin: 1rem 0;
+        .result-box h3 {
+            margin-top: 0;
+            color: #1a1a1a;
         }
-
         .penalty-breakdown {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
-
         .penalty-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid var(--red-border);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e0e0e0;
         }
-
-        .penalty-item:last-child { border-bottom: none; }
-
-        .warning-box {
-            background: var(--red-bg);
-            border-left: 4px solid var(--red);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 6px;
+        .penalty-item:last-child {
+            border-bottom: none;
         }
-
-        .warning-box strong {
-            color: var(--red);
+        .total-penalty {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-top: 1rem;
         }
-
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
         .cta-box {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-            border: 2px solid var(--gold-dim);
-            border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             padding: 2rem;
-            margin-top: 3rem;
+            border-radius: 8px;
+            margin-top: 2rem;
             text-align: center;
         }
-
         .cta-box h3 {
-            color: var(--gold-light);
-            margin-bottom: 1rem;
+            margin-top: 0;
+            color: white;
         }
-
-        .cta-box p {
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-
         .cta-button {
             display: inline-block;
-            background: var(--gold);
-            color: #0a0a0a;
-            padding: 0.9rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
             text-decoration: none;
-            transition: all 0.2s;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.2s;
         }
-
         .cta-button:hover {
-            background: var(--gold-light);
             transform: translateY(-2px);
         }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-top: 4rem;
-        }
-
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            .tool-card { padding: 1.5rem; }
-            .penalty-amount { font-size: 2.5rem; }
-        }
     </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977053494"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17977053494');
+</script>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/" class="logo">LANDOLIO</a>
-        <div class="nav-links">
-            <a href="/#products">Products</a>
-            <a href="/blog/">Blog</a>
-            <a href="/#tools">Tools</a>
+    <header>
+        <div class="container">
+            <h1><a href="/">Landolio</a></h1>
+            <nav>
+                <a href="/#products">Products</a>
+                <a href="/#tools">Free Tools</a>
+                <a href="/blog">Blog</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <div class="container">
-        <h1>MTD Penalty Calculator</h1>
-        <p class="subtitle">See exactly what late MTD submissions cost you. HMRC penalties start at £200 per missed deadline.</p>
+    <main class="container">
+        <div class="calculator-container">
+            <h1>MTD Quarterly Penalty Calculator</h1>
+            <p class="subtitle">Calculate your Making Tax Digital penalty exposure for late quarterly submissions</p>
 
-        <div class="tool-card">
-            <div class="form-group">
-                <label>How many quarterly deadlines did you miss?</label>
-                <div class="checkbox-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="q1" value="200">
-                        Q1 (6 Apr – 5 Jul) — Deadline: 5 August
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="q2" value="200">
-                        Q2 (6 Jul – 5 Oct) — Deadline: 5 November
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="q3" value="200">
-                        Q3 (6 Oct – 5 Jan) — Deadline: 5 February
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="q4" value="200">
-                        Q4 (6 Jan – 5 Apr) — Deadline: 5 May
-                    </label>
+            <div class="info-box">
+                <strong>New Penalty Points System (April 2026):</strong> Each late quarterly submission = 1 penalty point. Reach 4 points = £200 fine. Points expire after 2 years of compliance.
+            </div>
+
+            <div class="calculator-section">
+                <h2>Your Situation</h2>
+                
+                <div class="input-group">
+                    <label for="lateSubmissions">How many late quarterly submissions? (0-8)</label>
+                    <input type="number" id="lateSubmissions" min="0" max="8" value="0" oninput="calculate()">
+                    <small>Each tax year requires 4 quarterly submissions (Apr-Jul, Jul-Oct, Oct-Jan, Jan-Apr)</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="taxOwed">Estimated tax owed for the year (£)</label>
+                    <input type="number" id="taxOwed" min="0" value="5000" step="100" oninput="calculate()">
+                    <small>This helps calculate interest on late payment</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="monthsLate">Months late on final tax payment (0-12)</label>
+                    <input type="number" id="monthsLate" min="0" max="12" value="0" oninput="calculate()">
+                    <small>Late payment deadline is 31 January following tax year end</small>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="tax-owed">Do you have unpaid tax from these periods? (£)</label>
-                <input type="number" id="tax-owed" placeholder="0" min="0" step="100">
-                <small style="color: var(--text-secondary); display: block; margin-top: 0.5rem;">
-                    If you owe tax AND paid late, additional penalties apply (5% after 30 days, 5% after 6 months).
-                </small>
-            </div>
+            <div id="results"></div>
 
-            <button class="btn-calculate" onclick="calculate()">Calculate Penalty</button>
-        </div>
-
-        <div class="result" id="result">
-            <h2>Your Estimated MTD Penalty</h2>
-            <div class="penalty-amount" id="total-penalty">£0</div>
-
-            <div class="penalty-breakdown">
-                <div class="penalty-item">
-                    <span>Late submission penalties</span>
-                    <span id="submission-penalty">£0</span>
-                </div>
-                <div class="penalty-item">
-                    <span>Late payment penalties (30 days)</span>
-                    <span id="payment-penalty-30">£0</span>
-                </div>
-                <div class="penalty-item" id="payment-penalty-6mo-row" style="display: none;">
-                    <span>Late payment penalties (6 months)</span>
-                    <span id="payment-penalty-6mo">£0</span>
-                </div>
-            </div>
-
-            <div class="warning-box" style="margin-top: 1.5rem;">
-                <strong>⚠️ This is a minimum estimate.</strong> HMRC can charge daily penalties if you're more than 12 months late. Interest accrues on unpaid tax from the original deadline.
+            <div class="cta-box">
+                <h3>🎯 Never Miss Another MTD Deadline</h3>
+                <p>Get the complete MTD Readiness Toolkit with quarterly submission calendar, software comparison guide, and compliance checklist.</p>
+                <a href="https://buy.stripe.com/dR6bJT4qp7gN4aQ5kB" class="cta-button">Get MTD Toolkit - £14</a>
             </div>
         </div>
-
-        <div class="cta-box">
-            <h3>Never Miss an MTD Deadline</h3>
-            <p>Get the complete preparation toolkit with quarterly checklists, software comparison, and penalty avoidance strategies.</p>
-            <a href="/products/mtd-readiness-toolkit.html" class="cta-button">Get MTD Readiness Toolkit (£14)</a>
-        </div>
-
-        <div style="margin-top: 3rem; color: var(--text-secondary); font-size: 0.9rem;">
-            <h3 style="color: var(--gold-light); margin-bottom: 1rem;">How MTD Penalties Work</h3>
-
-            <p style="margin-bottom: 1rem;"><strong style="color: var(--text-primary);">Late Submission Penalties:</strong></p>
-            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                <li>£200 for each missed quarterly deadline</li>
-                <li>No grace period — penalties start from day 1</li>
-                <li>Maximum £800/year if you miss all 4 quarters</li>
-            </ul>
-
-            <p style="margin-bottom: 1rem;"><strong style="color: var(--text-primary);">Late Payment Penalties (if you owe tax):</strong></p>
-            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                <li>5% of unpaid tax after 30 days late</li>
-                <li>Another 5% after 6 months late</li>
-                <li>Another 5% after 12 months late</li>
-                <li>PLUS daily interest on the unpaid amount</li>
-            </ul>
-
-            <p style="margin-bottom: 1rem;"><strong style="color: var(--text-primary);">Example:</strong> Miss all 4 quarterly deadlines + owe £5,000 in tax (paid 8 months late):</p>
-            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                <li>Submission penalties: £800</li>
-                <li>Payment penalty (30 days): £250</li>
-                <li>Payment penalty (6 months): £250</li>
-                <li>Interest (8 months @ 7.75%): ~£260</li>
-                <li><strong style="color: var(--red);">Total: £1,560 in penalties + interest</strong></li>
-            </ul>
-
-            <p><strong style="color: var(--text-primary);">Avoid this.</strong> Use MTD-compatible software, set quarterly reminders, and file on time. See our <a href="/blog/making-tax-digital-income-tax-guide.html" style="color: var(--gold);">complete MTD guide</a> for preparation steps.</p>
-        </div>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Landolio. All rights reserved. | <a href="/contact.html">Contact</a> | <a href="/terms.html">Terms</a> | <a href="/privacy.html">Privacy</a></p>
+        <div class="container">
+            <p>&copy; 2026 Landolio. Tools and resources for UK freelancers and small businesses.</p>
+        </div>
     </footer>
 
     <script>
         function calculate() {
-            // Get missed quarters
-            const quarters = ['q1', 'q2', 'q3', 'q4'];
-            const missedQuarters = quarters.filter(q => document.getElementById(q).checked).length;
+            const lateSubmissions = parseInt(document.getElementById('lateSubmissions').value) || 0;
+            const taxOwed = parseFloat(document.getElementById('taxOwed').value) || 0;
+            const monthsLate = parseInt(document.getElementById('monthsLate').value) || 0;
 
-            // Late submission penalty = £200 per quarter
-            const submissionPenalty = missedQuarters * 200;
+            // Penalty points system
+            const penaltyPoints = lateSubmissions;
+            const pointPenalties = Math.floor(penaltyPoints / 4) * 200; // £200 per 4 points
 
-            // Get unpaid tax amount
-            const taxOwed = parseFloat(document.getElementById('tax-owed').value) || 0;
+            // Interest on late payment (approx 7.75% annual)
+            const interestRate = 0.0775;
+            const monthlyRate = interestRate / 12;
+            const interest = taxOwed * monthlyRate * monthsLate;
 
-            // Late payment penalties (if tax owed)
-            let paymentPenalty30 = 0;
-            let paymentPenalty6mo = 0;
+            // Total
+            const totalPenalty = pointPenalties + interest;
 
-            if (taxOwed > 0) {
-                paymentPenalty30 = taxOwed * 0.05; // 5% after 30 days
-                paymentPenalty6mo = taxOwed * 0.05; // Another 5% after 6 months
+            // Build results HTML
+            let resultsHTML = '<div class="result-box' + (totalPenalty > 0 ? ' warning' : '') + '">';
+            resultsHTML += '<h3>Your Penalty Exposure</h3>';
+            resultsHTML += '<div class="penalty-breakdown">';
+            
+            resultsHTML += '<div class="penalty-item">';
+            resultsHTML += '<span>Penalty Points Accumulated:</span>';
+            resultsHTML += '<strong>' + penaltyPoints + ' points</strong>';
+            resultsHTML += '</div>';
+
+            resultsHTML += '<div class="penalty-item">';
+            resultsHTML += '<span>Late Submission Fines:</span>';
+            resultsHTML += '<strong>£' + pointPenalties.toFixed(2) + '</strong>';
+            resultsHTML += '</div>';
+
+            if (monthsLate > 0) {
+                resultsHTML += '<div class="penalty-item">';
+                resultsHTML += '<span>Interest on Late Payment (' + monthsLate + ' months):</span>';
+                resultsHTML += '<strong>£' + interest.toFixed(2) + '</strong>';
+                resultsHTML += '</div>';
             }
 
-            // Total penalty
-            const totalPenalty = submissionPenalty + paymentPenalty30 + paymentPenalty6mo;
+            resultsHTML += '</div>';
+            resultsHTML += '<div class="total-penalty">Total Cost: £' + totalPenalty.toFixed(2) + '</div>';
 
-            // Update UI
-            document.getElementById('submission-penalty').textContent = `£${submissionPenalty}`;
-            document.getElementById('payment-penalty-30').textContent = `£${paymentPenalty30.toFixed(2)}`;
-            document.getElementById('payment-penalty-6mo').textContent = `£${paymentPenalty6mo.toFixed(2)}`;
-            document.getElementById('total-penalty').textContent = `£${totalPenalty.toFixed(2)}`;
-
-            // Show/hide 6-month row
-            const row6mo = document.getElementById('payment-penalty-6mo-row');
-            if (paymentPenalty6mo > 0) {
-                row6mo.style.display = 'flex';
+            // Add warnings
+            if (penaltyPoints >= 4) {
+                const finesIncurred = Math.floor(penaltyPoints / 4);
+                resultsHTML += '<div class="info-box" style="margin-top: 1rem; border-left-color: #ff6b6b; background: #fff5f5;">';
+                resultsHTML += '<strong>⚠️ Warning:</strong> You\'ve reached ' + penaltyPoints + ' penalty points, triggering ' + finesIncurred + ' × £200 fine(s). ';
+                resultsHTML += 'Points expire after 2 years of compliance.';
+                resultsHTML += '</div>';
+            } else if (penaltyPoints > 0) {
+                const pointsToFine = 4 - (penaltyPoints % 4);
+                resultsHTML += '<div class="info-box" style="margin-top: 1rem;">';
+                resultsHTML += '<strong>ℹ️ Status:</strong> You have ' + penaltyPoints + ' penalty point(s). ';
+                resultsHTML += pointsToFine + ' more late submission(s) will trigger a £200 fine.';
+                resultsHTML += '</div>';
             } else {
-                row6mo.style.display = 'none';
+                resultsHTML += '<div class="info-box" style="margin-top: 1rem; border-left-color: #00aa00; background: #f0fff0;">';
+                resultsHTML += '<strong>✅ Good News:</strong> You\'re currently compliant with no penalty exposure. ';
+                resultsHTML += 'Stay on track with quarterly submissions to avoid penalties.';
+                resultsHTML += '</div>';
             }
 
-            // Show result
-            document.getElementById('result').classList.add('show');
+            // HMRC grace period note
+            resultsHTML += '<div class="info-box" style="margin-top: 1rem;">';
+            resultsHTML += '<strong>📢 First Year Grace:</strong> HMRC is waiving penalties for late quarterly submissions in the first year (2026-27). ';
+            resultsHTML += 'However, this calculator shows what you\'d face from April 2027 onwards.';
+            resultsHTML += '</div>';
+
+            resultsHTML += '</div>';
+
+            document.getElementById('results').innerHTML = resultsHTML;
         }
+
+        // Run on page load
+        calculate();
     </script>
 </body>
 </html>
