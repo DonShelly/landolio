@@ -17,16 +17,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         :root {
-            --bg: #0a0a0a;
-            --bg-card: #141414;
-            --bg-card-hover: #1a1a1a;
+            --bg: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f7f8fa;
             --text: #e8e8e8;
             --text-muted: #999;
-            --gold: #d4a843;
-            --gold-hover: #e0ba5a;
-            --border: #222;
+            --gold: #2563eb;
+            --gold-hover: #3b82f6;
+            --border-bottom: 1px solid #e2e8f0;
             --radius: 12px;
         }
 
@@ -69,7 +70,7 @@
         .nav-logo {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--gold);
+            color: #2563eb;
             text-decoration: none;
             letter-spacing: -0.02em;
         }
@@ -110,7 +111,7 @@
         }
 
         .hero h1 span {
-            color: var(--gold);
+            color: #2563eb;
         }
 
         .hero p {
@@ -143,7 +144,7 @@
 
         .blog-card:hover {
             background: var(--bg-card-hover);
-            border-color: var(--gold);
+            border-color: #2563eb;
             transform: translateY(-2px);
         }
 
@@ -158,7 +159,7 @@
         }
 
         .blog-card:hover h2 {
-            color: var(--gold);
+            color: #2563eb;
         }
 
         .blog-card p {
@@ -169,7 +170,7 @@
         }
 
         .read-link {
-            color: var(--gold);
+            color: #2563eb;
             font-size: 0.9rem;
             font-weight: 600;
             display: inline-flex;
@@ -193,7 +194,7 @@
         }
 
         footer a {
-            color: var(--gold);
+            color: #2563eb;
             text-decoration: none;
         }
 
@@ -234,13 +235,23 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: var(--gold); text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
+            <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: #2563eb; text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
             <nav style="display: flex; gap: 24px;">
-                <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
-                <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+                <a href="/tools/" style="color: #64748b; text-decoration: none; font-weight: 500;">Free Tools</a>
+                <a href="/blog/" style="color: #64748b; text-decoration: none; font-weight: 500;">Blog</a>
             </nav>
         </div>
     </header>
@@ -251,6 +262,18 @@
     </section>
 
     <div class="blog-grid">
+
+        <a href="/blog/vat-registration-freelancers-uk.html" class="blog-card">
+            <h2>VAT Registration for Freelancers UK: Complete Guide 2026</h2>
+            <p>Should you register for VAT as a UK freelancer? Everything you need to know about the £90k threshold, voluntary registration, VAT schemes, and whether it's worth it for your business.</p>
+            <span class="read-link">Read →</span>
+        </a>
+
+        <a href="/blog/freelance-bad-debt-tax-relief-uk.html" class="blog-card">
+            <h2>How to Claim Bad Debt Tax Relief UK: Freelancer's Complete Guide 2026</h2>
+            <p>Client won't pay? Claim bad debt tax relief and reduce your tax bill. Complete guide to writing off unpaid invoices for UK freelancers — with HMRC requirements and templates.</p>
+            <span class="read-link">Read →</span>
+        </a>
 
         <a href="/blog/hmrc-time-to-pay-self-assessment-2026.html" class="blog-card">
             <h2>HMRC Time to Pay Arrangement for Self‑Assessment (2026)</h2>
@@ -593,13 +616,13 @@
     <footer>
         <div class="container" style="max-width: 900px; margin: 0 auto;">
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
-                <a href="/" style="color: var(--gold); text-decoration: none;">Home</a>
-                <a href="/tools/" style="color: var(--gold); text-decoration: none;">Free Tools</a>
-                <a href="/blog/" style="color: var(--gold); text-decoration: none;">Blog</a>
-                <a href="/products/getting-paid-toolkit.html" style="color: var(--gold); text-decoration: none;">Getting-Paid Toolkit</a>
-                <a href="/free-course.html" style="color: var(--gold); text-decoration: none;">Free Course</a>
+                <a href="/" style="color: #2563eb; text-decoration: none;">Home</a>
+                <a href="/tools/" style="color: #2563eb; text-decoration: none;">Free Tools</a>
+                <a href="/blog/" style="color: #2563eb; text-decoration: none;">Blog</a>
+                <a href="/products/getting-paid-toolkit.html" style="color: #2563eb; text-decoration: none;">Getting-Paid Toolkit</a>
+                <a href="/free-course.html" style="color: #2563eb; text-decoration: none;">Free Course</a>
             </div>
-            <p>© 2026 Landolio. Built by Midas 👑</p>
+            <p>© 2026 Landolio. © 2026 Landolio</p>
             <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
         </div>
     </footer>

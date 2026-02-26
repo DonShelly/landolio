@@ -44,17 +44,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #0a0a0a;
-            --bg-card: #141414;
-            --bg-card-hover: #1a1a1a;
+            --bg: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f7f8fa;
             --text: #e8e8e8;
             --text-muted: #999;
-            --gold: #d4a843;
-            --gold-hover: #e0ba5a;
+            --gold: #2563eb;
+            --gold-hover: #3b82f6;
             --gold-dim: rgba(212, 168, 67, 0.15);
             --green: #4ade80;
             --green-dim: rgba(34, 197, 94, 0.12);
@@ -91,7 +92,7 @@
         .logo {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--gold);
+            color: #2563eb;
             text-decoration: none;
             letter-spacing: -0.01em;
         }
@@ -103,7 +104,7 @@
             font-weight: 500;
             transition: color 0.2s;
         }
-        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .nav-links a:hover, .nav-links a.active { color: #2563eb; }
 
         /* Hero */
         .hero {
@@ -115,7 +116,7 @@
         .hero-badge {
             display: inline-block;
             background: var(--gold-dim);
-            color: var(--gold);
+            color: #2563eb;
             padding: 5px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
@@ -132,7 +133,7 @@
             letter-spacing: -0.03em;
             margin-bottom: 1rem;
         }
-        .hero h1 .gold { color: var(--gold); }
+        .hero h1 .gold { color: #2563eb; }
         .hero p {
             font-size: 1.15rem;
             color: var(--text-muted);
@@ -181,7 +182,7 @@
             flex-direction: column;
         }
         .product-card:hover {
-            border-color: var(--gold);
+            border-color: #2563eb;
             transform: translateY(-3px);
         }
         .product-card-body {
@@ -193,7 +194,7 @@
         .product-badge {
             display: inline-block;
             background: var(--gold-dim);
-            color: var(--gold);
+            color: #2563eb;
             padding: 3px 10px;
             border-radius: 6px;
             font-size: 0.7rem;
@@ -240,7 +241,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--gold);
+            color: #2563eb;
             font-weight: 600;
         }
         .product-footer {
@@ -253,7 +254,7 @@
         .product-price {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--gold);
+            color: #2563eb;
             letter-spacing: -0.02em;
         }
         .product-price small {
@@ -264,7 +265,7 @@
         .buy-btn {
             display: inline-block;
             background: var(--gold);
-            color: #0a0a0a;
+            color: #ffffff;
             padding: 10px 22px;
             font-size: 0.9rem;
             font-weight: 600;
@@ -350,7 +351,7 @@
             font-size: 0.85rem;
             transition: color 0.2s;
         }
-        .footer-links a:hover { color: var(--gold); }
+        .footer-links a:hover { color: #2563eb; }
         .footer-copy {
             color: #555;
             font-size: 0.8rem;
@@ -372,6 +373,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
     <nav>
         <div class="nav-inner">
             <a href="/" class="logo">Landolio</a>
@@ -542,7 +553,7 @@
         <!-- Bundle CTA -->
         <div class="bundle-cta">
             <span class="savings">Save over 50%</span>
-            <h2>Want everything? Get the <span style="color: var(--gold);">Getting-Paid Toolkit</span></h2>
+            <h2>Want everything? Get the <span style="color: #2563eb;">Getting-Paid Toolkit</span></h2>
             <p>All templates, contracts, and systems in one bundle for £19 — less than buying the individual packs separately (£34 value).</p>
             <a href="https://buy.stripe.com/dRm14n6yz58F8naa1df7i07" class="buy-btn" style="padding: 14px 32px; font-size: 1rem;">Get the Complete Toolkit — £19 →</a>
         </div>
@@ -560,7 +571,7 @@
     <section style="background: var(--bg-card); padding: 3rem 1.5rem; text-align: center; border-top: 1px solid var(--border);">
         <h2 style="font-size: 1.3rem; margin-bottom: 0.75rem;">Not ready to buy? Try our free tools</h2>
         <p style="color: var(--text-muted); margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">Calculate late payment interest, generate invoices, and more — completely free, no signup required.</p>
-        <a href="/tools/" class="buy-btn" style="background: transparent; color: var(--gold); border: 1px solid var(--gold);">Browse Free Tools →</a>
+        <a href="/tools/" class="buy-btn" style="background: transparent; color: #2563eb; border: 1px solid var(--gold);">Browse Free Tools →</a>
     </section>
 
     <footer>
@@ -576,5 +587,13 @@
         </div>
     </footer>
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

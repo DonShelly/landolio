@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tax Year-End Planner 2026 | Free Tool for UK Freelancers</title>
     <meta name="description" content="Calculate your 2025/26 tax bill, optimise pension contributions, and plan your tax year-end strategy before the 5 April 2026 deadline.">
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -15,7 +16,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
             min-height: 100vh;
             padding: 20px;
         }
@@ -74,7 +75,7 @@
             border-color: #667eea;
         }
         .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
             color: white;
             padding: 15px 30px;
             border: none;
@@ -152,7 +153,7 @@
             margin: 10px 0;
         }
         .cta-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
             color: white;
             padding: 30px;
             border-radius: 8px;
@@ -186,6 +187,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
     <div class="container">
         <h1>💷 Tax Year-End Planner 2026</h1>
         <p class="subtitle">Calculate your tax bill, optimise pension contributions, and maximise tax relief before 5 April 2026</p>
@@ -403,5 +414,14 @@
             document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
     </script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
+<script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})()</script>
 </body>
 </html>

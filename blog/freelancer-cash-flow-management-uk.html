@@ -91,13 +91,14 @@
             }
       ]
 }</script>
+<link rel="stylesheet" href="/style.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0a0a0a;--surface:#111;--surface2:#1a1a1a;--gold:#d4a843;--gold-dim:#b8922e;--text:#e0e0e0;--text-muted:#999;--radius:8px}
+:root{--bg:#ffffff;--surface:#f7f8fa;--surface2:#f7f8fa;--gold: #2563eb;--gold-dim:#b8922e;--text:#e0e0e0;--text-muted:#999;--radius:8px}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
 a{color:var(--gold);text-decoration:none;transition:color .2s}
 a:hover{color:#f0c65a}
-nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid #222;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;max-width:100%}
+nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom: 1px solid #e2e8f0;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;max-width:100%}
 nav .logo{font-weight:800;font-size:1.25rem;color:var(--gold);letter-spacing:-.02em}
 nav .links{display:flex;gap:1.5rem;font-size:.9rem;font-weight:500}
 nav .links a{color:var(--text-muted)}
@@ -114,32 +115,32 @@ article ul,article ol{margin:0 0 1.25rem 1.5rem;color:var(--text)}
 article li{margin-bottom:.5rem}
 article strong{color:#fff}
 blockquote{border-left:3px solid var(--gold);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-style:italic;color:var(--text-muted)}
-.cta-box{background:linear-gradient(135deg,#1a1708,#1a1a1a);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:2rem;text-align:center;margin:3rem 0}
+.cta-box{background:linear-gradient(135deg,#1a1708,#f7f8fa);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:2rem;text-align:center;margin:3rem 0}
 .cta-box h3{color:#fff;font-size:1.3rem;margin-bottom:.5rem}
 .cta-box p{color:var(--text-muted);margin-bottom:1.25rem;font-size:.95rem}
-.cta-btn{display:inline-block;background:var(--gold);color:#0a0a0a;font-weight:700;padding:.8rem 2rem;border-radius:var(--radius);font-size:1rem;transition:background .2s,transform .15s}
-.cta-btn:hover{background:#f0c65a;color:#0a0a0a;transform:translateY(-1px)}
+.cta-btn{display:inline-block;background: #2563eb;color:#ffffff;font-weight:700;padding:.8rem 2rem;border-radius:var(--radius);font-size:1rem;transition:background .2s,transform .15s}
+.cta-btn:hover{background:#f0c65a;color:#ffffff;transform:translateY(-1px)}
 .step-box{background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:1.25rem;margin:1.25rem 0;font-size:.95rem}
 .step-box strong{display:block;margin-bottom:.5rem;color:#fff}
 .spreadsheet-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
 .spreadsheet-table th{text-align:left;color:var(--gold);font-weight:600;padding:.75rem;border-bottom:2px solid #333}
-.spreadsheet-table td{padding:.75rem;border-bottom:1px solid #222;color:var(--text)}
+.spreadsheet-table td{padding:.75rem;border-bottom: 1px solid #e2e8f0;color:var(--text)}
 .spreadsheet-table tr:hover td{background:var(--surface)}
 .checklist{background:var(--surface);border:1px solid #333;border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0}
 .checklist h3{margin-top:0}
 .checklist ul{list-style:none;margin-left:0;padding-left:0}
 .checklist li{padding:.4rem 0;padding-left:1.5rem;position:relative}
 .checklist li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700}
-.emergency-step{counter-increment:emergency;background:var(--surface);border:1px solid #222;border-radius:var(--radius);padding:1.25rem;margin:1rem 0;position:relative;padding-left:3.5rem}
-.emergency-step::before{content:counter(emergency);position:absolute;left:1rem;top:1.25rem;background:var(--gold);color:#0a0a0a;font-weight:800;width:1.75rem;height:1.75rem;line-height:1.75rem;text-align:center;border-radius:50%;font-size:.85rem}
+.emergency-step{counter-increment:emergency;background:var(--surface);border-bottom: 1px solid #e2e8f0;border-radius:var(--radius);padding:1.25rem;margin:1rem 0;position:relative;padding-left:3.5rem}
+.emergency-step::before{content:counter(emergency);position:absolute;left:1rem;top:1.25rem;background: #2563eb;color:#ffffff;font-weight:800;width:1.75rem;height:1.75rem;line-height:1.75rem;text-align:center;border-radius:50%;font-size:.85rem}
 .emergency-steps{counter-reset:emergency}
 .faq{max-width:780px;margin:0 auto;padding:0 1.5rem 3rem}
 .faq h2{font-size:1.45rem;font-weight:700;color:#fff;margin-bottom:1.5rem;padding-left:.75rem;border-left:3px solid var(--gold)}
-.faq details{background:var(--surface);border:1px solid #222;border-radius:var(--radius);margin-bottom:.75rem;padding:1rem 1.25rem}
+.faq details{background:var(--surface);border-bottom: 1px solid #e2e8f0;border-radius:var(--radius);margin-bottom:.75rem;padding:1rem 1.25rem}
 .faq summary{font-weight:600;cursor:pointer;color:#fff;font-size:1rem}
 .faq details[open] summary{margin-bottom:.75rem;color:var(--gold)}
 .faq details p{margin:0;color:var(--text-muted);font-size:.95rem;line-height:1.7}
-footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-muted);border-top:1px solid #1a1a1a}
+footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-muted);border-top:1px solid #f7f8fa}
 @media(max-width:600px){.hero{padding:2.5rem 1rem 1.5rem}article{padding:0 1rem 3rem}.cta-box{padding:1.5rem}.spreadsheet-table{font-size:.8rem}.spreadsheet-table th,.spreadsheet-table td{padding:.5rem}}
 </style>
 <!-- Google tag (gtag.js) -->
@@ -152,12 +153,22 @@ footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-mu
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
 <header style="padding: 1.2rem 2rem; border-bottom: 1px solid #2a2a2a; display: flex; justify-content: space-between; align-items: center;">
-    <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: #d4a843; text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
+    <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: #2563eb; text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
     <nav style="display: flex; gap: 24px;">
-        <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
-        <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+        <a href="/tools/" style="color: #64748b; text-decoration: none; font-weight: 500;">Free Tools</a>
+        <a href="/blog/" style="color: #64748b; text-decoration: none; font-weight: 500;">Blog</a>
     </nav>
 </header>
 
@@ -381,19 +392,19 @@ footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-mu
 <div class="emergency-steps">
 
 <div class="emergency-step">
-  <strong style="color: #fff; margin-bottom: .5rem; display: block;">Chase Every Outstanding Invoice — Today</strong>
+  <strong style="color: #1a1a2e; margin-bottom: .5rem; display: block;">Chase Every Outstanding Invoice — Today</strong>
   <p>Before you do anything else, open your records and identify every invoice that's overdue or due soon. Most freelancers in a cash crisis are sitting on <strong>money they've already earned but haven't chased</strong>. Send follow-ups immediately. Not tomorrow, not after lunch — now. Use our <a href="/blog/freelancer-late-payment-email-sequence.html">late payment email sequence</a> and don't be shy about calling. A phone call is ten times more effective than an email when money is urgent.</p>
   <p style="margin-bottom: 0;">For clients who are seriously overdue, send a <a href="/blog/letter-before-action-unpaid-invoice-template.html">letter before action</a>. It sounds dramatic, but it works. Most clients pay within days of receiving one because they know the next step is <a href="/blog/small-claims-court-freelancer-uk.html">Small Claims Court</a>.</p>
 </div>
 
 <div class="emergency-step">
-  <strong style="color: #fff; margin-bottom: .5rem; display: block;">Contact HMRC Before They Contact You</strong>
+  <strong style="color: #1a1a2e; margin-bottom: .5rem; display: block;">Contact HMRC Before They Contact You</strong>
   <p>If you have a Self Assessment payment due and can't cover it, don't ignore it. HMRC offers <strong>Time to Pay (TTP) arrangements</strong> that let you spread your tax bill over monthly instalments. Call the Self Assessment helpline (0300 200 3310) as soon as you know you'll miss a deadline. Being proactive dramatically increases your chances of getting favourable terms.</p>
   <p style="margin-bottom: 0;">You can even set up a payment plan online through your HMRC account if the debt is under £30,000 and less than 60 days overdue. Interest will apply, but it's far cheaper than the penalties for simply not paying.</p>
 </div>
 
 <div class="emergency-step">
-  <strong style="color: #fff; margin-bottom: .5rem; display: block;">Negotiate With Creditors and Prioritise Payments</strong>
+  <strong style="color: #1a1a2e; margin-bottom: .5rem; display: block;">Negotiate With Creditors and Prioritise Payments</strong>
   <p>When cash is critically low, you need to triage. Not all bills carry the same consequences for non-payment. Prioritise in this order:</p>
   <ul>
     <li><strong>Rent/mortgage:</strong> Shelter comes first. If you'll be late, contact your landlord or lender immediately — they'd rather know in advance than chase you.</li>
@@ -406,7 +417,7 @@ footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-mu
 </div>
 
 <div class="emergency-step">
-  <strong style="color: #fff; margin-bottom: .5rem; display: block;">Consider Invoice Factoring as a Short-Term Bridge</strong>
+  <strong style="color: #1a1a2e; margin-bottom: .5rem; display: block;">Consider Invoice Factoring as a Short-Term Bridge</strong>
   <p>Invoice factoring means selling your unpaid invoices to a third party (a "factor") for immediate cash — typically <strong>80–90% of the invoice value</strong>. The factor then collects the full amount from your client and takes a fee (usually 1–5%).</p>
   <p>This isn't a long-term strategy — the fees make it expensive as a habit. But when you have confirmed invoices outstanding and need cash immediately, it can be a legitimate lifeline. UK providers include:</p>
   <ul>
@@ -418,7 +429,7 @@ footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-mu
 </div>
 
 <div class="emergency-step">
-  <strong style="color: #fff; margin-bottom: .5rem; display: block;">Generate Quick-Turnaround Income</strong>
+  <strong style="color: #1a1a2e; margin-bottom: .5rem; display: block;">Generate Quick-Turnaround Income</strong>
   <p>When you need cash fast, look for work that pays quickly rather than work that pays the most. Options include:</p>
   <ul>
     <li><strong>Existing clients:</strong> Reach out to past clients with a specific offer. "I have availability next week — do you have anything that needs doing?" Former clients who trust you are the fastest path to income.</li>
@@ -459,8 +470,8 @@ footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-mu
   <li><strong>Stress-test your buffer.</strong> If your biggest client paid 30 days late tomorrow, would you survive without stress? If the answer is no, your emergency fund needs topping up.</li>
 </ol>
 
-<div style="background: #141414; border: 1px solid #333; border-radius: 12px; padding: 24px; margin: 32px 0;">
-  <h3 style="color: #d4a843; margin-bottom: 16px; font-size: 1.1rem;">📚 Related Articles</h3>
+<div style="background: #ffffff; border: 1px solid #333; border-radius: 12px; padding: 24px; margin: 32px 0;">
+  <h3 style="color: #2563eb; margin-bottom: 16px; font-size: 1.1rem;">📚 Related Articles</h3>
   <ul style="list-style: none; padding: 0; margin: 0;">
     <li style="margin-bottom: 12px;"><a href="/blog/freelance-cash-flow-management-tips.html" style="color: #e8e8e8; text-decoration: none; font-weight: 500;">Cash Flow for Freelancers: 9 Rules to Never Be Broke Between Projects →</a></li>
     <li style="margin-bottom: 12px;"><a href="/blog/freelance-invoice-best-practices.html" style="color: #e8e8e8; text-decoration: none; font-weight: 500;">Invoice Like a Pro: 11 Best Practices to Get Paid Faster →</a></li>
@@ -525,16 +536,24 @@ footer{text-align:center;padding:2rem 1.5rem;font-size:.8rem;color:var(--text-mu
 
 <footer>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
-        <a href="/" style="color: #d4a843; text-decoration: none;">Home</a>
-        <a href="/tools/" style="color: #d4a843; text-decoration: none;">Free Tools</a>
-        <a href="/blog/" style="color: #d4a843; text-decoration: none;">Blog</a>
-        <a href="/products/getting-paid-toolkit.html" style="color: #d4a843; text-decoration: none;">Getting-Paid Toolkit</a>
-        <a href="/free-course.html" style="color: #d4a843; text-decoration: none;">Free Course</a>
+        <a href="/" style="color: #2563eb; text-decoration: none;">Home</a>
+        <a href="/tools/" style="color: #2563eb; text-decoration: none;">Free Tools</a>
+        <a href="/blog/" style="color: #2563eb; text-decoration: none;">Blog</a>
+        <a href="/products/getting-paid-toolkit.html" style="color: #2563eb; text-decoration: none;">Getting-Paid Toolkit</a>
+        <a href="/free-course.html" style="color: #2563eb; text-decoration: none;">Free Course</a>
     </div>
-    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p>© 2026 Landolio. © 2026 Landolio</p>
     <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
 </footer>
 
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

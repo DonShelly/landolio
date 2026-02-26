@@ -56,15 +56,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         :root {
-            --bg: #0a0a0a;
-            --bg-card: #141414;
+            --bg: #ffffff;
+            --bg-card: #ffffff;
             --text: #e8e8e8;
             --text-muted: #999;
-            --gold: #d4a843;
-            --gold-hover: #e0ba5a;
-            --border: #222;
+            --gold: #2563eb;
+            --gold-hover: #3b82f6;
+            --border-bottom: 1px solid #e2e8f0;
             --radius: 12px;
         }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -85,7 +86,7 @@
             max-width: 760px; margin: 0 auto; padding: 0 24px;
             height: 64px; display: flex; align-items: center; justify-content: space-between;
         }
-        .nav-logo { font-size: 1.25rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+        .nav-logo { font-size: 1.25rem; font-weight: 700; color: #2563eb; text-decoration: none; }
         .nav-links { display: flex; gap: 24px; }
         .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--text); }
@@ -100,7 +101,7 @@
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px; }
         article h2 {
             font-size: 1.4rem; font-weight: 600; margin: 48px 0 16px;
-            letter-spacing: -0.02em; color: var(--gold);
+            letter-spacing: -0.02em; color: #2563eb;
         }
         article h3 {
             font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px;
@@ -108,44 +109,44 @@
         article p { margin-bottom: 20px; color: var(--text); font-size: 1.05rem; }
         article ul, article ol { margin: 0 0 20px 24px; color: var(--text); }
         article li { margin-bottom: 8px; font-size: 1.05rem; }
-        article a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+        article a { color: #2563eb; text-decoration: underline; text-underline-offset: 3px; }
         article a:hover { color: var(--gold-hover); }
 
         .cta-box {
             background: var(--bg-card); border: 1px solid var(--gold);
             border-radius: var(--radius); padding: 32px; margin: 40px 0; text-align: center;
         }
-        .cta-box h3 { color: var(--gold); margin: 0 0 12px; }
+        .cta-box h3 { color: #2563eb; margin: 0 0 12px; }
         .cta-box p { color: var(--text-muted); margin-bottom: 16px; }
         .cta-btn {
-            display: inline-block; background: var(--gold); color: #0a0a0a;
+            display: inline-block; background: #2563eb; color: #ffffff;
             padding: 12px 32px; border-radius: 8px; text-decoration: none;
             font-weight: 600; font-size: 1rem; transition: background 0.2s;
         }
-        .cta-btn:hover { background: var(--gold-hover); color: #0a0a0a; }
+        .cta-btn:hover { background: var(--gold-hover); color: #ffffff; }
 
         .checklist-box {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: var(--radius); padding: 28px; margin: 24px 0;
         }
-        .checklist-box h4 { color: var(--gold); margin-bottom: 16px; font-size: 1rem; }
+        .checklist-box h4 { color: #2563eb; margin-bottom: 16px; font-size: 1rem; }
         .checklist-box ul { margin: 0; list-style: none; }
         .checklist-box li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
         .checklist-box li:last-child { border-bottom: none; }
-        .checklist-box li::before { content: "☐ "; color: var(--gold); }
+        .checklist-box li::before { content: "☐ "; color: #2563eb; }
 
         .email-template {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: var(--radius); padding: 28px; margin: 24px 0;
             font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;
         }
-        .email-template strong { color: var(--gold); }
+        .email-template strong { color: #2563eb; }
 
         footer {
             border-top: 1px solid var(--border); padding: 40px 24px;
             text-align: center; color: var(--text-muted); font-size: 0.85rem;
         }
-        footer a { color: var(--gold); text-decoration: none; }
+        footer a { color: #2563eb; text-decoration: none; }
 
         @media (max-width: 600px) {
             article { padding: 40px 16px 64px; }
@@ -162,6 +163,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
 <nav>
     <div class="nav-inner">
@@ -396,11 +407,19 @@
             <a href="/blog/">Blog</a>
             <a href="https://buy.stripe.com/dRm14n6yz58F8naa1df7i07">Getting-Paid Toolkit</a>
         </div>
-        <p>© 2026 Landolio. Built by Midas 👑</p>
+        <p>© 2026 Landolio. © 2026 Landolio</p>
         <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
     </div>
 </footer>
 
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

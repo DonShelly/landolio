@@ -20,21 +20,22 @@
     <meta property="og:image:alt" content="Landolio — Automation tools for freelancers and small businesses">
     <meta name="twitter:image" content="https://landolio.com/images/og-default.png">
 
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         /* Reset & Base */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --bg-card: #1a1a1a;
+            --bg-primary: #ffffff;
+            --bg-secondary: #ffffff;
+            --bg-card: #f7f8fa;
             --text-primary: #e8e8e8;
             --text-secondary: #a0a0a0;
-            --gold: #d4a843;
+            --gold: #2563eb;
             --gold-light: #e8c36a;
             --gold-dim: #b8922e;
             --border: #2a2a2a;
-            --template-bg: #111111;
+            --template-bg: #f7f8fa111;
             --template-border: #2a2a2a;
         }
 
@@ -58,7 +59,7 @@
             margin: 0 auto;
         }
         .nav a {
-            color: var(--gold);
+            color: #2563eb;
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.2s;
@@ -88,7 +89,7 @@
         h1 {
             font-size: 2.2rem;
             line-height: 1.25;
-            color: #fff;
+            color: #1a1a2e;
             margin-bottom: 1.2rem;
             font-weight: 800;
         }
@@ -102,7 +103,7 @@
 
         h2 {
             font-size: 1.5rem;
-            color: #fff;
+            color: #1a1a2e;
             margin: 2.8rem 0 1rem;
             font-weight: 700;
             padding-top: 0.5rem;
@@ -110,7 +111,7 @@
 
         h3 {
             font-size: 1.2rem;
-            color: var(--gold);
+            color: #2563eb;
             margin: 2rem 0 0.6rem;
             font-weight: 600;
         }
@@ -120,10 +121,10 @@
             color: var(--text-primary);
         }
 
-        a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+        a { color: #2563eb; text-decoration: underline; text-underline-offset: 2px; }
         a:hover { color: var(--gold-light); }
 
-        strong { color: #fff; font-weight: 600; }
+        strong { color: #1a1a2e; font-weight: 600; }
 
         ul, ol {
             margin: 0 0 1.4rem 1.5rem;
@@ -177,7 +178,7 @@
             justify-content: center;
             width: 32px;
             height: 32px;
-            background: var(--gold);
+            background: #2563eb;
             color: #000;
             font-weight: 800;
             font-size: 0.85rem;
@@ -204,11 +205,11 @@
             padding: 1.2rem 1.5rem;
             margin: 1.5rem 0;
         }
-        .tip-box strong { color: var(--gold); }
+        .tip-box strong { color: #2563eb; }
 
         /* CTA */
         .cta-section {
-            background: linear-gradient(135deg, #1a1500 0%, #141414 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
             border: 1px solid var(--gold-dim);
             border-radius: 10px;
             padding: 2.5rem 2rem;
@@ -227,7 +228,7 @@
         }
         .cta-btn {
             display: inline-block;
-            background: var(--gold);
+            background: #2563eb;
             color: #000;
             font-weight: 700;
             font-size: 1rem;
@@ -262,7 +263,7 @@
             margin: 1.5rem 0 2.5rem;
         }
         .toc h3 {
-            color: #fff;
+            color: #1a1a2e;
             margin: 0 0 0.8rem;
             font-size: 1rem;
         }
@@ -275,7 +276,7 @@
             color: var(--text-secondary);
             text-decoration: none;
         }
-        .toc a:hover { color: var(--gold); }
+        .toc a:hover { color: #2563eb; }
 
         /* Responsive */
         @media (max-width: 640px) {
@@ -317,12 +318,22 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
 <header style="padding: 1.2rem 2rem; border-bottom: 1px solid #2a2a2a; display: flex; justify-content: space-between; align-items: center;">
-    <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: #d4a843; text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
+    <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: #2563eb; text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
     <nav style="display: flex; gap: 24px;">
-        <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
-        <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+        <a href="/tools/" style="color: #64748b; text-decoration: none; font-weight: 500;">Free Tools</a>
+        <a href="/blog/" style="color: #64748b; text-decoration: none; font-weight: 500;">Blog</a>
     </nav>
 </header>
 
@@ -529,8 +540,8 @@
     <p>The common thread? <strong>Systems beat willpower.</strong> Having a polite payment reminder email template ready as a freelancer means you follow up consistently — not just when you remember or when you're desperate enough to overcome the awkwardness.</p>
 
     <!-- Related Articles -->
-    <div style="background: #141414; border: 1px solid #333; border-radius: 12px; padding: 24px; margin: 32px 0;">
-        <h3 style="color: #d4a843; margin-bottom: 16px; font-size: 1.1rem;">📚 Related Articles</h3>
+    <div style="background: #ffffff; border: 1px solid #333; border-radius: 12px; padding: 24px; margin: 32px 0;">
+        <h3 style="color: #2563eb; margin-bottom: 16px; font-size: 1.1rem;">📚 Related Articles</h3>
         <ul style="list-style: none; padding: 0; margin: 0;">
             <li style="margin-bottom: 12px;"><a href="/blog/freelancer-late-payment-email-sequence.html" style="color: #e8e8e8; text-decoration: none; font-weight: 500;">The 5-Email Late Payment Sequence That Gets Overdue Invoices Paid →</a></li>
             <li style="margin-bottom: 12px;"><a href="/blog/how-to-chase-unpaid-invoices-freelancer.html" style="color: #e8e8e8; text-decoration: none; font-weight: 500;">How to Chase Unpaid Invoices Without Burning Client Relationships →</a></li>
@@ -566,16 +577,24 @@
 
 <footer class="footer">
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
-        <a href="/" style="color: #d4a843; text-decoration: none;">Home</a>
-        <a href="/tools/" style="color: #d4a843; text-decoration: none;">Free Tools</a>
-        <a href="/blog/" style="color: #d4a843; text-decoration: none;">Blog</a>
-        <a href="/products/getting-paid-toolkit.html" style="color: #d4a843; text-decoration: none;">Getting-Paid Toolkit</a>
-        <a href="/free-course.html" style="color: #d4a843; text-decoration: none;">Free Course</a>
+        <a href="/" style="color: #2563eb; text-decoration: none;">Home</a>
+        <a href="/tools/" style="color: #2563eb; text-decoration: none;">Free Tools</a>
+        <a href="/blog/" style="color: #2563eb; text-decoration: none;">Blog</a>
+        <a href="/products/getting-paid-toolkit.html" style="color: #2563eb; text-decoration: none;">Getting-Paid Toolkit</a>
+        <a href="/free-course.html" style="color: #2563eb; text-decoration: none;">Free Course</a>
     </div>
-    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p>© 2026 Landolio. © 2026 Landolio</p>
     <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
 </footer>
 
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

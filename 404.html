@@ -6,28 +6,29 @@
     <title>Page Not Found — Landolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --gold: #D4AF37; --black: #0A0A0A; --dark: #1A1A1A; --gray: #888; --white: #FAFAFA; }
-        body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); min-height: 100vh; display: flex; flex-direction: column; }
-        header { padding: 24px 0; border-bottom: 1px solid rgba(212,175,55,0.2); }
+        :root { --gold: #2563eb; --black: #ffffff; --dark: #f7f8fa; --gray: #888; --white: #FAFAFA; }
+        body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--text, #1a1a2e); min-height: 100vh; display: flex; flex-direction: column; }
+        header { padding: 24px 0; border-bottom: 1px solid rgba(37,99,235,0.2); }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #2563eb; text-decoration: none; }
         nav { display: flex; gap: 24px; }
-        nav a { color: var(--gray); text-decoration: none; font-weight: 500; transition: color 0.2s; }
-        nav a:hover { color: var(--gold); }
+        nav a { color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        nav a:hover { color: #2563eb; }
         main { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 24px; }
-        .error-code { font-size: 8rem; font-weight: 800; color: var(--gold); opacity: 0.3; line-height: 1; margin-bottom: 16px; }
+        .error-code { font-size: 8rem; font-weight: 800; color: #2563eb; opacity: 0.3; line-height: 1; margin-bottom: 16px; }
         h1 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
-        p { color: var(--gray); font-size: 1.1rem; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        p { color: #64748b; font-size: 1.1rem; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
         .links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .links a { color: var(--gold); text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid var(--gold); border-radius: 8px; transition: all 0.2s; }
+        .links a { color: #2563eb; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid var(--gold); border-radius: 8px; transition: all 0.2s; }
         .links a:hover { background: var(--gold); color: var(--black); }
         .links a.primary { background: var(--gold); color: var(--black); }
-        .links a.primary:hover { background: #B8962E; }
-        footer { padding: 48px 0; border-top: 1px solid rgba(212,175,55,0.1); text-align: center; color: var(--gray); font-size: 0.875rem; }
-        footer a { color: var(--gold); text-decoration: none; }
+        .links a.primary:hover { background: #1d4ed8; }
+        footer { padding: 48px 0; border-top: 1px solid rgba(37,99,235,0.1); text-align: center; color: #64748b; font-size: 0.875rem; }
+        footer a { color: #2563eb; text-decoration: none; }
     </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977053494"></script>
@@ -39,12 +40,22 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <a href="/" class="logo">Landolio</a>
             <nav style="display: flex; gap: 24px;">
-                <a href="/tools/" style="color: var(--gray); text-decoration: none; font-weight: 500;">Free Tools</a>
-                <a href="/blog/" style="color: var(--gray); text-decoration: none; font-weight: 500;">Blog</a>
+                <a href="/tools/" style="color: #64748b; text-decoration: none; font-weight: 500;">Free Tools</a>
+                <a href="/blog/" style="color: #64748b; text-decoration: none; font-weight: 500;">Blog</a>
             </nav>
         </div>
     </header>
@@ -63,16 +74,24 @@
     <footer>
         <div class="container">
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
-                <a href="/" style="color: var(--gold); text-decoration: none;">Home</a>
-                <a href="/tools/" style="color: var(--gold); text-decoration: none;">Free Tools</a>
-                <a href="/blog/" style="color: var(--gold); text-decoration: none;">Blog</a>
-                <a href="/products/getting-paid-toolkit.html" style="color: var(--gold); text-decoration: none;">Getting-Paid Toolkit</a>
-                <a href="/free-course.html" style="color: var(--gold); text-decoration: none;">Free Course</a>
+                <a href="/" style="color: #2563eb; text-decoration: none;">Home</a>
+                <a href="/tools/" style="color: #2563eb; text-decoration: none;">Free Tools</a>
+                <a href="/blog/" style="color: #2563eb; text-decoration: none;">Blog</a>
+                <a href="/products/getting-paid-toolkit.html" style="color: #2563eb; text-decoration: none;">Getting-Paid Toolkit</a>
+                <a href="/free-course.html" style="color: #2563eb; text-decoration: none;">Free Course</a>
             </div>
-            <p>© 2026 Landolio. Built by Midas 👑</p>
+            <p>© 2026 Landolio. © 2026 Landolio</p>
             <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
         </div>
     </footer>
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

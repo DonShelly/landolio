@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Freelancer Payment Protection Checklist</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --gold: #2563eb;
+            --gold-dark: #1d4ed8;
+            --black: #ffffff;
+            --dark: #1A1A1A;
+            --gray: #888;
+            --white: #FAFAFA;
+            --green: #4ade80;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--gold);
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .intro {
+            background: #fafaf0;
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .intro p {
+            margin-bottom: 12px;
+        }
+        
+        .intro p:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            background: var(--black);
+            color: var(--white);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-number {
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checkbox {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            margin-top: 2px;
+        }
+        
+        .item-content h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .item-content p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .pro-tip {
+            background: #e8f5e9;
+            border-left: 4px solid var(--green);
+            padding: 16px;
+            margin: 24px 0;
+        }
+        
+        .pro-tip strong {
+            color: var(--black);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .danger-zone {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        
+        .danger-zone strong {
+            color: #e65100;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        .footer .logo {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">LANDOLIO</div>
+            <h1>The Ultimate Freelancer Payment Protection Checklist</h1>
+            <p class="subtitle">Everything you need to check before, during, and after every project</p>
+        </div>
+        
+        <div class="intro">
+            <p><strong>Why this checklist matters:</strong></p>
+            <p>The average UK freelancer loses £3,500 per year to late or non-payment. This checklist has been built from lessons learned by thousands of freelancers who've been burned — so you don't have to be.</p>
+            <p>Print this out. Pin it to your wall. Check every box before you start work.</p>
+        </div>
+        
+        <!-- SECTION 1: BEFORE TAKING THE JOB -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">1</span>
+                <h2 class="section-title">Before Taking the Job</h2>
+            </div>
+            
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Run a basic company check</h3>
+                        <p>Search Companies House (UK) or equivalent. Check they're still trading, not in administration, and have filed recent accounts. Red flag: recently incorporated companies with no trading history.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Google the company + "payment issues" or "late payment"</h3>
+                        <p>Check Trustpilot, Reddit, freelancer forums. If multiple people are complaining about payment, walk away.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Ask for a deposit (minimum 25-50%)</h3>
+                        <p>If they refuse a deposit, that's a red flag. Legitimate businesses understand this protects both parties.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Get a written contract or statement of work</h3>
+                        <p>Email confirmation is legally binding in the UK, but a proper contract is better. Must include: scope, deliverables, payment terms, timeline.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Include late payment terms in your contract</h3>
+                        <p>UK: You're entitled to statutory interest (8% + Bank of England base rate) plus £40-£100 debt recovery fee. Put this in your terms.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Define "approval" and "completion" criteria</h3>
+                        <p>Vague terms = scope creep = payment disputes. Be specific: "Client has 5 business days to request changes. After that, project is deemed approved."</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Confirm payment method upfront</h3>
+                        <p>Bank transfer, PayPal, Stripe? Get their preferred method in writing. If they say "we'll sort it later," push back.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Clarify who you're contracting with</h3>
+                        <p>Is it the person you're talking to, or their company? Get the legal entity name and registration number. Chase payments from the right entity.</p>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong>
+                For projects over £1,000, ask for 50% upfront, 25% at midpoint, 25% on completion. This protects your cash flow and proves the client is serious.
+            </div>
+        </div>
+        
+        <!-- SECTION 2: DURING THE PROJECT -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">2</span>
+                <h2 class="section-title">During the Project</h2>
+            </div>
+            
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Document every scope change in writing</h3>
+                        <p>Client asks for "just one more thing"? Email them: "To confirm, this is outside the original scope. I can do it for £X extra. Please reply to approve." Never do extra work without written approval.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Send progress updates at every milestone</h3>
+                        <p>Even if they don't ask. "Phase 1 complete. Moving to Phase 2. Invoice #001 attached for £X." Keeps you top of mind and reduces surprise when invoices arrive.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Invoice immediately when each milestone is hit</h3>
+                        <p>Don't wait until the end of the month. The sooner you invoice, the sooner you get paid. Most businesses pay within 30 days of invoice date — not project completion.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Track time and deliverables</h3>
+                        <p>Even on fixed-price projects. If there's ever a dispute, you'll need proof of what you delivered and when.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Don't hand over final files until payment is confirmed</h3>
+                        <p>Send watermarked previews, low-res versions, or demos. Once they have the files, your leverage disappears.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Get sign-off at every stage</h3>
+                        <p>Email: "Phase 1 complete. Please confirm approval within 5 business days." If they don't respond, send a follow-up: "Taking your silence as approval to proceed."</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Watch for red flags</h3>
+                        <p>Sudden radio silence, vague feedback, "we'll pay when we have the budget," new people getting involved. If you see these, stop work until payment clears.</p>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="danger-zone">
+                <strong>🚨 Stop-Work Trigger:</strong>
+                If a milestone payment is more than 7 days overdue, pause all work immediately. Send a polite but firm email: "I'm pausing work until Invoice #X is settled. Happy to resume once payment clears." Don't be afraid to enforce this.
+            </div>
+        </div>
+        
+        <!-- SECTION 3: AFTER DELIVERY -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">3</span>
+                <h2 class="section-title">After Delivery</h2>
+            </div>
+            
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Send a professional invoice immediately</h3>
+                        <p>Include: your business name, invoice number, date, payment terms (e.g., "Due within 14 days"), itemised breakdown, bank details, late payment terms.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Confirm receipt of the invoice</h3>
+                        <p>Email: "Invoice #X sent. Can you confirm you've received it and when I can expect payment?" If they don't respond within 48 hours, follow up.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Set a calendar reminder for due date minus 3 days</h3>
+                        <p>Send a friendly nudge: "Just a heads-up that Invoice #X is due on [date]. Let me know if you need any details to process it."</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>If payment is 1 day late, send a polite reminder</h3>
+                        <p>"Hi [Name], Invoice #X was due yesterday. I'm sure it's just slipped through — can you check on it for me? Thanks!"</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>If payment is 7 days late, escalate tone slightly</h3>
+                        <p>"Hi [Name], Invoice #X is now 7 days overdue. Please can you confirm when I can expect payment? As per our agreement, late fees apply from [date]."</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>If payment is 14 days late, send a formal demand</h3>
+                        <p>"This is a formal request for payment of Invoice #X, now 14 days overdue. If payment is not received within 7 days, I will begin legal proceedings to recover the debt plus statutory interest and costs."</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>If payment is 21 days late, send a Letter Before Action</h3>
+                        <p>Formal legal letter stating you'll take them to court if they don't pay within 14 days. Send via recorded delivery. (Free template available at landolio.com)</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>If payment is 35+ days late, file with Small Claims Court</h3>
+                        <p>UK: Use Money Claim Online (gov.uk). Costs £25-£455 depending on claim value. You'll get your court fees back if you win.</p>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong>
+                Most late payments are resolved at the "7 days late" stage. Don't be afraid to follow up early and often. The squeaky wheel gets paid.
+            </div>
+        </div>
+        
+        <!-- BONUS SECTION -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">💼</span>
+                <h2 class="section-title">Bonus: Payment Recovery Toolkit</h2>
+            </div>
+            
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Save all emails and contracts</h3>
+                        <p>If you end up in court, you'll need proof of the agreement, deliverables, and payment terms. Keep everything.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Calculate statutory interest and recovery fees</h3>
+                        <p>UK: 8% + BoE base rate on outstanding amount, plus £40 (under £1k), £70 (£1k-£10k), or £100 (over £10k). Use Landolio's free calculator.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Know your legal options</h3>
+                        <p>UK: Letter Before Action → Small Claims Court → County Court Judgement → Bailiff enforcement. Each step escalates pressure.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Join freelancer communities</h3>
+                        <p>Reddit r/freelance, UK Freelancers Facebook groups. Others have dealt with similar clients — learn from their experiences.</p>
+                    </div>
+                </li>
+                
+                <li class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <h3>Consider payment protection insurance</h3>
+                        <p>Protects against client insolvency. Costs 1-3% of invoice value. Worth it for large projects or risky clients.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">LANDOLIO</div>
+            <p>Stop chasing invoices. Start getting paid.</p>
+            <p style="margin-top: 16px;"><strong>Want more?</strong> Get copy-paste email templates, contract clauses, and automated reminder tools at <strong>landolio.com</strong></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -19,27 +19,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.7;color:#1a1a1a;background:#fff;}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.7;color:#f7f8fa;background:#fff;}
 .container{max-width:800px;margin:0 auto;padding:2rem 1.5rem;}
 header{padding:1.5rem 0;border-bottom:1px solid #e5e5e5;margin-bottom:2rem;}
-header a{text-decoration:none;color:#1a1a1a;font-weight:600;font-size:1.25rem;}
+header a{text-decoration:none;color:#f7f8fa;font-weight:600;font-size:1.25rem;}
 article{margin-bottom:3rem;}
-h1{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem;color:#111;}
+h1{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem;color:#f7f8fa;}
 .meta{color:#666;font-size:0.95rem;margin-bottom:2rem;}
-.content h2{font-size:1.75rem;font-weight:700;margin:2.5rem 0 1rem;color:#111;}
+.content h2{font-size:1.75rem;font-weight:700;margin:2.5rem 0 1rem;color:#f7f8fa;}
 .content h3{font-size:1.35rem;font-weight:600;margin:2rem 0 0.75rem;color:#222;}
 .content h4{font-size:1.1rem;font-weight:600;margin:1.5rem 0 0.5rem;color:#333;}
 .content p{margin-bottom:1.25rem;}
 .content ul,.content ol{margin:1rem 0 1.5rem 1.75rem;}
 .content li{margin-bottom:0.5rem;}
-.content strong{font-weight:600;color:#111;}
+.content strong{font-weight:600;color:#f7f8fa;}
 .content code{background:#f5f5f5;padding:0.2rem 0.4rem;border-radius:3px;font-size:0.9em;font-family:monospace;}
 .content table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.95rem;}
 .content th,.content td{padding:0.75rem;text-align:left;border:1px solid #ddd;}
 .content th{background:#f8f8f8;font-weight:600;}
-.cta-box{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:2rem;border-radius:8px;margin:2rem 0;text-align:center;}
+.cta-box{background: linear-gradient(135deg, #2563eb, #3b82f6);color:#fff;padding:2rem;border-radius:8px;margin:2rem 0;text-align:center;}
 .cta-box h3{color:#fff;margin-bottom:0.75rem;}
 .cta-box p{margin-bottom:1.25rem;opacity:0.95;}
 .cta-btn{display:inline-block;background:#fff;color:#667eea;padding:0.9rem 2rem;border-radius:6px;text-decoration:none;font-weight:600;transition:transform 0.2s;}
@@ -63,6 +64,16 @@ h1{font-size:1.75rem;}
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 <div class="container">
 <header>
 <a href="/">← Landolio</a>
@@ -545,10 +556,17 @@ h1{font-size:1.75rem;}
 <hr>
 
 <div class="cta-box">
-<h3>Get Your CIS + MTD Setup Right</h3>
-<p>The April 2026 deadline is closer than you think. Our <strong>MTD Readiness Toolkit</strong> includes CIS-specific checklists, software comparison spreadsheets, and quarterly deadline templates.</p>
-<p><strong>£14 • Instant download • Built for CIS subcontractors</strong></p>
-<a href="https://buy.stripe.com/6oE5lA5Qg0t30Vi28s" class="cta-btn">Get the Toolkit →</a>
+<h3>🛠️ CIS Contractor MTD Survival Kit (NEW)</h3>
+<p>Built specifically for construction subcontractors: CIS deduction tracker spreadsheet, reconciliation guides, HMRC letter templates, software comparison, and compliance calendar.</p>
+<p><strong>£16 • Instant download • Handles CIS + MTD double compliance</strong></p>
+<a href="/products/cis-mtd-survival-kit.html" class="cta-btn">Get the CIS Survival Kit →</a>
+</div>
+
+<div class="cta-box" style="background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);margin-top:1.5rem;">
+<h3>General MTD Readiness Toolkit</h3>
+<p>For non-CIS freelancers and sole traders. Our <strong>MTD Readiness Toolkit</strong> includes checklists, software comparison, and quarterly deadline templates.</p>
+<p><strong>£14 • Instant download</strong></p>
+<a href="https://buy.stripe.com/6oE5lA5Qg0t30Vi28s" class="cta-btn">Get the MTD Toolkit →</a>
 </div>
 
 <hr>
@@ -568,5 +586,14 @@ h1{font-size:1.75rem;}
 </div>
 </article>
 </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
+<script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})()</script>
 </body>
 </html>

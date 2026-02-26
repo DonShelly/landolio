@@ -1,452 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Tools for Freelancers — Landolio</title>
-    <meta name="description" content="Free online tools for freelancers: late payment interest calculator, invoice generator, and more. No signup required.">
+    <title>Free Tools for UK Freelancers — Landolio</title>
+    <meta name="description" content="Free calculators and generators for UK freelancers: late payment interest, invoice generator, tax calculator, MTD readiness checker, and more. No signup.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://landolio.com/tools/">
-    <meta property="og:title" content="Free Tools for Freelancers — Landolio">
-    <meta property="og:description" content="Free online tools for freelancers: late payment interest calculator, invoice generator, and more. No signup required.">
+    <meta property="og:title" content="Free Tools for UK Freelancers — Landolio">
+    <meta property="og:description" content="Free calculators and generators for UK freelancers. No signup required.">
     <meta property="og:url" content="https://landolio.com/tools/">
-    <meta property="og:image" content="https://landolio.com/images/og-default.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Landolio — Automation tools for freelancers and small businesses">
-    <meta name="twitter:image" content="https://landolio.com/images/og-default.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Free Tools for Freelancers — Landolio">
-    <meta name="twitter:description" content="Free online tools for freelancers: late payment interest calculator, invoice generator, and more.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977053494"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17977053494');
+    </script>
     <style>
-        :root {
-            --bg: #0a0a0a;
-            --bg-card: #141414;
-            --bg-card-hover: #1a1a1a;
-            --text: #e8e8e8;
-            --text-muted: #999;
-            --gold: #d4a843;
-            --gold-hover: #e0ba5a;
-            --border: #222;
-            --radius: 12px;
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Nav */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--text);
-        }
-
-        /* Hero */
-        .hero {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 24px 48px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 2.75rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 540px;
+        .tools-list {
+            max-width: 700px;
             margin: 0 auto;
         }
-
-        /* Tools Grid */
-        .tools-grid {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px 48px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .tool-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 32px;
+        .tool-entry {
+            display: block;
             text-decoration: none;
             color: inherit;
-            display: block;
-            transition: background 0.25s, border-color 0.25s, transform 0.25s;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-light);
+            transition: background 0.15s;
         }
-
-        .tool-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--gold);
-            transform: translateY(-2px);
+        .tool-entry:hover {
+            background: var(--bg-alt);
+            margin: 0 -16px;
+            padding: 20px 16px;
+            border-radius: var(--radius);
         }
-
-        .tool-badge {
-            display: inline-block;
-            background: rgba(212, 168, 67, 0.15);
-            color: var(--gold);
-            padding: 4px 12px;
-            border-radius: 20px;
+        .tool-entry h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+        .tool-entry:hover h3 {
+            color: var(--accent);
+        }
+        .tool-entry p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .tool-category {
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            margin-top: 40px;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
         }
-
-        .tool-card h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            line-height: 1.35;
-            margin-bottom: 10px;
-            color: var(--text);
-            transition: color 0.2s;
+        .tool-category:first-child {
+            margin-top: 0;
         }
-
-        .tool-card:hover h2 {
-            color: var(--gold);
-        }
-
-        .tool-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.55;
-            margin-bottom: 16px;
-        }
-
-        .use-link {
-            color: var(--gold);
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: gap 0.2s;
-        }
-
-        .tool-card:hover .use-link {
-            gap: 8px;
-            color: var(--gold-hover);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px 96px;
-            text-align: center;
-        }
-
-        .cta-box {
-            background: var(--bg-card);
-            border: 1px solid var(--gold);
-            border-radius: var(--radius);
-            padding: 48px 32px;
-        }
-
-        .cta-box h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-        }
-
-        .cta-box p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 24px;
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--gold);
-            color: #0a0a0a;
-            padding: 14px 28px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.2s;
-        }
-
-        .cta-button:hover {
-            background: var(--gold-hover);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 40px 24px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile */
-        @media (max-width: 600px) {
-            .hero {
-                padding: 56px 20px 36px;
-            }
-
-            .tools-grid {
-                padding: 0 16px 36px;
-            }
-
-            .tool-card {
-                padding: 24px;
-            }
-
-            .tool-card h2 {
-                font-size: 1.1rem;
-            }
-
-            .nav-inner {
-                padding: 0 16px;
-            }
-
-            .cta-section {
-                padding: 0 16px 64px;
-            }
-
-            .cta-box {
-                padding: 36px 24px;
-            }
+        .tool-category--orange {
+            color: var(--orange);
+            border-bottom-color: var(--orange);
         }
     </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977053494"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17977053494');
-</script>
 </head>
 <body>
-
-    <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; padding: 0 24px;">
-            <a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: var(--gold); text-decoration: none; letter-spacing: -0.02em;">Landolio</a>
-            <nav style="display: flex; gap: 24px;">
-                <a href="/tools/" style="color: #888; text-decoration: none; font-weight: 500;">Free Tools</a>
-                <a href="/blog/" style="color: #888; text-decoration: none; font-weight: 500;">Blog</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <h1><span>Free Tools</span> for Freelancers</h1>
-        <p>Practical tools to help you get paid on time — no signup, no fees, no catch. Just open and use.</p>
-    </section>
+    <main>
+        <section class="section">
+            <div class="container--narrow">
+                <h1 style="margin-bottom: 8px;">Free Tools</h1>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px;">Calculators and generators for UK freelancers. No signup, no fees.</p>
 
-    <div class="tools-grid">
+                <div class="tools-list">
 
-        <a href="/tools/mtd-penalty-calculator.html" class="tool-card">
-            <span class="tool-badge" style="background: rgba(231, 76, 60, 0.15); color: #e74c3c;">⚠️ April 2026</span>
-            <h2>MTD Penalty Calculator</h2>
-            <p>Calculate Making Tax Digital late submission penalties. See what missed quarterly deadlines cost you + how to avoid HMRC fines.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
+                    <p class="tool-category tool-category--orange">Making Tax Digital</p>
 
-        <a href="/tools/mtd-readiness-checker.html" class="tool-card">
-            <span class="tool-badge" style="background: rgba(231, 76, 60, 0.15); color: #e74c3c;">⚠️ April 2026</span>
-            <h2>MTD Readiness Checker</h2>
-            <p>Find out if Making Tax Digital applies to you, which deadline you have, and what software you need. Takes 2 minutes.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
+                    <a href="/tools/mtd-readiness-checker.html" class="tool-entry">
+                        <h3>MTD Readiness Checker</h3>
+                        <p>Find out if MTD applies to you, your deadline, and what software you need. 2 minutes.</p>
+                    </a>
+                    <a href="/tools/mtd-penalty-calculator.html" class="tool-entry">
+                        <h3>MTD Penalty Calculator</h3>
+                        <p>Calculate late submission penalties under MTD's new points-based system.</p>
+                    </a>
+                    <a href="/tools/mtd-cost-calculator.html" class="tool-entry">
+                        <h3>MTD Cost Calculator</h3>
+                        <p>Estimate your annual MTD compliance costs: software, time, and accountant fees.</p>
+                    </a>
 
-        <a href="/tools/mtd-cost-calculator.html" class="tool-card">
-            <span class="tool-badge" style="background: rgba(231, 76, 60, 0.15); color: #e74c3c;">⚠️ April 2026</span>
-            <h2>MTD Cost Calculator</h2>
-            <p>Calculate your total annual Making Tax Digital compliance costs — software, time, and accountant fees. See if DIY or outsourcing makes sense.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
+                    <p class="tool-category">Invoicing</p>
 
-        <a href="/tools/late-payment-interest-calculator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Late Payment Interest Calculator</h2>
-            <p>Calculate exactly how much statutory interest and compensation you're owed under UK law.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
+                    <a href="/tools/invoice-generator.html" class="tool-entry">
+                        <h3>Invoice Generator</h3>
+                        <p>Create a professional invoice, preview it, and save as PDF. No account needed.</p>
+                    </a>
+                    <a href="/tools/statement-generator.html" class="tool-entry">
+                        <h3>Statement of Account Generator</h3>
+                        <p>Generate a printable statement showing all outstanding invoices for a client.</p>
+                    </a>
+                    <a href="/tools/payment-reminder-generator.html" class="tool-entry">
+                        <h3>Payment Reminder Email Generator</h3>
+                        <p>Generate chase emails for overdue invoices. Friendly, firm, or final notice.</p>
+                    </a>
+                    <a href="/tools/late-payment-interest-calculator.html" class="tool-entry">
+                        <h3>Late Payment Interest Calculator</h3>
+                        <p>Calculate statutory interest and compensation owed under UK law.</p>
+                    </a>
 
-        <a href="/tools/invoice-generator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Free Invoice Generator</h2>
-            <p>Create professional invoices in seconds. Fill in your details, preview, and print or save as PDF.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
+                    <p class="tool-category">Tax &amp; Money</p>
 
-        <a href="/tools/payment-terms-generator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Payment Terms Generator</h2>
-            <p>Get recommended payment terms and copy-paste contract clauses tailored to your industry, project size, and risk tolerance.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
+                    <a href="/tools/self-employed-tax-calculator.html" class="tool-entry">
+                        <h3>Self-Employed Tax Calculator 2025/26</h3>
+                        <p>Income Tax, National Insurance, student loan, and take-home pay breakdown.</p>
+                    </a>
+                    <a href="/tools/freelance-tax-calculator.html" class="tool-entry">
+                        <h3>Freelance Tax Calculator</h3>
+                        <p>Estimate tax, NI, and take-home with visual breakdown and payment deadlines.</p>
+                    </a>
+                    <a href="/tools/day-rate-calculator.html" class="tool-entry">
+                        <h3>Day Rate Calculator</h3>
+                        <p>Calculate your ideal day rate from target salary, expenses, and tax.</p>
+                    </a>
+                    <a href="/tools/profit-margin-calculator.html" class="tool-entry">
+                        <h3>Profit Margin Calculator</h3>
+                        <p>See what you actually take home from every pound invoiced.</p>
+                    </a>
+                    <a href="/tools/vat-threshold-calculator.html" class="tool-entry">
+                        <h3>VAT Threshold Calculator</h3>
+                        <p>Check if you need to register for VAT based on rolling 12-month turnover.</p>
+                    </a>
+                    <a href="/tools/tax-year-end-planner.html" class="tool-entry">
+                        <h3>Tax Year-End Planner</h3>
+                        <p>Plan your tax year-end tasks with deadlines and action items.</p>
+                    </a>
 
-        <a href="/tools/statement-generator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Statement of Account Generator</h2>
-            <p>Enter multiple invoices for a client and generate a professional printable statement of account showing all outstanding amounts and totals.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
+                    <p class="tool-category">Contracts</p>
 
-        <a href="/tools/payment-reminder-generator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Payment Reminder Email Generator</h2>
-            <p>Generate professional chase emails for overdue invoices. Choose friendly, firm, or final notice tone — customise and copy in seconds.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
-
-        <a href="/tools/day-rate-calculator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Freelance Day Rate Calculator</h2>
-            <p>Calculate your ideal freelance day rate based on your target salary, expenses, tax, and pension. Includes UK tax breakdown and employed vs freelance comparison.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
-
-        <a href="/tools/freelance-tax-calculator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Freelance Tax Calculator UK 2025/26</h2>
-            <p>Estimate your Income Tax, Class 2 &amp; 4 National Insurance, student loan repayments, and take-home pay. Visual breakdown with payment deadlines and VAT estimates.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
-
-        <a href="/tools/profit-margin-calculator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Freelance Profit Margin Calculator</h2>
-            <p>See exactly what you take home from every pound you invoice — after expenses, Income Tax, National Insurance, and pension. Visual breakdown with margin rating.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
-
-        <a href="/tools/vat-threshold-calculator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>VAT Threshold Calculator UK</h2>
-            <p>Check if you need to register for VAT based on your turnover. Includes rolling 12-month tracker, voluntary registration analysis, and Flat Rate Scheme comparison.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
-
-        <a href="/tools/contract-generator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Freelance Contract Generator</h2>
-            <p>Build a professional, UK-compliant freelance contract in minutes. Covers scope, payment, IP rights, liability, termination, and IR35-friendly clauses.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
-
-        <a href="/tools/self-employed-tax-calculator.html" class="tool-card">
-            <span class="tool-badge">Free Tool</span>
-            <h2>Self-Employed Tax Calculator 2025/26</h2>
-            <p>Calculate your Income Tax, National Insurance, student loan repayments, and take-home pay. Full breakdown with monthly figures and tax-saving tips.</p>
-            <span class="use-link">Use Free →</span>
-        </a>
-
-    </div>
-
-    <div class="cta-section">
-        <div class="cta-box">
-            <h2>Want Automated Invoice Chasing?</h2>
-            <p>Stop manually following up on late payments. Landolio's invoice automator sends reminders on your schedule — so you get paid without the awkward emails.</p>
-            <a href="https://app.landolio.com/signup" class="cta-button">Start Free — No Card Required →</a>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container" style="max-width: 900px; margin: 0 auto;">
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px;">
-                <a href="/" style="color: var(--gold); text-decoration: none;">Home</a>
-                <a href="/tools/" style="color: var(--gold); text-decoration: none;">Free Tools</a>
-                <a href="/blog/" style="color: var(--gold); text-decoration: none;">Blog</a>
-                <a href="/products/getting-paid-toolkit.html" style="color: var(--gold); text-decoration: none;">Getting-Paid Toolkit</a>
-                <a href="/free-course.html" style="color: var(--gold); text-decoration: none;">Free Course</a>
+                    <a href="/tools/contract-generator.html" class="tool-entry">
+                        <h3>Freelance Contract Generator</h3>
+                        <p>Build a UK-compliant freelance contract covering scope, payment, IP, and IR35.</p>
+                    </a>
+                    <a href="/tools/payment-terms-generator.html" class="tool-entry">
+                        <h3>Payment Terms Generator</h3>
+                        <p>Get recommended payment terms and contract clauses for your situation.</p>
+                    </a>
+                </div>
             </div>
-            <p>© 2026 Landolio. Built by Midas 👑</p>
-            <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
         </div>
     </footer>
-
-<script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})()</script>
 </body>
 </html>

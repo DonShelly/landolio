@@ -104,19 +104,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/style.css">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #0a0a0a;
-    --dark: #1A1A1A;
-    --gold: #D4AF37;
-    --gold-dim: rgba(212, 175, 55, 0.15);
-    --gold-glow: rgba(212, 175, 55, 0.3);
-    --white: #FAFAFA;
-    --gray: #888;
+    --bg: #ffffff;
+    --dark: #f7f8fa;
+    --gold: #2563eb;
+    --gold-dim: rgba(37, 99, 235, 0.1);
+    --gold-glow: rgba(37, 99, 235, 0.2);
+    --white: #1a1a2e;
+    --gray: #64748b;
     --gray-light: #aaa;
-    --border: rgba(212, 175, 55, 0.2);
+    --border: rgba(37, 99, 235, 0.2);
     --radius: 12px;
     --max-width: 800px;
     --green: #22c55e;
@@ -132,7 +133,7 @@
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
-    color: var(--white);
+    color: var(--text, #1a1a2e);
     line-height: 1.7;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
@@ -161,19 +162,19 @@
   .logo {
     font-size: 1.4rem;
     font-weight: 800;
-    color: var(--gold);
+    color: #2563eb;
     text-decoration: none;
     letter-spacing: -0.5px;
   }
   nav { display: flex; gap: 28px; }
   nav a {
-    color: var(--gray);
+    color: #64748b;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
   }
-  nav a:hover { color: var(--white); }
+  nav a:hover { color: var(--text, #1a1a2e); }
 
   /* === MAIN === */
   main {
@@ -190,7 +191,7 @@
   .hero-badge {
     display: inline-block;
     background: var(--gold-dim);
-    color: var(--gold);
+    color: #2563eb;
     font-size: 0.78rem;
     font-weight: 600;
     padding: 6px 16px;
@@ -207,7 +208,7 @@
     margin-bottom: 16px;
     letter-spacing: -1px;
   }
-  .hero h1 .gold { color: var(--gold); }
+  .hero h1 .gold { color: #2563eb; }
   .hero p {
     color: var(--gray-light);
     font-size: 1.05rem;
@@ -266,7 +267,7 @@
     font-weight: 400;
     text-transform: none;
     letter-spacing: 0;
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.78rem;
   }
 
@@ -277,7 +278,7 @@
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 8px;
     padding: 12px 14px;
-    color: var(--white);
+    color: var(--text, #1a1a2e);
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -287,7 +288,7 @@
   }
   input:focus, select:focus {
     outline: none;
-    border-color: var(--gold);
+    border-color: #2563eb;
     box-shadow: 0 0 0 3px var(--gold-dim);
   }
 
@@ -298,7 +299,7 @@
   }
 
   .hint-text {
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.82rem;
     margin-top: -8px;
     margin-bottom: 8px;
@@ -308,7 +309,7 @@
   .gen-btn {
     display: block;
     width: 100%;
-    background: linear-gradient(135deg, var(--gold), #c9a030);
+    background: #2563eb;
     color: var(--bg);
     border: none;
     border-radius: 8px;
@@ -323,7 +324,7 @@
   }
   .gen-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
   }
   .gen-btn:active { transform: translateY(0); }
 
@@ -357,7 +358,7 @@
   .summary-card .label {
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--gray);
+    color: #64748b;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 8px;
@@ -367,11 +368,11 @@
     font-weight: 800;
     letter-spacing: -0.5px;
   }
-  .summary-card .value.gold { color: var(--gold); }
+  .summary-card .value.gold { color: #2563eb; }
   .summary-card .value.green { color: var(--green); }
   .summary-card .sub {
     font-size: 0.72rem;
-    color: var(--gray);
+    color: #64748b;
     margin-top: 4px;
   }
 
@@ -433,14 +434,14 @@
     padding-top: 14px;
   }
   .breakdown-table .row-total .row-label {
-    color: var(--white);
+    color: var(--text, #1a1a2e);
   }
   .breakdown-table .row-total .row-value {
-    color: var(--gold);
+    color: #2563eb;
   }
   .breakdown-table .positive { color: var(--green); }
   .breakdown-table .negative { color: var(--red); }
-  .breakdown-table .gold-text { color: var(--gold); }
+  .breakdown-table .gold-text { color: #2563eb; }
   .breakdown-table .indent { padding-left: 18px; }
 
   /* === VISUAL BAR === */
@@ -464,10 +465,10 @@
     transition: width 0.5s ease;
   }
   .bar-segment.take-home { background: var(--green); }
-  .bar-segment.tax { background: var(--gold); }
+  .bar-segment.tax { background: #2563eb; }
   .bar-segment.costs { background: var(--red); opacity: 0.8; }
   .bar-segment.pension { background: var(--blue); }
-  .bar-segment.profit { background: #8b5cf6; }
+  .bar-segment.profit { background: #2563eb; }
 
   .bar-legend {
     display: flex;
@@ -490,10 +491,10 @@
     display: inline-block;
   }
   .legend-dot.take-home { background: var(--green); }
-  .legend-dot.tax { background: var(--gold); }
+  .legend-dot.tax { background: #2563eb; }
   .legend-dot.costs { background: var(--red); opacity: 0.8; }
   .legend-dot.pension { background: var(--blue); }
-  .legend-dot.profit { background: #8b5cf6; }
+  .legend-dot.profit { background: #2563eb; }
 
   /* === COMPARISON === */
   .comparison-card {
@@ -523,7 +524,7 @@
     gap: 8px;
   }
   .comparison-card .subtitle {
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.85rem;
     margin-bottom: 24px;
   }
@@ -542,8 +543,8 @@
     transition: border-color 0.2s;
   }
   .comparison-col.freelance {
-    border-color: var(--gold);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+    border-color: #2563eb;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
   }
   .comparison-col .col-label {
     font-size: 0.72rem;
@@ -561,7 +562,7 @@
   }
   .comparison-col.freelance .col-label {
     background: var(--gold-dim);
-    color: var(--gold);
+    color: #2563eb;
   }
   .comparison-col .main-value {
     font-size: 1.5rem;
@@ -570,10 +571,10 @@
     margin-bottom: 4px;
   }
   .comparison-col.employed .main-value { color: var(--blue); }
-  .comparison-col.freelance .main-value { color: var(--gold); }
+  .comparison-col.freelance .main-value { color: #2563eb; }
   .comparison-col .main-sub {
     font-size: 0.78rem;
-    color: var(--gray);
+    color: #64748b;
     margin-bottom: 16px;
   }
   .comp-detail {
@@ -591,7 +592,7 @@
   .comp-detail .detail-row:last-child { border-bottom: none; }
   .comp-detail .detail-val {
     font-weight: 600;
-    color: var(--white);
+    color: var(--text, #1a1a2e);
     font-variant-numeric: tabular-nums;
   }
 
@@ -623,7 +624,7 @@
     gap: 8px;
   }
   .tax-card .subtitle {
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.85rem;
     margin-bottom: 20px;
   }
@@ -644,7 +645,7 @@
   .tax-highlight .th-label {
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--gray);
+    color: #64748b;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 6px;
@@ -709,7 +710,7 @@
     font-size: 1.05rem;
     font-weight: 700;
     margin: 24px 0 12px;
-    color: var(--white);
+    color: var(--text, #1a1a2e);
   }
   .seo-content ul {
     color: var(--gray-light);
@@ -719,7 +720,7 @@
     margin-bottom: 16px;
   }
   .seo-content a {
-    color: var(--gold);
+    color: #2563eb;
     text-decoration: none;
   }
   .seo-content a:hover { text-decoration: underline; }
@@ -744,14 +745,14 @@
   }
   .related-links li { margin-bottom: 10px; }
   .related-links a {
-    color: var(--gold);
+    color: #2563eb;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
   }
   .related-links a:hover { text-decoration: underline; }
   .related-links .link-desc {
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.82rem;
     margin-top: 2px;
   }
@@ -774,10 +775,10 @@
     transition: color 0.2s;
     gap: 16px;
   }
-  .faq-q:hover { color: var(--gold); }
+  .faq-q:hover { color: #2563eb; }
   .faq-q .toggle {
     font-size: 1.3rem;
-    color: var(--gold);
+    color: #2563eb;
     transition: transform 0.3s;
     flex-shrink: 0;
   }
@@ -792,7 +793,7 @@
   }
   .faq-item.open .toggle { transform: rotate(45deg); }
   .faq-a p {
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.9rem;
     line-height: 1.7;
   }
@@ -821,7 +822,7 @@
   }
   .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, var(--gold), #c9a030);
+    background: #2563eb;
     color: var(--bg);
     padding: 14px 28px;
     font-size: 0.95rem;
@@ -832,10 +833,10 @@
   }
   .cta-button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
   }
   .cta-price {
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.82rem;
     margin-top: 12px;
   }
@@ -845,10 +846,10 @@
     border-top: 1px solid rgba(255,255,255,0.06);
     padding: 40px 24px;
     text-align: center;
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.85rem;
   }
-  footer a { color: var(--gold); text-decoration: none; }
+  footer a { color: #2563eb; text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
   /* === MOBILE === */
@@ -875,6 +876,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
 <header>
   <div class="header-inner">
@@ -921,7 +932,7 @@
       </div>
       <div class="form-group">
         <label>Effective Billable Days</label>
-        <input type="text" id="effectiveDaysDisplay" value="190" readonly style="background: rgba(212,175,55,0.08); border-color: var(--border); color: var(--gold); font-weight: 700; cursor: default;">
+        <input type="text" id="effectiveDaysDisplay" value="190" readonly style="background: rgba(37,99,235,0.08); border-color: var(--border); color: #2563eb; font-weight: 700; cursor: default;">
       </div>
     </div>
     <p class="hint-text">💡 <span id="effectiveHint">190 billable days = 220 working days minus 25 holidays and 5 sick days.</span></p>
@@ -1130,7 +1141,7 @@
       <a href="/products/getting-paid-toolkit.html">Getting-Paid Toolkit</a>
       <a href="/free-course.html">Free Course</a>
     </div>
-    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p>© 2026 Landolio. © 2026 Landolio</p>
     <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
   </div>
 </footer>
@@ -1426,5 +1437,13 @@
 </script>
 
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -65,39 +65,40 @@
       ]
     }
     </script>
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --gold: #D4AF37; --gold-dark: #B8962E; --black: #0A0A0A; --dark: #1A1A1A; --darker: #141414; --gray: #888; --light-gray: #ccc; --white: #FAFAFA; --green: #22C55E; --red: #EF4444; --blue: #3B82F6; }
-        body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); min-height: 100vh; }
-        header { padding: 20px 0; border-bottom: 1px solid rgba(212,175,55,0.2); }
+        :root { --gold: #2563eb; --gold-dark: #1d4ed8; --black: #ffffff; --dark: #f7f8fa; --darker: #ffffff; --gray: #64748b; --light-gray: #ccc; --white: #1a1a2e; --green: #22C55E; --red: #EF4444; --blue: #3B82F6; }
+        body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--text, #1a1a2e); min-height: 100vh; }
+        header { padding: 20px 0; border-bottom: 1px solid #e2e8f0; }
         .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #2563eb; text-decoration: none; }
         nav { display: flex; gap: 20px; }
-        nav a { color: var(--gray); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
-        nav a:hover { color: var(--gold); }
+        nav a { color: #64748b; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: #2563eb; }
         
         .hero { text-align: center; padding: 48px 0 32px; }
         .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
-        .hero h1 span { color: var(--gold); }
-        .hero p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-        .tax-year-badge { display: inline-block; background: rgba(212,175,55,0.15); color: var(--gold); padding: 4px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+        .hero h1 span { color: #2563eb; }
+        .hero p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .tax-year-badge { display: inline-block; background: rgba(37,99,235,0.15); color: #2563eb; padding: 4px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
         
-        .calculator { background: var(--dark); border: 1px solid rgba(212,175,55,0.2); border-radius: 16px; padding: 32px; margin: 24px 0; }
+        .calculator { background: var(--dark); border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px; margin: 24px 0; }
         .input-group { margin-bottom: 24px; }
         .input-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.95rem; }
-        .input-group .hint { color: var(--gray); font-size: 0.8rem; margin-bottom: 8px; }
+        .input-group .hint { color: #64748b; font-size: 0.8rem; margin-bottom: 8px; }
         .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         @media (max-width: 600px) { .input-row { grid-template-columns: 1fr; } }
-        input[type="number"], select { width: 100%; padding: 14px 16px; background: var(--darker); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: var(--white); font-size: 1.05rem; font-family: inherit; }
-        input:focus, select:focus { outline: none; border-color: var(--gold); }
+        input[type="number"], select { width: 100%; padding: 14px 16px; background: var(--darker); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: var(--text, #1a1a2e); font-size: 1.05rem; font-family: inherit; }
+        input:focus, select:focus { outline: none; border-color: #2563eb; }
         input::placeholder { color: #555; }
         
         .checkbox-group { display: flex; align-items: center; gap: 10px; margin-top: 8px; cursor: pointer; }
-        .checkbox-group input { width: 18px; height: 18px; accent-color: var(--gold); }
+        .checkbox-group input { width: 18px; height: 18px; accent-color: #2563eb; }
         .checkbox-group label { font-size: 0.9rem; color: var(--light-gray); cursor: pointer; }
         
-        .btn { display: block; width: 100%; padding: 16px; background: var(--gold); color: var(--black); font-size: 1.1rem; font-weight: 700; border: none; border-radius: 10px; cursor: pointer; margin-top: 8px; }
+        .btn { display: block; width: 100%; padding: 16px; background: #2563eb; color: var(--black); font-size: 1.1rem; font-weight: 700; border: none; border-radius: 10px; cursor: pointer; margin-top: 8px; }
         .btn:hover { background: var(--gold-dark); }
         
         .results { display: none; margin-top: 32px; }
@@ -105,25 +106,25 @@
         
         .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
         .summary-card { background: var(--darker); border-radius: 12px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
-        .summary-card .label { color: var(--gray); font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .summary-card .label { color: #64748b; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
         .summary-card .value { font-size: 1.6rem; font-weight: 800; }
         .summary-card .value.green { color: var(--green); }
         .summary-card .value.red { color: var(--red); }
         .summary-card .value.blue { color: var(--blue); }
-        .summary-card .value.gold { color: var(--gold); }
-        .summary-card .sub { color: var(--gray); font-size: 0.8rem; margin-top: 4px; }
+        .summary-card .value.gold { color: #2563eb; }
+        .summary-card .sub { color: #64748b; font-size: 0.8rem; margin-top: 4px; }
         
         .breakdown { background: var(--darker); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
-        .breakdown h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--gold); }
+        .breakdown h3 { font-size: 1.1rem; margin-bottom: 16px; color: #2563eb; }
         .breakdown-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
         .breakdown-row:last-child { border-bottom: none; }
         .breakdown-row .label { color: var(--light-gray); }
         .breakdown-row .amount { font-weight: 600; }
         .breakdown-row.total { border-top: 2px solid var(--gold); margin-top: 8px; padding-top: 12px; font-weight: 700; }
-        .breakdown-row.total .label { color: var(--white); }
+        .breakdown-row.total .label { color: var(--text, #1a1a2e); }
         
         .bar-chart { margin: 24px 0; }
-        .bar-chart h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--gold); }
+        .bar-chart h3 { font-size: 1.1rem; margin-bottom: 16px; color: #2563eb; }
         .bar { display: flex; height: 40px; border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
         .bar-segment { display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: var(--black); min-width: 30px; transition: width 0.5s ease; }
         .bar-legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
@@ -131,7 +132,7 @@
         .legend-dot { width: 12px; height: 12px; border-radius: 3px; }
         
         .monthly { background: var(--darker); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
-        .monthly h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--gold); }
+        .monthly h3 { font-size: 1.1rem; margin-bottom: 16px; color: #2563eb; }
         .monthly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         @media (max-width: 500px) { .monthly-grid { grid-template-columns: 1fr; } }
         .monthly-item { display: flex; justify-content: space-between; padding: 8px 0; }
@@ -139,30 +140,30 @@
         .monthly-item .value { font-weight: 600; font-size: 0.9rem; }
         
         .tips { background: var(--darker); border-radius: 12px; padding: 24px; margin: 24px 0; }
-        .tips h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--gold); }
+        .tips h3 { font-size: 1.1rem; margin-bottom: 16px; color: #2563eb; }
         .tip { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .tip:last-child { border-bottom: none; }
-        .tip strong { color: var(--gold); }
+        .tip strong { color: #2563eb; }
         .tip p { color: var(--light-gray); font-size: 0.9rem; line-height: 1.5; margin-top: 4px; }
         
         .faq { margin: 48px 0; }
         .faq h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
         .faq-item { background: var(--dark); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; cursor: pointer; border: 1px solid rgba(255,255,255,0.05); }
-        .faq-item:hover { border-color: rgba(212,175,55,0.3); }
+        .faq-item:hover { border-color: rgba(37,99,235,0.3); }
         .faq-q { font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
         .faq-a { color: var(--light-gray); font-size: 0.9rem; line-height: 1.6; margin-top: 12px; display: none; }
         .faq-item.open .faq-a { display: block; }
         .faq-item.open .faq-arrow { transform: rotate(180deg); }
-        .faq-arrow { transition: transform 0.2s; color: var(--gold); }
+        .faq-arrow { transition: transform 0.2s; color: #2563eb; }
         
-        .cta-box { text-align: center; padding: 40px 24px; background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(212,175,55,0.05)); border: 1px solid rgba(212,175,55,0.2); border-radius: 16px; margin: 32px 0; }
+        .cta-box { text-align: center; padding: 40px 24px; background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(37,99,235,0.05)); border: 1px solid #e2e8f0; border-radius: 16px; margin: 32px 0; }
         .cta-box h3 { font-size: 1.3rem; margin-bottom: 8px; }
-        .cta-box p { color: var(--gray); margin-bottom: 20px; }
-        .cta-btn { display: inline-block; padding: 14px 32px; background: var(--gold); color: var(--black); font-weight: 700; text-decoration: none; border-radius: 8px; }
+        .cta-box p { color: #64748b; margin-bottom: 20px; }
+        .cta-btn { display: inline-block; padding: 14px 32px; background: #2563eb; color: var(--black); font-weight: 700; text-decoration: none; border-radius: 8px; }
         .cta-btn:hover { background: var(--gold-dark); }
         
-        footer { padding: 48px 0; border-top: 1px solid rgba(212,175,55,0.1); text-align: center; color: var(--gray); font-size: 0.875rem; }
-        footer a { color: var(--gold); text-decoration: none; }
+        footer { padding: 48px 0; border-top: 1px solid rgba(37,99,235,0.1); text-align: center; color: #64748b; font-size: 0.875rem; }
+        footer a { color: #2563eb; text-decoration: none; }
         .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 16px; }
     </style>
 <!-- Google tag (gtag.js) -->
@@ -175,6 +176,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
     <header>
         <div class="container header-inner">
             <a href="/" class="logo">Landolio</a>
@@ -500,5 +511,13 @@
     });
     </script>
     <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

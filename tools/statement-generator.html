@@ -104,19 +104,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/style.css">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #0a0a0a;
-    --dark: #1A1A1A;
-    --gold: #D4AF37;
-    --gold-dim: rgba(212, 175, 55, 0.15);
-    --gold-glow: rgba(212, 175, 55, 0.3);
-    --white: #FAFAFA;
-    --gray: #888;
+    --bg: #ffffff;
+    --dark: #f7f8fa;
+    --gold: #2563eb;
+    --gold-dim: rgba(37, 99, 235, 0.1);
+    --gold-glow: rgba(37, 99, 235, 0.2);
+    --white: #1a1a2e;
+    --gray: #64748b;
     --gray-light: #aaa;
-    --border: rgba(212, 175, 55, 0.2);
+    --border: rgba(37, 99, 235, 0.2);
     --radius: 12px;
     --max-width: 900px;
     --red: #e74c3c;
@@ -129,7 +130,7 @@
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
-    color: var(--white);
+    color: var(--text, #1a1a2e);
     line-height: 1.7;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
@@ -158,19 +159,19 @@
   .logo {
     font-size: 1.4rem;
     font-weight: 800;
-    color: var(--gold);
+    color: #2563eb;
     text-decoration: none;
     letter-spacing: -0.5px;
   }
   nav { display: flex; gap: 28px; }
   nav a {
-    color: var(--gray);
+    color: #64748b;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
   }
-  nav a:hover { color: var(--white); }
+  nav a:hover { color: var(--text, #1a1a2e); }
 
   /* === MAIN === */
   main {
@@ -187,7 +188,7 @@
   .hero-badge {
     display: inline-block;
     background: var(--gold-dim);
-    color: var(--gold);
+    color: #2563eb;
     font-size: 0.78rem;
     font-weight: 600;
     padding: 6px 16px;
@@ -204,7 +205,7 @@
     margin-bottom: 16px;
     letter-spacing: -1px;
   }
-  .hero h1 .gold { color: var(--gold); }
+  .hero h1 .gold { color: #2563eb; }
   .hero p {
     color: var(--gray-light);
     font-size: 1.05rem;
@@ -236,7 +237,7 @@
   .section-title {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--gold);
+    color: #2563eb;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 20px;
@@ -272,7 +273,7 @@
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 8px;
     padding: 12px 14px;
-    color: var(--white);
+    color: var(--text, #1a1a2e);
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -282,7 +283,7 @@
   }
   input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: var(--gold);
+    border-color: #2563eb;
     box-shadow: 0 0 0 3px var(--gold-dim);
   }
   textarea { resize: vertical; min-height: 60px; }
@@ -296,7 +297,7 @@
     right: 14px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--gray);
+    color: #64748b;
     pointer-events: none;
     font-size: 0.9rem;
   }
@@ -314,8 +315,8 @@
     min-width: 700px;
   }
   .invoice-table th {
-    background: rgba(212, 175, 55, 0.1);
-    color: var(--gold);
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
     text-align: left;
     padding: 12px 14px;
     font-size: 0.78rem;
@@ -368,7 +369,7 @@
     align-items: center;
     gap: 6px;
     background: var(--gold-dim);
-    color: var(--gold);
+    color: #2563eb;
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 10px 20px;
@@ -379,7 +380,7 @@
     transition: all 0.2s;
   }
   .add-row-btn:hover {
-    background: rgba(212, 175, 55, 0.25);
+    background: rgba(37, 99, 235, 0.25);
   }
 
   /* Status colours */
@@ -391,7 +392,7 @@
   .calc-btn {
     display: block;
     width: 100%;
-    background: linear-gradient(135deg, var(--gold), #c9a030);
+    background: #2563eb;
     color: var(--bg);
     border: none;
     border-radius: 8px;
@@ -407,7 +408,7 @@
   }
   .calc-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
   }
   .calc-btn:active { transform: translateY(0); }
 
@@ -438,9 +439,9 @@
     border-color: rgba(255,255,255,0.2);
   }
   .copy-btn.copied {
-    background: rgba(212, 175, 55, 0.15);
-    color: var(--gold);
-    border-color: var(--gold);
+    background: rgba(37, 99, 235, 0.15);
+    color: #2563eb;
+    border-color: #2563eb;
   }
 
   /* === ERROR === */
@@ -472,7 +473,7 @@
   /* === STATEMENT PREVIEW === */
   .statement-preview {
     background: #fff;
-    color: #1a1a1a;
+    color: #f7f8fa;
     border-radius: 10px;
     padding: 48px 40px;
     font-family: 'Inter', sans-serif;
@@ -485,12 +486,12 @@
     align-items: flex-start;
     margin-bottom: 32px;
     padding-bottom: 20px;
-    border-bottom: 3px solid #D4AF37;
+    border-bottom: 3px solid #2563eb;
   }
   .stmt-from h2 {
     font-size: 1.4rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: #f7f8fa;
     margin-bottom: 4px;
   }
   .stmt-from p {
@@ -504,7 +505,7 @@
   .stmt-title h1 {
     font-size: 1.2rem;
     font-weight: 800;
-    color: #D4AF37;
+    color: #2563eb;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 4px;
@@ -532,7 +533,7 @@
   .stmt-client-block .name {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #f7f8fa;
   }
 
   .stmt-table {
@@ -541,8 +542,8 @@
     margin-bottom: 24px;
   }
   .stmt-table th {
-    background: #1a1a1a;
-    color: #fff;
+    background: #f7f8fa;
+    color: #1a1a2e;
     text-align: left;
     padding: 12px 16px;
     font-size: 0.75rem;
@@ -572,7 +573,7 @@
   }
   .stmt-summary-box {
     min-width: 280px;
-    border: 2px solid #1a1a1a;
+    border: 2px solid #f7f8fa;
     border-radius: 8px;
     overflow: hidden;
   }
@@ -585,13 +586,13 @@
   }
   .stmt-summary-row:last-child { border-bottom: none; }
   .stmt-summary-row .label { color: #666; }
-  .stmt-summary-row .value { font-weight: 600; color: #1a1a1a; }
+  .stmt-summary-row .value { font-weight: 600; color: #f7f8fa; }
   .stmt-summary-row.total {
-    background: #1a1a1a;
-    color: #fff;
+    background: #f7f8fa;
+    color: #1a1a2e;
   }
   .stmt-summary-row.total .label { color: #ccc; font-weight: 700; }
-  .stmt-summary-row.total .value { color: #D4AF37; font-size: 1.1rem; font-weight: 800; }
+  .stmt-summary-row.total .value { color: #2563eb; font-size: 1.1rem; font-weight: 800; }
 
   .stmt-footer {
     margin-top: 32px;
@@ -607,7 +608,7 @@
     padding: 16px 20px;
     background: #f8f8f8;
     border-radius: 8px;
-    border-left: 3px solid #D4AF37;
+    border-left: 3px solid #2563eb;
   }
   .stmt-notes .label {
     font-size: 0.72rem;
@@ -638,7 +639,7 @@
     font-size: 1.15rem;
     font-weight: 600;
     margin: 32px 0 12px;
-    color: var(--gold);
+    color: #2563eb;
   }
   .content-section p {
     color: var(--gray-light);
@@ -646,7 +647,7 @@
     font-size: 0.95rem;
   }
   .content-section a {
-    color: var(--gold);
+    color: #2563eb;
     text-decoration: none;
     font-weight: 500;
   }
@@ -665,7 +666,7 @@
     content: '→';
     position: absolute;
     left: 0;
-    color: var(--gold);
+    color: #2563eb;
     font-weight: 600;
   }
 
@@ -693,12 +694,12 @@
   .faq-q h3 {
     font-size: 0.92rem;
     font-weight: 600;
-    color: var(--white);
+    color: var(--text, #1a1a2e);
     margin: 0;
     flex: 1;
   }
   .faq-toggle {
-    color: var(--gold);
+    color: #2563eb;
     font-size: 1.2rem;
     transition: transform 0.3s;
     flex-shrink: 0;
@@ -722,7 +723,7 @@
 
   /* === CTA BANNER === */
   .cta-banner {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.04));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(37, 99, 235, 0.04));
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 36px;
@@ -733,7 +734,7 @@
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: var(--white);
+    color: var(--text, #1a1a2e);
   }
   .cta-banner p {
     color: var(--gray-light);
@@ -742,7 +743,7 @@
   }
   .cta-banner .btn-gold {
     display: inline-block;
-    background: linear-gradient(135deg, var(--gold), #c9a030);
+    background: #2563eb;
     color: var(--bg);
     text-decoration: none;
     padding: 14px 32px;
@@ -753,14 +754,14 @@
   }
   .cta-banner .btn-gold:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
     text-decoration: none;
   }
   .cta-link {
     display: inline-block;
     margin-top: 12px;
     font-size: 0.85rem;
-    color: var(--gold);
+    color: #2563eb;
     text-decoration: none;
   }
   .cta-link:hover { text-decoration: underline; }
@@ -770,7 +771,7 @@
   .related-links h3 {
     font-size: 1.1rem;
     margin-bottom: 16px;
-    color: var(--white);
+    color: var(--text, #1a1a2e);
   }
   .related-grid {
     display: grid;
@@ -792,18 +793,18 @@
     transform: translateX(4px);
     text-decoration: none;
   }
-  .related-grid a .arrow { color: var(--gold); font-size: 1.1rem; }
-  .related-grid a span { color: var(--white); font-size: 0.9rem; font-weight: 500; }
+  .related-grid a .arrow { color: #2563eb; font-size: 1.1rem; }
+  .related-grid a span { color: var(--text, #1a1a2e); font-size: 0.9rem; font-weight: 500; }
 
   /* === FOOTER === */
   footer {
     border-top: 1px solid var(--border);
     padding: 32px 24px;
     text-align: center;
-    color: var(--gray);
+    color: #64748b;
     font-size: 0.82rem;
   }
-  footer a { color: var(--gold); text-decoration: none; }
+  footer a { color: #2563eb; text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
   /* === RESPONSIVE === */
@@ -850,6 +851,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
 <!-- HEADER -->
 <header>
@@ -1077,7 +1088,7 @@
       <a href="/products/getting-paid-toolkit.html">Getting-Paid Toolkit</a>
       <a href="/free-course.html">Free Course</a>
     </div>
-    <p>© 2026 Landolio. Built by Midas 👑</p>
+    <p>© 2026 Landolio. © 2026 Landolio</p>
     <p style="margin-top: 8px;">Questions? <a href="mailto:hello@landolio.com">hello@landolio.com</a></p>
   </div>
 </footer>
@@ -1432,5 +1443,13 @@
 </script>
 
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

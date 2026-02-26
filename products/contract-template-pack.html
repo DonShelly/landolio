@@ -95,15 +95,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --gold: #D4AF37;
-            --gold-dark: #B8962E;
-            --gold-glow: rgba(212, 175, 55, 0.15);
-            --black: #0A0A0A;
-            --dark: #1A1A1A;
+            --gold: #2563eb;
+            --gold-dark: #1d4ed8;
+            --gold-glow: rgba(37, 99, 235, 0.15);
+            --black: #ffffff;
+            --dark: #f7f8fa;
             --dark-card: #151515;
             --gray: #888;
             --gray-light: #AAA;
@@ -115,7 +116,7 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--black);
-            color: var(--white);
+            color: var(--text, #1a1a2e);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -125,7 +126,7 @@
         /* Header */
         header {
             padding: 24px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
             position: sticky;
             top: 0;
             background: rgba(10, 10, 10, 0.95);
@@ -134,10 +135,10 @@
             z-index: 100;
         }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--gold); text-decoration: none; letter-spacing: -0.02em; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #2563eb; text-decoration: none; letter-spacing: -0.02em; }
         .nav-links { display: flex; gap: 24px; }
-        .nav-links a { color: var(--gray); text-decoration: none; font-weight: 500; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--white); }
+        .nav-links a { color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text, #1a1a2e); }
 
         /* Hero */
         .hero {
@@ -153,13 +154,13 @@
             transform: translateX(-50%);
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
             pointer-events: none;
         }
         .hero-badge {
             display: inline-block;
             background: var(--gold-glow);
-            color: var(--gold);
+            color: #2563eb;
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.8rem;
@@ -167,7 +168,7 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-bottom: 28px;
-            border: 1px solid rgba(212, 175, 55, 0.25);
+            border: 1px solid rgba(37, 99, 235, 0.25);
         }
         .hero h1 {
             font-size: clamp(2.2rem, 5vw, 3.5rem);
@@ -179,7 +180,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .hero h1 .gold { color: var(--gold); }
+        .hero h1 .gold { color: #2563eb; }
         .hero-sub {
             font-size: 1.15rem;
             color: var(--gray-light);
@@ -188,7 +189,7 @@
             line-height: 1.65;
         }
         .price-block { margin-bottom: 32px; }
-        .price-new { font-size: 2.5rem; font-weight: 800; color: var(--gold); letter-spacing: -0.02em; }
+        .price-new { font-size: 2.5rem; font-weight: 800; color: #2563eb; letter-spacing: -0.02em; }
         .cta-button {
             display: inline-block;
             background: var(--gold);
@@ -199,14 +200,14 @@
             text-decoration: none;
             border-radius: 10px;
             transition: all 0.25s;
-            box-shadow: 0 4px 24px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 4px 24px rgba(37, 99, 235, 0.25);
         }
         .cta-button:hover {
             background: var(--gold-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.35);
         }
-        .guarantee-text { margin-top: 16px; font-size: 0.85rem; color: var(--gray); }
+        .guarantee-text { margin-top: 16px; font-size: 0.85rem; color: #64748b; }
         .guarantee-text span { color: var(--green); }
 
         /* What's Inside */
@@ -215,7 +216,7 @@
             text-transform: uppercase;
             font-size: 0.8rem;
             font-weight: 600;
-            color: var(--gold);
+            color: #2563eb;
             letter-spacing: 0.1em;
             margin-bottom: 12px;
         }
@@ -232,16 +233,16 @@
         }
         .template-card {
             background: var(--dark);
-            border: 1px solid rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(37, 99, 235, 0.12);
             border-radius: 12px;
             padding: 28px;
             transition: border-color 0.3s;
         }
-        .template-card:hover { border-color: rgba(212, 175, 55, 0.4); }
+        .template-card:hover { border-color: rgba(37, 99, 235, 0.4); }
         .template-number {
             display: inline-block;
             background: var(--gold-glow);
-            color: var(--gold);
+            color: #2563eb;
             width: 36px;
             height: 36px;
             border-radius: 8px;
@@ -253,7 +254,7 @@
             margin-bottom: 16px;
         }
         .template-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
-        .template-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
+        .template-card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
         .template-card .includes {
             margin-top: 12px;
             list-style: none;
@@ -269,13 +270,13 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--gold);
+            color: #2563eb;
             font-weight: 600;
             font-size: 0.8rem;
         }
 
         /* Clauses */
-        .clauses-section { padding: 60px 0 80px; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+        .clauses-section { padding: 60px 0 80px; border-top: 1px solid rgba(37, 99, 235, 0.1); }
         .clauses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -289,10 +290,10 @@
         }
         .clause-item .icon { font-size: 1.5rem; margin-bottom: 8px; }
         .clause-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
-        .clause-item p { font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
+        .clause-item p { font-size: 0.8rem; color: #64748b; line-height: 1.5; }
 
         /* Who For */
-        .who-for { padding: 80px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+        .who-for { padding: 80px 0; border-top: 1px solid rgba(37, 99, 235, 0.1); }
         .who-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -309,20 +310,20 @@
         .who-item h4 { font-size: 0.95rem; font-weight: 600; }
 
         /* FAQ */
-        .faq { padding: 80px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+        .faq { padding: 80px 0; border-top: 1px solid rgba(37, 99, 235, 0.1); }
         .faq-list { max-width: 700px; margin: 0 auto; }
         .faq-item {
             border-bottom: 1px solid rgba(255,255,255,0.06);
             padding: 24px 0;
         }
         .faq-item h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; cursor: pointer; }
-        .faq-item p { color: var(--gray); font-size: 0.92rem; line-height: 1.7; }
+        .faq-item p { color: #64748b; font-size: 0.92rem; line-height: 1.7; }
 
         /* Final CTA */
         .final-cta {
             padding: 80px 0;
             text-align: center;
-            background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.04));
+            background: linear-gradient(180deg, transparent, rgba(37, 99, 235, 0.04));
         }
         .final-cta h2 {
             font-size: 2rem;
@@ -333,10 +334,10 @@
         .final-cta p { color: var(--gray-light); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
         /* Footer */
-        footer { padding: 48px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); text-align: center; }
+        footer { padding: 48px 0; border-top: 1px solid rgba(37, 99, 235, 0.1); text-align: center; }
         .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
-        .footer-links a { color: var(--gray); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-        .footer-links a:hover { color: var(--gold); }
+        .footer-links a { color: #64748b; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #2563eb; }
         .footer-copy { color: #555; font-size: 0.8rem; }
 
         @media (max-width: 640px) {
@@ -357,6 +358,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
     <header>
         <div class="container">
@@ -549,7 +560,7 @@
                 </div>
                 <div class="faq-item">
                     <h3>What's the difference between this and the Getting-Paid Toolkit?</h3>
-                    <p>The Contract Template Pack includes 5 complete, ready-to-sign contract templates. The <a href="/products/getting-paid-toolkit.html" style="color: var(--gold);">Getting-Paid Toolkit</a> (£19) is a broader bundle with 37 email templates, 10 contract clauses (not full contracts), a late payment escalation system, and a client onboarding kit. Want both? The Toolkit is great value.</p>
+                    <p>The Contract Template Pack includes 5 complete, ready-to-sign contract templates. The <a href="/products/getting-paid-toolkit.html" style="color: #2563eb;">Getting-Paid Toolkit</a> (£19) is a broader bundle with 37 email templates, 10 contract clauses (not full contracts), a late payment escalation system, and a client onboarding kit. Want both? The Toolkit is great value.</p>
                 </div>
             </div>
         </div>
@@ -558,13 +569,13 @@
     <!-- Final CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2>Stop Working Without <span style="color: var(--gold);">Protection</span></h2>
+            <h2>Stop Working Without <span style="color: #2563eb;">Protection</span></h2>
             <p>Every project without a contract is a risk. For less than the cost of a single billable hour, protect every project you take on.</p>
             <a href="https://buy.stripe.com/14A00j6yz1Wt6f2c9lf7i04" class="cta-button">Get the Contract Pack — £15 →</a>
             <p class="guarantee-text"><span>✓</span> 30-day money-back guarantee · Instant PDF + Markdown download</p>
 
-            <p style="margin-top: 32px; font-size: 0.9rem; color: var(--gray);">
-                Want everything? The <a href="/products/getting-paid-toolkit.html" style="color: var(--gold);">Getting-Paid Toolkit (£19)</a> includes email templates, contract clauses, and a complete onboarding system.
+            <p style="margin-top: 32px; font-size: 0.9rem; color: #64748b;">
+                Want everything? The <a href="/products/getting-paid-toolkit.html" style="color: #2563eb;">Getting-Paid Toolkit (£19)</a> includes email templates, contract clauses, and a complete onboarding system.
             </p>
         </div>
     </section>
@@ -583,5 +594,13 @@
     </footer>
 
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

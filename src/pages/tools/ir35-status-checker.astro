@@ -1,0 +1,376 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="IR35 Status Checker — Free Tool for UK Contractors | Landolio">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-4">IR35 Status Checker</h1>
+    <p class="text-xl text-gray-600 mb-8">Quick self-assessment quiz — Are you inside or outside IR35?</p>
+
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
+      <p class="text-sm text-gray-700">
+        <strong>Disclaimer:</strong> This tool provides a quick indication based on typical IR35 factors. It is not a substitute for HMRC's official CEST tool or professional IR35 advice. For high-value contracts or marginal cases, always seek professional review.
+      </p>
+    </div>
+
+    <div id="quiz-container">
+      <!-- Question 1: Substitution -->
+      <div class="question-block mb-8 p-6 bg-white rounded-lg shadow-md" data-question="1">
+        <h3 class="text-xl font-semibold mb-4">1. Right of Substitution</h3>
+        <p class="mb-4 text-gray-700">Does your contract allow you to send a substitute to do the work if you're unavailable?</p>
+        <div class="space-y-3">
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q1" value="3" class="mt-1 mr-3">
+            <span>Yes — unlimited right, no client approval needed, and I've actually sent a substitute before</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q1" value="2" class="mt-1 mr-3">
+            <span>Yes — unlimited right, no client approval needed, but I've never actually used it</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q1" value="1" class="mt-1 mr-3">
+            <span>Substitution allowed but requires client approval</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q1" value="0" class="mt-1 mr-3">
+            <span>No — I must perform the work personally</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 2: Control (Working Hours) -->
+      <div class="question-block mb-8 p-6 bg-white rounded-lg shadow-md" data-question="2">
+        <h3 class="text-xl font-semibold mb-4">2. Control Over Working Hours</h3>
+        <p class="mb-4 text-gray-700">Who decides when you work?</p>
+        <div class="space-y-3">
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q2" value="3" class="mt-1 mr-3">
+            <span>I decide my own hours (as long as I meet project deadlines)</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q2" value="2" class="mt-1 mr-3">
+            <span>Mostly flexible, but I need to attend some core hours/meetings</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q2" value="1" class="mt-1 mr-3">
+            <span>Client sets core hours, but some flexibility</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q2" value="0" class="mt-1 mr-3">
+            <span>Fixed hours (e.g., 9am-5pm, Monday-Friday)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 3: Control (Location) -->
+      <div class="question-block mb-8 p-6 bg-white rounded-lg shadow-md" data-question="3">
+        <h3 class="text-xl font-semibold mb-4">3. Control Over Working Location</h3>
+        <p class="mb-4 text-gray-700">Where do you work?</p>
+        <div class="space-y-3">
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q3" value="3" class="mt-1 mr-3">
+            <span>I work remotely from my own location</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q3" value="2" class="mt-1 mr-3">
+            <span>Mix of remote and client site (by my choice)</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q3" value="1" class="mt-1 mr-3">
+            <span>Mostly at client site but occasionally remote</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q3" value="0" class="mt-1 mr-3">
+            <span>Required to work at client's office full-time</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 4: Mutuality of Obligation -->
+      <div class="question-block mb-8 p-6 bg-white rounded-lg shadow-md" data-question="4">
+        <h3 class="text-xl font-semibold mb-4">4. Mutuality of Obligation</h3>
+        <p class="mb-4 text-gray-700">What's the nature of your engagement?</p>
+        <div class="space-y-3">
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q4" value="3" class="mt-1 mr-3">
+            <span>Fixed-term project with a clear end date (under 6 months)</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q4" value="2" class="mt-1 mr-3">
+            <span>Fixed-term project (6-12 months)</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q4" value="1" class="mt-1 mr-3">
+            <span>Long-term rolling contract (12+ months)</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q4" value="0" class="mt-1 mr-3">
+            <span>Ongoing with no end date (like a permanent job)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 5: Equipment -->
+      <div class="question-block mb-8 p-6 bg-white rounded-lg shadow-md" data-question="5">
+        <h3 class="text-xl font-semibold mb-4">5. Equipment and Tools</h3>
+        <p class="mb-4 text-gray-700">Who provides the equipment you use for work?</p>
+        <div class="space-y-3">
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q5" value="3" class="mt-1 mr-3">
+            <span>I provide all my own equipment (laptop, phone, software)</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q5" value="2" class="mt-1 mr-3">
+            <span>Mostly my own equipment, but use some client systems</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q5" value="1" class="mt-1 mr-3">
+            <span>Mix — some of mine, some provided by client</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q5" value="0" class="mt-1 mr-3">
+            <span>Client provides all equipment (laptop, phone, access cards)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 6: Financial Risk -->
+      <div class="question-block mb-8 p-6 bg-white rounded-lg shadow-md" data-question="6">
+        <h3 class="text-xl font-semibold mb-4">6. Financial Risk</h3>
+        <p class="mb-4 text-gray-700">Who bears the financial risk if something goes wrong?</p>
+        <div class="space-y-3">
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q6" value="3" class="mt-1 mr-3">
+            <span>I do — I have PI insurance and would be liable for mistakes</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q6" value="2" class="mt-1 mr-3">
+            <span>Shared — contract has some liability clauses</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q6" value="1" class="mt-1 mr-3">
+            <span>Client bears most risk</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q6" value="0" class="mt-1 mr-3">
+            <span>Client bears all risk — I get paid regardless of outcomes</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 7: Multiple Clients -->
+      <div class="question-block mb-8 p-6 bg-white rounded-lg shadow-md" data-question="7">
+        <h3 class="text-xl font-semibold mb-4">7. Multiple Clients</h3>
+        <p class="mb-4 text-gray-700">How many clients have you worked for in the past 12 months?</p>
+        <div class="space-y-3">
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q7" value="3" class="mt-1 mr-3">
+            <span>3+ clients (working for multiple simultaneously)</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q7" value="2" class="mt-1 mr-3">
+            <span>2 clients</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q7" value="1" class="mt-1 mr-3">
+            <span>1 client, but I've had others in previous years</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q7" value="0" class="mt-1 mr-3">
+            <span>1 client only (for 12+ months)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 8: Business Marketing -->
+      <div class="question-block mb-8 p-6 bg-white rounded-lg shadow-md" data-question="8">
+        <h3 class="text-xl font-semibold mb-4">8. Business Marketing</h3>
+        <p class="mb-4 text-gray-700">Do you actively market your services?</p>
+        <div class="space-y-3">
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q8" value="3" class="mt-1 mr-3">
+            <span>Yes — I have a website, LinkedIn profile, and actively network</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q8" value="2" class="mt-1 mr-3">
+            <span>Yes — LinkedIn profile and occasional networking</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q8" value="1" class="mt-1 mr-3">
+            <span>Not really — I rely on word-of-mouth</span>
+          </label>
+          <label class="flex items-start cursor-pointer">
+            <input type="radio" name="q8" value="0" class="mt-1 mr-3">
+            <span>No — I don't market myself</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <div class="text-center mb-8">
+        <button id="calculate-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition">
+          Check My IR35 Status
+        </button>
+      </div>
+
+      <!-- Results -->
+      <div id="result-container" class="hidden">
+        <div id="result-outside" class="hidden p-8 bg-green-50 border-l-4 border-green-500 rounded-lg mb-6">
+          <h2 class="text-2xl font-bold text-green-800 mb-4">✅ Likely Outside IR35</h2>
+          <p class="text-gray-700 mb-4">Based on your answers, you appear to be operating as a genuine business. You're likely <strong>outside IR35</strong>.</p>
+          <p class="text-sm text-gray-600 mb-4"><strong>Score:</strong> <span id="score-outside"></span>/24</p>
+          <div class="bg-white p-4 rounded-md mb-4">
+            <h3 class="font-semibold mb-2">What This Means:</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>You can continue to pay yourself via dividends</li>
+              <li>You can claim legitimate business expenses</li>
+              <li>You file Self Assessment as normal</li>
+              <li>No PAYE deductions at source</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-md mb-4 border border-yellow-200">
+            <h3 class="font-semibold mb-2">⚠️ Important:</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>This is a quick indication, not an official determination</li>
+              <li>Run your contract through <a href="https://www.gov.uk/guidance/check-employment-status-for-tax" class="text-blue-600 underline" target="_blank">HMRC's CEST tool</a></li>
+              <li>Keep evidence of your working practices (contracts, emails, substitutes)</li>
+              <li>For high-value contracts, get professional IR35 advice</li>
+            </ul>
+          </div>
+          <a href="/products/ir35-contract-review-toolkit" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition">
+            Download IR35 Contract Review Toolkit (£19) →
+          </a>
+        </div>
+
+        <div id="result-inside" class="hidden p-8 bg-red-50 border-l-4 border-red-500 rounded-lg mb-6">
+          <h2 class="text-2xl font-bold text-red-800 mb-4">❌ Likely Inside IR35</h2>
+          <p class="text-gray-700 mb-4">Based on your answers, your working arrangements suggest you may be a <strong>disguised employee</strong> (inside IR35).</p>
+          <p class="text-sm text-gray-600 mb-4"><strong>Score:</strong> <span id="score-inside"></span>/24</p>
+          <div class="bg-white p-4 rounded-md mb-4">
+            <h3 class="font-semibold mb-2">What This Means:</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>Your client (or agency) should operate PAYE</li>
+              <li>Tax and NI will be deducted at source</li>
+              <li>You'll lose dividend tax advantages</li>
+              <li>Your take-home pay could drop 20-30%</li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded-md mb-4">
+            <h3 class="font-semibold mb-2">What You Can Do:</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li><strong>Challenge the determination</strong> if you think it's wrong (provide evidence)</li>
+              <li><strong>Restructure the contract</strong> for future engagements (add substitution, increase autonomy)</li>
+              <li><strong>Work for multiple clients</strong> to diversify risk</li>
+              <li><strong>Move to fixed-price project work</strong> instead of day-rate contracts</li>
+              <li><strong>Get professional advice</strong> — an IR35 specialist can help</li>
+            </ul>
+          </div>
+          <a href="/blog/ir35-guide-uk-contractors-2026" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition mb-4">
+            Read Full IR35 Guide →
+          </a>
+          <a href="/products/ir35-contract-review-toolkit" class="inline-block bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition">
+            Download IR35 Contract Review Toolkit (£19) →
+          </a>
+        </div>
+
+        <div id="result-marginal" class="hidden p-8 bg-yellow-50 border-l-4 border-yellow-500 rounded-lg mb-6">
+          <h2 class="text-2xl font-bold text-yellow-800 mb-4">⚠️ Marginal — Seek Professional Advice</h2>
+          <p class="text-gray-700 mb-4">Based on your answers, your IR35 status is <strong>unclear</strong>. You're in a grey area.</p>
+          <p class="text-sm text-gray-600 mb-4"><strong>Score:</strong> <span id="score-marginal"></span>/24</p>
+          <div class="bg-white p-4 rounded-md mb-4">
+            <h3 class="font-semibold mb-2">What This Means:</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>Some factors suggest outside IR35, others suggest inside</li>
+              <li>HMRC could challenge your status</li>
+              <li>You need stronger evidence or contract changes</li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded-md mb-4">
+            <h3 class="font-semibold mb-2">What You Should Do:</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li><strong>Run HMRC's CEST tool</strong> — <a href="https://www.gov.uk/guidance/check-employment-status-for-tax" class="text-blue-600 underline" target="_blank">official gov.uk tool</a></li>
+              <li><strong>Get professional IR35 advice</strong> (£200-500 for a status review)</li>
+              <li><strong>Strengthen your position:</strong> negotiate better contract terms, add substitution rights, work remotely</li>
+              <li><strong>Keep detailed records</strong> of working practices</li>
+            </ul>
+          </div>
+          <a href="/blog/ir35-guide-uk-contractors-2026" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition mb-4">
+            Read Full IR35 Guide →
+          </a>
+          <a href="/products/ir35-contract-review-toolkit" class="inline-block bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition">
+            Download IR35 Contract Review Toolkit (£19) →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Resources -->
+    <div class="mt-12 p-6 bg-gray-50 rounded-lg">
+      <h2 class="text-2xl font-semibold mb-4">IR35 Resources</h2>
+      <ul class="space-y-3">
+        <li>
+          <a href="/blog/ir35-guide-uk-contractors-2026" class="text-blue-600 hover:underline font-semibold">
+            Complete IR35 Guide for UK Contractors 2026
+          </a>
+          <p class="text-sm text-gray-600">Everything you need to know about IR35 — inside vs outside, CEST tool, financial impact, compliance</p>
+        </li>
+        <li>
+          <a href="https://www.gov.uk/guidance/check-employment-status-for-tax" class="text-blue-600 hover:underline font-semibold" target="_blank">
+            HMRC CEST Tool (Official)
+          </a>
+          <p class="text-sm text-gray-600">HMRC's official Check Employment Status for Tax tool</p>
+        </li>
+        <li>
+          <a href="/products/ir35-contract-review-toolkit" class="text-blue-600 hover:underline font-semibold">
+            IR35 Contract Review Toolkit — £19
+          </a>
+          <p class="text-sm text-gray-600">IR35-proof contract template, substitution clauses, evidence checklist, HMRC challenge response templates</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('calculate-btn').addEventListener('click', () => {
+      let totalScore = 0;
+      let answeredAll = true;
+
+      // Calculate total score
+      for (let i = 1; i <= 8; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (!selected) {
+          answeredAll = false;
+          alert(`Please answer question ${i} before calculating.`);
+          return;
+        }
+        totalScore += parseInt(selected.value);
+      }
+
+      // Hide all results first
+      document.getElementById('result-outside').classList.add('hidden');
+      document.getElementById('result-inside').classList.add('hidden');
+      document.getElementById('result-marginal').classList.add('hidden');
+
+      // Show appropriate result
+      if (totalScore >= 18) {
+        // Outside IR35
+        document.getElementById('score-outside').textContent = totalScore;
+        document.getElementById('result-outside').classList.remove('hidden');
+      } else if (totalScore <= 10) {
+        // Inside IR35
+        document.getElementById('score-inside').textContent = totalScore;
+        document.getElementById('result-inside').classList.remove('hidden');
+      } else {
+        // Marginal (11-17)
+        document.getElementById('score-marginal').textContent = totalScore;
+        document.getElementById('result-marginal').classList.remove('hidden');
+      }
+
+      // Show result container
+      document.getElementById('result-container').classList.remove('hidden');
+
+      // Scroll to result
+      document.getElementById('result-container').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</Layout>

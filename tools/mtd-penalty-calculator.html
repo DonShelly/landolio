@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTD Quarterly Penalty Calculator 2026 | Calculate Your Risk | Landolio</title>
     <meta name="description" content="Calculate your Making Tax Digital quarterly penalty exposure. See how late submissions stack up to £200+ fines. Free calculator for UK sole traders & landlords.">
-    <link rel="stylesheet" href="../style.css">
-    <style>
+    <link rel="stylesheet" href="/style.css">
+<style>
         .calculator-container {
             max-width: 800px;
             margin: 0 auto;
@@ -25,7 +25,7 @@
             display: block;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: #1a1a1a;
+            color: #f7f8fa;
         }
         input[type="number"] {
             width: 100%;
@@ -51,7 +51,7 @@
         }
         .result-box h3 {
             margin-top: 0;
-            color: #1a1a1a;
+            color: #f7f8fa;
         }
         .penalty-breakdown {
             margin-top: 1rem;
@@ -78,7 +78,7 @@
             margin: 1.5rem 0;
         }
         .cta-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
             color: white;
             padding: 2rem;
             border-radius: 8px;
@@ -114,6 +114,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
     <header>
         <div class="container">
             <h1><a href="/">Landolio</a></h1>
@@ -249,5 +259,14 @@
         // Run on page load
         calculate();
     </script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
+<script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})()</script>
 </body>
 </html>

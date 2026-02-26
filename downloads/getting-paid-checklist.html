@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate UK Freelancer Getting-Paid Checklist — Landolio</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #2563eb;
+            --gold-dark: #1d4ed8;
+            --black: #ffffff;
+            --dark: #1A1A1A;
+            --gray: #888;
+            --white: #FAFAFA;
+            --green: #4ade80;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 48px;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+        }
+        
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            flex: 1;
+        }
+        
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px;
+            background: var(--dark);
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            border-radius: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            page-break-inside: avoid;
+        }
+        
+        .checklist-item:hover {
+            border-color: var(--gold);
+        }
+        
+        .checklist-item.checked {
+            opacity: 0.6;
+            border-color: var(--green);
+        }
+        
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all 0.2s;
+        }
+        
+        .checklist-item.checked .checkbox {
+            background: var(--green);
+            border-color: var(--green);
+        }
+        
+        .checkbox::after {
+            content: '✓';
+            color: var(--black);
+            font-weight: 700;
+            font-size: 16px;
+            display: none;
+        }
+        
+        .checklist-item.checked .checkbox::after {
+            display: block;
+        }
+        
+        .item-content {
+            flex: 1;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            color: var(--white);
+        }
+        
+        .item-description {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 48px;
+            border-top: 2px solid rgba(37, 99, 235, 0.2);
+            color: var(--gray);
+        }
+        
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(37,99,235,0.05));
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            margin: 48px 0;
+            page-break-inside: avoid;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: var(--gold-dark);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .checklist-item {
+                background: white;
+                border: 1px solid #ddd;
+            }
+            
+            .section {
+                page-break-after: always;
+            }
+            
+            .cta-box {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .item-title {
+                font-size: 1rem;
+            }
+            
+            .item-description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Landolio</div>
+            <h1>The Ultimate UK Freelancer<br>Getting-Paid Checklist</h1>
+            <p class="subtitle">A comprehensive, step-by-step checklist covering the entire payment lifecycle — from first contact to money in the bank.</p>
+        </div>
+        
+        <!-- Section 1: Before You Start Work -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">1</span>
+                <h2>Before You Start Work</h2>
+            </div>
+            
+            <div class="checklist">
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Credit check the client (if it's a company)</div>
+                        <div class="item-description">Use Companies House or a credit checking service to verify the company is active, solvent, and has no CCJs. Red flags: dissolved status, multiple late filing penalties, or adverse court judgments.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Get everything in writing</div>
+                        <div class="item-description">Never start work on a verbal agreement. Use a written contract, signed statement of work, or at minimum a detailed email confirming scope, price, timeline, and payment terms.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Set clear payment terms upfront</div>
+                        <div class="item-description">State your payment terms explicitly: when invoices are due (e.g., "Net 14 days"), accepted payment methods, and late payment interest rate (UK statutory: 8% + Bank of England base rate).</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Request a deposit for new clients</div>
+                        <div class="item-description">For first-time clients or large projects, ask for 25–50% upfront. This filters out time-wasters and protects you if they ghost mid-project.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Define scope clearly (and what's NOT included)</div>
+                        <div class="item-description">List exactly what you're delivering, how many revisions are included, and what's out of scope. Scope creep kills cash flow — protect yourself early.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Add a late payment clause to your contract</div>
+                        <div class="item-description">Include: "Late payments will incur interest at 8% + Bank of England base rate per annum, plus a £40 statutory debt recovery fee." Makes it legally enforceable.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Confirm who will approve and pay the invoice</div>
+                        <div class="item-description">Get the name and email of the person who authorises payment. Don't assume your day-to-day contact handles invoices — often they don't.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Ask about their payment cycle</div>
+                        <div class="item-description">Some companies only run invoices once a month. If you invoice the day after their cycle, you might wait 6 weeks. Ask upfront and plan accordingly.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Set project milestones with staggered payments</div>
+                        <div class="item-description">For large projects, break payments into milestones (e.g., 30% upfront, 40% at midpoint, 30% on completion). Never do all the work before getting paid anything.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Trust your gut — walk away from red flags</div>
+                        <div class="item-description">Pushy negotiation, vague scope, reluctance to sign contracts, or requests for spec work without pay? These are warning signs. Don't ignore them.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 2: During the Project -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">2</span>
+                <h2>During the Project</h2>
+            </div>
+            
+            <div class="checklist">
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Send invoices immediately upon delivery</div>
+                        <div class="item-description">Don't wait. The moment you deliver a milestone or complete the project, send the invoice. Delays = delayed payment. Strike while the value is fresh.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Make your invoice crystal clear</div>
+                        <div class="item-description">Include: invoice number, issue date, due date, payment terms, itemised breakdown, total amount, payment methods, and your VAT number (if registered). No ambiguity = faster payment.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Follow up immediately to confirm receipt</div>
+                        <div class="item-description">Send a polite "Just checking this reached you OK" email 1–2 days after sending. This confirms they received it and prompts them to queue payment.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Track payment due dates in a system</div>
+                        <div class="item-description">Use a spreadsheet, accounting software, or calendar reminder. Don't rely on memory. Know exactly when each invoice is due and set a reminder for the day after.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Send a friendly reminder 3 days before due date</div>
+                        <div class="item-description">"Just a friendly reminder that invoice #123 is due on [date]. Let me know if you need anything!" Proactive reminders prevent late payments.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Offer multiple payment methods</div>
+                        <div class="item-description">Bank transfer, PayPal, Stripe, credit card — the more options you offer, the fewer excuses they have. "We don't use that method" shouldn't block payment.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Document all scope changes with updated pricing</div>
+                        <div class="item-description">If they ask for extra work, send a written change order with the additional cost and revised timeline. Don't do free work hoping they'll "remember" later.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Keep communication professional and documented</div>
+                        <div class="item-description">Use email for all payment-related discussions. If they call, follow up with "As discussed..." confirmation email. You'll need this paper trail if things go south.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3: When Payment is Late -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">3</span>
+                <h2>When Payment is Late</h2>
+            </div>
+            
+            <div class="checklist">
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Day 1 overdue: Send a polite nudge</div>
+                        <div class="item-description">"Hi [Name], invoice #123 was due yesterday. Just checking it's in your system — let me know if you need me to resend!" Assume good intent. Mistakes happen.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Day 7 overdue: Formal but friendly chase</div>
+                        <div class="item-description">"Hi [Name], following up on invoice #123 (now 7 days overdue). Can you confirm when payment will be processed? Happy to help if there's an issue." Still polite, but firmer.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Day 14 overdue: Notify of late payment interest</div>
+                        <div class="item-description">"Invoice #123 is now 14 days overdue. As per our contract, late payment interest of [rate]% will apply from [date], plus a £40 statutory recovery fee." Make it clear there are consequences.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Day 21 overdue: Escalate to decision-maker</div>
+                        <div class="item-description">If your contact isn't responding, CC their manager, finance director, or company director. "I've tried to resolve this with [contact], but haven't received a response. Can you assist?"</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Day 30 overdue: Send a Letter Before Action</div>
+                        <div class="item-description">Formal legal notice stating: amount owed, late fees, 7-day deadline to pay, and that you'll start court proceedings if not resolved. Send via email AND recorded delivery.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Day 37: File a claim via Money Claim Online</div>
+                        <div class="item-description">If they ignore your Letter Before Action, file a claim at gov.uk/make-money-claim. Costs £25–£455 depending on amount (usually recoverable). Most businesses pay at this stage.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">If they dispute: Respond with evidence</div>
+                        <div class="item-description">Submit your contract, invoices, email trail, and proof of delivery. Courts favour freelancers with clear documentation. This is why you kept everything in writing.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">If you win: Request a County Court Judgment (CCJ)</div>
+                        <div class="item-description">A CCJ damages their credit rating for 6 years and makes it harder for them to get credit. It's public record — Google-able. Most companies will pay to avoid this.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">If they still don't pay: Enforce the judgment</div>
+                        <div class="item-description">Options: Bailiffs (£110 fee), Attachment of Earnings (if they're employed), Third Party Debt Order (freeze their bank account), or Charging Order (against property). Nuclear, but effective.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Consider selling the debt to a collection agency</div>
+                        <div class="item-description">You'll get 60–80% of the invoice value immediately, and they handle chasing. Good option if you want to move on and focus on paying clients.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Stay professional throughout (even when furious)</div>
+                        <div class="item-description">Never send angry emails, post on social media, or threaten illegal action. It damages your credibility and could be used against you in court. Be firm, not emotional.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Know when to cut your losses</div>
+                        <div class="item-description">If the debt is under £500 and enforcement will cost more than you'll recover, it might not be worth it. Learn from it, move on, and focus on clients who do pay.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4: Prevention for Next Time -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">4</span>
+                <h2>Prevention for Next Time</h2>
+            </div>
+            
+            <div class="checklist">
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Blacklist bad payers (and share warnings discreetly)</div>
+                        <div class="item-description">Keep a private list of clients who paid late or not at all. If fellow freelancers ask for references, warn them (tactfully). Protect your community.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Tighten your payment terms</div>
+                        <div class="item-description">Move from Net 30 to Net 14. Require 50% upfront for all new clients. Add an early payment discount (e.g., "2% off if paid within 7 days"). Make timely payment the path of least resistance.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Automate invoice follow-ups</div>
+                        <div class="item-description">Use tools like Landolio's Invoice Follow-Up Automator to send reminder sequences automatically. You shouldn't have to remember to chase — the system does it for you.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Build a 3-month emergency fund</div>
+                        <div class="item-description">Late payments hurt less when you have runway. Aim to save 3 months of living expenses so you're not desperate when someone pays 60 days late.</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item" onclick="toggleCheck(this)">
+                    <div class="checkbox"></div>
+                    <div class="item-content">
+                        <div class="item-title">Diversify your client base</div>
+                        <div class="item-description">Don't rely on 1–2 big clients. If one goes bust or stops paying, you're in trouble. Spread risk across 5–10 clients so no single non-payment destroys your cash flow.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="cta-box">
+            <h3>🚀 Automate Your Invoice Follow-Ups</h3>
+            <p>Stop manually chasing payments. Landolio's Invoice Follow-Up Automator sends reminder sequences automatically — so you get paid faster without lifting a finger.</p>
+            <a href="https://app.landolio.com/signup" class="cta-button">Start Free Trial →</a>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-logo">Landolio</div>
+            <p>Built by freelancers, for freelancers.</p>
+            <p style="margin-top: 12px;">Questions? <a href="mailto:hello@landolio.com" style="color: var(--gold); text-decoration: none;">hello@landolio.com</a></p>
+            <p style="margin-top: 8px;"><a href="https://landolio.com" style="color: var(--gold); text-decoration: none;">landolio.com</a></p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+            saveProgress();
+        }
+        
+        function saveProgress() {
+            const checked = Array.from(document.querySelectorAll('.checklist-item.checked'))
+                .map(item => item.querySelector('.item-title').textContent);
+            localStorage.setItem('landolio-checklist-progress', JSON.stringify(checked));
+        }
+        
+        function loadProgress() {
+            const saved = localStorage.getItem('landolio-checklist-progress');
+            if (!saved) return;
+            
+            const checked = JSON.parse(saved);
+            document.querySelectorAll('.checklist-item').forEach(item => {
+                const title = item.querySelector('.item-title').textContent;
+                if (checked.includes(title)) {
+                    item.classList.add('checked');
+                }
+            });
+        }
+        
+        // Load saved progress on page load
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free IR35 Status Checker | Landolio</title>
+    <meta name="description" content="Free IR35 status checker for UK contractors. Answer 12 questions to assess your inside/outside IR35 status based on HMRC guidance and case law.">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .tool-container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        .question-block { background: #f8f9fa; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; border-left: 4px solid #2563eb; }
+        .question-block h3 { margin-top: 0; font-size: 1.1rem; color: #1e293b; }
+        .options { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
+        .option-label { display: flex; align-items: center; padding: 0.75rem; background: white; border: 2px solid #e2e8f0; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+        .option-label:hover { border-color: #2563eb; background: #eff6ff; }
+        .option-label input[type="radio"] { margin-right: 0.75rem; }
+        .result-box { background: #f0f9ff; border: 2px solid #2563eb; border-radius: 8px; padding: 2rem; margin-top: 2rem; display: none; }
+        .result-box.inside { background: #fef2f2; border-color: #dc2626; }
+        .result-box.outside { background: #f0fdf4; border-color: #16a34a; }
+        .result-box h2 { margin-top: 0; color: #1e293b; }
+        .score { font-size: 2.5rem; font-weight: bold; margin: 1rem 0; }
+        .score.inside { color: #dc2626; }
+        .score.outside { color: #16a34a; }
+        .disclaimer { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 1rem; margin-top: 2rem; font-size: 0.9rem; }
+        .cta-box { background: #2563eb; color: white; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; text-align: center; }
+        .cta-box h3 { margin-top: 0; color: white; }
+        .cta-button { display: inline-block; background: white; color: #2563eb; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 1rem; }
+        .cta-button:hover { background: #f1f5f9; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="/" class="logo">Landolio</a>
+            <ul class="nav-links">
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/tools">Tools</a></li>
+                <li><a href="/products">Products</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tool-container">
+        <h1>IR35 Status Checker</h1>
+        <p class="subtitle">Answer 12 questions to assess whether your contract is likely inside or outside IR35</p>
+
+        <div class="disclaimer">
+            <strong>⚠️ Important:</strong> This tool provides guidance based on HMRC's CEST principles and case law, but it is NOT a substitute for professional tax advice. IR35 assessments are complex and fact-specific. For definitive status, consult an IR35 specialist.
+        </div>
+
+        <form id="ir35-form">
+            <div class="question-block">
+                <h3>1. Substitution: Can you send someone else to do the work instead of you?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="2" required>
+                        Yes, without client approval (strong outside IR35 indicator)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="1">
+                        Yes, but client must approve (neutral/weak outside)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="-2">
+                        No, must be me personally (inside IR35 indicator)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>2. Control: Who decides HOW you do the work?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="2" required>
+                        I decide the methods and approach (outside IR35)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="0">
+                        Mix — client sets goals, I choose methods (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="-2">
+                        Client dictates how I work (inside IR35)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>3. Control: Who decides WHEN you work?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="2" required>
+                        I set my own hours (outside IR35)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="0">
+                        Flexible within reason (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="-2">
+                        Client sets fixed hours/schedule (inside IR35)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>4. Control: Who decides WHERE you work?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="1" required>
+                        I work from my own location (weak outside)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="0">
+                        Client site when needed, otherwise remote (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="-1">
+                        Must be on client site full-time (weak inside)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>5. Financial Risk: Can you make a loss on this contract?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="2" required>
+                        Yes — I cover errors, rework, or project overruns (outside IR35)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="0">
+                        Limited risk (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="-1">
+                        No — paid for time regardless (inside IR35)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>6. Equipment: Who provides the main tools/equipment?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="1" required>
+                        I provide all equipment (weak outside)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="0">
+                        Mix of mine and client's (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="-1">
+                        Client provides everything (weak inside)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>7. Part and Parcel: Do you have the same rights as employees?</h3>
+                <p style="font-size: 0.9rem; color: #64748b;">(e.g., access to employee perks, annual leave, sick pay, company events)</p>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q7" value="2" required>
+                        No employee benefits at all (outside IR35)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q7" value="0">
+                        Some minor perks (e.g., parking, canteen) (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q7" value="-2">
+                        Treated like an employee (inside IR35)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>8. Exclusivity: Can you work for other clients during this contract?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q8" value="2" required>
+                        Yes, no restrictions (outside IR35)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q8" value="0">
+                        Allowed but impractical due to workload (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q8" value="-2">
+                        No, contract forbids it (inside IR35)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>9. Business on Own Account: Do you actively market your services?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q9" value="2" required>
+                        Yes — website, marketing, multiple clients (outside IR35)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q9" value="1">
+                        Some marketing presence (weak outside)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q9" value="-1">
+                        No, I just work through agencies (weak inside)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>10. Length of Engagement: How long is the contract?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q10" value="1" required>
+                        Short-term project (< 6 months) (weak outside)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q10" value="0">
+                        6-12 months (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q10" value="-1">
+                        Long-term (12+ months or rolling) (weak inside)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>11. Supervision: Are you supervised or managed day-to-day?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q11" value="2" required>
+                        No supervision — I self-manage (outside IR35)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q11" value="0">
+                        Light oversight (weekly check-ins) (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q11" value="-2">
+                        Daily supervision/reporting (inside IR35)
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>12. Mutuality of Obligation: Is there ongoing work obligation?</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="q12" value="2" required>
+                        No — fixed deliverable, no ongoing obligation (outside IR35)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q12" value="0">
+                        Rolling contract but can end easily (neutral)
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q12" value="-2">
+                        Continuous work obligation like an employee (inside IR35)
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" style="background: #2563eb; color: white; padding: 1rem 2rem; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; margin-top: 1rem;">
+                Calculate IR35 Status
+            </button>
+        </form>
+
+        <div id="result" class="result-box"></div>
+    </main>
+
+    <footer style="background: #1e293b; color: white; padding: 2rem 1rem; margin-top: 4rem; text-align: center;">
+        <p>&copy; 2026 Landolio. Built for UK freelancers and small businesses.</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+            <a href="/tools" style="color: #93c5fd;">More Free Tools</a> | 
+            <a href="/products" style="color: #93c5fd;">Digital Products</a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('ir35-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = new FormData(e.target);
+            let score = 0;
+            
+            for (let i = 1; i <= 12; i++) {
+                const value = form.get(`q${i}`);
+                if (value) score += parseInt(value);
+            }
+            
+            const resultBox = document.getElementById('result');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            let status, explanation, advice, className, product;
+            
+            if (score >= 10) {
+                status = 'Likely OUTSIDE IR35';
+                className = 'outside';
+                explanation = 'Your contract shows strong indicators of genuine self-employment. You appear to have sufficient control, substitution rights, and business independence.';
+                advice = '<strong>Next steps:</strong> Document your working practices. Keep evidence of how you operate independently (emails showing autonomy, multiple clients, marketing materials). Consider professional IR35 insurance.';
+                product = `
+                    <div class="cta-box">
+                        <h3>📋 Protect Your Status</h3>
+                        <p>Get our <strong>IR35 Contract Review Toolkit</strong> (£12) — template questions to ask clients, working practices checklist, and evidence log.</p>
+                        <a href="/products/ir35-toolkit" class="cta-button">View Toolkit →</a>
+                    </div>
+                `;
+            } else if (score >= 0) {
+                status = 'BORDERLINE (High Risk)';
+                className = 'inside';
+                explanation = 'Your contract has mixed indicators. This is the danger zone — HMRC or the client may challenge your status.';
+                advice = '<strong>Action required:</strong> You need to strengthen outside IR35 indicators OR prepare for inside IR35 treatment. Consider renegotiating contract terms (add substitution clause, remove supervision, work from own location). Seek specialist advice URGENTLY.';
+                product = `
+                    <div class="cta-box">
+                        <h3>⚠️ Borderline? Get Help</h3>
+                        <p>Our <strong>IR35 Contract Negotiation Pack</strong> (£19) includes email templates to renegotiate terms, alternative clause wording, and risk mitigation strategies.</p>
+                        <a href="/products/ir35-negotiation" class="cta-button">View Pack →</a>
+                    </div>
+                `;
+            } else {
+                status = 'Likely INSIDE IR35';
+                className = 'inside';
+                explanation = 'Your contract shows strong employment indicators. You are likely caught by IR35 and should be paying income tax and NICs as if employed.';
+                advice = '<strong>Critical action:</strong> If you're currently treating this as outside IR35, you may be building a tax liability. Options: (1) Accept inside IR35 status and pay tax via umbrella/PAYE, (2) Renegotiate contract to genuine self-employment terms, (3) End contract and find truly outside IR35 work.';
+                product = `
+                    <div class="cta-box">
+                        <h3>🚨 Inside IR35? Minimise the Damage</h3>
+                        <p>Get our <strong>Inside IR35 Survival Guide</strong> (£14) — tax-efficient strategies, allowable expenses checklist, and umbrella company comparison.</p>
+                        <a href="/products/inside-ir35-guide" class="cta-button">View Guide →</a>
+                    </div>
+                `;
+            }
+            
+            resultBox.className = `result-box ${className}`;
+            resultBox.innerHTML = `
+                <h2>Your IR35 Assessment</h2>
+                <div class="score ${className}">${status}</div>
+                <p style="font-size: 1.1rem; line-height: 1.6;"><strong>Score: ${score}/24</strong></p>
+                <p style="line-height: 1.6;">${explanation}</p>
+                <p style="line-height: 1.6; margin-top: 1rem;">${advice}</p>
+                ${product}
+                <div class="disclaimer" style="margin-top: 1.5rem;">
+                    <strong>Disclaimer:</strong> This tool is educational only. IR35 status depends on the specific facts of your working arrangement, not just contract wording. HMRC's Check Employment Status for Tax (CEST) tool and professional advice are recommended for definitive assessment.
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

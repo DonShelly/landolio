@@ -75,50 +75,51 @@
 }
 </script>
 
+<link rel="stylesheet" href="/style.css">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --bg: #0a0a0f; --surface: #12121a; --surface2: #1a1a25; --border: #2a2a3a; --text: #e8e8f0; --text-muted: #8888a0; --gold: #d4a843; --gold-dim: #b8922e; --green: #2ecc71; --red: #e74c3c; --blue: #3498db; }
+:root { --bg: #0a0a0f; --surface: #12121a; --surface2: #1a1a25; --border: #2a2a3a; --text: #e8e8f0; --text-muted: #8888a0; --gold: #2563eb; --gold-dim: #b8922e; --green: #2ecc71; --red: #e74c3c; --blue: #3498db; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
-a { color: var(--gold); text-decoration: none; } a:hover { text-decoration: underline; }
+a { color: #2563eb; text-decoration: none; } a:hover { text-decoration: underline; }
 
 /* Nav */
 .nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
-.nav-brand { font-size: 1.4rem; font-weight: 700; color: var(--gold); }
+.nav-brand { font-size: 1.4rem; font-weight: 700; color: #2563eb; }
 .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.nav-links a { color: var(--text-muted); font-size: 0.95rem; } .nav-links a:hover { color: var(--gold); text-decoration: none; }
+.nav-links a { color: var(--text-muted); font-size: 0.95rem; } .nav-links a:hover { color: #2563eb; text-decoration: none; }
 
 /* Layout */
 .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
-h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--gold); }
+h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #2563eb; }
 .subtitle { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
 
 /* Form */
 .calc-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
-.calc-section h2 { font-size: 1.2rem; color: var(--gold); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.calc-section h2 { font-size: 1.2rem; color: #2563eb; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
 .field { margin-bottom: 1.5rem; }
 .field label { display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.95rem; }
 .field .hint { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem; }
 .field input, .field select { width: 100%; padding: 0.75rem 1rem; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem; }
-.field input:focus, .field select:focus { outline: none; border-color: var(--gold); }
+.field input:focus, .field select:focus { outline: none; border-color: #2563eb; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
 
 /* Button */
-.btn { display: inline-block; padding: 0.85rem 2rem; background: linear-gradient(135deg, var(--gold), var(--gold-dim)); color: #000; font-weight: 700; font-size: 1.05rem; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.15s; }
+.btn { display: inline-block; padding: 0.85rem 2rem; background: #2563eb; color: #000; font-weight: 700; font-size: 1.05rem; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.15s; }
 .btn:hover { transform: translateY(-1px); }
 
 /* Results */
 .results { display: none; }
 .results.show { display: block; }
 .result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 1.5rem; }
-.result-card h3 { color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem; }
+.result-card h3 { color: #2563eb; margin-bottom: 1rem; font-size: 1.1rem; }
 .result-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
 .result-row:last-child { border-bottom: none; }
 .result-label { color: var(--text-muted); font-size: 0.95rem; }
 .result-value { font-weight: 700; font-size: 1.05rem; }
 .result-value.green { color: var(--green); }
 .result-value.red { color: var(--red); }
-.result-value.gold { color: var(--gold); }
+.result-value.gold { color: #2563eb; }
 .big-number { text-align: center; padding: 2rem; }
 .big-number .amount { font-size: 2.8rem; font-weight: 800; color: var(--green); }
 .big-number .label { color: var(--text-muted); font-size: 1rem; margin-top: 0.3rem; }
@@ -129,25 +130,25 @@ h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--gold); }
 .bar-legend span::before { content: ''; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 0.4rem; vertical-align: middle; }
 
 /* CTA */
-.cta-box { background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid var(--gold); border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0; }
-.cta-box h3 { color: var(--gold); margin-bottom: 0.5rem; }
+.cta-box { background: #f7f8fa; border: 1px solid var(--gold); border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0; }
+.cta-box h3 { color: #2563eb; margin-bottom: 0.5rem; }
 .cta-box p { color: var(--text-muted); margin-bottom: 1.5rem; }
 
 /* FAQ */
 .faq { margin-top: 3rem; }
-.faq h2 { font-size: 1.4rem; color: var(--gold); margin-bottom: 1.5rem; }
+.faq h2 { font-size: 1.4rem; color: #2563eb; margin-bottom: 1.5rem; }
 .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
 .faq-q { padding: 1rem 1.25rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
 .faq-q:hover { background: var(--surface2); }
 .faq-a { padding: 0 1.25rem 1rem; color: var(--text-muted); display: none; line-height: 1.7; }
 .faq-item.open .faq-a { display: block; }
 .faq-item.open .faq-arrow { transform: rotate(180deg); }
-.faq-arrow { transition: transform 0.2s; color: var(--gold); }
+.faq-arrow { transition: transform 0.2s; color: #2563eb; }
 
 /* Footer */
 .footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; margin-top: 4rem; }
 .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem; }
-.footer-links a { color: var(--text-muted); font-size: 0.9rem; } .footer-links a:hover { color: var(--gold); }
+.footer-links a { color: var(--text-muted); font-size: 0.9rem; } .footer-links a:hover { color: #2563eb; }
 .footer p { color: var(--text-muted); font-size: 0.85rem; }
 
 /* Analytics */
@@ -163,6 +164,16 @@ h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--gold); }
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
 <nav class="nav">
   <a href="/" class="nav-brand">Landolio</a>
@@ -402,7 +413,7 @@ h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--gold); }
 
   <!-- SEO content -->
   <div style="margin-top: 3rem;">
-    <h2 style="color: var(--gold); margin-bottom: 1rem;">How to Use This Freelance Tax Calculator</h2>
+    <h2 style="color: #2563eb; margin-bottom: 1rem;">How to Use This Freelance Tax Calculator</h2>
     <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem;">Enter your total annual gross income — that's everything clients pay you before deducting expenses. Then enter your allowable business expenses (software, travel, equipment, home office costs). The calculator works out your taxable profit and shows exactly how much you'll owe in Income Tax, Class 2 NI, and Class 4 NI.</p>
     <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem;">If you have other income (employment, rental, dividends), add it in the "Other Taxable Income" field — this affects which tax band your freelance profits fall into. Pension contributions reduce your taxable income, so include those too.</p>
     <p style="color: var(--text-muted); line-height: 1.8;">For more help managing your freelance finances, check out our <a href="/blog/freelance-bookkeeping-basics-uk.html">Freelance Bookkeeping Guide</a>, <a href="/tools/day-rate-calculator.html">Day Rate Calculator</a>, and <a href="/blog/uk-freelancer-tax-deadlines-2026.html">UK Tax Deadlines Calendar</a>.</p>
@@ -635,5 +646,13 @@ function calculate() {
 (function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',body:JSON.stringify({p:location.pathname,r:document.referrer}),headers:{'Content-Type':'application/json'},mode:'cors'}).catch(function(){});}catch(e){}})();
 </script>
 
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

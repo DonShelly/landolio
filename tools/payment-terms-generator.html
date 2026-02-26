@@ -72,62 +72,63 @@
 }
 </script>
 
+<link rel="stylesheet" href="/style.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
-  a { color: #d4a843; text-decoration: none; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.6; }
+  a { color: #2563eb; text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  .nav { background: #111; border-bottom: 1px solid #222; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-  .nav-brand { font-size: 1.3rem; font-weight: 700; color: #d4a843; }
+  .nav { background: #f7f8fa; border-bottom: 1px solid #e2e8f0; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+  .nav-brand { font-size: 1.3rem; font-weight: 700; color: #2563eb; }
   .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
   .nav-links a { color: #999; font-size: 0.9rem; }
-  .nav-links a:hover { color: #d4a843; }
+  .nav-links a:hover { color: #2563eb; }
 
   .hero { text-align: center; padding: 3rem 1rem 2rem; }
-  .hero h1 { font-size: 2rem; color: #fff; margin-bottom: 0.5rem; }
+  .hero h1 { font-size: 2rem; color: #1a1a2e; margin-bottom: 0.5rem; }
   .hero p { color: #999; max-width: 600px; margin: 0 auto; }
-  .badge { display: inline-block; background: #1a3a1a; color: #4ade80; padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
+  .badge { display: inline-block; background: #1a3a1a; color: #059669; padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
 
   .container { max-width: 800px; margin: 0 auto; padding: 0 1rem 3rem; }
 
   .card { background: #151515; border: 1px solid #252525; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
-  .card h2 { font-size: 1.1rem; color: #d4a843; margin-bottom: 1rem; }
+  .card h2 { font-size: 1.1rem; color: #2563eb; margin-bottom: 1rem; }
 
   label { display: block; font-size: 0.85rem; color: #bbb; margin-bottom: 0.3rem; margin-top: 0.8rem; }
   label:first-child { margin-top: 0; }
   select, input[type="text"], input[type="number"] {
-    width: 100%; padding: 0.6rem 0.8rem; background: #0d0d0d; border: 1px solid #333; border-radius: 8px; color: #e0e0e0; font-size: 0.95rem;
+    width: 100%; padding: 0.6rem 0.8rem; background: #0d0d0d; border: 1px solid #333; border-radius: 8px; color: #1a1a2e; font-size: 0.95rem;
   }
-  select:focus, input:focus { outline: none; border-color: #d4a843; }
+  select:focus, input:focus { outline: none; border-color: #2563eb; }
 
   .checkbox-row { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.8rem; }
-  .checkbox-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: #d4a843; }
+  .checkbox-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: #2563eb; }
   .checkbox-row label { margin: 0; }
 
-  .btn { display: inline-block; padding: 0.75rem 1.5rem; background: #d4a843; color: #000; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; margin-top: 1rem; }
+  .btn { display: inline-block; padding: 0.75rem 1.5rem; background: #2563eb; color: #000; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; margin-top: 1rem; }
   .btn:hover { background: #e6bc5a; }
-  .btn-outline { background: transparent; border: 1px solid #d4a843; color: #d4a843; margin-left: 0.5rem; }
-  .btn-outline:hover { background: #d4a843; color: #000; }
+  .btn-outline { background: transparent; border: 1px solid #2563eb; color: #2563eb; margin-left: 0.5rem; }
+  .btn-outline:hover { background: #2563eb; color: #000; }
 
   .output { background: #0d0d0d; border: 1px solid #333; border-radius: 8px; padding: 1.2rem; white-space: pre-wrap; font-family: 'Georgia', serif; font-size: 0.92rem; line-height: 1.7; color: #ddd; min-height: 200px; }
-  .output strong { color: #fff; }
+  .output strong { color: #1a1a2e; }
 
-  .copied-toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: #1a3a1a; color: #4ade80; padding: 0.6rem 1.5rem; border-radius: 8px; font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999; }
+  .copied-toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: #1a3a1a; color: #059669; padding: 0.6rem 1.5rem; border-radius: 8px; font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999; }
   .copied-toast.show { opacity: 1; }
 
-  .cta-box { text-align: center; padding: 2rem; background: linear-gradient(135deg, #1a1500, #151515); border: 1px solid #333; border-radius: 12px; margin-top: 2rem; }
-  .cta-box h3 { color: #d4a843; margin-bottom: 0.5rem; }
+  .cta-box { text-align: center; padding: 2rem; background: linear-gradient(135deg, #ffffff, #151515); border: 1px solid #333; border-radius: 12px; margin-top: 2rem; }
+  .cta-box h3 { color: #2563eb; margin-bottom: 0.5rem; }
   .cta-box p { color: #999; margin-bottom: 1rem; }
   .cta-box .btn { margin-top: 0; }
 
   .faq { margin-top: 2rem; }
-  .faq h2 { color: #d4a843; margin-bottom: 1rem; font-size: 1.3rem; }
+  .faq h2 { color: #2563eb; margin-bottom: 1rem; font-size: 1.3rem; }
   .faq-item { border-bottom: 1px solid #252525; padding: 1rem 0; }
-  .faq-item h3 { color: #fff; font-size: 1rem; cursor: pointer; }
+  .faq-item h3 { color: #1a1a2e; font-size: 1rem; cursor: pointer; }
   .faq-item p { color: #999; margin-top: 0.5rem; font-size: 0.9rem; }
 
-  .footer { text-align: center; padding: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; margin-top: 2rem; }
+  .footer { text-align: center; padding: 2rem; border-bottom: 1px solid #e2e8f0; color: #666; font-size: 0.8rem; margin-top: 2rem; }
 
   @media (max-width: 600px) {
     .hero h1 { font-size: 1.5rem; }
@@ -145,6 +146,16 @@
 </script>
 </head>
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="site-logo">Landolio</a>
+            <nav class="site-nav">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Guides</a>
+                <a href="/free-checklist.html">Free Checklist</a>
+            </nav>
+        </div>
+    </header>
 
 <nav class="nav">
   <a href="/" class="nav-brand">Landolio</a>
@@ -322,7 +333,7 @@
     <a href="https://app.landolio.com/signup" class="btn">Start Free — No Card Required →</a>
   </div>
 
-  <div class="cta-box" style="margin-top:1rem; background: linear-gradient(135deg, #151515, #1a1500);">
+  <div class="cta-box" style="margin-top:1rem; background: linear-gradient(135deg, #151515, #ffffff);">
     <h3>Need Complete Contract Templates?</h3>
     <p>Get our professionally written contract templates — payment terms already included, plus scope, IP rights, and more.</p>
     <a href="/products/contract-template-pack.html" class="btn btn-outline">Contract Template Pack — £15 →</a>
@@ -533,5 +544,13 @@ function downloadTerms() {
 </script>
 
 <script>(function(){try{fetch('https://landolio-analytics.landolio.workers.dev/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname,referrer:document.referrer}),keepalive:true})}catch(e){}})();</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Landolio</p>
+                <a href="mailto:hello@landolio.com">hello@landolio.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
