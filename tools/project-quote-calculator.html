@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Project Quote Calculator UK — Price Any Project | Landolio</title>
+<meta name="description" content="Free freelance project quote calculator for UK freelancers. Enter your hours, rate, expenses and risk buffer to generate a professional project price breakdown.">
+<meta name="keywords" content="freelance project quote calculator, how much to charge for freelance project, freelance pricing calculator UK, project estimate calculator freelancer, freelance quote template">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://landolio.com/tools/project-quote-calculator.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Freelance Project Quote Calculator UK — Price Any Project | Landolio">
+<meta property="og:description" content="Calculate exactly what to charge for your next freelance project. Covers hours, expenses, scope creep buffer, and generates a professional quote breakdown.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://landolio.com/tools/project-quote-calculator.html">
+<meta property="og:image" content="https://landolio.com/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Landolio — Free Freelance Project Quote Calculator">
+<meta property="og:site_name" content="Landolio">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Freelance Project Quote Calculator UK — Price Any Project | Landolio">
+<meta name="twitter:description" content="Calculate exactly what to charge for your next freelance project. Covers hours, expenses, scope creep buffer, and generates a professional quote breakdown.">
+<meta name="twitter:image" content="https://landolio.com/images/og-default.png">
+
+<!-- Schema.org WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Freelance Project Quote Calculator UK",
+  "description": "Free tool to calculate exactly what to charge for a freelance project. Enter estimated hours by phase, your rate, project expenses, scope creep buffer, and discount. See a full professional breakdown of your project quote.",
+  "url": "https://landolio.com/tools/project-quote-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Landolio",
+    "url": "https://landolio.com"
+  }
+}
+</script>
+
+<!-- Schema.org FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate what to charge for a freelance project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Break the project into phases (discovery, design, development, revisions, etc.), estimate hours for each phase, multiply by your hourly or day rate, add project-specific expenses, then add a 15-25% scope creep buffer. This gives you a professional, defensible quote rather than guessing a flat number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I charge hourly or a fixed project price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fixed project pricing is generally better for freelancers because it rewards efficiency — the faster you get, the higher your effective hourly rate. However, always calculate based on estimated hours internally even when quoting a fixed price. Add a scope creep buffer (15-25%) to protect yourself from underestimating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a scope creep buffer and how much should I add?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A scope creep buffer is extra cost built into your project quote to account for the inevitable extras — client revisions, unforeseen complexity, communication overhead, and minor additions that always crop up. Most experienced freelancers add 15-25%. If you're newer or the brief is vague, go higher (25-30%). If the brief is detailed and the client is experienced, 10-15% may suffice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I handle project expenses in a freelance quote?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "List all project-specific costs separately: software licences, stock imagery, hosting, domain registration, subcontractor fees, travel, printing, etc. Add these on top of your time-based fee. Be transparent — clients respect itemised quotes that show exactly what they're paying for."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --dark: #f7f8fa;
+    --gold: #2563eb;
+    --gold-dim: rgba(37, 99, 235, 0.1);
+    --gold-glow: rgba(37, 99, 235, 0.2);
+    --white: #1a1a2e;
+    --gray: #64748b;
+    --gray-light: #aaa;
+    --border: rgba(37, 99, 235, 0.2);
+    --radius: 12px;
+    --max-width: 800px;
+    --green: #22c55e;
+    --green-dim: rgba(34, 197, 94, 0.15);
+    --red: #ef4444;
+    --red-dim: rgba(239, 68, 68, 0.15);
+    --blue: #3b82f6;
+    --blue-dim: rgba(59, 130, 246, 0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .logo { font-size: 1.4rem; font-weight: 800; color: #2563eb; text-decoration: none; letter-spacing: -0.5px; }
+  nav { display: flex; gap: 28px; }
+  nav a { color: #64748b; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  nav a:hover { color: var(--white); }
+
+  main { max-width: var(--max-width); margin: 0 auto; padding: 48px 20px 80px; }
+
+  .hero { text-align: center; margin-bottom: 48px; }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold-dim);
+    color: #2563eb;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+  .hero h1 .gold { color: #2563eb; }
+  .hero p { color: var(--gray-light); font-size: 1.05rem; max-width: 620px; margin: 0 auto; line-height: 1.6; }
+
+  .calc-card {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .calc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .card-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  label .hint { font-weight: 400; text-transform: none; letter-spacing: 0; color: #64748b; font-size: 0.78rem; }
+
+  input[type="number"], input[type="text"], select {
+    background: var(--bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+  }
+  input:focus, select:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px var(--gold-dim); }
+
+  .section-divider { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 28px 0; }
+
+  .hint-text { color: #64748b; font-size: 0.82rem; margin-top: -8px; margin-bottom: 8px; }
+
+  .gen-btn {
+    display: block;
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  .gen-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+
+  .output { display: none; margin-top: 32px; animation: fadeSlideIn 0.5s ease-out; }
+  .output.show { display: block; }
+  @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px; }
+  .summary-card {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 16px;
+    text-align: center;
+  }
+  .summary-card .label { font-size: 0.72rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .summary-card .value { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; }
+  .summary-card .value.gold { color: #2563eb; }
+  .summary-card .value.green { color: var(--green); }
+  .summary-card .sub { font-size: 0.72rem; color: #64748b; margin-top: 4px; }
+
+  .breakdown-card {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .breakdown-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .breakdown-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+
+  .breakdown-table { width: 100%; border-collapse: collapse; }
+  .breakdown-table th {
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .breakdown-table th:last-child { text-align: right; }
+  .breakdown-table td {
+    padding: 12px;
+    font-size: 0.92rem;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .breakdown-table td:last-child { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .breakdown-table tr.total td {
+    font-weight: 800;
+    font-size: 1rem;
+    border-top: 2px solid var(--gold);
+    border-bottom: none;
+    padding-top: 16px;
+  }
+  .breakdown-table tr.subtotal td {
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(37, 99, 235, 0.03);
+  }
+
+  /* Phase rows */
+  .phase-row { display: grid; grid-template-columns: 2fr 1fr 80px; gap: 12px; align-items: end; margin-bottom: 12px; }
+  .phase-row input { width: 100%; }
+  .remove-phase {
+    background: var(--red-dim);
+    color: var(--red);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    height: 45px;
+  }
+  .remove-phase:hover { background: rgba(239, 68, 68, 0.25); }
+  .add-phase-btn {
+    background: var(--gold-dim);
+    color: #2563eb;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    margin-bottom: 8px;
+  }
+  .add-phase-btn:hover { background: var(--gold-glow); }
+
+  /* Expense rows */
+  .expense-row { display: grid; grid-template-columns: 2fr 1fr 80px; gap: 12px; align-items: end; margin-bottom: 12px; }
+  .expense-row input { width: 100%; }
+
+  /* CTA */
+  .cta-banner {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .cta-banner h3 { color: #fff; font-size: 1.2rem; margin-bottom: 8px; }
+  .cta-banner p { color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 20px; }
+  .cta-banner a {
+    display: inline-block;
+    background: #fff;
+    color: #2563eb;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform 0.2s;
+  }
+  .cta-banner a:hover { transform: translateY(-2px); }
+
+  /* Tip box */
+  .tip-box {
+    background: var(--green-dim);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .tip-box h4 { color: var(--green); font-size: 0.88rem; margin-bottom: 6px; }
+  .tip-box p { color: var(--gray); font-size: 0.88rem; line-height: 1.6; }
+
+  /* Content sections */
+  .content-section { margin-top: 60px; }
+  .content-section h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
+  .content-section h3 { font-size: 1.15rem; font-weight: 700; margin-top: 28px; margin-bottom: 12px; }
+  .content-section p { color: var(--gray); font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; }
+  .content-section ul, .content-section ol { color: var(--gray); font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; }
+  .content-section li { margin-bottom: 8px; }
+  .content-section strong { color: var(--white); }
+
+  /* Related */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+  .related-card {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+  .related-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--white); }
+  .related-card p { font-size: 0.82rem; color: var(--gray); line-height: 1.5; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+  }
+  footer p { color: #64748b; font-size: 0.82rem; }
+  footer a { color: #2563eb; text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .phase-row, .expense-row { grid-template-columns: 1fr 80px 50px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .calc-card { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">Landolio</a>
+    <nav>
+      <a href="/products.html">Products</a>
+      <a href="/tools/">Free Tools</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-badge">Free Tool</div>
+    <h1>Freelance <span class="gold">Project Quote</span> Calculator</h1>
+    <p>Stop guessing what to charge. Break your project into phases, add expenses and a scope creep buffer, and get a professional price breakdown in seconds.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-card">
+    <div class="card-section-title">📐 Your Rate</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Rate Type</label>
+        <select id="rateType" onchange="toggleRateFields()">
+          <option value="hourly">Hourly Rate</option>
+          <option value="daily">Day Rate</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label id="rateLabel">Hourly Rate (£)</label>
+        <input type="number" id="rate" value="50" min="1" step="1">
+      </div>
+      <div class="form-group" id="hoursPerDayGroup" style="display:none;">
+        <label>Hours Per Day</label>
+        <input type="number" id="hoursPerDay" value="7.5" min="1" max="24" step="0.5">
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="card-section-title">📋 Project Phases <span class="hint">(estimate hours for each)</span></div>
+    <div id="phases">
+      <div class="phase-row">
+        <div class="form-group">
+          <label>Phase Name</label>
+          <input type="text" value="Discovery & Planning" class="phase-name">
+        </div>
+        <div class="form-group">
+          <label>Hours</label>
+          <input type="number" value="8" min="0" step="0.5" class="phase-hours">
+        </div>
+        <button class="remove-phase" onclick="removePhase(this)" title="Remove">✕</button>
+      </div>
+      <div class="phase-row">
+        <div class="form-group">
+          <label>Phase Name</label>
+          <input type="text" value="Design / Creation" class="phase-name">
+        </div>
+        <div class="form-group">
+          <label>Hours</label>
+          <input type="number" value="20" min="0" step="0.5" class="phase-hours">
+        </div>
+        <button class="remove-phase" onclick="removePhase(this)" title="Remove">✕</button>
+      </div>
+      <div class="phase-row">
+        <div class="form-group">
+          <label>Phase Name</label>
+          <input type="text" value="Development / Build" class="phase-name">
+        </div>
+        <div class="form-group">
+          <label>Hours</label>
+          <input type="number" value="30" min="0" step="0.5" class="phase-hours">
+        </div>
+        <button class="remove-phase" onclick="removePhase(this)" title="Remove">✕</button>
+      </div>
+      <div class="phase-row">
+        <div class="form-group">
+          <label>Phase Name</label>
+          <input type="text" value="Revisions & Testing" class="phase-name">
+        </div>
+        <div class="form-group">
+          <label>Hours</label>
+          <input type="number" value="10" min="0" step="0.5" class="phase-hours">
+        </div>
+        <button class="remove-phase" onclick="removePhase(this)" title="Remove">✕</button>
+      </div>
+    </div>
+    <button class="add-phase-btn" onclick="addPhase()">+ Add Phase</button>
+
+    <hr class="section-divider">
+
+    <div class="card-section-title">💰 Project Expenses <span class="hint">(optional — software, stock, travel, etc.)</span></div>
+    <div id="expenses">
+      <div class="expense-row">
+        <div class="form-group">
+          <label>Expense</label>
+          <input type="text" value="" placeholder="e.g. Stock images" class="expense-name">
+        </div>
+        <div class="form-group">
+          <label>Cost (£)</label>
+          <input type="number" value="" min="0" step="0.01" placeholder="0" class="expense-cost">
+        </div>
+        <button class="remove-phase" onclick="removeExpense(this)" title="Remove">✕</button>
+      </div>
+    </div>
+    <button class="add-phase-btn" onclick="addExpense()">+ Add Expense</button>
+
+    <hr class="section-divider">
+
+    <div class="card-section-title">🛡️ Adjustments</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Scope Creep Buffer (%) <span class="hint">— typically 15-25%</span></label>
+        <input type="number" id="buffer" value="20" min="0" max="100" step="5">
+      </div>
+      <div class="form-group">
+        <label>Discount (%) <span class="hint">— early bird, repeat client</span></label>
+        <input type="number" id="discount" value="0" min="0" max="100" step="5">
+      </div>
+      <div class="form-group">
+        <label>Add VAT?</label>
+        <select id="addVat">
+          <option value="no">No — below VAT threshold</option>
+          <option value="yes">Yes — add 20% VAT</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Payment Terms</label>
+        <select id="paymentTerms">
+          <option value="50-50">50% upfront / 50% on completion</option>
+          <option value="30-70">30% upfront / 70% on completion</option>
+          <option value="100-up">100% upfront</option>
+          <option value="100-end">100% on completion</option>
+          <option value="thirds">⅓ upfront / ⅓ midpoint / ⅓ completion</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="gen-btn" onclick="calculate()">Calculate Project Quote</button>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="output" id="output">
+
+    <div class="summary-grid" id="summaryGrid"></div>
+
+    <div class="breakdown-card">
+      <h3>📋 Full Quote Breakdown</h3>
+      <table class="breakdown-table" id="breakdownTable">
+        <thead>
+          <tr><th>Item</th><th>Amount</th></tr>
+        </thead>
+        <tbody id="breakdownBody"></tbody>
+      </table>
+    </div>
+
+    <div class="breakdown-card" id="paymentCard">
+      <h3>💳 Payment Schedule</h3>
+      <table class="breakdown-table">
+        <thead>
+          <tr><th>Milestone</th><th>Amount</th></tr>
+        </thead>
+        <tbody id="paymentBody"></tbody>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <h4>💡 Pro Tip</h4>
+      <p>Always present your quote as a breakdown (like above), not a single number. Clients are more likely to accept a quote when they can see exactly where their money goes. It also makes negotiation easier — they can remove a phase rather than haggle on price.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-banner">
+      <h3>Need Professional Contract Templates?</h3>
+      <p>Protect your quotes with legally-sound UK freelance contracts. Scope of work, change request process, payment terms — all included.</p>
+      <a href="/products/contract-template-pack.html">Get the Contract Template Pack — £15</a>
+    </div>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <div class="content-section">
+    <h2>How to Price a Freelance Project (UK Guide)</h2>
+
+    <p>Pricing a freelance project is one of the hardest things to get right. Charge too little and you'll resent the work. Charge too much and you'll lose the job. The key is having a <strong>systematic, defensible method</strong> — not guessing.</p>
+
+    <h3>The Phase-Based Pricing Method</h3>
+    <p>The most reliable way to price a project is to break it into phases, estimate hours for each, and multiply by your rate. This approach works because:</p>
+    <ul>
+      <li><strong>It's transparent.</strong> Clients can see exactly what they're paying for.</li>
+      <li><strong>It's defensible.</strong> If a client questions the price, you can walk through each phase.</li>
+      <li><strong>It makes negotiation easier.</strong> Instead of "can you do it cheaper?", the conversation becomes "which phases can we reduce or remove?"</li>
+      <li><strong>It protects you from scope creep.</strong> Anything not in the phases is a change request.</li>
+    </ul>
+
+    <h3>Why You Need a Scope Creep Buffer</h3>
+    <p>Every project takes longer than you think. Even with a detailed brief, there will be:</p>
+    <ul>
+      <li>Client revisions beyond what you planned</li>
+      <li>Technical complications you didn't anticipate</li>
+      <li>"Quick" additions that take hours</li>
+      <li>Communication overhead (emails, calls, chasing feedback)</li>
+      <li>Context switching between this project and others</li>
+    </ul>
+    <p>A <strong>15-25% scope creep buffer</strong> isn't padding — it's realistic pricing. If the project comes in under budget, you've earned a better effective rate. If it doesn't (and it usually doesn't), you're protected.</p>
+
+    <h3>Project Expenses: Pass Them Through</h3>
+    <p>Any costs specific to the project should be added on top of your time-based fee. Common freelance project expenses include:</p>
+    <ul>
+      <li>Software licences or subscriptions needed for the project</li>
+      <li>Stock photography, icons, or fonts</li>
+      <li>Hosting or domain registration</li>
+      <li>Subcontractor or specialist fees</li>
+      <li>Travel to client meetings</li>
+      <li>Printing or physical materials</li>
+    </ul>
+    <p>Be upfront about expenses. List them as separate line items. Clients prefer transparency over discovering hidden costs later.</p>
+
+    <h3>Payment Terms: Protect Your Cash Flow</h3>
+    <p>Never start a project without an upfront payment. The standard approaches are:</p>
+    <ul>
+      <li><strong>50/50:</strong> Half upfront, half on completion. Most common and safest for both parties.</li>
+      <li><strong>Thirds:</strong> ⅓ upfront, ⅓ at midpoint, ⅓ on completion. Good for longer projects.</li>
+      <li><strong>100% upfront:</strong> For small projects or new clients with no track record.</li>
+      <li><strong>100% on completion:</strong> Only for trusted, long-term clients. Risky for freelancers.</li>
+    </ul>
+    <p>Whatever terms you choose, put them in your <a href="/products/contract-template-pack.html">contract</a>. Verbal agreements are worthless when an invoice goes unpaid.</p>
+
+    <h3>VAT Considerations for UK Freelancers</h3>
+    <p>If your taxable turnover exceeds £90,000 (2025/26 threshold), you must register for VAT and add 20% to your quotes. Even below the threshold, some freelancers voluntarily register to reclaim VAT on business expenses. Consider this carefully — it increases your admin burden but can save money if you have significant expenses.</p>
+
+    <h3>Common Pricing Mistakes</h3>
+    <ol>
+      <li><strong>Quoting a round number without a breakdown.</strong> "It'll be about £3,000" invites haggling. A detailed breakdown doesn't.</li>
+      <li><strong>Forgetting revision rounds.</strong> Always specify how many revision rounds are included. Additional revisions are billed at your hourly rate.</li>
+      <li><strong>Not charging for project management.</strong> Emails, calls, file organisation, and progress updates all take time. Account for them.</li>
+      <li><strong>Underpricing to "win" the job.</strong> You'll resent the work, rush it, and damage your reputation. Price fairly or walk away.</li>
+      <li><strong>Not adjusting for client complexity.</strong> A client who's done this before needs less hand-holding. A first-timer needs more. Price accordingly.</li>
+    </ol>
+  </div>
+
+  <!-- RELATED -->
+  <div class="related-grid">
+    <a href="/tools/day-rate-calculator.html" class="related-card">
+      <h4>📊 Day Rate Calculator</h4>
+      <p>Work out your ideal freelance day rate from your target salary, with full UK tax breakdown.</p>
+    </a>
+    <a href="/blog/how-to-calculate-freelance-day-rate-uk.html" class="related-card">
+      <h4>📖 How to Calculate Your Freelance Day Rate</h4>
+      <p>Complete 2026 guide with industry benchmarks, salary comparisons, and rate-setting strategies.</p>
+    </a>
+    <a href="/blog/how-to-handle-scope-creep-freelancer-uk.html" class="related-card">
+      <h4>📖 How to Handle Scope Creep</h4>
+      <p>Contract clauses, scripts, and strategies to keep projects profitable.</p>
+    </a>
+    <a href="/tools/profit-margin-calculator.html" class="related-card">
+      <h4>📊 Profit Margin Calculator</h4>
+      <p>Check your profit margins on any project or product.</p>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 <a href="/">Landolio</a>. Free tools for UK freelancers.</p>
+</footer>
+
+<script>
+function toggleRateFields() {
+  const type = document.getElementById('rateType').value;
+  const label = document.getElementById('rateLabel');
+  const hpdGroup = document.getElementById('hoursPerDayGroup');
+  if (type === 'daily') {
+    label.textContent = 'Day Rate (£)';
+    document.getElementById('rate').value = 400;
+    hpdGroup.style.display = 'flex';
+  } else {
+    label.textContent = 'Hourly Rate (£)';
+    document.getElementById('rate').value = 50;
+    hpdGroup.style.display = 'none';
+  }
+}
+
+function addPhase() {
+  const div = document.createElement('div');
+  div.className = 'phase-row';
+  div.innerHTML = `
+    <div class="form-group">
+      <label>Phase Name</label>
+      <input type="text" value="" placeholder="e.g. Deployment" class="phase-name">
+    </div>
+    <div class="form-group">
+      <label>Hours</label>
+      <input type="number" value="0" min="0" step="0.5" class="phase-hours">
+    </div>
+    <button class="remove-phase" onclick="removePhase(this)" title="Remove">✕</button>
+  `;
+  document.getElementById('phases').appendChild(div);
+}
+
+function removePhase(btn) {
+  const rows = document.querySelectorAll('#phases .phase-row');
+  if (rows.length > 1) btn.parentElement.remove();
+}
+
+function addExpense() {
+  const div = document.createElement('div');
+  div.className = 'expense-row';
+  div.innerHTML = `
+    <div class="form-group">
+      <label>Expense</label>
+      <input type="text" value="" placeholder="e.g. Hosting" class="expense-name">
+    </div>
+    <div class="form-group">
+      <label>Cost (£)</label>
+      <input type="number" value="" min="0" step="0.01" placeholder="0" class="expense-cost">
+    </div>
+    <button class="remove-phase" onclick="removeExpense(this)" title="Remove">✕</button>
+  `;
+  document.getElementById('expenses').appendChild(div);
+}
+
+function removeExpense(btn) {
+  btn.parentElement.remove();
+}
+
+function fmt(n) {
+  return '£' + n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function calculate() {
+  const rateType = document.getElementById('rateType').value;
+  const rate = parseFloat(document.getElementById('rate').value) || 0;
+  const hoursPerDay = parseFloat(document.getElementById('hoursPerDay').value) || 7.5;
+  const bufferPct = parseFloat(document.getElementById('buffer').value) || 0;
+  const discountPct = parseFloat(document.getElementById('discount').value) || 0;
+  const addVat = document.getElementById('addVat').value === 'yes';
+  const paymentTerms = document.getElementById('paymentTerms').value;
+
+  // Calculate hourly rate
+  const hourlyRate = rateType === 'daily' ? rate / hoursPerDay : rate;
+
+  // Gather phases
+  const phaseNames = document.querySelectorAll('.phase-name');
+  const phaseHours = document.querySelectorAll('.phase-hours');
+  const phases = [];
+  let totalHours = 0;
+  for (let i = 0; i < phaseNames.length; i++) {
+    const name = phaseNames[i].value || `Phase ${i + 1}`;
+    const hours = parseFloat(phaseHours[i].value) || 0;
+    if (hours > 0) {
+      phases.push({ name, hours, cost: hours * hourlyRate });
+      totalHours += hours;
+    }
+  }
+
+  // Gather expenses
+  const expNames = document.querySelectorAll('.expense-name');
+  const expCosts = document.querySelectorAll('.expense-cost');
+  const expenses = [];
+  let totalExpenses = 0;
+  for (let i = 0; i < expNames.length; i++) {
+    const name = expNames[i].value || `Expense ${i + 1}`;
+    const cost = parseFloat(expCosts[i].value) || 0;
+    if (cost > 0) {
+      expenses.push({ name, cost });
+      totalExpenses += cost;
+    }
+  }
+
+  // Calculate totals
+  const labourCost = totalHours * hourlyRate;
+  const bufferAmount = labourCost * (bufferPct / 100);
+  const subtotal = labourCost + bufferAmount + totalExpenses;
+  const discountAmount = subtotal * (discountPct / 100);
+  const netTotal = subtotal - discountAmount;
+  const vatAmount = addVat ? netTotal * 0.2 : 0;
+  const grandTotal = netTotal + vatAmount;
+  const effectiveHourly = totalHours > 0 ? netTotal / totalHours : 0;
+  const effectiveDaily = effectiveHourly * hoursPerDay;
+
+  // Summary cards
+  document.getElementById('summaryGrid').innerHTML = `
+    <div class="summary-card">
+      <div class="label">Total Hours</div>
+      <div class="value">${totalHours.toFixed(1)}</div>
+      <div class="sub">${(totalHours / hoursPerDay).toFixed(1)} days</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Labour Cost</div>
+      <div class="value">${fmt(labourCost)}</div>
+      <div class="sub">at ${fmt(hourlyRate)}/hr</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Quote Total</div>
+      <div class="value gold">${fmt(grandTotal)}</div>
+      <div class="sub">${addVat ? 'inc. VAT' : 'ex. VAT'}</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Effective Rate</div>
+      <div class="value green">${fmt(effectiveHourly)}/hr</div>
+      <div class="sub">${fmt(effectiveDaily)}/day</div>
+    </div>
+  `;
+
+  // Breakdown table
+  let rows = '';
+  phases.forEach(p => {
+    rows += `<tr><td>${p.name} (${p.hours}h × ${fmt(hourlyRate)})</td><td>${fmt(p.cost)}</td></tr>`;
+  });
+  rows += `<tr class="subtotal"><td>Labour Subtotal</td><td>${fmt(labourCost)}</td></tr>`;
+
+  if (bufferAmount > 0) {
+    rows += `<tr><td>Scope Creep Buffer (${bufferPct}%)</td><td>${fmt(bufferAmount)}</td></tr>`;
+  }
+
+  if (expenses.length > 0) {
+    expenses.forEach(e => {
+      rows += `<tr><td>${e.name}</td><td>${fmt(e.cost)}</td></tr>`;
+    });
+    rows += `<tr class="subtotal"><td>Subtotal (Labour + Buffer + Expenses)</td><td>${fmt(subtotal)}</td></tr>`;
+  }
+
+  if (discountAmount > 0) {
+    rows += `<tr><td>Discount (${discountPct}%)</td><td>-${fmt(discountAmount)}</td></tr>`;
+    rows += `<tr class="subtotal"><td>Net Total</td><td>${fmt(netTotal)}</td></tr>`;
+  }
+
+  if (addVat) {
+    rows += `<tr><td>VAT (20%)</td><td>${fmt(vatAmount)}</td></tr>`;
+  }
+
+  rows += `<tr class="total"><td>Total Project Quote</td><td>${fmt(grandTotal)}</td></tr>`;
+  document.getElementById('breakdownBody').innerHTML = rows;
+
+  // Payment schedule
+  let payRows = '';
+  const payTotal = grandTotal;
+  switch (paymentTerms) {
+    case '50-50':
+      payRows = `
+        <tr><td>On signing (50%)</td><td>${fmt(payTotal * 0.5)}</td></tr>
+        <tr><td>On completion (50%)</td><td>${fmt(payTotal * 0.5)}</td></tr>
+      `;
+      break;
+    case '30-70':
+      payRows = `
+        <tr><td>On signing (30%)</td><td>${fmt(payTotal * 0.3)}</td></tr>
+        <tr><td>On completion (70%)</td><td>${fmt(payTotal * 0.7)}</td></tr>
+      `;
+      break;
+    case '100-up':
+      payRows = `<tr><td>On signing (100%)</td><td>${fmt(payTotal)}</td></tr>`;
+      break;
+    case '100-end':
+      payRows = `<tr><td>On completion (100%)</td><td>${fmt(payTotal)}</td></tr>`;
+      break;
+    case 'thirds':
+      payRows = `
+        <tr><td>On signing (⅓)</td><td>${fmt(payTotal / 3)}</td></tr>
+        <tr><td>At midpoint (⅓)</td><td>${fmt(payTotal / 3)}</td></tr>
+        <tr><td>On completion (⅓)</td><td>${fmt(payTotal / 3)}</td></tr>
+      `;
+      break;
+  }
+  payRows += `<tr class="total"><td>Total</td><td>${fmt(payTotal)}</td></tr>`;
+  document.getElementById('paymentBody').innerHTML = payRows;
+
+  // Show output
+  const out = document.getElementById('output');
+  out.classList.add('show');
+  out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
+</html>
