@@ -581,4 +581,22 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+  <url>
+    <loc>https://landolio.com/blog/what-happens-ignore-making-tax-digital-2026.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landolio.com/blog/is-mtd-replacing-self-assessment-2026.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landolio.com/blog/real-cost-making-tax-digital-sole-traders-2026.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
