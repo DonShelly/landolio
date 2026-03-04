@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977053494"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17977053494');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTD Readiness Checker — Are You Ready for Making Tax Digital? | Landolio</title>
+<meta name="description" content="Take this 2-minute quiz to find out if you're ready for Making Tax Digital for Income Tax, starting April 2026. Get a personalised action plan with deadlines.">
+<meta name="keywords" content="MTD readiness checker, making tax digital ready, MTD ITSA 2026, am I ready for MTD, making tax digital checklist, MTD April 2026, sole trader MTD, self employed MTD">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://landolio.com/tools/mtd-readiness-checker.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="MTD Readiness Checker — Are You Ready for Making Tax Digital?">
+<meta property="og:description" content="2-minute quiz: find out if you're ready for MTD for Income Tax (April 2026). Get a personalised action plan.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://landolio.com/tools/mtd-readiness-checker.html">
+<meta property="og:image" content="https://landolio.com/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Landolio">
+<meta property="og:locale" content="en_GB">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MTD Readiness Checker — Are You Ready for Making Tax Digital?">
+<meta name="twitter:description" content="2-minute quiz to check your MTD readiness. Personalised action plan included.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "MTD Readiness Checker",
+  "description": "Free interactive quiz that checks if you're ready for Making Tax Digital for Income Tax (April 2026) and gives you a personalised action plan.",
+  "url": "https://landolio.com/tools/mtd-readiness-checker.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "creator": { "@type": "Organization", "name": "Landolio", "url": "https://landolio.com" }
+}
+</script>
+
+<style>
+  :root {
+    --brand: #1a73e8;
+    --brand-dark: #1557b0;
+    --green: #34a853;
+    --amber: #f9ab00;
+    --red: #ea4335;
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --text: #202124;
+    --muted: #5f6368;
+    --border: #dadce0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .header {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+  }
+
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brand);
+    text-decoration: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px;
+  }
+
+  .nav-links a:hover { color: var(--brand); }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 32px 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .countdown-bar {
+    background: linear-gradient(135deg, #ea4335 0%, #f9ab00 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+
+  .countdown-bar span { font-size: 22px; }
+
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    background: var(--border);
+    height: 6px;
+    border-radius: 3px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    background: var(--brand);
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+
+  .question-num {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .question-text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .question-help {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+
+  .option-btn {
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    color: var(--text);
+    font-family: inherit;
+  }
+
+  .option-btn:hover {
+    border-color: var(--brand);
+    background: #e8f0fe;
+  }
+
+  .option-btn.selected {
+    border-color: var(--brand);
+    background: #e8f0fe;
+    font-weight: 600;
+  }
+
+  /* Results */
+  .result-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    color: white;
+    font-weight: 700;
+  }
+
+  .score-circle .score-num { font-size: 36px; line-height: 1; }
+  .score-circle .score-label { font-size: 12px; opacity: 0.9; }
+
+  .score-green { background: var(--green); }
+  .score-amber { background: var(--amber); }
+  .score-red { background: var(--red); }
+
+  .result-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .result-subtitle {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .action-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .action-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .action-item:last-child { border-bottom: none; }
+
+  .action-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .action-urgent { background: #fce8e6; color: var(--red); }
+  .action-soon { background: #fef7e0; color: #e37400; }
+  .action-done { background: #e6f4ea; color: var(--green); }
+
+  .action-text strong { display: block; font-size: 15px; }
+  .action-text span { font-size: 13px; color: var(--muted); }
+
+  .cta-box {
+    background: linear-gradient(135deg, #e8f0fe 0%, #f3e8fd 100%);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .cta-box p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--brand);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.2s;
+  }
+
+  .cta-btn:hover { background: var(--brand-dark); }
+
+  .cta-secondary {
+    display: inline-block;
+    color: var(--brand);
+    font-size: 14px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+
+  .hidden { display: none; }
+
+  .restart-btn {
+    background: none;
+    border: 2px solid var(--border);
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--muted);
+    margin-top: 16px;
+    font-family: inherit;
+  }
+
+  .restart-btn:hover { border-color: var(--brand); color: var(--brand); }
+
+  .share-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .share-btn {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--muted);
+    font-family: inherit;
+  }
+
+  .share-btn:hover { border-color: var(--brand); color: var(--brand); }
+
+  .footer {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .footer a { color: var(--brand); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 22px; }
+    .card { padding: 20px; }
+    .question-text { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">Landolio</a>
+    <nav class="nav-links">
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/products/">Products</a>
+    </nav>
+  </div>
+</div>
+
+<div class="container">
+  <h1>🔍 MTD Readiness Checker</h1>
+  <p class="subtitle">Answer 8 quick questions to find out if you're ready for Making Tax Digital — and what you still need to do before April 6th.</p>
+
+  <div class="countdown-bar" id="countdown">
+    ⏰ <span id="days-left"></span> days until MTD for Income Tax starts
+  </div>
+
+  <!-- Quiz Section -->
+  <div id="quiz-section">
+    <div class="card">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress" style="width: 0%"></div>
+      </div>
+
+      <div class="question-num" id="q-num">Question 1 of 8</div>
+      <div class="question-text" id="q-text"></div>
+      <div class="question-help" id="q-help"></div>
+
+      <div class="options" id="options"></div>
+    </div>
+  </div>
+
+  <!-- Results Section -->
+  <div id="results-section" class="hidden">
+    <div class="card">
+      <div class="result-header">
+        <div class="score-circle" id="score-circle">
+          <div class="score-num" id="score-num"></div>
+          <div class="score-label">out of 8</div>
+        </div>
+        <div class="result-title" id="result-title"></div>
+        <div class="result-subtitle" id="result-subtitle"></div>
+      </div>
+
+      <h3 style="margin: 20px 0 12px; font-size: 16px;">Your personalised action plan:</h3>
+      <ul class="action-list" id="action-list"></ul>
+
+      <div class="cta-box" id="cta-box"></div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <div class="share-row">
+          <button class="share-btn" onclick="copyResults()">📋 Copy results</button>
+          <button class="share-btn" onclick="shareTwitter()">🐦 Share on X</button>
+        </div>
+        <button class="restart-btn" onclick="restart()">↻ Take the quiz again</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Free tool from <a href="/">Landolio</a> — helping UK freelancers and sole traders get paid and stay compliant.</p>
+  <p style="margin-top: 8px;">
+    <a href="/blog/mtd-income-tax-complete-guide-2026.html">Complete MTD Guide</a> ·
+    <a href="/tools/mtd-cost-calculator.html">MTD Cost Calculator</a> ·
+    <a href="/tools/mtd-penalty-calculator.html">MTD Penalty Calculator</a>
+  </p>
+</div>
+
+<script>
+// Countdown
+(function() {
+  var mtdDate = new Date('2026-04-06T00:00:00');
+  var now = new Date();
+  var diff = Math.ceil((mtdDate - now) / (1000 * 60 * 60 * 24));
+  document.getElementById('days-left').textContent = diff > 0 ? diff : 0;
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML = '🚀 MTD for Income Tax has started! Check if you\'re compliant.';
+  }
+})();
+
+var questions = [
+  {
+    text: "Are you self-employed or a landlord with income over £50,000?",
+    help: "MTD for Income Tax applies from April 2026 if your qualifying income exceeds £50,000. The £30,000 threshold follows in April 2027.",
+    options: [
+      { label: "Yes — my income is over £50,000", score: 1, tag: "threshold" },
+      { label: "My income is between £30,000 and £50,000", score: 1, tag: "threshold-2027" },
+      { label: "My income is under £30,000", score: 1, tag: "exempt" },
+      { label: "I'm not sure what my qualifying income is", score: 0, tag: "unsure-income" }
+    ]
+  },
+  {
+    text: "Have you registered for Self Assessment with HMRC?",
+    help: "You need a Unique Taxpayer Reference (UTR) number to use MTD-compatible software.",
+    options: [
+      { label: "Yes — I have a UTR number", score: 1, tag: "sa-yes" },
+      { label: "I've applied but haven't received my UTR yet", score: 0.5, tag: "sa-pending" },
+      { label: "No — I haven't registered", score: 0, tag: "sa-no" },
+      { label: "I don't know what a UTR is", score: 0, tag: "sa-unknown" }
+    ]
+  },
+  {
+    text: "Do you currently use accounting or bookkeeping software?",
+    help: "MTD requires you to keep digital records using HMRC-recognised software — spreadsheets alone won't be enough.",
+    options: [
+      { label: "Yes — I use MTD-compatible software (e.g. Xero, FreeAgent, QuickBooks)", score: 1, tag: "software-mtd" },
+      { label: "I use software but I'm not sure if it's MTD-compatible", score: 0.5, tag: "software-unsure" },
+      { label: "I use spreadsheets or paper records", score: 0, tag: "software-no" },
+      { label: "I don't keep records at all", score: 0, tag: "no-records" }
+    ]
+  },
+  {
+    text: "Do you know what quarterly updates are?",
+    help: "Under MTD, you'll need to send summary income and expense data to HMRC every 3 months — not just once a year.",
+    options: [
+      { label: "Yes — I understand the quarterly reporting requirement", score: 1, tag: "quarterly-yes" },
+      { label: "I've heard of it but don't know the details", score: 0.5, tag: "quarterly-vague" },
+      { label: "No — this is news to me", score: 0, tag: "quarterly-no" }
+    ]
+  },
+  {
+    text: "Do you know when your first quarterly update would be due?",
+    help: "If you're in the April–March tax year, your first quarterly update covers April–July 2026, due by 7 August 2026.",
+    options: [
+      { label: "Yes — I know my quarterly deadlines", score: 1, tag: "deadlines-yes" },
+      { label: "No — I don't know the deadlines", score: 0, tag: "deadlines-no" }
+    ]
+  },
+  {
+    text: "Are you aware of the penalty grace period for the first year?",
+    help: "HMRC has confirmed there will be no late-submission penalties for quarterly updates in the first year of MTD (2026/27).",
+    options: [
+      { label: "Yes — I know about the grace period", score: 1, tag: "grace-yes" },
+      { label: "No — I didn't know there was a grace period", score: 0, tag: "grace-no" }
+    ]
+  },
+  {
+    text: "How do you currently categorise your business expenses?",
+    help: "MTD software will need expenses in categories. If your income is under £85,000, you may be able to use simplified 3-line accounts.",
+    options: [
+      { label: "I have clear categories (e.g. travel, equipment, office costs)", score: 1, tag: "expenses-good" },
+      { label: "I track totals but don't categorise properly", score: 0.5, tag: "expenses-partial" },
+      { label: "I throw receipts in a shoebox and deal with it once a year", score: 0, tag: "expenses-chaos" }
+    ]
+  },
+  {
+    text: "Have you connected your software to HMRC's MTD systems yet?",
+    help: "Your software needs to be authorised to submit data to HMRC on your behalf. This requires signing in via your Government Gateway.",
+    options: [
+      { label: "Yes — software is connected and authorised", score: 1, tag: "connected-yes" },
+      { label: "I have software but haven't connected it to HMRC", score: 0.5, tag: "connected-no" },
+      { label: "I don't have MTD software yet", score: 0, tag: "no-software" }
+    ]
+  }
+];
+
+var currentQ = 0;
+var answers = [];
+
+function renderQuestion() {
+  var q = questions[currentQ];
+  document.getElementById('q-num').textContent = 'Question ' + (currentQ + 1) + ' of ' + questions.length;
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('q-help').textContent = q.help;
+  document.getElementById('progress').style.width = ((currentQ / questions.length) * 100) + '%';
+
+  var optEl = document.getElementById('options');
+  optEl.innerHTML = '';
+  q.options.forEach(function(opt, i) {
+    var btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.textContent = opt.label;
+    btn.onclick = function() { selectAnswer(i); };
+    optEl.appendChild(btn);
+  });
+}
+
+function selectAnswer(idx) {
+  var q = questions[currentQ];
+  answers.push({ score: q.options[idx].score, tag: q.options[idx].tag });
+
+  currentQ++;
+  if (currentQ < questions.length) {
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function showResults() {
+  document.getElementById('quiz-section').classList.add('hidden');
+  document.getElementById('results-section').classList.remove('hidden');
+  document.getElementById('progress').style.width = '100%';
+
+  var total = 0;
+  answers.forEach(function(a) { total += a.score; });
+  var score = Math.round(total);
+  var tags = answers.map(function(a) { return a.tag; });
+
+  var circle = document.getElementById('score-circle');
+  var titleEl = document.getElementById('result-title');
+  var subEl = document.getElementById('result-subtitle');
+
+  document.getElementById('score-num').textContent = score;
+
+  if (score >= 7) {
+    circle.className = 'score-circle score-green';
+    titleEl.textContent = '✅ You\'re almost there!';
+    subEl.textContent = 'You\'re well prepared for MTD. Just a few things to double-check.';
+  } else if (score >= 4) {
+    circle.className = 'score-circle score-amber';
+    titleEl.textContent = '⚠️ Getting there, but gaps remain';
+    subEl.textContent = 'You have some preparation done but need to act on several areas before April.';
+  } else {
+    circle.className = 'score-circle score-red';
+    titleEl.textContent = '🔴 Significant preparation needed';
+    subEl.textContent = 'You need to take action now. MTD starts in ' + document.getElementById('days-left').textContent + ' days.';
+  }
+
+  // Build action items
+  var actions = [];
+
+  if (tags.indexOf('exempt') !== -1) {
+    actions.push({ icon: '✅', cls: 'action-done', title: 'You may be exempt from MTD in April 2026', desc: 'The £50k threshold doesn\'t apply to you yet. But the £30k threshold starts April 2027 — start preparing now.' });
+  }
+
+  if (tags.indexOf('threshold-2027') !== -1) {
+    actions.push({ icon: 'ℹ️', cls: 'action-soon', title: 'You\'re in the second wave (April 2027)', desc: 'Not required until April 2027, but smart to start now. You\'ll have a full year of practice.' });
+  }
+
+  if (tags.indexOf('unsure-income') !== -1) {
+    actions.push({ icon: '⚡', cls: 'action-urgent', title: 'Check your qualifying income', desc: 'Add up all self-employment + property income (before expenses). If over £50k, you\'re in scope from April 2026.' });
+  }
+
+  if (tags.indexOf('sa-no') !== -1 || tags.indexOf('sa-unknown') !== -1) {
+    actions.push({ icon: '🔴', cls: 'action-urgent', title: 'Register for Self Assessment immediately', desc: 'Go to gov.uk/register-for-self-assessment. You\'ll receive a UTR in 7-10 working days. You need this for MTD.' });
+  }
+
+  if (tags.indexOf('sa-pending') !== -1) {
+    actions.push({ icon: '⏳', cls: 'action-soon', title: 'Chase your UTR if not received', desc: 'If you applied more than 10 working days ago and haven\'t received your UTR, call HMRC on 0300 200 3310.' });
+  }
+
+  if (tags.indexOf('software-no') !== -1 || tags.indexOf('no-records') !== -1 || tags.indexOf('no-software') !== -1) {
+    actions.push({ icon: '🔴', cls: 'action-urgent', title: 'Get MTD-compatible software', desc: 'You need HMRC-recognised software. Check the official list at gov.uk. Free options exist (e.g. HMRC\'s own tool for simple cases).' });
+  }
+
+  if (tags.indexOf('software-unsure') !== -1) {
+    actions.push({ icon: '⚠️', cls: 'action-soon', title: 'Verify your software is MTD-compatible', desc: 'Check HMRC\'s list of recognised MTD software. Not all accounting apps support MTD quarterly submissions yet.' });
+  }
+
+  if (tags.indexOf('quarterly-no') !== -1 || tags.indexOf('quarterly-vague') !== -1) {
+    actions.push({ icon: '📖', cls: 'action-soon', title: 'Learn about quarterly updates', desc: 'Every 3 months you\'ll send a summary of income + expenses to HMRC. It\'s simpler than a tax return — just totals, not individual transactions.' });
+  }
+
+  if (tags.indexOf('deadlines-no') !== -1) {
+    actions.push({ icon: '📅', cls: 'action-soon', title: 'Note your quarterly deadlines', desc: 'Q1: Apr–Jul (due 7 Aug) · Q2: Aug–Oct (due 7 Nov) · Q3: Nov–Jan (due 7 Feb) · Q4: Feb–Mar (due 7 May). Final declaration by 31 January.' });
+  }
+
+  if (tags.indexOf('grace-no') !== -1) {
+    actions.push({ icon: '💡', cls: 'action-done', title: 'Good news: no penalties in year one', desc: 'HMRC won\'t charge late-submission penalties for quarterly updates in 2026/27. You have breathing room to get it right.' });
+  }
+
+  if (tags.indexOf('expenses-chaos') !== -1) {
+    actions.push({ icon: '⚠️', cls: 'action-soon', title: 'Start organising your expenses now', desc: 'Begin categorising expenses (travel, equipment, office, etc). If turnover is under £85k, you can use simplified 3-line accounts.' });
+  }
+
+  if (tags.indexOf('expenses-partial') !== -1) {
+    actions.push({ icon: 'ℹ️', cls: 'action-soon', title: 'Refine your expense categories', desc: 'Your MTD software will need properly categorised expenses. Start using consistent categories from April 6th.' });
+  }
+
+  if (tags.indexOf('connected-no') !== -1) {
+    actions.push({ icon: '🔗', cls: 'action-soon', title: 'Connect your software to HMRC', desc: 'Log into your software, find the MTD/HMRC connection settings, and authorise it via your Government Gateway login.' });
+  }
+
+  // Always add
+  actions.push({ icon: '📚', cls: 'action-done', title: 'Read the complete MTD guide', desc: 'Our comprehensive guide covers everything — timeline, software, penalties, exemptions, and step-by-step setup.' });
+
+  var listEl = document.getElementById('action-list');
+  listEl.innerHTML = '';
+  actions.forEach(function(a) {
+    var li = document.createElement('li');
+    li.className = 'action-item';
+    li.innerHTML = '<div class="action-icon ' + a.cls + '">' + a.icon + '</div>' +
+      '<div class="action-text"><strong>' + a.title + '</strong><span>' + a.desc + '</span></div>';
+    listEl.appendChild(li);
+  });
+
+  // CTA
+  var ctaEl = document.getElementById('cta-box');
+  if (score < 5) {
+    ctaEl.innerHTML = '<h3>📘 Get the complete MTD survival guide</h3>' +
+      '<p>Everything you need to know about Making Tax Digital in one place — deadlines, software options, penalties, exemptions, and a week-by-week setup plan.</p>' +
+      '<a href="/blog/mtd-income-tax-complete-guide-2026.html" class="cta-btn">Read the Full MTD Guide →</a><br>' +
+      '<a href="/tools/mtd-cost-calculator.html" class="cta-secondary">Or check what MTD software will cost you →</a>';
+  } else {
+    ctaEl.innerHTML = '<h3>🎯 Fine-tune your setup</h3>' +
+      '<p>You\'re nearly there. Use our other free tools to check the details.</p>' +
+      '<a href="/tools/mtd-penalty-calculator.html" class="cta-btn">Check MTD Penalty Rules →</a><br>' +
+      '<a href="/tools/mtd-cost-calculator.html" class="cta-secondary">Compare MTD software costs →</a>';
+  }
+
+  // Analytics
+  if (typeof gtag === 'function') {
+    gtag('event', 'quiz_complete', {
+      event_category: 'mtd_readiness',
+      event_label: score >= 7 ? 'ready' : (score >= 4 ? 'partial' : 'not_ready'),
+      value: score
+    });
+  }
+}
+
+function restart() {
+  currentQ = 0;
+  answers = [];
+  document.getElementById('quiz-section').classList.remove('hidden');
+  document.getElementById('results-section').classList.add('hidden');
+  renderQuestion();
+}
+
+function copyResults() {
+  var title = document.getElementById('result-title').textContent;
+  var score = document.getElementById('score-num').textContent;
+  var text = 'MTD Readiness Score: ' + score + '/8 — ' + title + '\nCheck yours at landolio.com/tools/mtd-readiness-checker.html';
+  navigator.clipboard.writeText(text).then(function() {
+    alert('Results copied to clipboard!');
+  });
+}
+
+function shareTwitter() {
+  var score = document.getElementById('score-num').textContent;
+  var text = encodeURIComponent('I scored ' + score + '/8 on the MTD Readiness Checker. Are you ready for Making Tax Digital? Check yours 👇 landolio.com/tools/mtd-readiness-checker.html #MTD #MakingTaxDigital #SelfEmployed');
+  window.open('https://twitter.com/intent/tweet?text=' + text, '_blank');
+}
+
+// Init
+renderQuestion();
+</script>
+</body>
+</html>

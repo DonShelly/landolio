@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Cash Flow Forecast Tool | Self-Employed UK | Landolio</title>
+    <meta name="description" content="Free cash flow forecast tool for freelancers and self-employed in the UK. Plan income vs expenses month-by-month, spot cash gaps early, and stay in control of your finances.">
+    <meta name="keywords" content="cash flow forecast, freelance cash flow, self-employed cash flow, cash flow template, small business cash flow UK">
+    <link rel="canonical" href="https://landolio.com/tools/cash-flow-forecast.html">
+    <meta property="og:title" content="Free Cash Flow Forecast — Self-Employed UK">
+    <meta property="og:description" content="Plan your income vs expenses month-by-month. Spot cash gaps before they happen.">
+    <meta property="og:url" content="https://landolio.com/tools/cash-flow-forecast.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Cash Flow Forecast — Self-Employed UK">
+    <meta name="twitter:description" content="Plan income vs expenses month-by-month. Free, no signup.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Cash Flow Forecast Tool",
+        "description": "Free cash flow forecast for freelancers and self-employed in the UK.",
+        "url": "https://landolio.com/tools/cash-flow-forecast.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+        "publisher": { "@type": "Organization", "name": "Landolio", "url": "https://landolio.com" }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { font-size: 2rem; margin-bottom: 8px; }
+        header p { opacity: 0.9; font-size: 1.1rem; }
+        .logo-link { color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.7; display: block; margin-bottom: 12px; }
+        .card { background: white; border-radius: 12px; padding: 24px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        h2 { font-size: 1.3rem; margin-bottom: 16px; color: #1a1a2e; }
+        h3 { font-size: 1.1rem; margin-bottom: 12px; color: #333; }
+        label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 0.9rem; }
+        input, select { padding: 10px 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; }
+        input:focus, select:focus { outline: none; border-color: #e94560; }
+        .btn { display: inline-block; padding: 12px 24px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .btn-primary { background: #e94560; color: white; }
+        .btn-primary:hover { background: #c73e54; transform: translateY(-1px); }
+        .btn-secondary { background: #16213e; color: white; }
+        .btn-secondary:hover { background: #1a1a2e; }
+        .btn-outline { background: transparent; color: #e94560; border: 2px solid #e94560; }
+        .btn-outline:hover { background: #e94560; color: white; }
+        .btn-sm { padding: 6px 14px; font-size: 0.85rem; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; overflow-x: auto; display: block; }
+        th, td { padding: 10px 8px; text-align: right; border: 1px solid #e0e0e0; font-size: 0.85rem; white-space: nowrap; }
+        th { background: #1a1a2e; color: white; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3px; position: sticky; top: 0; }
+        th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: inherit; z-index: 1; min-width: 160px; }
+        th:first-child { z-index: 2; }
+        tr:nth-child(even) { background: #fafafa; }
+        tr:hover { background: #f0f0f0; }
+        .row-income td { color: #28a745; }
+        .row-expense td { color: #dc3545; }
+        .row-total { font-weight: 700; background: #f0f4ff !important; }
+        .row-total td { border-top: 2px solid #1a1a2e; }
+        .row-balance { font-weight: 700; }
+        .row-balance td { font-size: 0.95rem; }
+        .positive { color: #28a745 !important; }
+        .negative { color: #dc3545 !important; }
+        .cell-input { width: 80px; padding: 4px 6px; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; text-align: right; }
+        .cell-input:focus { border-color: #e94560; outline: none; }
+        .setup-row { display: flex; gap: 16px; align-items: end; flex-wrap: wrap; margin-bottom: 16px; }
+        .setup-row > div { flex: 1; min-width: 150px; }
+        .setup-row input, .setup-row select { width: 100%; }
+        .chart-container { width: 100%; height: 250px; position: relative; margin: 16px 0; }
+        .chart-bar-group { display: flex; align-items: flex-end; gap: 2px; height: 200px; }
+        .chart-bar { flex: 1; min-width: 0; border-radius: 4px 4px 0 0; transition: height 0.3s; position: relative; }
+        .chart-bar:hover::after { content: attr(data-label); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; white-space: nowrap; }
+        .chart-labels { display: flex; gap: 2px; margin-top: 4px; }
+        .chart-labels span { flex: 1; text-align: center; font-size: 0.7rem; color: #666; }
+        .chart-legend { display: flex; gap: 16px; justify-content: center; margin-top: 8px; font-size: 0.8rem; }
+        .chart-legend span::before { content: ''; display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+        .legend-income::before { background: #28a745 !important; }
+        .legend-expense::before { background: #dc3545 !important; }
+        .legend-balance::before { background: #007bff !important; }
+        .storage-note { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; font-size: 0.85rem; }
+        .cta-box { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; border-radius: 12px; padding: 24px; text-align: center; margin: 24px 0; }
+        .cta-box h3 { color: white; margin-bottom: 8px; }
+        .cta-box p { opacity: 0.9; margin-bottom: 16px; }
+        .cta-box .btn { background: #e94560; color: white; text-decoration: none; }
+        .seo-content { margin-top: 24px; }
+        .seo-content h2 { border-bottom: 2px solid #e94560; padding-bottom: 8px; }
+        .seo-content h3 { margin-top: 20px; }
+        .seo-content p, .seo-content ul, .seo-content li { margin-bottom: 8px; }
+        .seo-content ul { padding-left: 20px; }
+        footer { text-align: center; padding: 40px 20px; color: #999; font-size: 0.85rem; }
+        footer a { color: #e94560; text-decoration: none; }
+        .alert-box { padding: 12px 16px; border-radius: 8px; margin: 12px 0; font-size: 0.9rem; }
+        .alert-warning { background: #fff3cd; border: 1px solid #ffc107; color: #856404; }
+        .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .alert-success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .line-item-controls { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo-link">← Landolio</a>
+        <h1>💰 Cash Flow Forecast</h1>
+        <p>Plan your income vs expenses month-by-month. Spot cash gaps before they happen.</p>
+    </header>
+
+    <div class="container">
+        <div class="storage-note">
+            💾 <strong>Your data is saved locally in your browser.</strong> Nothing is sent to any server. Export to CSV regularly as a backup.
+        </div>
+
+        <!-- Setup -->
+        <div class="card">
+            <h2>Setup</h2>
+            <div class="setup-row">
+                <div>
+                    <label for="startMonth">Start month</label>
+                    <input type="month" id="startMonth">
+                </div>
+                <div>
+                    <label for="numMonths">Months to forecast</label>
+                    <select id="numMonths">
+                        <option value="3">3 months</option>
+                        <option value="6" selected>6 months</option>
+                        <option value="12">12 months</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="openingBalance">Opening balance (£)</label>
+                    <input type="number" id="openingBalance" value="0" step="0.01">
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="buildForecast()">Build Forecast</button>
+        </div>
+
+        <!-- Line Items -->
+        <div class="card" id="lineItemsCard" style="display:none;">
+            <h2>Income & Expense Lines</h2>
+            <p style="font-size:0.9rem;color:#666;margin-bottom:12px;">Add your regular income sources and recurring expenses. Then edit individual month values in the table below.</p>
+
+            <h3 style="color:#28a745;">Income Lines</h3>
+            <div id="incomeLines"></div>
+            <div class="line-item-controls">
+                <input type="text" id="newIncomeName" placeholder="e.g. Freelance work" style="width:200px;">
+                <input type="number" id="newIncomeAmount" placeholder="Monthly £" step="0.01" style="width:120px;">
+                <button class="btn btn-sm btn-primary" onclick="addLine('income')">+ Add Income</button>
+            </div>
+
+            <h3 style="color:#dc3545;margin-top:20px;">Expense Lines</h3>
+            <div id="expenseLines"></div>
+            <div class="line-item-controls">
+                <input type="text" id="newExpenseName" placeholder="e.g. Software subscriptions" style="width:200px;">
+                <input type="number" id="newExpenseAmount" placeholder="Monthly £" step="0.01" style="width:120px;">
+                <button class="btn btn-sm btn-primary" onclick="addLine('expense')">+ Add Expense</button>
+            </div>
+        </div>
+
+        <!-- Forecast Table -->
+        <div class="card" id="forecastCard" style="display:none;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <h2 style="margin-bottom:0;">Forecast</h2>
+                <button class="btn btn-outline btn-sm" onclick="exportForecastCSV()">📥 Export CSV</button>
+            </div>
+
+            <div id="alertsContainer"></div>
+
+            <div style="overflow-x:auto;">
+                <table id="forecastTable"></table>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="card" id="chartCard" style="display:none;">
+            <h2>Cash Flow Chart</h2>
+            <div class="chart-container">
+                <div class="chart-bar-group" id="chartBars"></div>
+                <div class="chart-labels" id="chartLabels"></div>
+            </div>
+            <div class="chart-legend">
+                <span class="legend-income">Income</span>
+                <span class="legend-expense">Expenses</span>
+                <span class="legend-balance">Closing Balance</span>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>💼 Getting Paid on Time?</h3>
+            <p>Our Getting Paid Toolkit has everything you need — contracts, chase templates, late payment calculators, and more.</p>
+            <a href="https://buy.stripe.com/bIY9CG7u25s33E4bJ1" class="btn" target="_blank">Get the Getting Paid Toolkit — £19 →</a>
+        </div>
+
+        <!-- SEO Content -->
+        <div class="card seo-content">
+            <h2>How to Forecast Cash Flow as a Freelancer</h2>
+            <p>Cash flow is the single biggest reason small businesses fail. Not lack of profit — lack of <strong>cash at the right time</strong>. A freelancer can be profitable on paper but still run out of money if clients pay late or expenses cluster together.</p>
+
+            <h3>Why Cash Flow Matters for Self-Employed</h3>
+            <p>When you're employed, money arrives predictably on the same date each month. When you're self-employed, income is irregular — a big invoice might pay 60 days late, while your rent, software, and tax are due on fixed dates regardless.</p>
+            <p>A cash flow forecast helps you:</p>
+            <ul>
+                <li><strong>Spot gaps</strong> — see months where outgoings exceed income before they happen</li>
+                <li><strong>Plan for tax</strong> — set aside money for Self Assessment payments on account (31 January and 31 July)</li>
+                <li><strong>Make better decisions</strong> — know when you can afford to invest in equipment, training, or marketing</li>
+                <li><strong>Sleep better</strong> — financial uncertainty is the #1 freelancer stress factor</li>
+            </ul>
+
+            <h3>Key Dates for UK Self-Employed</h3>
+            <ul>
+                <li><strong>31 January</strong> — Self Assessment tax return deadline + first payment on account</li>
+                <li><strong>31 July</strong> — Second payment on account</li>
+                <li><strong>6 April 2026</strong> — MTD for Income Tax starts (income over £50,000)</li>
+                <li><strong>Quarterly VAT</strong> — if VAT registered, plan for quarterly payments</li>
+            </ul>
+
+            <h3>Tips for Better Cash Flow</h3>
+            <ul>
+                <li><strong>Invoice immediately</strong> — don't wait until month-end</li>
+                <li><strong>Shorten payment terms</strong> — 14 days beats 30 days</li>
+                <li><strong>Chase promptly</strong> — use our <a href="/tools/payment-reminder-generator.html">payment reminder generator</a> when invoices go overdue</li>
+                <li><strong>Build a buffer</strong> — aim for 3 months' expenses in reserve</li>
+                <li><strong>Track expenses</strong> — use our <a href="/tools/expense-tracker.html">expense tracker</a> to know your real costs</li>
+                <li><strong>Separate tax money</strong> — put 25-30% of every invoice into a separate account</li>
+            </ul>
+        </div>
+
+        <!-- More Tools -->
+        <div class="card">
+            <h3>More Free Tools</h3>
+            <ul>
+                <li><a href="/tools/expense-tracker.html">Business Expense Tracker</a></li>
+                <li><a href="/tools/self-employed-tax-calculator.html">Self-Employed Tax Calculator</a></li>
+                <li><a href="/tools/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+                <li><a href="/tools/invoice-generator.html">Invoice Generator</a></li>
+                <li><a href="/tools/day-rate-calculator.html">Day Rate Calculator</a></li>
+                <li><a href="/tools/">View all tools →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p><a href="/">Landolio</a> — Free tools for UK freelancers and small businesses</p>
+        <p style="margin-top:8px;"><a href="/tools/">All Tools</a> · <a href="/blog/">Blog</a> · <a href="/products/">Products</a></p>
+    </footer>
+
+    <script>
+        const STORAGE_KEY = 'landolio_cashflow';
+        let state = { months: [], incomeLines: [], expenseLines: [], openingBalance: 0, values: {} };
+
+        function loadState() {
+            try { const s = localStorage.getItem(STORAGE_KEY); if (s) state = JSON.parse(s); } catch {}
+        }
+
+        function saveState() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        }
+
+        function getMonthLabel(ym) {
+            const [y, m] = ym.split('-');
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return months[parseInt(m) - 1] + ' ' + y.slice(2);
+        }
+
+        function buildForecast() {
+            const startMonth = document.getElementById('startMonth').value;
+            const numMonths = parseInt(document.getElementById('numMonths').value);
+            const openingBalance = parseFloat(document.getElementById('openingBalance').value) || 0;
+
+            if (!startMonth) { alert('Please select a start month.'); return; }
+
+            state.openingBalance = openingBalance;
+            state.months = [];
+
+            const [sy, sm] = startMonth.split('-').map(Number);
+            for (let i = 0; i < numMonths; i++) {
+                const d = new Date(sy, sm - 1 + i, 1);
+                state.months.push(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`);
+            }
+
+            // Keep existing lines, init values for new months
+            for (const line of [...state.incomeLines, ...state.expenseLines]) {
+                for (const m of state.months) {
+                    const key = `${line.id}_${m}`;
+                    if (!(key in state.values)) {
+                        state.values[key] = line.defaultAmount || 0;
+                    }
+                }
+            }
+
+            saveState();
+            renderAll();
+        }
+
+        function addLine(type) {
+            const nameEl = document.getElementById(type === 'income' ? 'newIncomeName' : 'newExpenseName');
+            const amountEl = document.getElementById(type === 'income' ? 'newIncomeAmount' : 'newExpenseAmount');
+            const name = nameEl.value.trim();
+            const amount = parseFloat(amountEl.value) || 0;
+
+            if (!name) { alert('Please enter a name.'); return; }
+
+            const line = { id: Date.now(), name, type, defaultAmount: amount };
+            if (type === 'income') state.incomeLines.push(line);
+            else state.expenseLines.push(line);
+
+            // Init values for all months
+            for (const m of state.months) {
+                state.values[`${line.id}_${m}`] = amount;
+            }
+
+            nameEl.value = '';
+            amountEl.value = '';
+            saveState();
+            renderAll();
+        }
+
+        function removeLine(id) {
+            state.incomeLines = state.incomeLines.filter(l => l.id !== id);
+            state.expenseLines = state.expenseLines.filter(l => l.id !== id);
+            // Clean up values
+            for (const key of Object.keys(state.values)) {
+                if (key.startsWith(id + '_')) delete state.values[key];
+            }
+            saveState();
+            renderAll();
+        }
+
+        function onCellChange(lineId, month, value) {
+            state.values[`${lineId}_${month}`] = parseFloat(value) || 0;
+            saveState();
+            renderForecast();
+            renderChart();
+        }
+
+        function renderAll() {
+            document.getElementById('lineItemsCard').style.display = state.months.length ? 'block' : 'none';
+            document.getElementById('forecastCard').style.display = state.months.length ? 'block' : 'none';
+            document.getElementById('chartCard').style.display = state.months.length ? 'block' : 'none';
+
+            renderLineItems('income');
+            renderLineItems('expense');
+            renderForecast();
+            renderChart();
+        }
+
+        function renderLineItems(type) {
+            const container = document.getElementById(type === 'income' ? 'incomeLines' : 'expenseLines');
+            const lines = type === 'income' ? state.incomeLines : state.expenseLines;
+
+            if (lines.length === 0) {
+                container.innerHTML = `<p style="color:#999;font-size:0.9rem;margin-bottom:8px;">No ${type} lines yet.</p>`;
+                return;
+            }
+
+            container.innerHTML = lines.map(l =>
+                `<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+                    <span style="flex:1;font-size:0.9rem;">${escHtml(l.name)} — £${(l.defaultAmount || 0).toFixed(2)}/mo</span>
+                    <button onclick="removeLine(${l.id})" style="background:none;border:none;color:#dc3545;cursor:pointer;font-size:0.85rem;">✕ Remove</button>
+                </div>`
+            ).join('');
+        }
+
+        function renderForecast() {
+            const table = document.getElementById('forecastTable');
+            if (!state.months.length) return;
+
+            let html = '<thead><tr><th>Category</th>';
+            for (const m of state.months) html += `<th>${getMonthLabel(m)}</th>`;
+            html += '<th>Total</th></tr></thead><tbody>';
+
+            // Income rows
+            let monthlyIncome = state.months.map(() => 0);
+            for (const line of state.incomeLines) {
+                html += `<tr class="row-income"><td>${escHtml(line.name)}</td>`;
+                let lineTotal = 0;
+                state.months.forEach((m, i) => {
+                    const val = state.values[`${line.id}_${m}`] || 0;
+                    monthlyIncome[i] += val;
+                    lineTotal += val;
+                    html += `<td><input class="cell-input" type="number" value="${val}" step="0.01" onchange="onCellChange(${line.id},'${m}',this.value)"></td>`;
+                });
+                html += `<td style="font-weight:600;">£${lineTotal.toFixed(0)}</td></tr>`;
+            }
+
+            // Total income
+            html += '<tr class="row-total row-income"><td><strong>Total Income</strong></td>';
+            let totalIncome = 0;
+            monthlyIncome.forEach(v => { html += `<td>£${v.toFixed(0)}</td>`; totalIncome += v; });
+            html += `<td>£${totalIncome.toFixed(0)}</td></tr>`;
+
+            // Expense rows
+            let monthlyExpense = state.months.map(() => 0);
+            for (const line of state.expenseLines) {
+                html += `<tr class="row-expense"><td>${escHtml(line.name)}</td>`;
+                let lineTotal = 0;
+                state.months.forEach((m, i) => {
+                    const val = state.values[`${line.id}_${m}`] || 0;
+                    monthlyExpense[i] += val;
+                    lineTotal += val;
+                    html += `<td><input class="cell-input" type="number" value="${val}" step="0.01" onchange="onCellChange(${line.id},'${m}',this.value)"></td>`;
+                });
+                html += `<td style="font-weight:600;">£${lineTotal.toFixed(0)}</td></tr>`;
+            }
+
+            // Total expenses
+            html += '<tr class="row-total row-expense"><td><strong>Total Expenses</strong></td>';
+            let totalExpense = 0;
+            monthlyExpense.forEach(v => { html += `<td>£${v.toFixed(0)}</td>`; totalExpense += v; });
+            html += `<td>£${totalExpense.toFixed(0)}</td></tr>`;
+
+            // Net cash flow
+            html += '<tr class="row-total"><td><strong>Net Cash Flow</strong></td>';
+            let totalNet = 0;
+            state.months.forEach((m, i) => {
+                const net = monthlyIncome[i] - monthlyExpense[i];
+                totalNet += net;
+                html += `<td class="${net >= 0 ? 'positive' : 'negative'}">£${net.toFixed(0)}</td>`;
+            });
+            html += `<td class="${totalNet >= 0 ? 'positive' : 'negative'}">£${totalNet.toFixed(0)}</td></tr>`;
+
+            // Closing balance
+            html += '<tr class="row-balance"><td><strong>Closing Balance</strong></td>';
+            let balance = state.openingBalance;
+            let alerts = [];
+            state.months.forEach((m, i) => {
+                balance += monthlyIncome[i] - monthlyExpense[i];
+                if (balance < 0) alerts.push({ month: getMonthLabel(m), amount: balance });
+                html += `<td class="${balance >= 0 ? 'positive' : 'negative'}">£${balance.toFixed(0)}</td>`;
+            });
+            html += `<td class="${balance >= 0 ? 'positive' : 'negative'}">£${balance.toFixed(0)}</td></tr>`;
+
+            html += '</tbody>';
+            table.innerHTML = html;
+
+            // Alerts
+            const alertsContainer = document.getElementById('alertsContainer');
+            if (alerts.length > 0) {
+                alertsContainer.innerHTML = alerts.map(a =>
+                    `<div class="alert-danger">⚠️ <strong>Cash gap in ${a.month}</strong> — your balance drops to £${a.amount.toFixed(0)}. Consider invoicing earlier, chasing overdue payments, or reducing expenses.</div>`
+                ).join('');
+            } else if (state.incomeLines.length > 0 || state.expenseLines.length > 0) {
+                alertsContainer.innerHTML = '<div class="alert-success">✅ No cash gaps forecast — your balance stays positive throughout.</div>';
+            } else {
+                alertsContainer.innerHTML = '';
+            }
+        }
+
+        function renderChart() {
+            if (!state.months.length) return;
+
+            const barsContainer = document.getElementById('chartBars');
+            const labelsContainer = document.getElementById('chartLabels');
+
+            let monthlyIncome = [];
+            let monthlyExpense = [];
+            let balances = [];
+            let balance = state.openingBalance;
+
+            for (let i = 0; i < state.months.length; i++) {
+                let inc = 0, exp = 0;
+                for (const line of state.incomeLines) inc += state.values[`${line.id}_${state.months[i]}`] || 0;
+                for (const line of state.expenseLines) exp += state.values[`${line.id}_${state.months[i]}`] || 0;
+                monthlyIncome.push(inc);
+                monthlyExpense.push(exp);
+                balance += inc - exp;
+                balances.push(balance);
+            }
+
+            const maxVal = Math.max(...monthlyIncome, ...monthlyExpense, ...balances.map(Math.abs), 1);
+
+            let barsHtml = '';
+            let labelsHtml = '';
+
+            for (let i = 0; i < state.months.length; i++) {
+                const incH = (monthlyIncome[i] / maxVal * 180).toFixed(0);
+                const expH = (monthlyExpense[i] / maxVal * 180).toFixed(0);
+                const balH = (Math.abs(balances[i]) / maxVal * 180).toFixed(0);
+                const balColor = balances[i] >= 0 ? '#007bff' : '#ff6b6b';
+
+                barsHtml += `<div style="flex:1;display:flex;align-items:flex-end;gap:1px;min-width:0;">
+                    <div class="chart-bar" style="flex:1;height:${incH}px;background:#28a745;" data-label="Income: £${monthlyIncome[i].toFixed(0)}"></div>
+                    <div class="chart-bar" style="flex:1;height:${expH}px;background:#dc3545;" data-label="Expenses: £${monthlyExpense[i].toFixed(0)}"></div>
+                    <div class="chart-bar" style="flex:1;height:${balH}px;background:${balColor};" data-label="Balance: £${balances[i].toFixed(0)}"></div>
+                </div>`;
+                labelsHtml += `<span style="flex:1;">${getMonthLabel(state.months[i])}</span>`;
+            }
+
+            barsContainer.innerHTML = barsHtml;
+            labelsContainer.innerHTML = labelsHtml;
+        }
+
+        function exportForecastCSV() {
+            if (!state.months.length) return;
+
+            let csv = 'Category,' + state.months.map(getMonthLabel).join(',') + ',Total\n';
+
+            for (const line of state.incomeLines) {
+                let total = 0;
+                csv += `"${line.name} (income)"`;
+                for (const m of state.months) {
+                    const v = state.values[`${line.id}_${m}`] || 0;
+                    total += v;
+                    csv += `,${v.toFixed(2)}`;
+                }
+                csv += `,${total.toFixed(2)}\n`;
+            }
+
+            for (const line of state.expenseLines) {
+                let total = 0;
+                csv += `"${line.name} (expense)"`;
+                for (const m of state.months) {
+                    const v = state.values[`${line.id}_${m}`] || 0;
+                    total += v;
+                    csv += `,${v.toFixed(2)}`;
+                }
+                csv += `,${total.toFixed(2)}\n`;
+            }
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `landolio-cashflow-${new Date().toISOString().slice(0, 10)}.csv`;
+            a.click();
+        }
+
+        function escHtml(s) {
+            const d = document.createElement('div');
+            d.textContent = s || '';
+            return d.innerHTML;
+        }
+
+        // Init
+        loadState();
+        const now = new Date();
+        document.getElementById('startMonth').value = state.months?.[0] || `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+        if (state.openingBalance) document.getElementById('openingBalance').value = state.openingBalance;
+        if (state.months.length) {
+            document.getElementById('numMonths').value = state.months.length <= 3 ? '3' : state.months.length <= 6 ? '6' : '12';
+            renderAll();
+        }
+    </script>
+</body>
+</html>

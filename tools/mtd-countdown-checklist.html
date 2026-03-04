@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTD Countdown & Compliance Checklist | Landolio</title>
+    <meta name="description" content="Free Making Tax Digital countdown timer and compliance checklist. Track your MTD readiness with 15 actionable steps before the April 6, 2026 deadline.">
+    <meta name="keywords" content="MTD countdown, making tax digital checklist, MTD compliance, April 2026 deadline, sole trader tax, HMRC">
+    <link rel="canonical" href="https://landolio.com/tools/mtd-countdown-checklist.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MTD Countdown & Compliance Checklist | Only 33 Days Left">
+    <meta property="og:description" content="Are you ready for Making Tax Digital? Track your progress with this free countdown timer and 15-step compliance checklist.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://landolio.com/tools/mtd-countdown-checklist.html">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MTD Countdown & Compliance Checklist">
+    <meta name="twitter:description" content="Making Tax Digital starts April 6. Are you ready? Free checklist to track your compliance.">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "MTD Countdown & Compliance Checklist",
+        "description": "Free Making Tax Digital countdown timer and 15-step compliance checklist for UK sole traders and landlords.",
+        "url": "https://landolio.com/tools/mtd-countdown-checklist.html",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+        "author": { "@type": "Organization", "name": "Landolio", "url": "https://landolio.com" }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #1a56db;
+            --primary-light: #e8effd;
+            --success: #059669;
+            --success-light: #d1fae5;
+            --warning: #d97706;
+            --warning-light: #fef3c7;
+            --danger: #dc2626;
+            --danger-light: #fee2e2;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f9fafb;
+            --card: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 1.5rem; }
+
+        /* Nav */
+        .nav { background: var(--card); border-bottom: 1px solid var(--border); padding: 0.75rem 0; }
+        .nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .nav-links a { margin-left: 1.5rem; color: var(--text-light); font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Countdown */
+        .countdown-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #1a56db 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .countdown-title { font-size: 1.1rem; opacity: 0.9; margin-bottom: 0.5rem; }
+        .countdown-date { font-size: 0.9rem; opacity: 0.7; margin-bottom: 1.5rem; }
+
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .countdown-unit {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+
+        .urgency-bar {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            height: 8px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .urgency-fill {
+            height: 100%;
+            border-radius: 20px;
+            transition: width 0.5s;
+        }
+
+        .urgency-text { font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem; }
+
+        /* Progress */
+        .progress-section {
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-header h2 { font-size: 1.2rem; }
+
+        .progress-stats {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .progress-stats span { font-weight: 600; color: var(--text); }
+
+        .progress-bar {
+            background: #e5e7eb;
+            border-radius: 20px;
+            height: 12px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--success));
+            border-radius: 20px;
+            transition: width 0.5s ease;
+        }
+
+        /* Checklist */
+        .checklist-section {
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .checklist-category {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .checklist-category:last-child { border-bottom: none; }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            gap: 0.75rem;
+        }
+
+        .category-header:hover { background: var(--bg); }
+
+        .category-icon { font-size: 1.3rem; }
+        .category-title { font-weight: 600; flex: 1; }
+
+        .category-badge {
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .category-chevron {
+            transition: transform 0.2s;
+            color: var(--text-light);
+        }
+
+        .category-header.open .category-chevron { transform: rotate(90deg); }
+
+        .checklist-items {
+            display: none;
+            padding: 0 1.5rem 1rem;
+        }
+
+        .checklist-items.open { display: block; }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .checklist-item:last-child { border-bottom: none; }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: var(--success);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .item-content { flex: 1; }
+
+        .item-title {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .item-title.done {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .item-link {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-top: 0.25rem;
+        }
+
+        .item-link:hover { text-decoration: underline; }
+
+        .item-priority {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .priority-urgent { background: var(--danger-light); color: var(--danger); }
+        .priority-soon { background: var(--warning-light); color: var(--warning); }
+        .priority-later { background: var(--success-light); color: var(--success); }
+
+        /* Share */
+        .share-section {
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .share-section h3 { margin-bottom: 0.5rem; }
+        .share-section p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        .share-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .share-btn:hover { background: var(--bg); border-color: var(--primary); color: var(--primary); }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e8effd 100%);
+            border-radius: 12px;
+            border: 1px solid #bfdbfe;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section h3 { margin-bottom: 0.5rem; color: #1e40af; }
+        .cta-section p { color: var(--text-light); margin-bottom: 1rem; font-size: 0.95rem; }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .cta-btn:hover { background: #1e40af; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* Reset button */
+        .reset-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .reset-btn:hover { color: var(--danger); }
+
+        @media (max-width: 600px) {
+            .countdown-grid { gap: 0.5rem; }
+            .countdown-unit { padding: 0.75rem; min-width: 65px; }
+            .countdown-number { font-size: 1.8rem; }
+            .progress-stats { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <a href="/">Landolio</a>
+            <div class="nav-links">
+                <a href="/tools/">Tools</a>
+                <a href="/blog/">Blog</a>
+                <a href="/products/">Products</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="countdown-section" id="countdown">
+            <div class="countdown-title">⏰ Making Tax Digital Starts In</div>
+            <div class="countdown-date">Monday 6 April 2026 — the clock is ticking</div>
+            <div class="countdown-grid">
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="cd-days">--</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="cd-hours">--</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="cd-mins">--</div>
+                    <div class="countdown-label">Mins</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="cd-secs">--</div>
+                    <div class="countdown-label">Secs</div>
+                </div>
+            </div>
+            <div class="urgency-bar">
+                <div class="urgency-fill" id="urgency-fill"></div>
+            </div>
+            <div class="urgency-text" id="urgency-text"></div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <h2>Your MTD Readiness</h2>
+                <div class="progress-stats">
+                    <div><span id="completed-count">0</span> of <span id="total-count">15</span> complete</div>
+                    <button class="reset-btn" onclick="resetChecklist()">Reset</button>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="checklist-container"></div>
+
+        <div class="share-section">
+            <h3>Share This Checklist</h3>
+            <p>Know someone who needs to prepare for MTD? Share this free tool.</p>
+            <div class="share-buttons">
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=Only%20days%20left%20until%20Making%20Tax%20Digital%20starts.%20Free%20countdown%20%26%20compliance%20checklist%3A&url=https%3A%2F%2Flandolio.com%2Ftools%2Fmtd-countdown-checklist.html" target="_blank" rel="noopener">𝕏 Share on X</a>
+                <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flandolio.com%2Ftools%2Fmtd-countdown-checklist.html" target="_blank" rel="noopener">📘 Share on Facebook</a>
+                <button class="share-btn" onclick="copyLink()">📋 Copy Link</button>
+                <a class="share-btn" href="mailto:?subject=MTD%20Countdown%20%26%20Checklist&body=Making%20Tax%20Digital%20starts%20April%206.%20Here%27s%20a%20free%20compliance%20checklist%3A%20https%3A%2F%2Flandolio.com%2Ftools%2Fmtd-countdown-checklist.html" target="_blank">✉️ Email</a>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need help getting MTD-ready?</h3>
+            <p>Our Getting Paid Toolkit includes invoice templates, payment chasing scripts, and a complete late payment guide — everything you need alongside MTD compliance.</p>
+            <a class="cta-btn" href="/products/getting-paid-toolkit.html">Get the Toolkit — £19</a>
+        </div>
+
+        <div class="cta-section" style="background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%); border-color: #86efac;">
+            <h3 style="color: #166534;">Read the full MTD guide</h3>
+            <p>Everything you need to know about Making Tax Digital for Income Tax — deadlines, software, penalties, and the grace period most people don't know about.</p>
+            <a class="cta-btn" href="/blog/making-tax-digital-income-tax-2026.html" style="background: #059669;">Read the Free Guide →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Built by <a href="/">Landolio</a> — free tools for UK freelancers & sole traders</p>
+        <p style="margin-top: 0.5rem;"><a href="/tools/">More free tools</a> · <a href="/blog/">Blog</a></p>
+    </footer>
+
+    <script>
+        const MTD_DATE = new Date('2026-04-06T00:00:00+01:00');
+        const TOTAL_DAYS = 90; // tracking window
+
+        const CHECKLIST_DATA = [
+            {
+                category: "📋 Check If You're Affected",
+                items: [
+                    {
+                        id: 'check-income',
+                        title: 'Check your qualifying income for 2024/25',
+                        desc: 'Add up your gross self-employment + property income. Over £50k? You must comply from April 2026. Over £30k? April 2027.',
+                        link: '/blog/making-tax-digital-income-tax-2026.html',
+                        linkText: 'Read the full MTD guide →',
+                        priority: 'urgent'
+                    },
+                    {
+                        id: 'check-hmrc-letter',
+                        title: 'Check for HMRC letters or messages',
+                        desc: 'HMRC has been writing to affected taxpayers. Check your Government Gateway inbox and post.',
+                        priority: 'urgent'
+                    },
+                    {
+                        id: 'sign-up-mtd',
+                        title: 'Sign up for MTD for Income Tax on HMRC',
+                        desc: 'You need to register via your Government Gateway account. This is separate from Self Assessment.',
+                        link: 'https://www.gov.uk/guidance/sign-up-your-business-for-making-tax-digital-for-income-tax',
+                        linkText: 'Sign up on GOV.UK →',
+                        priority: 'urgent'
+                    }
+                ]
+            },
+            {
+                category: "💻 Choose & Set Up Software",
+                items: [
+                    {
+                        id: 'research-software',
+                        title: 'Research MTD-compatible software options',
+                        desc: 'Only software on HMRC\'s official list counts. Popular choices: FreeAgent (free with NatWest), Xero Simple (£7+VAT/mo), QuickBooks.',
+                        link: 'https://www.tax.service.gov.uk/find-making-tax-digital-income-tax-software/how-will-you-use-it',
+                        linkText: 'HMRC\'s official software list →',
+                        priority: 'urgent'
+                    },
+                    {
+                        id: 'choose-software',
+                        title: 'Choose and purchase/subscribe to software',
+                        desc: 'Consider: cost, ease of use, bank feed support, 3-line accounts support, and whether your accountant recommends it.',
+                        link: '/tools/mtd-cost-calculator.html',
+                        linkText: 'Estimate your MTD costs →',
+                        priority: 'urgent'
+                    },
+                    {
+                        id: 'connect-bank',
+                        title: 'Connect your bank account to the software',
+                        desc: 'Most MTD software uses Open Banking to import transactions automatically. Set this up early so you\'re ready from day one.',
+                        priority: 'soon'
+                    },
+                    {
+                        id: 'link-hmrc',
+                        title: 'Link your software to HMRC',
+                        desc: 'Authorise your software to submit to HMRC via your Government Gateway credentials. Test the connection before April.',
+                        priority: 'soon'
+                    }
+                ]
+            },
+            {
+                category: "📊 Prepare Your Records",
+                items: [
+                    {
+                        id: 'digitise-records',
+                        title: 'Digitise your current record-keeping',
+                        desc: 'If you\'re using spreadsheets or paper, start entering historical data. You need digital records from 6 April 2026 onwards.',
+                        priority: 'soon'
+                    },
+                    {
+                        id: 'categorise-income',
+                        title: 'Set up income and expense categories',
+                        desc: 'Configure your software with the right categories for your business. Align with Self Assessment categories where possible.',
+                        priority: 'soon'
+                    },
+                    {
+                        id: 'separate-personal',
+                        title: 'Separate business and personal transactions',
+                        desc: 'If you don\'t have a dedicated business account, now is a good time. It makes quarterly updates much simpler.',
+                        priority: 'later'
+                    }
+                ]
+            },
+            {
+                category: "📅 Understand the Timeline",
+                items: [
+                    {
+                        id: 'know-quarters',
+                        title: 'Know your quarterly update deadlines',
+                        desc: 'Q1: 6 Apr–5 Jul (due 7 Aug) · Q2: 6 Jul–5 Oct (due 7 Nov) · Q3: 6 Oct–5 Jan (due 7 Feb) · Q4: 6 Jan–5 Apr (due 7 May)',
+                        priority: 'soon'
+                    },
+                    {
+                        id: 'know-penalties',
+                        title: 'Understand the penalty grace period',
+                        desc: 'Good news: HMRC has confirmed NO penalties for late quarterly submissions in the first year (2026/27). But don\'t rely on this — build good habits early.',
+                        link: '/tools/mtd-penalty-calculator.html',
+                        linkText: 'Calculate potential penalties →',
+                        priority: 'later'
+                    }
+                ]
+            },
+            {
+                category: "🤝 Get Support",
+                items: [
+                    {
+                        id: 'talk-accountant',
+                        title: 'Speak to your accountant (if you have one)',
+                        desc: 'If you use an accountant, check what they\'re offering for MTD. Some will handle quarterly updates for you (at extra cost). Clarify responsibilities.',
+                        priority: 'soon'
+                    },
+                    {
+                        id: 'test-submission',
+                        title: 'Do a test quarterly update before it counts',
+                        desc: 'Some software lets you do a practice submission. Try it now while there\'s no pressure.',
+                        priority: 'later'
+                    },
+                    {
+                        id: 'bookmark-resources',
+                        title: 'Bookmark key resources and helplines',
+                        desc: 'HMRC MTD helpline: 0300 200 3600. Keep your Government Gateway login safe. Bookmark this checklist!',
+                        link: '/tools/mtd-readiness-checker.html',
+                        linkText: 'Take the MTD Readiness Quiz →',
+                        priority: 'later'
+                    }
+                ]
+            }
+        ];
+
+        // Countdown
+        function updateCountdown() {
+            const now = new Date();
+            const diff = MTD_DATE - now;
+
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = '0';
+                document.getElementById('cd-hours').textContent = '0';
+                document.getElementById('cd-mins').textContent = '0';
+                document.getElementById('cd-secs').textContent = '0';
+                document.getElementById('urgency-text').textContent = 'MTD for Income Tax has started!';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('cd-days').textContent = days;
+            document.getElementById('cd-hours').textContent = hours;
+            document.getElementById('cd-mins').textContent = mins;
+            document.getElementById('cd-secs').textContent = secs;
+
+            // Urgency bar
+            const elapsed = TOTAL_DAYS - days;
+            const pct = Math.min(100, Math.max(0, (elapsed / TOTAL_DAYS) * 100));
+            const fill = document.getElementById('urgency-fill');
+            fill.style.width = pct + '%';
+
+            if (days > 30) {
+                fill.style.background = 'linear-gradient(90deg, #10b981, #34d399)';
+                document.getElementById('urgency-text').textContent = `You have time — but start now to avoid the rush`;
+            } else if (days > 14) {
+                fill.style.background = 'linear-gradient(90deg, #f59e0b, #fbbf24)';
+                document.getElementById('urgency-text').textContent = `⚠️ Getting close — complete your setup this week`;
+            } else if (days > 7) {
+                fill.style.background = 'linear-gradient(90deg, #f97316, #fb923c)';
+                document.getElementById('urgency-text').textContent = `🔥 Under 2 weeks — prioritise urgent items now`;
+            } else {
+                fill.style.background = 'linear-gradient(90deg, #ef4444, #f87171)';
+                document.getElementById('urgency-text').textContent = `🚨 Final days — focus on essentials only`;
+            }
+        }
+
+        // Checklist rendering
+        function getState() {
+            try {
+                return JSON.parse(localStorage.getItem('mtd-checklist') || '{}');
+            } catch { return {}; }
+        }
+
+        function saveState(state) {
+            localStorage.setItem('mtd-checklist', JSON.stringify(state));
+        }
+
+        function renderChecklist() {
+            const container = document.getElementById('checklist-container');
+            const state = getState();
+            let html = '';
+
+            CHECKLIST_DATA.forEach((cat, ci) => {
+                const catDone = cat.items.filter(i => state[i.id]).length;
+                const catTotal = cat.items.length;
+                const allDone = catDone === catTotal;
+                const badgeColor = allDone ? 'background:#d1fae5;color:#059669' : 'background:#f3f4f6;color:#6b7280';
+
+                html += `<div class="checklist-section">
+                    <div class="checklist-category">
+                        <div class="category-header${ci === 0 ? ' open' : ''}" onclick="toggleCategory(this)">
+                            <span class="category-icon">${allDone ? '✅' : cat.category.split(' ')[0]}</span>
+                            <span class="category-title">${cat.category.split(' ').slice(1).join(' ')}</span>
+                            <span class="category-badge" style="${badgeColor}">${catDone}/${catTotal}</span>
+                            <span class="category-chevron">▶</span>
+                        </div>
+                        <div class="checklist-items${ci === 0 ? ' open' : ''}">`;
+
+                cat.items.forEach(item => {
+                    const checked = state[item.id] ? 'checked' : '';
+                    const doneClass = state[item.id] ? ' done' : '';
+                    const priorityClass = item.priority === 'urgent' ? 'priority-urgent' : item.priority === 'soon' ? 'priority-soon' : 'priority-later';
+                    const priorityLabel = item.priority === 'urgent' ? 'DO NOW' : item.priority === 'soon' ? 'THIS WEEK' : 'WHEN READY';
+
+                    html += `<div class="checklist-item">
+                        <input type="checkbox" id="${item.id}" ${checked} onchange="toggleItem('${item.id}')">
+                        <div class="item-content">
+                            <div class="item-title${doneClass}">${item.title}</div>
+                            <div class="item-desc">${item.desc}</div>
+                            ${item.link ? `<a class="item-link" href="${item.link}" target="_blank">${item.linkText || 'Learn more →'}</a>` : ''}
+                        </div>
+                        <span class="item-priority ${priorityClass}">${priorityLabel}</span>
+                    </div>`;
+                });
+
+                html += `</div></div></div>`;
+            });
+
+            container.innerHTML = html;
+            updateProgress();
+        }
+
+        function toggleCategory(header) {
+            header.classList.toggle('open');
+            header.nextElementSibling.classList.toggle('open');
+        }
+
+        function toggleItem(id) {
+            const state = getState();
+            state[id] = !state[id];
+            saveState(state);
+            renderChecklist();
+        }
+
+        function updateProgress() {
+            const state = getState();
+            const total = CHECKLIST_DATA.reduce((sum, cat) => sum + cat.items.length, 0);
+            const done = CHECKLIST_DATA.reduce((sum, cat) => sum + cat.items.filter(i => state[i.id]).length, 0);
+
+            document.getElementById('completed-count').textContent = done;
+            document.getElementById('total-count').textContent = total;
+            document.getElementById('progress-fill').style.width = (done / total * 100) + '%';
+        }
+
+        function resetChecklist() {
+            if (confirm('Reset all progress? This cannot be undone.')) {
+                localStorage.removeItem('mtd-checklist');
+                renderChecklist();
+            }
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText('https://landolio.com/tools/mtd-countdown-checklist.html')
+                .then(() => {
+                    const btn = event.target;
+                    const orig = btn.textContent;
+                    btn.textContent = '✅ Copied!';
+                    setTimeout(() => btn.textContent = orig, 2000);
+                });
+        }
+
+        // Init
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        renderChecklist();
+    </script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Business Expense Tracker | Self-Employed UK | Landolio</title>
+    <meta name="description" content="Free business expense tracker for self-employed and freelancers in the UK. Categorise expenses, track totals by category, export to CSV for your tax return. HMRC compliant.">
+    <meta name="keywords" content="business expense tracker, self-employed expenses, freelancer expense tracker, HMRC expenses, tax deductible expenses UK, expense categories self-employed">
+    <link rel="canonical" href="https://landolio.com/tools/expense-tracker.html">
+    <meta property="og:title" content="Free Business Expense Tracker — Self-Employed UK">
+    <meta property="og:description" content="Track business expenses by HMRC category. Export to CSV for your tax return. Free, no signup.">
+    <meta property="og:url" content="https://landolio.com/tools/expense-tracker.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Business Expense Tracker — Self-Employed UK">
+    <meta name="twitter:description" content="Categorise and track business expenses. Export CSV for your tax return.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Business Expense Tracker",
+        "description": "Free business expense tracker for self-employed and freelancers in the UK. Categorise expenses and export to CSV.",
+        "url": "https://landolio.com/tools/expense-tracker.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+        "publisher": { "@type": "Organization", "name": "Landolio", "url": "https://landolio.com" }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { font-size: 2rem; margin-bottom: 8px; }
+        header p { opacity: 0.9; font-size: 1.1rem; }
+        .logo-link { color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.7; display: block; margin-bottom: 12px; }
+        .card { background: white; border-radius: 12px; padding: 24px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        h2 { font-size: 1.3rem; margin-bottom: 16px; color: #1a1a2e; }
+        h3 { font-size: 1.1rem; margin-bottom: 12px; color: #333; }
+        label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 0.9rem; }
+        input, select, textarea { width: 100%; padding: 10px 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; margin-bottom: 12px; transition: border-color 0.2s; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #e94560; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+        @media (max-width: 600px) { .form-row, .form-row-3 { grid-template-columns: 1fr; } }
+        .btn { display: inline-block; padding: 12px 24px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .btn-primary { background: #e94560; color: white; }
+        .btn-primary:hover { background: #c73e54; transform: translateY(-1px); }
+        .btn-secondary { background: #16213e; color: white; }
+        .btn-secondary:hover { background: #1a1a2e; }
+        .btn-outline { background: transparent; color: #e94560; border: 2px solid #e94560; }
+        .btn-outline:hover { background: #e94560; color: white; }
+        .btn-danger { background: transparent; color: #dc3545; border: 1px solid #dc3545; padding: 6px 12px; font-size: 0.85rem; }
+        .btn-danger:hover { background: #dc3545; color: white; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        th { background: #f8f9fa; font-weight: 600; color: #555; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px; }
+        tr:hover { background: #fafafa; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 16px 0; }
+        .summary-item { background: #f8f9fa; padding: 16px; border-radius: 8px; text-align: center; }
+        .summary-item .amount { font-size: 1.5rem; font-weight: 700; color: #e94560; }
+        .summary-item .label { font-size: 0.85rem; color: #666; margin-top: 4px; }
+        .category-bar { display: flex; align-items: center; margin: 6px 0; }
+        .category-bar .name { width: 180px; font-size: 0.85rem; flex-shrink: 0; }
+        .category-bar .bar-bg { flex: 1; height: 24px; background: #eee; border-radius: 4px; overflow: hidden; margin: 0 10px; }
+        .category-bar .bar-fill { height: 100%; background: #e94560; border-radius: 4px; transition: width 0.3s; }
+        .category-bar .value { width: 80px; text-align: right; font-size: 0.85rem; font-weight: 600; flex-shrink: 0; }
+        .empty-state { text-align: center; padding: 40px 20px; color: #999; }
+        .empty-state p { font-size: 1.1rem; margin-bottom: 8px; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+        .tag-green { background: #d4edda; color: #155724; }
+        .cta-box { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; border-radius: 12px; padding: 24px; text-align: center; margin: 24px 0; }
+        .cta-box h3 { color: white; margin-bottom: 8px; }
+        .cta-box p { opacity: 0.9; margin-bottom: 16px; }
+        .cta-box .btn { background: #e94560; color: white; text-decoration: none; }
+        .seo-content { margin-top: 24px; }
+        .seo-content h2 { border-bottom: 2px solid #e94560; padding-bottom: 8px; }
+        .seo-content h3 { margin-top: 20px; }
+        .seo-content p, .seo-content ul, .seo-content li { margin-bottom: 8px; }
+        .seo-content ul { padding-left: 20px; }
+        footer { text-align: center; padding: 40px 20px; color: #999; font-size: 0.85rem; }
+        footer a { color: #e94560; text-decoration: none; }
+        .storage-note { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; font-size: 0.85rem; }
+        .filter-row { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; align-items: end; }
+        .filter-row > div { flex: 1; min-width: 150px; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo-link">← Landolio</a>
+        <h1>📊 Business Expense Tracker</h1>
+        <p>Track expenses by HMRC category. Export to CSV for your tax return. Free, no signup.</p>
+    </header>
+
+    <div class="container">
+        <div class="storage-note">
+            💾 <strong>Your data is saved locally in your browser.</strong> Nothing is sent to any server. Export to CSV regularly as a backup.
+        </div>
+
+        <!-- Add Expense Form -->
+        <div class="card">
+            <h2>Add Expense</h2>
+            <div class="form-row">
+                <div>
+                    <label for="expDate">Date</label>
+                    <input type="date" id="expDate">
+                </div>
+                <div>
+                    <label for="expCategory">Category</label>
+                    <select id="expCategory">
+                        <option value="office">Office, property & equipment</option>
+                        <option value="car">Car, van & travel</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="staff">Staff costs</option>
+                        <option value="stock">Things you buy to resell</option>
+                        <option value="legal">Legal & financial costs</option>
+                        <option value="marketing">Marketing & advertising</option>
+                        <option value="training">Training courses</option>
+                        <option value="tech">Technology & software</option>
+                        <option value="insurance">Business insurance</option>
+                        <option value="phone">Phone, internet & utilities</option>
+                        <option value="home">Working from home</option>
+                        <option value="other">Other allowable expenses</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label for="expAmount">Amount (£)</label>
+                    <input type="number" id="expAmount" step="0.01" min="0" placeholder="0.00">
+                </div>
+                <div>
+                    <label for="expPayment">Payment Method</label>
+                    <select id="expPayment">
+                        <option value="bank">Bank transfer</option>
+                        <option value="card">Debit/credit card</option>
+                        <option value="cash">Cash</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <label for="expDesc">Description</label>
+            <input type="text" id="expDesc" placeholder="e.g. Adobe Creative Cloud monthly subscription">
+            <label for="expNotes">Notes (optional)</label>
+            <input type="text" id="expNotes" placeholder="e.g. Receipt saved in Dropbox">
+            <div style="display:flex;gap:12px;margin-top:4px;">
+                <label style="display:flex;align-items:center;gap:6px;font-weight:normal;margin-bottom:0;">
+                    <input type="checkbox" id="expRecurring"> Recurring monthly
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;font-weight:normal;margin-bottom:0;">
+                    <input type="checkbox" id="expReceipt"> Receipt saved
+                </label>
+            </div>
+            <br>
+            <button class="btn btn-primary" onclick="addExpense()">+ Add Expense</button>
+        </div>
+
+        <!-- Summary -->
+        <div class="card" id="summaryCard" style="display:none;">
+            <h2>Summary</h2>
+            <div class="summary-grid" id="summaryGrid"></div>
+
+            <h3 style="margin-top:20px;">Spending by Category</h3>
+            <div id="categoryBars"></div>
+        </div>
+
+        <!-- Expense List -->
+        <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <h2 style="margin-bottom:0;">Expenses</h2>
+                <div style="display:flex;gap:8px;">
+                    <button class="btn btn-outline" onclick="exportCSV()" style="padding:8px 16px;font-size:0.9rem;">📥 Export CSV</button>
+                    <button class="btn btn-secondary" onclick="importCSV()" style="padding:8px 16px;font-size:0.9rem;">📤 Import CSV</button>
+                    <input type="file" id="csvInput" accept=".csv" style="display:none;" onchange="handleImport(event)">
+                </div>
+            </div>
+
+            <div class="filter-row" style="margin-top:16px;">
+                <div>
+                    <label for="filterCategory">Filter by category</label>
+                    <select id="filterCategory" onchange="renderExpenses()">
+                        <option value="all">All categories</option>
+                        <option value="office">Office, property & equipment</option>
+                        <option value="car">Car, van & travel</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="staff">Staff costs</option>
+                        <option value="stock">Things you buy to resell</option>
+                        <option value="legal">Legal & financial costs</option>
+                        <option value="marketing">Marketing & advertising</option>
+                        <option value="training">Training courses</option>
+                        <option value="tech">Technology & software</option>
+                        <option value="insurance">Business insurance</option>
+                        <option value="phone">Phone, internet & utilities</option>
+                        <option value="home">Working from home</option>
+                        <option value="other">Other allowable expenses</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="filterMonth">Filter by month</label>
+                    <input type="month" id="filterMonth" onchange="renderExpenses()">
+                </div>
+            </div>
+
+            <div id="expenseList">
+                <div class="empty-state">
+                    <p>No expenses yet</p>
+                    <span>Add your first expense above to get started.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>📧 Chasing Late Payments?</h3>
+            <p>Our Invoice Email Pack has 45 ready-to-send templates for every payment situation — from friendly reminders to final demands.</p>
+            <a href="https://buy.stripe.com/fZu5mqdSq2fR2A06oE" class="btn" target="_blank">Get the Invoice Email Pack — £7 →</a>
+        </div>
+
+        <!-- SEO Content -->
+        <div class="card seo-content">
+            <h2>How to Track Business Expenses as Self-Employed in the UK</h2>
+            <p>If you're self-employed, a sole trader, or a freelancer in the UK, keeping accurate records of your business expenses is a legal requirement. HMRC expects you to keep records for at least 5 years after the 31 January submission deadline of the relevant tax year.</p>
+
+            <h3>What Counts as a Business Expense?</h3>
+            <p>A business expense is any cost that is <strong>wholly and exclusively</strong> for business purposes. You can deduct allowable expenses from your income to reduce your tax bill. Common categories include:</p>
+            <ul>
+                <li><strong>Office costs</strong> — stationery, phone bills, postage, software subscriptions</li>
+                <li><strong>Travel</strong> — fuel, parking, train/bus fares, hotel rooms for business trips</li>
+                <li><strong>Marketing</strong> — website hosting, advertising, business cards</li>
+                <li><strong>Professional fees</strong> — accountant fees, solicitor costs, insurance</li>
+                <li><strong>Working from home</strong> — proportion of rent, utilities, broadband (or the £6/week flat rate)</li>
+            </ul>
+
+            <h3>HMRC Expense Categories for Self-Assessment</h3>
+            <p>When you fill in your Self Assessment tax return (SA103), HMRC groups expenses into specific categories. This tracker uses those same categories so your records are already organised for your tax return.</p>
+
+            <h3>Making Tax Digital (MTD) from April 2026</h3>
+            <p>From <strong>6 April 2026</strong>, self-employed individuals earning over £50,000 must use MTD-compatible software to keep digital records and submit quarterly updates to HMRC. Even if you're below the threshold, keeping digital records now will make the transition easier.</p>
+            <p>This free tracker helps you build the habit of logging expenses digitally. For MTD-specific guidance, see our <a href="/blog/making-tax-digital-sole-traders-guide.html">complete MTD guide</a> and <a href="/tools/mtd-readiness-checker.html">MTD readiness checker</a>.</p>
+
+            <h3>Tips for Tracking Expenses</h3>
+            <ul>
+                <li><strong>Record expenses as they happen</strong> — don't leave it until year-end</li>
+                <li><strong>Keep receipts</strong> — photograph them and store digitally</li>
+                <li><strong>Separate business and personal spending</strong> — use a dedicated business account</li>
+                <li><strong>Export regularly</strong> — download your CSV backup monthly</li>
+                <li><strong>Check HMRC guidance</strong> — when unsure if something qualifies, check <a href="https://www.gov.uk/expenses-if-youre-self-employed" target="_blank" rel="noopener">gov.uk expenses guidance</a></li>
+            </ul>
+        </div>
+
+        <!-- More Tools -->
+        <div class="card">
+            <h3>More Free Tools</h3>
+            <ul>
+                <li><a href="/tools/self-employed-tax-calculator.html">Self-Employed Tax Calculator</a></li>
+                <li><a href="/tools/vat-threshold-calculator.html">VAT Threshold Calculator</a></li>
+                <li><a href="/tools/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+                <li><a href="/tools/day-rate-calculator.html">Day Rate Calculator</a></li>
+                <li><a href="/tools/mtd-readiness-checker.html">MTD Readiness Checker</a></li>
+                <li><a href="/tools/">View all tools →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p><a href="/">Landolio</a> — Free tools for UK freelancers and small businesses</p>
+        <p style="margin-top:8px;"><a href="/tools/">All Tools</a> · <a href="/blog/">Blog</a> · <a href="/products/">Products</a></p>
+    </footer>
+
+    <script>
+        const STORAGE_KEY = 'landolio_expenses';
+        const CATEGORIES = {
+            office: 'Office, property & equipment',
+            car: 'Car, van & travel',
+            clothing: 'Clothing',
+            staff: 'Staff costs',
+            stock: 'Things you buy to resell',
+            legal: 'Legal & financial costs',
+            marketing: 'Marketing & advertising',
+            training: 'Training courses',
+            tech: 'Technology & software',
+            insurance: 'Business insurance',
+            phone: 'Phone, internet & utilities',
+            home: 'Working from home',
+            other: 'Other allowable expenses'
+        };
+
+        function getExpenses() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+            catch { return []; }
+        }
+
+        function saveExpenses(expenses) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(expenses));
+        }
+
+        function addExpense() {
+            const date = document.getElementById('expDate').value;
+            const category = document.getElementById('expCategory').value;
+            const amount = parseFloat(document.getElementById('expAmount').value);
+            const payment = document.getElementById('expPayment').value;
+            const desc = document.getElementById('expDesc').value.trim();
+            const notes = document.getElementById('expNotes').value.trim();
+            const recurring = document.getElementById('expRecurring').checked;
+            const receipt = document.getElementById('expReceipt').checked;
+
+            if (!date || !amount || amount <= 0 || !desc) {
+                alert('Please fill in date, amount, and description.');
+                return;
+            }
+
+            const expenses = getExpenses();
+            expenses.push({
+                id: Date.now(),
+                date, category, amount, payment, desc, notes, recurring, receipt
+            });
+            expenses.sort((a, b) => b.date.localeCompare(a.date));
+            saveExpenses(expenses);
+
+            // Reset form
+            document.getElementById('expAmount').value = '';
+            document.getElementById('expDesc').value = '';
+            document.getElementById('expNotes').value = '';
+            document.getElementById('expRecurring').checked = false;
+            document.getElementById('expReceipt').checked = false;
+
+            renderExpenses();
+            renderSummary();
+        }
+
+        function deleteExpense(id) {
+            if (!confirm('Delete this expense?')) return;
+            const expenses = getExpenses().filter(e => e.id !== id);
+            saveExpenses(expenses);
+            renderExpenses();
+            renderSummary();
+        }
+
+        function renderExpenses() {
+            const expenses = getExpenses();
+            const filterCat = document.getElementById('filterCategory').value;
+            const filterMonth = document.getElementById('filterMonth').value;
+            const list = document.getElementById('expenseList');
+
+            let filtered = expenses;
+            if (filterCat !== 'all') filtered = filtered.filter(e => e.category === filterCat);
+            if (filterMonth) filtered = filtered.filter(e => e.date.startsWith(filterMonth));
+
+            if (filtered.length === 0) {
+                list.innerHTML = '<div class="empty-state"><p>No expenses found</p><span>Try changing your filters or add an expense above.</span></div>';
+                return;
+            }
+
+            const total = filtered.reduce((s, e) => s + e.amount, 0);
+            let html = `<p style="margin:8px 0;font-size:0.9rem;color:#666;">Showing ${filtered.length} expense${filtered.length !== 1 ? 's' : ''} — Total: <strong>£${total.toFixed(2)}</strong></p>`;
+            html += '<table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th style="text-align:right">Amount</th><th></th></tr></thead><tbody>';
+
+            for (const e of filtered) {
+                html += `<tr>
+                    <td>${formatDate(e.date)}</td>
+                    <td>${escHtml(e.desc)}${e.recurring ? ' <span class="tag tag-green">recurring</span>' : ''}${e.receipt ? ' 🧾' : ''}</td>
+                    <td>${CATEGORIES[e.category] || e.category}</td>
+                    <td style="text-align:right;font-weight:600;">£${e.amount.toFixed(2)}</td>
+                    <td><button class="btn-danger" onclick="deleteExpense(${e.id})">✕</button></td>
+                </tr>`;
+            }
+            html += '</tbody></table>';
+            list.innerHTML = html;
+        }
+
+        function renderSummary() {
+            const expenses = getExpenses();
+            const card = document.getElementById('summaryCard');
+
+            if (expenses.length === 0) { card.style.display = 'none'; return; }
+            card.style.display = 'block';
+
+            const total = expenses.reduce((s, e) => s + e.amount, 0);
+            const thisMonth = expenses.filter(e => e.date.startsWith(new Date().toISOString().slice(0, 7)));
+            const monthTotal = thisMonth.reduce((s, e) => s + e.amount, 0);
+
+            // Category totals
+            const catTotals = {};
+            for (const e of expenses) {
+                catTotals[e.category] = (catTotals[e.category] || 0) + e.amount;
+            }
+            const maxCat = Math.max(...Object.values(catTotals));
+
+            document.getElementById('summaryGrid').innerHTML = `
+                <div class="summary-item"><div class="amount">£${total.toFixed(2)}</div><div class="label">Total expenses</div></div>
+                <div class="summary-item"><div class="amount">£${monthTotal.toFixed(2)}</div><div class="label">This month</div></div>
+                <div class="summary-item"><div class="amount">${expenses.length}</div><div class="label">Entries</div></div>
+            `;
+
+            let barsHtml = '';
+            const sorted = Object.entries(catTotals).sort((a, b) => b[1] - a[1]);
+            for (const [cat, amt] of sorted) {
+                const pct = (amt / maxCat * 100).toFixed(0);
+                barsHtml += `<div class="category-bar">
+                    <span class="name">${CATEGORIES[cat] || cat}</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div>
+                    <span class="value">£${amt.toFixed(2)}</span>
+                </div>`;
+            }
+            document.getElementById('categoryBars').innerHTML = barsHtml;
+        }
+
+        function exportCSV() {
+            const expenses = getExpenses();
+            if (expenses.length === 0) { alert('No expenses to export.'); return; }
+
+            let csv = 'Date,Category,Description,Amount,Payment Method,Recurring,Receipt,Notes\n';
+            for (const e of expenses) {
+                csv += `${e.date},"${CATEGORIES[e.category] || e.category}","${(e.desc||'').replace(/"/g,'""')}",${e.amount.toFixed(2)},${e.payment||''},${e.recurring?'Yes':'No'},${e.receipt?'Yes':'No'},"${(e.notes||'').replace(/"/g,'""')}"\n`;
+            }
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `landolio-expenses-${new Date().toISOString().slice(0,10)}.csv`;
+            a.click();
+        }
+
+        function importCSV() {
+            document.getElementById('csvInput').click();
+        }
+
+        function handleImport(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const lines = e.target.result.split('\n').filter(l => l.trim());
+                if (lines.length < 2) { alert('CSV appears empty.'); return; }
+
+                const expenses = getExpenses();
+                let imported = 0;
+
+                for (let i = 1; i < lines.length; i++) {
+                    const parts = parseCSVLine(lines[i]);
+                    if (parts.length < 4) continue;
+
+                    const catKey = Object.keys(CATEGORIES).find(k => CATEGORIES[k] === parts[1]) || 'other';
+                    expenses.push({
+                        id: Date.now() + i,
+                        date: parts[0],
+                        category: catKey,
+                        desc: parts[2],
+                        amount: parseFloat(parts[3]) || 0,
+                        payment: parts[4] || 'other',
+                        recurring: (parts[5] || '').toLowerCase() === 'yes',
+                        receipt: (parts[6] || '').toLowerCase() === 'yes',
+                        notes: parts[7] || ''
+                    });
+                    imported++;
+                }
+
+                expenses.sort((a, b) => b.date.localeCompare(a.date));
+                saveExpenses(expenses);
+                renderExpenses();
+                renderSummary();
+                alert(`Imported ${imported} expenses.`);
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            for (let i = 0; i < line.length; i++) {
+                if (inQuotes) {
+                    if (line[i] === '"' && line[i + 1] === '"') { current += '"'; i++; }
+                    else if (line[i] === '"') { inQuotes = false; }
+                    else { current += line[i]; }
+                } else {
+                    if (line[i] === '"') { inQuotes = true; }
+                    else if (line[i] === ',') { result.push(current.trim()); current = ''; }
+                    else { current += line[i]; }
+                }
+            }
+            result.push(current.trim());
+            return result;
+        }
+
+        function formatDate(d) {
+            const [y, m, day] = d.split('-');
+            return `${day}/${m}/${y}`;
+        }
+
+        function escHtml(s) {
+            const d = document.createElement('div');
+            d.textContent = s;
+            return d.innerHTML;
+        }
+
+        // Init
+        document.getElementById('expDate').value = new Date().toISOString().slice(0, 10);
+        renderExpenses();
+        renderSummary();
+    </script>
+</body>
+</html>
