@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do I Need an Accountant? Free Quiz for Self-Employed UK | Landolio</title>
+  <meta name="description" content="Find out if you actually need an accountant or can file your own self-assessment. Free 2-minute quiz based on your income, expenses, and situation.">
+  <meta name="keywords" content="do i need an accountant self employed, accountant quiz uk, self assessment accountant or diy, freelancer accountant uk">
+  <link rel="canonical" href="https://landolio.com/tools/do-i-need-an-accountant-quiz.html">
+  <meta property="og:title" content="Do I Need an Accountant? Free Quiz">
+  <meta property="og:description" content="2-minute quiz to find out if you need a professional or can handle your own taxes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://landolio.com/tools/do-i-need-an-accountant-quiz.html">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body { max-width: 720px; margin: 0 auto; padding: 24px; line-height: 1.7; font-family: system-ui, -apple-system, sans-serif; }
+    h1 { color: #1a1a2e; text-align: center; }
+    .subtitle { text-align: center; color: #64748b; margin-bottom: 2rem; }
+    .quiz-container { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; }
+    .question { display: none; }
+    .question.active { display: block; }
+    .question h2 { font-size: 1.15rem; color: #1e293b; margin-bottom: 1rem; }
+    .question p.context { color: #64748b; font-size: 0.9rem; margin-bottom: 1rem; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; cursor: pointer; transition: all 0.15s; font-size: 0.95rem; }
+    .option:hover { border-color: #2563eb; background: #eef4ff; }
+    .progress { background: #e2e8f0; border-radius: 99px; height: 8px; margin-bottom: 1.5rem; overflow: hidden; }
+    .progress-bar { background: #2563eb; height: 100%; border-radius: 99px; transition: width 0.3s; }
+    .q-count { text-align: center; color: #94a3b8; font-size: 0.85rem; margin-bottom: 0.5rem; }
+    #result { display: none; }
+    .result-card { text-align: center; padding: 2rem 1rem; }
+    .score-circle { width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; font-weight: 700; }
+    .score-green { background: #dcfce7; color: #16a34a; border: 3px solid #86efac; }
+    .score-amber { background: #fef3c7; color: #d97706; border: 3px solid #fcd34d; }
+    .score-red { background: #fee2e2; color: #dc2626; border: 3px solid #fca5a5; }
+    .verdict { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .explanation { color: #475569; margin-bottom: 1.5rem; }
+    .breakdown { text-align: left; background: #f8fafc; border-radius: 8px; padding: 16px; margin: 1.5rem 0; }
+    .breakdown h3 { margin-top: 0; font-size: 1rem; }
+    .breakdown ul { padding-left: 1.2rem; }
+    .breakdown li { margin-bottom: 6px; color: #334155; }
+    .cta { background: #eef4ff; border: 1px solid #bfdbfe; padding: 18px; border-radius: 10px; margin-top: 1.5rem; text-align: center; }
+    .cta a { color: #2563eb; font-weight: 600; text-decoration: none; }
+    .cta a:hover { text-decoration: underline; }
+    .share-btns { display: flex; gap: 10px; justify-content: center; margin-top: 1rem; }
+    .share-btn { padding: 8px 16px; border-radius: 6px; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; font-size: 0.85rem; }
+    .share-btn:hover { background: #f1f5f9; }
+    .restart { display: inline-block; margin-top: 1rem; color: #2563eb; cursor: pointer; font-size: 0.9rem; }
+    .restart:hover { text-decoration: underline; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Do I Need an Accountant? Quiz",
+    "description": "Free quiz to help self-employed people decide if they need a professional accountant or can file their own tax return.",
+    "url": "https://landolio.com/tools/do-i-need-an-accountant-quiz.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+  }
+  </script>
+</head>
+<body>
+  <p><a href="/tools/">← All free tools</a></p>
+  <h1>🧮 Do I Need an Accountant?</h1>
+  <p class="subtitle">Answer 10 quick questions about your situation. Takes about 2 minutes.</p>
+
+  <div class="quiz-container">
+    <div class="q-count" id="qCount">Question 1 of 10</div>
+    <div class="progress"><div class="progress-bar" id="progressBar" style="width:10%"></div></div>
+
+    <div class="question active" data-q="0">
+      <h2>What's your main source of self-employed income?</h2>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">One client or one type of work (e.g. freelance writing, tutoring)</div>
+        <div class="option" data-score="1" onclick="answer(this)">Multiple clients, same type of work</div>
+        <div class="option" data-score="2" onclick="answer(this)">Multiple income streams (e.g. freelancing + rental + investments)</div>
+        <div class="option" data-score="3" onclick="answer(this)">Mix of employment and self-employment</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="1">
+      <h2>Roughly how much did you earn from self-employment this tax year?</h2>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">Under £12,570 (below the personal allowance)</div>
+        <div class="option" data-score="1" onclick="answer(this)">£12,570 – £50,000</div>
+        <div class="option" data-score="2" onclick="answer(this)">£50,000 – £100,000</div>
+        <div class="option" data-score="3" onclick="answer(this)">Over £100,000</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="2">
+      <h2>How would you describe your business expenses?</h2>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">Very simple — home office, phone, maybe some supplies</div>
+        <div class="option" data-score="1" onclick="answer(this)">Moderate — equipment, travel, subscriptions, some mixed-use items</div>
+        <div class="option" data-score="2" onclick="answer(this)">Complex — vehicles, premises, staff costs, or significant equipment</div>
+        <div class="option" data-score="3" onclick="answer(this)">Very complex — multiple categories, international costs, or large capital purchases</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="3">
+      <h2>Are you VAT registered (or approaching the £90,000 threshold)?</h2>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">No, and nowhere near the threshold</div>
+        <div class="option" data-score="1" onclick="answer(this)">No, but I might reach the threshold this year</div>
+        <div class="option" data-score="2" onclick="answer(this)">Yes, I'm VAT registered</div>
+        <div class="option" data-score="3" onclick="answer(this)">Yes, and I deal with VAT on imports/exports too</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="4">
+      <h2>Do you have any capital gains to report?</h2>
+      <p class="context">Selling property (not your main home), shares, crypto, or other assets at a profit.</p>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">No</div>
+        <div class="option" data-score="1" onclick="answer(this)">Maybe — I sold some shares or crypto</div>
+        <div class="option" data-score="2" onclick="answer(this)">Yes — I sold a property or significant assets</div>
+        <div class="option" data-score="3" onclick="answer(this)">Yes — multiple disposals or complex situations</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="5">
+      <h2>Do you have any foreign income?</h2>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">No, all UK-based</div>
+        <div class="option" data-score="1" onclick="answer(this)">Some clients pay me in foreign currency, but I'm UK-based</div>
+        <div class="option" data-score="2" onclick="answer(this)">I have foreign bank accounts or overseas investments</div>
+        <div class="option" data-score="3" onclick="answer(this)">I live/work across multiple countries or have complex residency</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="6">
+      <h2>How confident are you with numbers and forms?</h2>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">Very confident — I use spreadsheets regularly and understand basic accounting</div>
+        <div class="option" data-score="1" onclick="answer(this)">Fairly confident — I can follow instructions but wouldn't call myself a numbers person</div>
+        <div class="option" data-score="2" onclick="answer(this)">Not very confident — tax forms make me anxious</div>
+        <div class="option" data-score="3" onclick="answer(this)">I actively avoid anything to do with numbers</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="7">
+      <h2>How much is your time worth?</h2>
+      <p class="context">A basic self-assessment might take 3-8 hours to prepare and file. An accountant typically charges £150-£400.</p>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">I'd rather spend the time and save the money</div>
+        <div class="option" data-score="1" onclick="answer(this)">I could go either way — depends how complicated it is</div>
+        <div class="option" data-score="2" onclick="answer(this)">My time is definitely worth more than an accountant's fee</div>
+        <div class="option" data-score="3" onclick="answer(this)">I'd pay anything to not deal with this myself</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="8">
+      <h2>Is your business growing or changing?</h2>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">Steady — same thing year to year</div>
+        <div class="option" data-score="1" onclick="answer(this)">Growing gradually</div>
+        <div class="option" data-score="2" onclick="answer(this)">Growing fast — might need to incorporate or hire soon</div>
+        <div class="option" data-score="3" onclick="answer(this)">Major changes — incorporating, taking on partners, or restructuring</div>
+      </div>
+    </div>
+
+    <div class="question" data-q="9">
+      <h2>Have you ever had issues with HMRC?</h2>
+      <div class="options">
+        <div class="option" data-score="0" onclick="answer(this)">No, clean record</div>
+        <div class="option" data-score="1" onclick="answer(this)">A late filing penalty once, but nothing serious</div>
+        <div class="option" data-score="2" onclick="answer(this)">Yes — penalties, enquiries, or compliance issues</div>
+        <div class="option" data-score="3" onclick="answer(this)">Currently dealing with an HMRC investigation or dispute</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="result">
+    <div class="result-card">
+      <div class="score-circle" id="scoreCircle"></div>
+      <div class="verdict" id="verdict"></div>
+      <div class="explanation" id="explanation"></div>
+    </div>
+
+    <div class="breakdown" id="breakdown"></div>
+
+    <div class="cta" id="ctaDIY" style="display:none;">
+      <h3>📦 Going DIY? Get the Right Templates</h3>
+      <p>If you're handling your own taxes, make sure you're tracking expenses properly and chasing payments on time.</p>
+      <p><a href="/tools/business-expense-tracker.html">Free Expense Tracker →</a> · <a href="/products/getting-paid-toolkit.html">Getting-Paid Toolkit — £19 →</a></p>
+    </div>
+
+    <div class="cta" id="ctaMaybe" style="display:none;">
+      <h3>📦 Not Sure Yet? Start with the Basics</h3>
+      <p>You might not need an accountant if you get organised first. Our toolkit has everything for DIY tax admin.</p>
+      <p><a href="/blog/first-self-assessment-tax-return-self-employed-uk.html">First Self-Assessment Guide (free) →</a> · <a href="/products/getting-paid-toolkit.html">Getting-Paid Toolkit — £19 →</a></p>
+    </div>
+
+    <div class="cta" id="ctaYes" style="display:none;">
+      <h3>📋 Finding the Right Accountant</h3>
+      <p>Look for someone who specialises in your industry, charges fixed fees (not hourly), and is responsive. Ask for recommendations in freelancer communities.</p>
+      <p>Meanwhile, keep your records tidy: <a href="/tools/business-expense-tracker.html">Free Expense Tracker →</a></p>
+    </div>
+
+    <div class="share-btns">
+      <button class="share-btn" onclick="copyResult()">📋 Copy result</button>
+      <button class="share-btn" onclick="shareX()">𝕏 Share</button>
+    </div>
+    <div style="text-align:center"><span class="restart" onclick="restart()">↻ Take the quiz again</span></div>
+  </div>
+
+  <script>
+    let current = 0;
+    let scores = [];
+    const total = 10;
+
+    function answer(el) {
+      scores.push(parseInt(el.dataset.score));
+      current++;
+      if (current < total) {
+        document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+        document.querySelectorAll('.question')[current].classList.add('active');
+        document.getElementById('qCount').textContent = `Question ${current + 1} of ${total}`;
+        document.getElementById('progressBar').style.width = ((current + 1) / total * 100) + '%';
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      document.querySelector('.quiz-container').style.display = 'none';
+      document.getElementById('result').style.display = 'block';
+
+      const totalScore = scores.reduce((a, b) => a + b, 0);
+      const maxScore = total * 3;
+      const pct = Math.round((totalScore / maxScore) * 100);
+
+      const circle = document.getElementById('scoreCircle');
+      const verdict = document.getElementById('verdict');
+      const explanation = document.getElementById('explanation');
+      const breakdown = document.getElementById('breakdown');
+
+      if (totalScore <= 7) {
+        circle.className = 'score-circle score-green';
+        circle.textContent = '✓';
+        verdict.textContent = 'You probably don\'t need an accountant';
+        explanation.textContent = 'Your situation is straightforward enough to handle yourself. With good record-keeping and the right templates, you can file your own self-assessment confidently.';
+        document.getElementById('ctaDIY').style.display = 'block';
+      } else if (totalScore <= 15) {
+        circle.className = 'score-circle score-amber';
+        circle.textContent = '?';
+        verdict.textContent = 'It depends — you might benefit from one';
+        explanation.textContent = 'Your situation has some complexity. You could manage it yourself with good preparation, but an accountant might save you time and potentially find deductions you\'d miss. Consider a one-off consultation.';
+        document.getElementById('ctaMaybe').style.display = 'block';
+      } else {
+        circle.className = 'score-circle score-red';
+        circle.textContent = '£';
+        verdict.textContent = 'Yes, you should probably get an accountant';
+        explanation.textContent = 'Your situation is complex enough that professional help will likely save you more than it costs. An accountant can handle the complexity, reduce your risk of errors, and often identify tax savings you\'d miss.';
+        document.getElementById('ctaYes').style.display = 'block';
+      }
+
+      // Build personalised breakdown
+      let html = '<h3>Your situation at a glance:</h3><ul>';
+      const labels = ['Income complexity', 'Earnings level', 'Expense complexity', 'VAT status', 'Capital gains', 'Foreign income', 'Confidence with numbers', 'Time vs money', 'Business growth', 'HMRC history'];
+      const levels = ['Simple', 'Moderate', 'Complex', 'Very complex'];
+      for (let i = 0; i < total; i++) {
+        html += `<li><strong>${labels[i]}:</strong> ${levels[scores[i]]}`;
+        if (scores[i] >= 2) html += ' ⚠️';
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      if (totalScore <= 7) {
+        html += '<p><strong>💡 Tip:</strong> Even without an accountant, keep meticulous records. HMRC can enquire into returns up to 6 years back.</p>';
+      } else if (totalScore <= 15) {
+        html += '<p><strong>💡 Tip:</strong> Consider a one-off consultation (£50-£150) to review your setup, then decide if you need ongoing support.</p>';
+      } else {
+        html += '<p><strong>💡 Tip:</strong> When choosing an accountant, ask about fixed fees, their experience with your industry, and their availability during crunch periods.</p>';
+      }
+
+      breakdown.innerHTML = html;
+    }
+
+    function restart() {
+      current = 0;
+      scores = [];
+      document.querySelector('.quiz-container').style.display = 'block';
+      document.getElementById('result').style.display = 'none';
+      document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+      document.querySelectorAll('.question')[0].classList.add('active');
+      document.getElementById('qCount').textContent = 'Question 1 of 10';
+      document.getElementById('progressBar').style.width = '10%';
+      document.getElementById('ctaDIY').style.display = 'none';
+      document.getElementById('ctaMaybe').style.display = 'none';
+      document.getElementById('ctaYes').style.display = 'none';
+    }
+
+    function copyResult() {
+      const v = document.getElementById('verdict').textContent;
+      navigator.clipboard.writeText(`${v} — Take the quiz: https://landolio.com/tools/do-i-need-an-accountant-quiz.html`);
+      event.target.textContent = '✅ Copied!';
+      setTimeout(() => event.target.textContent = '📋 Copy result', 2000);
+    }
+
+    function shareX() {
+      const v = document.getElementById('verdict').textContent;
+      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(v + ' — Free quiz for self-employed UK:')}&url=${encodeURIComponent('https://landolio.com/tools/do-i-need-an-accountant-quiz.html')}`, '_blank');
+    }
+  </script>
+
+  <hr>
+  <p style="color:#64748b; font-size:0.85rem;">Landolio helps UK freelancers and small businesses get paid and stay compliant. <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/tools/">Free tools</a></p>
+</body>
+</html>

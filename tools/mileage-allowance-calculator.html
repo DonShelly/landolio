@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMRC Mileage Allowance Calculator (2025/26) — Free UK Tool | Landolio</title>
+  <meta name="description" content="Calculate your HMRC mileage allowance for self-assessment. Enter business miles, get your tax-deductible amount instantly. Cars, vans, motorcycles, and bicycles.">
+  <meta name="keywords" content="hmrc mileage calculator, mileage allowance calculator, approved mileage allowance payments, business mileage claim, self employed mileage rate uk">
+  <link rel="canonical" href="https://landolio.com/tools/mileage-allowance-calculator.html">
+  <meta property="og:title" content="HMRC Mileage Allowance Calculator (2025/26)">
+  <meta property="og:description" content="Free calculator for UK business mileage claims. Cars, vans, motorcycles, and bicycles.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://landolio.com/tools/mileage-allowance-calculator.html">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body { max-width: 860px; margin: 0 auto; padding: 24px; line-height: 1.7; font-family: system-ui, -apple-system, sans-serif; }
+    h1,h2,h3 { color: #1a1a2e; }
+    .meta { color: #64748b; margin-bottom: 1.2rem; }
+    .calc-box { background: #f8fafc; border: 2px solid #2563eb; border-radius: 12px; padding: 24px; margin: 1.5rem 0; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 4px; }
+    .form-group input, .form-group select { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+    .btn { background: #2563eb; color: #fff; border: none; padding: 12px 24px; border-radius: 8px; font-size: 1rem; cursor: pointer; width: 100%; font-weight: 600; }
+    .btn:hover { background: #1d4ed8; }
+    .result { display: none; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 12px; padding: 24px; margin: 1.5rem 0; }
+    .result.show { display: block; }
+    .result-big { font-size: 2.2rem; font-weight: 700; color: #16a34a; }
+    .result-detail { margin-top: 12px; }
+    .result-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #dcfce7; }
+    .result-row:last-child { border-bottom: none; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; }
+    th { background: #f8fafc; }
+    .tip { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px; margin: 1rem 0; }
+    .cta { background:#eef4ff; border:1px solid #bfdbfe; padding:18px; border-radius:10px; margin-top:2rem; }
+    .trips { margin-top: 1.5rem; }
+    .trip-entry { display: grid; grid-template-columns: 1fr 2fr 100px 40px; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .trip-entry input { padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.9rem; }
+    .trip-entry button { background: #ef4444; color: #fff; border: none; border-radius: 4px; padding: 8px; cursor: pointer; font-size: 0.9rem; }
+    .add-trip { background: #f1f5f9; border: 1px dashed #94a3b8; padding: 10px; border-radius: 6px; cursor: pointer; text-align: center; color: #64748b; margin-bottom: 12px; }
+    .add-trip:hover { background: #e2e8f0; }
+    @media (max-width: 600px) { .trip-entry { grid-template-columns: 1fr 1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HMRC Mileage Allowance Calculator",
+    "description": "Calculate your HMRC approved mileage allowance for self-assessment tax returns.",
+    "url": "https://landolio.com/tools/mileage-allowance-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+  }
+  </script>
+</head>
+<body>
+  <p><a href="/tools/">← Back to tools</a></p>
+  <h1>HMRC Mileage Allowance Calculator (2025/26)</h1>
+  <p class="meta">Calculate your tax-deductible mileage claim for self-assessment</p>
+
+  <p>If you use your own vehicle for business, you can claim a fixed rate per mile instead of tracking actual fuel and running costs. This is called the <strong>Approved Mileage Allowance Payment (AMAP)</strong>.</p>
+
+  <div class="calc-box">
+    <div class="form-group">
+      <label for="vehicle">Vehicle type</label>
+      <select id="vehicle">
+        <option value="car">Car or van</option>
+        <option value="motorcycle">Motorcycle</option>
+        <option value="bicycle">Bicycle</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="miles">Total business miles this tax year</label>
+      <input type="number" id="miles" placeholder="e.g. 8000" min="0" step="1">
+    </div>
+
+    <div class="form-group" id="passenger-group">
+      <label for="passengers">Passengers carried on business trips?</label>
+      <select id="passengers">
+        <option value="no">No</option>
+        <option value="yes">Yes — I carry colleagues/employees</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="passenger-miles-group" style="display:none;">
+      <label for="passengerMiles">Miles with passenger(s)</label>
+      <input type="number" id="passengerMiles" placeholder="e.g. 2000" min="0" step="1">
+    </div>
+
+    <button class="btn" onclick="calculate()">Calculate my claim</button>
+  </div>
+
+  <div class="result" id="result">
+    <p style="margin:0 0 8px;">Your mileage allowance claim:</p>
+    <div class="result-big" id="totalClaim">£0.00</div>
+    <div class="result-detail" id="breakdown"></div>
+  </div>
+
+  <h2>HMRC approved mileage rates (2025/26)</h2>
+  <table>
+    <thead>
+      <tr><th>Vehicle</th><th>First 10,000 miles</th><th>Above 10,000 miles</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Car or van</td><td>45p per mile</td><td>25p per mile</td></tr>
+      <tr><td>Motorcycle</td><td colspan="2">24p per mile (all miles)</td></tr>
+      <tr><td>Bicycle</td><td colspan="2">20p per mile (all miles)</td></tr>
+    </tbody>
+  </table>
+  <p>If you carry a colleague or employee on a business trip, you can claim an extra <strong>5p per passenger per mile</strong>.</p>
+
+  <div class="tip">
+    <strong>💡 Important:</strong> These rates cover fuel, insurance, road tax, MOT, servicing, and depreciation. If you claim mileage allowance, you <strong>cannot</strong> also claim actual vehicle running costs. It's one or the other.
+  </div>
+
+  <h2>What counts as a business mile?</h2>
+  <ul>
+    <li>✅ Driving to a client's premises</li>
+    <li>✅ Travelling between different work sites</li>
+    <li>✅ Going to the bank or post office for business</li>
+    <li>✅ Attending business meetings or networking events</li>
+    <li>✅ Collecting supplies for your business</li>
+    <li>❌ Commuting from home to your regular workplace</li>
+    <li>❌ Personal errands, even if done during the working day</li>
+  </ul>
+
+  <div class="tip">
+    <strong>💡 Home-based businesses:</strong> If you work from home and your home is your main place of business, trips to clients or temporary workplaces <em>do</em> count as business miles. This is a common area of confusion — many self-employed people underclaim because they assume these trips are "commuting."
+  </div>
+
+  <h2>How to keep a mileage log</h2>
+  <p>HMRC can ask for evidence. For each business trip, record:</p>
+  <ul>
+    <li>Date of the journey</li>
+    <li>Start point and destination</li>
+    <li>Purpose of the trip</li>
+    <li>Miles driven</li>
+  </ul>
+  <p>A simple spreadsheet works fine. Some people use apps like MileIQ or Driversnote, but a dated list is perfectly acceptable.</p>
+
+  <h2>Mileage vs actual costs — which is better?</h2>
+  <p>The mileage allowance is simpler but not always the best option:</p>
+  <table>
+    <thead>
+      <tr><th></th><th>Mileage allowance</th><th>Actual costs</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Best for</strong></td><td>Low-to-medium mileage, simple records</td><td>High mileage, expensive running costs</td></tr>
+      <tr><td><strong>Records needed</strong></td><td>Mileage log only</td><td>All receipts, MOT, insurance, fuel, depreciation</td></tr>
+      <tr><td><strong>Can switch?</strong></td><td>Yes, but only at the start of using a new vehicle</td><td>Same rule applies</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Rule of thumb:</strong> If you drive under 10,000 business miles per year in a reasonably efficient car, the 45p rate is usually generous. Above 10,000 miles, the drop to 25p means actual costs may be higher — especially with an older or larger vehicle.</p>
+
+  <h2>How to claim on your tax return</h2>
+  <ol>
+    <li>Total up your business miles for the tax year (6 April – 5 April)</li>
+    <li>Apply the correct rate (use the calculator above)</li>
+    <li>Enter the total in the <strong>Car, van and travel expenses</strong> box on your self-employment page (SA103S)</li>
+    <li>Keep your mileage log with your tax records for at least 5 years</li>
+  </ol>
+
+  <h2>Related tools and guides</h2>
+  <ul>
+    <li><a href="/tools/business-expense-tracker.html">Free Business Expense Tracker</a></li>
+    <li><a href="/tools/self-employed-tax-calculator.html">Self-Employed Tax Calculator</a></li>
+    <li><a href="/blog/first-self-assessment-tax-return-self-employed-uk.html">First Self-Assessment: Complete Guide</a></li>
+    <li><a href="/tools/freelance-tax-calculator.html">Freelance Tax Calculator</a></li>
+  </ul>
+
+  <div class="cta">
+    <h3>📦 Track Every Penny, Claim Every Expense</h3>
+    <p>The Getting-Paid Toolkit includes expense tracking templates, invoice templates, and compliance checklists to keep your freelance finances sorted.</p>
+    <p><a href="/products/getting-paid-toolkit.html"><strong>Get the toolkit — £19 →</strong></a></p>
+  </div>
+
+  <hr>
+  <p style="color:#64748b; font-size:0.85rem;">Landolio helps UK freelancers and small businesses get paid and stay compliant. <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/tools/">Free tools</a></p>
+
+  <script>
+    document.getElementById('passengers').addEventListener('change', function() {
+      document.getElementById('passenger-miles-group').style.display = this.value === 'yes' ? 'block' : 'none';
+    });
+
+    document.getElementById('vehicle').addEventListener('change', function() {
+      document.getElementById('passenger-group').style.display = this.value === 'car' ? 'block' : 'none';
+      document.getElementById('passenger-miles-group').style.display = 'none';
+      document.getElementById('passengers').value = 'no';
+    });
+
+    function calculate() {
+      const vehicle = document.getElementById('vehicle').value;
+      const miles = parseFloat(document.getElementById('miles').value) || 0;
+      const hasPassengers = document.getElementById('passengers').value === 'yes';
+      const passengerMiles = hasPassengers ? (parseFloat(document.getElementById('passengerMiles').value) || 0) : 0;
+
+      if (miles <= 0) {
+        alert('Please enter your business miles.');
+        return;
+      }
+
+      let mainClaim = 0;
+      let breakdownHTML = '';
+
+      if (vehicle === 'car') {
+        if (miles <= 10000) {
+          mainClaim = miles * 0.45;
+          breakdownHTML = '<div class="result-row"><span>' + miles.toLocaleString() + ' miles × 45p</span><span>£' + mainClaim.toFixed(2) + '</span></div>';
+        } else {
+          const first = 10000 * 0.45;
+          const rest = (miles - 10000) * 0.25;
+          mainClaim = first + rest;
+          breakdownHTML = '<div class="result-row"><span>First 10,000 miles × 45p</span><span>£' + first.toFixed(2) + '</span></div>';
+          breakdownHTML += '<div class="result-row"><span>' + (miles - 10000).toLocaleString() + ' miles × 25p</span><span>£' + rest.toFixed(2) + '</span></div>';
+        }
+      } else if (vehicle === 'motorcycle') {
+        mainClaim = miles * 0.24;
+        breakdownHTML = '<div class="result-row"><span>' + miles.toLocaleString() + ' miles × 24p</span><span>£' + mainClaim.toFixed(2) + '</span></div>';
+      } else {
+        mainClaim = miles * 0.20;
+        breakdownHTML = '<div class="result-row"><span>' + miles.toLocaleString() + ' miles × 20p</span><span>£' + mainClaim.toFixed(2) + '</span></div>';
+      }
+
+      let passengerClaim = 0;
+      if (hasPassengers && passengerMiles > 0) {
+        passengerClaim = passengerMiles * 0.05;
+        breakdownHTML += '<div class="result-row"><span>Passenger supplement: ' + passengerMiles.toLocaleString() + ' miles × 5p</span><span>£' + passengerClaim.toFixed(2) + '</span></div>';
+      }
+
+      const total = mainClaim + passengerClaim;
+      breakdownHTML += '<div class="result-row" style="font-weight:700; border-top:2px solid #16a34a; margin-top:8px; padding-top:8px;"><span>Total deductible amount</span><span>£' + total.toFixed(2) + '</span></div>';
+
+      // Tax saving estimate
+      const basicSaving = total * 0.20;
+      const higherSaving = total * 0.40;
+      breakdownHTML += '<div style="margin-top:12px; padding:12px; background:#f0fdf4; border-radius:6px;">';
+      breakdownHTML += '<strong>Estimated tax saving:</strong><br>';
+      breakdownHTML += 'Basic rate (20%): <strong>£' + basicSaving.toFixed(2) + '</strong><br>';
+      breakdownHTML += 'Higher rate (40%): <strong>£' + higherSaving.toFixed(2) + '</strong>';
+      breakdownHTML += '</div>';
+
+      document.getElementById('totalClaim').textContent = '£' + total.toFixed(2);
+      document.getElementById('breakdown').innerHTML = breakdownHTML;
+      document.getElementById('result').classList.add('show');
+    }
+  </script>
+</body>
+</html>
