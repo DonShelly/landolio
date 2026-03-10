@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Assessment 3-Month Penalty: Daily £10 Charges Started 1 March 2026 | Landolio</title>
+  <meta name="description" content="Missed the 31 January self-assessment deadline? Daily £10 penalties started 1 March 2026. Here's exactly what you owe, how to stop the clock, and how to appeal.">
+  <meta name="keywords" content="self assessment 3 month penalty, daily penalty self assessment, £10 daily penalty hmrc, missed tax return deadline march 2026, self assessment penalty appeal">
+  <link rel="canonical" href="https://landolio.com/blog/self-assessment-3-month-penalty-march-2026.html">
+  <meta property="og:title" content="Self-Assessment 3-Month Penalty: Daily £10 Charges Started March 2026">
+  <meta property="og:description" content="Daily £10 penalties are now running. How to stop them and what to do next.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://landolio.com/blog/self-assessment-3-month-penalty-march-2026.html">
+  <meta property="og:image" content="https://landolio.com/images/og-default.png">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body { max-width: 860px; margin: 0 auto; padding: 24px; line-height: 1.7; }
+    h1,h2,h3 { color: #1a1a2e; }
+    .meta { color: #64748b; margin-bottom: 1.2rem; }
+    .urgent { background: #fef2f2; border: 2px solid #ef4444; border-radius: 10px; padding: 18px; margin: 1rem 0; }
+    .urgent h3 { color: #991b1b; margin-top: 0; }
+    .timeline { background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:16px; margin:1rem 0; }
+    .tip { background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:14px; margin:1rem 0; }
+    .warn { background:#fff7ed; border:1px solid #fdba74; border-radius:8px; padding:14px; margin:1rem 0; }
+    .cta { background:#eef4ff; border:1px solid #bfdbfe; padding:18px; border-radius:10px; margin-top:2rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; }
+    th { background: #f8fafc; }
+    .counter { text-align: center; padding: 20px; background: #1a1a2e; color: white; border-radius: 10px; margin: 1rem 0; }
+    .counter .amount { font-size: 2.5rem; font-weight: 800; color: #ef4444; }
+    .counter .label { font-size: 0.9rem; color: #94a3b8; margin-top: 4px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"When do self-assessment daily penalties start?","acceptedAnswer":{"@type":"Answer","text":"Daily penalties of £10 per day start 3 months after the filing deadline. For the 2024/25 tax year, the deadline was 31 January 2026, so daily penalties started on 1 May 2026. The £10 daily charge runs for up to 90 days, meaning a maximum additional penalty of £900 on top of the initial £100 late filing penalty."}},
+      {"@type":"Question","name":"How do I stop self-assessment daily penalties?","acceptedAnswer":{"@type":"Answer","text":"The only way to stop daily penalties is to file your tax return. The penalties stop accumulating on the day you submit. You can file online through your Government Gateway account 24/7. Even if you don't have all your exact figures, file with your best estimates and amend later — an estimated return stops the clock."}},
+      {"@type":"Question","name":"Can I appeal self-assessment daily penalties?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can appeal if you have a reasonable excuse — such as serious illness, bereavement, or HMRC service outages that prevented you from filing. You have 30 days from the penalty notice to appeal. Simple excuses like forgetting, being too busy, or not having the money are not accepted."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <p><a href="/blog/">← Back to blog</a></p>
+  <h1>Self-Assessment 3-Month Penalty: Daily £10 Charges Have Started (March 2026)</h1>
+  <p class="meta">Updated: 10 March 2026 · Urgent guidance for late filers</p>
+
+  <div class="urgent">
+    <h3>🚨 If you haven't filed your 2024/25 tax return yet, read this now</h3>
+    <p>The 31 January 2026 deadline passed over five weeks ago. As of <strong>1 March 2026</strong>, HMRC is now charging <strong>£10 per day</strong> on top of the £100 initial penalty. Every day you wait costs you another tenner.</p>
+    <p><strong>The fastest way to stop it:</strong> File your return today. Even with estimated figures. You can amend later.</p>
+  </div>
+
+  <div class="counter">
+    <div class="label">Your current late filing penalty (if you haven't filed)</div>
+    <div class="amount" id="penalty-amount">Calculating...</div>
+    <div class="label" id="penalty-breakdown"></div>
+  </div>
+
+  <h2>The penalty timeline</h2>
+  <p>Here's how self-assessment late filing penalties stack up:</p>
+
+  <table>
+    <thead>
+      <tr><th>When</th><th>What happens</th><th>Cumulative cost</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>1 February 2026</strong></td><td>£100 automatic penalty (even if no tax owed)</td><td>£100</td></tr>
+      <tr><td><strong>1 March 2026</strong></td><td>Daily penalties begin: £10/day for up to 90 days</td><td>£100 + £10/day</td></tr>
+      <tr><td><strong>Today (<span id="today-date"></span>)</strong></td><td>You're <span id="days-late"></span> days into daily penalties</td><td><strong id="today-penalty"></strong></td></tr>
+      <tr><td><strong>31 May 2026</strong></td><td>Daily penalties end (90 days max = £900)</td><td>£1,000</td></tr>
+      <tr><td><strong>1 August 2026</strong></td><td>6-month penalty: £300 or 5% of tax due (whichever greater)</td><td>£1,300+</td></tr>
+      <tr><td><strong>1 February 2027</strong></td><td>12-month penalty: another £300 or 5% (serious cases up to 100%)</td><td>£1,600+</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">
+    <strong>⚠️ These are filing penalties only.</strong> If you also owe tax, there are separate <strong>late payment penalties</strong> plus interest at the current HMRC rate. The total cost of not filing can escalate very quickly.
+  </div>
+
+  <h2>How to stop the penalties right now</h2>
+
+  <h3>Step 1: File immediately — even with estimates</h3>
+  <p>This is the single most important thing. <strong>Filing stops the daily penalties on the day you submit.</strong></p>
+  <p>Don't have your exact figures? That's not a reason to wait. HMRC explicitly allows you to file with reasonable estimates and amend your return later. A filed return with estimates is infinitely better than no return at all.</p>
+
+  <h3>Step 2: Log in to Government Gateway</h3>
+  <p>Go to <a href="https://www.gov.uk/log-in-register-hmrc-online-services" rel="nofollow">HMRC online services</a> and log in. Navigate to Self Assessment → Complete your tax return.</p>
+  <p>If you've lost your Government Gateway details, you can recover them online. If you've never registered, do it now — though it will take time for your UTR and activation code to arrive.</p>
+
+  <h3>Step 3: Fill in the essentials</h3>
+  <p>For a basic self-employed return, you need:</p>
+  <ul>
+    <li><strong>Total income</strong> — add up everything you earned. Check bank statements.</li>
+    <li><strong>Total expenses</strong> — if you can't total them precisely, use a conservative estimate. You can amend upward later.</li>
+    <li><strong>Any employment income</strong> — this may be pre-filled from your P60.</li>
+  </ul>
+
+  <h3>Step 4: Submit and note the confirmation</h3>
+  <p>Save your submission reference. This is your proof of filing date — it's what stops the penalty clock.</p>
+
+  <h3>Step 5: Pay what you can</h3>
+  <p>If you owe tax but can't pay in full, <a href="/blog/hmrc-time-to-pay-self-assessment-2026.html">set up a Time to Pay arrangement</a>. HMRC is generally willing to agree payment plans, especially if you contact them before enforcement action starts.</p>
+
+  <h2>Can you get the penalties cancelled?</h2>
+  <p>Possibly — if you have a <strong>reasonable excuse</strong>. See our <a href="/blog/reasonable-excuse-late-tax-return-hmrc-guide.html">complete guide to reasonable excuses</a> for what HMRC accepts and how to appeal.</p>
+
+  <p><strong>Common reasonable excuses:</strong></p>
+  <ul>
+    <li>Serious illness or hospital stay</li>
+    <li>Bereavement of a close family member</li>
+    <li>HMRC online service outage near the deadline</li>
+    <li>Fire, flood, or theft of records</li>
+    <li>Mental health condition preventing you from managing affairs</li>
+  </ul>
+
+  <p><strong>Not reasonable excuses:</strong> "I forgot", "I was busy", "I didn't have the money", "I found it confusing".</p>
+
+  <div class="tip">
+    <strong>💡 File first, appeal second.</strong> Filing now stops the daily penalties. You can appeal the earlier penalties separately. Don't wait to appeal before filing — that just makes the total penalty bigger.
+  </div>
+
+  <h2>What if you can't pay the tax bill?</h2>
+  <p>Filing and paying are separate obligations. <strong>You can and should file even if you can't pay.</strong></p>
+  <p>Options if you can't pay:</p>
+  <ul>
+    <li><strong>Time to Pay (TTP)</strong> — HMRC offers payment plans of up to 12 months for debts under £30,000. <a href="/blog/hmrc-time-to-pay-self-assessment-2026.html">Read our TTP guide →</a></li>
+    <li><strong>Pay what you can</strong> — partial payment reduces the interest charges</li>
+    <li><strong>Contact HMRC</strong> — call 0300 200 3822 (Payment Support Service) before they contact you</li>
+  </ul>
+
+  <h2>Don't have a Government Gateway account?</h2>
+  <p>If you've never filed before and don't have a UTR or Government Gateway account, you're in a trickier position because registration takes time. But you still need to act:</p>
+  <ol>
+    <li><a href="https://www.gov.uk/register-for-self-assessment" rel="nofollow">Register for self-assessment</a> immediately</li>
+    <li>Call HMRC's Self Assessment helpline (0300 200 3310) and explain the situation</li>
+    <li>Ask about filing a paper return (SA100) while you wait for online access</li>
+  </ol>
+
+  <p>For a complete walkthrough of the registration and filing process, see our <a href="/blog/first-self-assessment-tax-return-self-employed-uk.html">first self-assessment guide</a>.</p>
+
+  <h2>The bottom line</h2>
+  <p>Every day you don't file costs £10. The maths is brutal and simple:</p>
+  <ul>
+    <li>File today → save £10 tomorrow</li>
+    <li>Wait a week → that's another £70</li>
+    <li>Wait until the daily penalties max out → £900 in daily penalties alone</li>
+  </ul>
+  <p><strong>There is no scenario where waiting helps.</strong> File now, sort the details later.</p>
+
+  <h2>Related guides</h2>
+  <ul>
+    <li><a href="/blog/reasonable-excuse-late-tax-return-hmrc-guide.html">Reasonable Excuse for Late Tax Return: HMRC Guide</a></li>
+    <li><a href="/blog/self-assessment-penalty-appeal-guide-2026.html">Self-Assessment Penalty Appeal Guide</a></li>
+    <li><a href="/blog/hmrc-time-to-pay-self-assessment-2026.html">HMRC Time to Pay for Self-Assessment</a></li>
+    <li><a href="/blog/first-self-assessment-tax-return-self-employed-uk.html">First Self-Assessment: Complete Guide</a></li>
+    <li><a href="/tools/self-assessment-penalty-calculator.html">Self-Assessment Penalty Calculator</a></li>
+  </ul>
+
+  <div class="cta">
+    <h3>📦 Sort Your Self-Assessment — Stop the Penalties</h3>
+    <p>The Getting-Paid Toolkit includes tax checklists, penalty appeal templates, HMRC letter wording, and step-by-step guides to get your freelance finances back on track.</p>
+    <p><a href="/products/getting-paid-toolkit.html"><strong>Get the toolkit — £19 →</strong></a></p>
+  </div>
+
+  <hr>
+  <p style="color:#64748b; font-size:0.85rem;">Landolio helps UK freelancers and small businesses get paid and stay compliant. <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/tools/">Free tools</a></p>
+
+<script>
+  const deadline = new Date('2026-01-31');
+  const dailyStart = new Date('2026-03-01');
+  const now = new Date();
+  const daysSinceDaily = Math.max(0, Math.floor((now - dailyStart) / 86400000));
+  const dailyPenalty = Math.min(daysSinceDaily * 10, 900);
+  const total = 100 + dailyPenalty;
+
+  document.getElementById('penalty-amount').textContent = '£' + total.toLocaleString();
+  document.getElementById('penalty-breakdown').textContent = '£100 initial + ' + daysSinceDaily + ' days × £10 = £' + dailyPenalty;
+  document.getElementById('today-date').textContent = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long' });
+  document.getElementById('days-late').textContent = daysSinceDaily;
+  document.getElementById('today-penalty').textContent = '£' + total;
+</script>
+</body>
+</html>

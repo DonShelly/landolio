@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Freelancer Client & Project Tracker | Landolio</title>
+  <meta name="description" content="Free client and project tracker for UK freelancers. Track clients, projects, invoices, and revenue — all in your browser. No sign-up required.">
+  <meta name="keywords" content="freelancer client tracker, project tracker freelance, freelance CRM free, invoice tracker freelancer, freelance project management">
+  <link rel="canonical" href="https://landolio.com/tools/freelancer-client-tracker.html">
+  <meta property="og:title" content="Free Freelancer Client & Project Tracker">
+  <meta property="og:description" content="Track clients, projects, and invoices in your browser. No sign-up, no subscription.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://landolio.com/tools/freelancer-client-tracker.html">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 1100px; margin: 0 auto; padding: 16px; line-height: 1.6; color: #1a1a2e; }
+    h1 { font-size: 1.6rem; margin-bottom: 8px; }
+    .subtitle { color: #64748b; margin-bottom: 20px; }
+    .tabs { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tab { padding: 8px 16px; border: 1px solid #e2e8f0; border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; background: #f8fafc; font-size: 0.9rem; }
+    .tab.active { background: #2563eb; color: white; border-color: #2563eb; }
+    .panel { display: none; border: 1px solid #e2e8f0; border-radius: 0 8px 8px 8px; padding: 16px; }
+    .panel.active { display: block; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { border: 1px solid #e2e8f0; padding: 6px 8px; text-align: left; }
+    th { background: #f1f5f9; font-weight: 600; white-space: nowrap; }
+    td { vertical-align: top; }
+    input, select, textarea { width: 100%; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.85rem; }
+    textarea { resize: vertical; min-height: 60px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .form-grid label { font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px; }
+    .form-group { margin-bottom: 8px; }
+    .btn { padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-danger { background: #ef4444; color: white; }
+    .btn-danger:hover { background: #dc2626; }
+    .btn-secondary { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+    .btn-secondary:hover { background: #e2e8f0; }
+    .btn-group { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .stat-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; text-align: center; }
+    .stat-card .number { font-size: 1.6rem; font-weight: 700; color: #2563eb; }
+    .stat-card .label { font-size: 0.8rem; color: #64748b; margin-top: 2px; }
+    .status-badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+    .status-active { background: #dcfce7; color: #166534; }
+    .status-prospect { background: #dbeafe; color: #1e40af; }
+    .status-dormant { background: #fef3c7; color: #92400e; }
+    .status-paid { background: #dcfce7; color: #166534; }
+    .status-overdue { background: #fee2e2; color: #991b1b; }
+    .status-sent { background: #dbeafe; color: #1e40af; }
+    .empty { text-align: center; padding: 40px; color: #94a3b8; }
+    .cta { background: #eef4ff; border: 1px solid #bfdbfe; padding: 16px; border-radius: 10px; margin-top: 24px; }
+    .delete-btn { color: #ef4444; cursor: pointer; font-size: 0.8rem; border: none; background: none; }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      table { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <p><a href="/tools/">← Back to tools</a></p>
+  <h1>📋 Freelancer Client & Project Tracker</h1>
+  <p class="subtitle">Track clients, projects, and invoices — all in your browser. Your data stays on your device.</p>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('dashboard')">📊 Dashboard</div>
+    <div class="tab" onclick="switchTab('clients')">👥 Clients</div>
+    <div class="tab" onclick="switchTab('projects')">📁 Projects</div>
+    <div class="tab" onclick="switchTab('invoices')">🧾 Invoices</div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="panel-dashboard" class="panel active">
+    <div class="stats">
+      <div class="stat-card"><div class="number" id="stat-clients">0</div><div class="label">Active Clients</div></div>
+      <div class="stat-card"><div class="number" id="stat-projects">0</div><div class="label">Active Projects</div></div>
+      <div class="stat-card"><div class="number" id="stat-revenue">£0</div><div class="label">Collected Revenue</div></div>
+      <div class="stat-card"><div class="number" id="stat-outstanding">£0</div><div class="label">Outstanding</div></div>
+      <div class="stat-card"><div class="number" id="stat-overdue">£0</div><div class="label">Overdue</div></div>
+      <div class="stat-card"><div class="number" id="stat-avg-days">-</div><div class="label">Avg Days to Pay</div></div>
+    </div>
+    <h3>Recent Activity</h3>
+    <div id="recent-activity"><p class="empty">Add clients and projects to see your dashboard.</p></div>
+  </div>
+
+  <!-- Clients -->
+  <div id="panel-clients" class="panel">
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="showForm('client')">+ Add Client</button>
+      <button class="btn btn-secondary" onclick="exportCSV('clients')">Export CSV</button>
+    </div>
+    <div id="client-form" style="display:none; margin-bottom:16px; padding:16px; background:#f8fafc; border-radius:8px;">
+      <h3 style="margin-bottom:12px;">Add Client</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Name *</label><input id="c-name" placeholder="Jane Smith"></div>
+        <div class="form-group"><label>Company</label><input id="c-company" placeholder="TechCorp Ltd"></div>
+        <div class="form-group"><label>Email</label><input id="c-email" type="email" placeholder="jane@techcorp.com"></div>
+        <div class="form-group"><label>Phone</label><input id="c-phone" placeholder="07700 900000"></div>
+        <div class="form-group"><label>Rate (£)</label><input id="c-rate" type="number" placeholder="50"></div>
+        <div class="form-group"><label>Rate Type</label>
+          <select id="c-rate-type"><option>Hourly</option><option>Daily</option><option>Project</option></select>
+        </div>
+        <div class="form-group"><label>Payment Terms (days)</label><input id="c-terms" type="number" value="30"></div>
+        <div class="form-group"><label>Status</label>
+          <select id="c-status"><option>Active</option><option>Prospect</option><option>Dormant</option><option>Former</option></select>
+        </div>
+      </div>
+      <div class="form-group"><label>Notes</label><textarea id="c-notes" placeholder="How you met, preferences, etc."></textarea></div>
+      <div class="btn-group" style="margin-top:8px;">
+        <button class="btn btn-primary" onclick="saveClient()">Save Client</button>
+        <button class="btn btn-secondary" onclick="hideForm('client')">Cancel</button>
+      </div>
+    </div>
+    <div id="clients-table"></div>
+  </div>
+
+  <!-- Projects -->
+  <div id="panel-projects" class="panel">
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="showForm('project')">+ Add Project</button>
+      <button class="btn btn-secondary" onclick="exportCSV('projects')">Export CSV</button>
+    </div>
+    <div id="project-form" style="display:none; margin-bottom:16px; padding:16px; background:#f8fafc; border-radius:8px;">
+      <h3 style="margin-bottom:12px;">Add Project</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Project Name *</label><input id="p-name" placeholder="Website Redesign"></div>
+        <div class="form-group"><label>Client *</label><select id="p-client"></select></div>
+        <div class="form-group"><label>Quoted Amount (£)</label><input id="p-quoted" type="number" placeholder="2000"></div>
+        <div class="form-group"><label>Status</label>
+          <select id="p-status"><option>Prospect</option><option>Quoted</option><option>Active</option><option>Completed</option><option>Invoiced</option><option>Paid</option><option>Cancelled</option></select>
+        </div>
+        <div class="form-group"><label>Start Date</label><input id="p-start" type="date"></div>
+        <div class="form-group"><label>Deadline</label><input id="p-deadline" type="date"></div>
+        <div class="form-group"><label>Hours Logged</label><input id="p-hours" type="number" placeholder="0"></div>
+        <div class="form-group"><label>Priority</label>
+          <select id="p-priority"><option>Medium</option><option>High</option><option>Low</option></select>
+        </div>
+      </div>
+      <div class="form-group"><label>Notes</label><textarea id="p-notes"></textarea></div>
+      <div class="btn-group" style="margin-top:8px;">
+        <button class="btn btn-primary" onclick="saveProject()">Save Project</button>
+        <button class="btn btn-secondary" onclick="hideForm('project')">Cancel</button>
+      </div>
+    </div>
+    <div id="projects-table"></div>
+  </div>
+
+  <!-- Invoices -->
+  <div id="panel-invoices" class="panel">
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="showForm('invoice')">+ Add Invoice</button>
+      <button class="btn btn-secondary" onclick="exportCSV('invoices')">Export CSV</button>
+    </div>
+    <div id="invoice-form" style="display:none; margin-bottom:16px; padding:16px; background:#f8fafc; border-radius:8px;">
+      <h3 style="margin-bottom:12px;">Add Invoice</h3>
+      <div class="form-grid">
+        <div class="form-group"><label>Invoice # *</label><input id="i-number" placeholder="INV-001"></div>
+        <div class="form-group"><label>Client *</label><select id="i-client"></select></div>
+        <div class="form-group"><label>Project</label><select id="i-project"><option value="">— None —</option></select></div>
+        <div class="form-group"><label>Amount (£) *</label><input id="i-amount" type="number" placeholder="500"></div>
+        <div class="form-group"><label>VAT (£)</label><input id="i-vat" type="number" value="0"></div>
+        <div class="form-group"><label>Date Sent</label><input id="i-sent" type="date"></div>
+        <div class="form-group"><label>Due Date</label><input id="i-due" type="date"></div>
+        <div class="form-group"><label>Status</label>
+          <select id="i-status"><option>Draft</option><option>Sent</option><option>Overdue</option><option>Paid</option><option>Written Off</option></select>
+        </div>
+        <div class="form-group"><label>Date Paid</label><input id="i-paid-date" type="date"></div>
+      </div>
+      <div class="btn-group" style="margin-top:8px;">
+        <button class="btn btn-primary" onclick="saveInvoice()">Save Invoice</button>
+        <button class="btn btn-secondary" onclick="hideForm('invoice')">Cancel</button>
+      </div>
+    </div>
+    <div id="invoices-table"></div>
+  </div>
+
+  <div class="cta">
+    <h3>📦 Want the full spreadsheet version?</h3>
+    <p>Get the <strong>Freelancer Client & Project Tracker</strong> as a ready-made Google Sheets / Excel spreadsheet with auto-calculating dashboards, revenue charts, pipeline tracking, and print-ready invoice log.</p>
+    <p><a href="/products/getting-paid-toolkit.html"><strong>Get the Getting-Paid Toolkit — £19 →</strong></a></p>
+  </div>
+
+  <hr style="margin-top:24px;">
+  <p style="color:#64748b; font-size:0.85rem; margin-top:12px;">Your data is stored in your browser (localStorage). It never leaves your device. <a href="/">Landolio</a> · <a href="/tools/">Free tools</a></p>
+
+<script>
+const STORAGE_KEY = 'landolio_tracker';
+let data = { clients: [], projects: [], invoices: [] };
+
+function load() {
+  try { const s = localStorage.getItem(STORAGE_KEY); if (s) data = JSON.parse(s); } catch(e) {}
+}
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  document.querySelector(`.tab[onclick="switchTab('${name}')"]`).classList.add('active');
+  if (name === 'dashboard') updateDashboard();
+  if (name === 'clients') renderClients();
+  if (name === 'projects') renderProjects();
+  if (name === 'invoices') renderInvoices();
+}
+
+function showForm(type) {
+  document.getElementById(type + '-form').style.display = 'block';
+  if (type === 'project' || type === 'invoice') populateClientDropdowns();
+  if (type === 'invoice') populateProjectDropdown();
+}
+function hideForm(type) { document.getElementById(type + '-form').style.display = 'none'; }
+
+function populateClientDropdowns() {
+  ['p-client', 'i-client'].forEach(id => {
+    const sel = document.getElementById(id);
+    if (!sel) return;
+    sel.innerHTML = '<option value="">— Select client —</option>' +
+      data.clients.map((c, i) => `<option value="${i}">${c.name}${c.company ? ' (' + c.company + ')' : ''}</option>`).join('');
+  });
+}
+function populateProjectDropdown() {
+  const sel = document.getElementById('i-project');
+  sel.innerHTML = '<option value="">— None —</option>' +
+    data.projects.map((p, i) => `<option value="${i}">${p.name}</option>`).join('');
+}
+
+function statusBadge(status) {
+  const cls = { Active: 'active', Prospect: 'prospect', Dormant: 'dormant', Paid: 'paid', Overdue: 'overdue', Sent: 'sent' };
+  return `<span class="status-badge status-${cls[status] || 'prospect'}">${status}</span>`;
+}
+
+function saveClient() {
+  const name = document.getElementById('c-name').value.trim();
+  if (!name) return alert('Client name is required');
+  data.clients.push({
+    name, company: document.getElementById('c-company').value.trim(),
+    email: document.getElementById('c-email').value.trim(),
+    phone: document.getElementById('c-phone').value.trim(),
+    rate: parseFloat(document.getElementById('c-rate').value) || 0,
+    rateType: document.getElementById('c-rate-type').value,
+    terms: parseInt(document.getElementById('c-terms').value) || 30,
+    status: document.getElementById('c-status').value,
+    notes: document.getElementById('c-notes').value.trim(),
+    created: new Date().toISOString().split('T')[0]
+  });
+  save(); hideForm('client'); renderClients();
+  ['c-name','c-company','c-email','c-phone','c-rate','c-notes'].forEach(id => document.getElementById(id).value = '');
+}
+
+function saveProject() {
+  const name = document.getElementById('p-name').value.trim();
+  const clientIdx = document.getElementById('p-client').value;
+  if (!name) return alert('Project name is required');
+  data.projects.push({
+    name, clientIdx: parseInt(clientIdx) || -1,
+    quoted: parseFloat(document.getElementById('p-quoted').value) || 0,
+    status: document.getElementById('p-status').value,
+    start: document.getElementById('p-start').value,
+    deadline: document.getElementById('p-deadline').value,
+    hours: parseFloat(document.getElementById('p-hours').value) || 0,
+    priority: document.getElementById('p-priority').value,
+    notes: document.getElementById('p-notes').value.trim(),
+    created: new Date().toISOString().split('T')[0]
+  });
+  save(); hideForm('project'); renderProjects();
+  ['p-name','p-quoted','p-hours','p-notes'].forEach(id => document.getElementById(id).value = '');
+}
+
+function saveInvoice() {
+  const num = document.getElementById('i-number').value.trim();
+  const amount = parseFloat(document.getElementById('i-amount').value);
+  if (!num || isNaN(amount)) return alert('Invoice number and amount are required');
+  data.invoices.push({
+    number: num, clientIdx: parseInt(document.getElementById('i-client').value) || -1,
+    projectIdx: document.getElementById('i-project').value ? parseInt(document.getElementById('i-project').value) : -1,
+    amount, vat: parseFloat(document.getElementById('i-vat').value) || 0,
+    sent: document.getElementById('i-sent').value,
+    due: document.getElementById('i-due').value,
+    status: document.getElementById('i-status').value,
+    paidDate: document.getElementById('i-paid-date').value,
+    created: new Date().toISOString().split('T')[0]
+  });
+  save(); hideForm('invoice'); renderInvoices();
+  ['i-number','i-amount','i-vat'].forEach(id => document.getElementById(id).value = '');
+}
+
+function deleteItem(type, idx) {
+  if (!confirm('Delete this ' + type + '?')) return;
+  data[type + 's'].splice(idx, 1);
+  save();
+  if (type === 'client') renderClients();
+  if (type === 'project') renderProjects();
+  if (type === 'invoice') renderInvoices();
+}
+
+function renderClients() {
+  const el = document.getElementById('clients-table');
+  if (!data.clients.length) { el.innerHTML = '<p class="empty">No clients yet. Add your first client above.</p>'; return; }
+  el.innerHTML = '<table><thead><tr><th>Name</th><th>Company</th><th>Email</th><th>Rate</th><th>Terms</th><th>Status</th><th></th></tr></thead><tbody>' +
+    data.clients.map((c, i) => `<tr><td><strong>${c.name}</strong></td><td>${c.company || '-'}</td><td>${c.email || '-'}</td><td>${c.rate ? '£' + c.rate + '/' + (c.rateType || 'hr') : '-'}</td><td>${c.terms}d</td><td>${statusBadge(c.status)}</td><td><button class="delete-btn" onclick="deleteItem('client',${i})">✕</button></td></tr>`).join('') +
+    '</tbody></table>';
+}
+
+function renderProjects() {
+  const el = document.getElementById('projects-table');
+  if (!data.projects.length) { el.innerHTML = '<p class="empty">No projects yet. Add your first project above.</p>'; return; }
+  el.innerHTML = '<table><thead><tr><th>Project</th><th>Client</th><th>Quoted</th><th>Hours</th><th>Deadline</th><th>Status</th><th></th></tr></thead><tbody>' +
+    data.projects.map((p, i) => {
+      const client = p.clientIdx >= 0 && data.clients[p.clientIdx] ? data.clients[p.clientIdx].name : '-';
+      return `<tr><td><strong>${p.name}</strong></td><td>${client}</td><td>${p.quoted ? '£' + p.quoted.toLocaleString() : '-'}</td><td>${p.hours || '-'}</td><td>${p.deadline || '-'}</td><td>${statusBadge(p.status)}</td><td><button class="delete-btn" onclick="deleteItem('project',${i})">✕</button></td></tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+function renderInvoices() {
+  const el = document.getElementById('invoices-table');
+  if (!data.invoices.length) { el.innerHTML = '<p class="empty">No invoices yet. Add your first invoice above.</p>'; return; }
+  el.innerHTML = '<table><thead><tr><th>#</th><th>Client</th><th>Amount</th><th>VAT</th><th>Total</th><th>Sent</th><th>Due</th><th>Status</th><th></th></tr></thead><tbody>' +
+    data.invoices.map((inv, i) => {
+      const client = inv.clientIdx >= 0 && data.clients[inv.clientIdx] ? data.clients[inv.clientIdx].name : '-';
+      const total = inv.amount + inv.vat;
+      return `<tr><td>${inv.number}</td><td>${client}</td><td>£${inv.amount.toLocaleString()}</td><td>£${inv.vat}</td><td><strong>£${total.toLocaleString()}</strong></td><td>${inv.sent || '-'}</td><td>${inv.due || '-'}</td><td>${statusBadge(inv.status)}</td><td><button class="delete-btn" onclick="deleteItem('invoice',${i})">✕</button></td></tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+function updateDashboard() {
+  const activeClients = data.clients.filter(c => c.status === 'Active').length;
+  const activeProjects = data.projects.filter(p => ['Active','Quoted','Prospect'].includes(p.status)).length;
+  const paidInvoices = data.invoices.filter(i => i.status === 'Paid');
+  const revenue = paidInvoices.reduce((s, i) => s + i.amount + i.vat, 0);
+  const outstanding = data.invoices.filter(i => ['Sent','Overdue'].includes(i.status)).reduce((s, i) => s + i.amount + i.vat, 0);
+  const overdue = data.invoices.filter(i => i.status === 'Overdue').reduce((s, i) => s + i.amount + i.vat, 0);
+
+  let avgDays = '-';
+  const daysArr = paidInvoices.filter(i => i.sent && i.paidDate).map(i => {
+    return Math.round((new Date(i.paidDate) - new Date(i.sent)) / 86400000);
+  });
+  if (daysArr.length) avgDays = Math.round(daysArr.reduce((a, b) => a + b, 0) / daysArr.length) + 'd';
+
+  document.getElementById('stat-clients').textContent = activeClients;
+  document.getElementById('stat-projects').textContent = activeProjects;
+  document.getElementById('stat-revenue').textContent = '£' + revenue.toLocaleString();
+  document.getElementById('stat-outstanding').textContent = '£' + outstanding.toLocaleString();
+  document.getElementById('stat-overdue').textContent = '£' + overdue.toLocaleString();
+  document.getElementById('stat-avg-days').textContent = avgDays;
+
+  const actEl = document.getElementById('recent-activity');
+  const items = [
+    ...data.clients.map(c => ({ date: c.created, text: `Added client: ${c.name}` })),
+    ...data.projects.map(p => ({ date: p.created, text: `Added project: ${p.name}` })),
+    ...data.invoices.map(i => ({ date: i.created, text: `Invoice ${i.number}: £${(i.amount + i.vat).toLocaleString()} (${i.status})` }))
+  ].sort((a, b) => b.date > a.date ? 1 : -1).slice(0, 8);
+
+  if (items.length) {
+    actEl.innerHTML = '<ul style="list-style:none;padding:0;">' + items.map(i => `<li style="padding:4px 0;border-bottom:1px solid #f1f5f9;font-size:0.85rem;"><span style="color:#64748b;">${i.date || 'n/a'}</span> — ${i.text}</li>`).join('') + '</ul>';
+  }
+}
+
+function exportCSV(type) {
+  let csv = '', filename = type + '.csv';
+  if (type === 'clients') {
+    csv = 'Name,Company,Email,Phone,Rate,Rate Type,Payment Terms,Status,Notes,Added\n' +
+      data.clients.map(c => [c.name,c.company,c.email,c.phone,c.rate,c.rateType,c.terms,c.status,'"'+c.notes.replace(/"/g,'""')+'"',c.created].join(',')).join('\n');
+  } else if (type === 'projects') {
+    csv = 'Project,Client,Quoted,Status,Start,Deadline,Hours,Priority,Notes,Added\n' +
+      data.projects.map(p => {
+        const client = p.clientIdx >= 0 && data.clients[p.clientIdx] ? data.clients[p.clientIdx].name : '';
+        return [p.name,client,p.quoted,p.status,p.start,p.deadline,p.hours,p.priority,'"'+p.notes.replace(/"/g,'""')+'"',p.created].join(',');
+      }).join('\n');
+  } else if (type === 'invoices') {
+    csv = 'Invoice #,Client,Amount,VAT,Total,Sent,Due,Paid Date,Status,Added\n' +
+      data.invoices.map(i => {
+        const client = i.clientIdx >= 0 && data.clients[i.clientIdx] ? data.clients[i.clientIdx].name : '';
+        return [i.number,client,i.amount,i.vat,i.amount+i.vat,i.sent,i.due,i.paidDate,i.status,i.created].join(',');
+      }).join('\n');
+  }
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; a.click();
+}
+
+load();
+updateDashboard();
+</script>
+</body>
+</html>
