@@ -812,6 +812,7 @@
 <url><loc>https://landolio.com/blog/freelancer-debt-recovery-options-uk.html</loc><lastmod>2026-03-09</lastmod><priority>0.8</priority></url>
 <url><loc>https://landolio.com/blog/uk-freelancer-tax-rates-thresholds-2025-26-2026-27.html</loc><lastmod>2026-03-11</lastmod><priority>0.9</priority></url>
 <url><loc>https://landolio.com/blog/how-to-get-first-freelance-client-uk.html</loc><lastmod>2026-03-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://landolio.com/blog/best-tools-chase-late-payments-uk-freelancers.html</loc><lastmod>2026-03-12</lastmod><priority>0.9</priority></url>
 <url><loc>https://landolio.com/blog/self-assessment-3-month-penalty-march-2026.html</loc><lastmod>2026-03-10</lastmod><priority>0.9</priority></url>
 <url><loc>https://landolio.com/tools/freelancer-client-tracker.html</loc><lastmod>2026-03-09</lastmod><priority>0.8</priority></url>
 <url><loc>https://landolio.com/blog/first-self-assessment-tax-return-self-employed-uk.html</loc><lastmod>2026-03-08</lastmod><priority>0.8</priority></url>
@@ -862,4 +863,10 @@
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
 </url>
+  <url>
+    <loc>https://landolio.com/blog/xero-vs-freeagent-uk-freelancers-2026.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
